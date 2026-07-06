@@ -1,0 +1,14 @@
+{
+  "dropboxWebsRoot": "",
+  "verifyMirror": true,
+  "sites": [
+    {
+      "siteKey": "yoursite",
+      "wpSiteFolder": "yoursite",
+      "folders": [
+        { "sourceRelative": "wp-content/uploads", "destName": "uploads" },
+        { "sourceRelative": "wp-content/themes/altitude-pro", "destName": "altitude-pro" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "siteKey": "yoursite",
+  "localUrl": "http://localhost/yoursite",
+  "productionUrl": "https://www.example.com",
+  "tablePrefix": "wp_",
+  "wampWwwRoot": "",
+  "dropboxWebsPath": "Dropbox/Webs/yoursite",
+  "theme": "altitude-pro"
+}

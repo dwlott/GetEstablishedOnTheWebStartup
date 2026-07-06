@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Permissions — Get Established On The Web — Static Mirror</title>
+<link rel="stylesheet" href="../assets/geotw-pages.css">
+</head>
+<body>
+<header class="geotw-static-header">
+  <p class="geotw-static-brand"><a href="../">Get Established On The Web — Static Mirror</a></p>
+  <p class="geotw-static-notice">Static mirror for review — live site: <a href="https://getestablishedontheweb.com">getestablishedontheweb.com</a></p>
+</header>
+<div class="geotw-static-layout">
+  <nav class="geotw-static-nav" aria-label="Static mirror pages"><div class="geotw-static-nav-group"><p class="geotw-static-nav-heading">Practical</p><ul><li><a href="../get-listed/">Get Listed</a></li><li><a href="../use-ai/">Use AI</a></li></ul></div><div class="geotw-static-nav-group"><p class="geotw-static-nav-heading">Repositories</p><ul><li><a href="../repositories/">Repositories</a></li><li><a href="../getestablished/">GetEstablished</a></li><li><a href="../get-established-on-the-web/">Get Established On The Web</a></li></ul></div><div class="geotw-static-nav-group"><p class="geotw-static-nav-heading">Learn</p><ul><li><a href="../github-workflow/">GitHub Workflow</a></li><li><a href="../agent-permissions/" aria-current="page">Agent Permissions</a></li><li><a href="../ai-workflow/">AI Workflow</a></li></ul></div><div class="geotw-static-nav-group"><p class="geotw-static-nav-heading">Site</p><ul><li><a href="../about/">About</a></li></ul></div><div class="geotw-static-nav-group"><p class="geotw-static-nav-heading">Listing guides</p><ul><li><a href="../google-business-profile-basics/">Google Basics</a></li><li><a href="../bing-places-basics/">Bing Places Basics</a></li><li><a href="../facebook-business-page-basics/">Facebook Business Page Basics</a></li><li><a href="../nextdoor-business-page-basics/">Nextdoor Business Page Basics</a></li><li><a href="../foursquare-business-listing-basics/">Foursquare Business Listing Basics</a></li><li><a href="../better-business-bureau-profile-basics/">Better Business Bureau Profile Basics</a></li><li><a href="../yelp-basics/">Yelp Basics</a></li><li><a href="../apple-maps-basics/">Apple Maps Basics</a></li><li><a href="../yellow-pages-basics/">Yellow Pages Basics</a></li></ul></div></nav>
+  <main class="geotw-static-main"><h1 class="geotw-page-title">Agent Permissions</h1>
+<div class="geotw-page-intro"><div class="geotw-page-intro-image-wrap"><img class="geotw-page-intro-image" src="../assets/page-images/agent-permissions-intro.jpg" alt="Agent Permissions"></div><div class="geotw-page-intro-copy"><p class="geotw-page-lead">Know what an agent is asking to do before you approve it.</p>
+<p class="geotw-page-deck">This page explains permission prompts, sandbox boundaries, and safer approval habits in plain language.</p></div></div>
+<p>AI agents are most useful when they can read the right project files and make focused changes with your approval.</p>
+<p><strong>Get Established Workspace</strong> is a prepared foundation for using AI to build your online presence. It is an <em>AI-ready</em> folder of organized files, with the <strong>Get Established Repository</strong> as the technical <strong>source of truth</strong> when file history and agent instructions matter.</p>
+<p>That prepared foundation helps agents work from clear instructions, page drafts, prompts, and planning notes instead of guessing what your online presence should become.</p>
+<p>Sometimes an agent needs permission before it can read a file, run a command, or make a change. Those permission prompts are part of keeping the work visible and <em>reviewable</em>.</p>
+<h2 id="why-agents-ask-for-permission">Why Agents Ask For Permission</h2>
+<p>Agents ask for permission when a task needs access outside the normal working area, when a command could change files, or when the app wants you to approve a local action before it continues.</p>
+<p>A permission prompt does not automatically mean something is wrong. It means the agent is asking before doing more.</p>
+<h2 id="what-the-sandbox-means">What The Sandbox Means</h2>
+<p>Think of the sandbox as a working boundary around the agent.</p>
+<p>It helps limit what the agent can read or change during a task. The goal is to let the agent work inside the project while keeping broader access controlled.</p>
+<p>The sandbox is not a promise that every action is safe. It is one part of a careful workflow: read the request, check the command, keep the task focused, and review the result.</p>
+<h2 id="when-the-sandbox-falls-back">When The Sandbox Falls Back</h2>
+<p>Sometimes the sandbox does not start cleanly or cannot complete an ordinary repository read.</p>
+<p>When that happens, the agent may ask to continue with safe local reads. For example, it may need to read the repository instructions, setup notes, or page drafts so it can follow the project workflow.</p>
+<p>That fallback should stay narrow. A sandbox issue is not a reason to approve broad access or unrelated commands.</p>
+<h2 id="lower-risk-read-only-reads">Lower-Risk Read-Only Reads</h2>
+<p>Read-only repository commands are usually lower risk when they only display trusted project files.</p>
+<p>Examples include reading files such as:</p>
+<ul>
+<li><code>AGENTS.md</code></li>
+<li><code>README.md</code></li>
+<li>Project planning notes</li>
+<li>Website page drafts</li>
+<li>Setup guidance files</li>
+</ul>
+<p>These reads help the agent understand the workspace before it suggests or edits anything.</p>
+<p>Still, check what the command is trying to read. A familiar read-only file command is different from a broad command that scans private folders or changes the system.</p>
+<h2 id="how-to-decide-what-to-click">How To Decide What To Click</h2>
+<p>Before approving a permission prompt, ask three simple questions:</p>
+<ol>
+<li>Does this match the task I gave the agent?</li>
+<li>Is the agent asking for the smallest access that can do the job?</li>
+<li>Do I understand whether the action only reads files or can change something?</li>
+</ol>
+<p>If the answer is not clear, pause and ask the agent to explain the request in plain language.</p>
+<p>For a documentation task, a request to read known project files is usually different from a request for Full Access, system changes, software installation, or a GitHub push. Full Access should be a careful, explicit choice for a clear reason, not the default fix when a sandbox has trouble.</p>
+<h2 id="higher-risk-actions">Higher-Risk Actions</h2>
+<p>Be more careful with actions that:</p>
+<ul>
+<li>Change, delete, move, or rename files.</li>
+<li>Install software or dependencies.</li>
+<li>Push changes to GitHub.</li>
+<li>Change system settings.</li>
+<li>Run broad scripts you do not recognize.</li>
+<li>Ask for full access when the task only needs a simple file read.</li>
+</ul>
+<p>Full Access should not be the default response to a sandbox problem. Use the smallest permission that fits the task.</p>
+<h2 id="when-to-stop">When To Stop</h2>
+<p>Stop and ask for help when:</p>
+<ul>
+<li>You do not understand what a command is trying to do.</li>
+<li>The requested access seems broader than the task needs.</li>
+<li>The agent asks to change system settings for a simple documentation task.</li>
+<li>A prompt asks you to approve something unrelated to the repository.</li>
+<li>You feel rushed to approve access before reviewing it.</li>
+</ul>
+<p>It is reasonable to pause. A good agent workflow should make the next action understandable.</p>
+<h2 id="how-this-fits-the-workspace">How This Fits The Workspace</h2>
+<p>The <strong>Get Established Workspace</strong> is designed so agents can start with organized files, clear instructions, and small <em>reviewable</em> tasks.</p>
+<p>That makes permission decisions easier. The agent can read the prepared foundation, follow the repository rules, and explain what it needs before it makes changes.</p>
+<p>The goal is practical progress: use AI with clear context, keep the work reviewable, and avoid approving more access than the task requires.</p>
+<h2 id="where-to-go-next">Where To Go Next</h2>
+<ul>
+<li>Want the bigger picture of how agents assist? <strong><a href="../ai-workflow/">AI Workflow</a></strong>.</li>
+<li>Curious how work is saved and synced? <strong><a href="../github-workflow/">GitHub Workflow</a></strong>.</li>
+<li>New here? <strong><a href="../get-listed/">Get Listed</a></strong>.</li>
+</ul></main>
+</div>
+<footer class="geotw-static-footer">
+  <p>Source: <a href="https://github.com/dwlott/GetEstablishedOnTheWeb">GitHub repository</a> · Markdown in <code>Content/Website/Pages/</code> · GitHub Pages publishing is disabled until owner approval.</p>
+</footer>
+</body>
+</html>

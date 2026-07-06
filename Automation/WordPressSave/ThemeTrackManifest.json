@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "siteKey": "yoursite",
+  "wpSiteFolder": "yoursite",
+  "themeRelativeRoot": "wp-content/themes/altitude-pro",
+  "gitTrackedFiles": [
+    {
+      "themeRelative": "geotw-custom/geotw-altitude-custom.css",
+      "repoRelative": "Workspace/LocalWordPressBuild/ges-altitude-custom.css",
+      "category": "css",
+      "role": "Primary Altitude overlay CSS (canonical repo copy for build sync)"
+    },
+    {
+      "themeRelative": "geotw-custom/ges-customizations.php",
+      "repoRelative": "Workspace/LocalWordPressBuild/ges-customizations.php",
+      "category": "php",
+      "role": "Site-specific theme hooks"
+    },
+    {
+      "themeRelative": "geotw-custom/geotw-customizations.php",
+      "repoRelative": "Content/Website/Theme/altitude-pro/geotw-custom/geotw-customizations.php",
+      "category": "php",
+      "role": "Enqueues custom CSS and theme helpers"
+    },
+    {
+      "themeRelative": "geotw-custom/geotw-site-links.php",
+      "repoRelative": "Content/Website/Theme/altitude-pro/geotw-custom/geotw-site-links.php",
+      "category": "php",
+      "role": "Link and new-tab resolution helpers"
+    },
+    {
+      "themeRelative": "functions.php",
+      "repoRelative": "Content/Website/Theme/altitude-pro/functions.php",
+      "category": "php",
+      "role": "Child theme functions.php"
+    },
+    {
+      "themeRelative": "style.css",
+      "repoRelative": "Content/Website/Theme/altitude-pro/style.css",
+      "category": "css",
+      "role": "Child theme stylesheet"
+    }
+  ],
+  "gitOptionalFiles": [
+    {
+      "themeRelative": "page_blog.php",
+      "repoRelative": "Content/Website/Theme/altitude-pro/page_blog.php",
+      "category": "php",
+      "role": "Blog page template — save only when modified"
+    },
+    {
+      "themeRelative": "front-page.php",
+      "repoRelative": "Content/Website/Theme/altitude-pro/front-page.php",
+      "category": "php",
+      "role": "Front page template — save only when modified"
+    }
+  ],
+  "dropboxLargeAssetFolders": [
+    {
+      "wpRelative": "wp-content/uploads",
+      "dropboxDestName": "uploads",
+      "role": "WordPress media library"
+    },
+    {
+      "wpRelative": "wp-content/themes/altitude-pro/images",
+      "dropboxDestName": "altitude-pro/images",
+      "role": "Theme images"
+    }
+  ],
+  "dropboxFullThemeMirror": {
+    "enabled": true,
+    "manifestSiteKey": "yoursite",
+    "note": "MirrorWebAssets copies full altitude-pro for one-step restore"
+  },
+  "databaseSnapshot": {
+    "repoRelative": "Content/Website/Database/yoursite-local.sql.gz",
+    "exportScript": "Automation/DatabaseBackups/Export-LocalWordPressDatabase.ps1"
+  }
+}

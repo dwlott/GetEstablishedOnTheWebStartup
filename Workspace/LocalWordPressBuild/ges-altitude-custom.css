@@ -1,0 +1,1315 @@
+/**
+ * GES Altitude Pro overlay — system fonts, wider pages, readable content.
+ * Source of truth in Git; synced to wp-content/themes/altitude-pro/ges-custom/
+ */
+
+:root {
+	--ges-brand-green: #6cc24a;
+	--ges-brand-green-dark: #3a8f3a;
+	--ges-brand-green-light: #8fd96e;
+	--ges-brand-green-bright: #7de53e;
+	--ges-brand-green-text: #2f6b2f;
+	--ges-brand-gold: #f0c419;
+	--ges-brand-gold-hover: #ffd95a;
+	--ges-brand-button-hover-text: #ebffb8;
+	--ges-accent: var(--ges-brand-green);
+	--ges-accent-text: var(--ges-brand-green-text);
+	--ges-text-primary: #f4f4f5;
+	--ges-text-muted: #c4cad0;
+	--ges-surface: rgba(24, 24, 26, 0.92);
+	--ges-surface-border: rgba(255, 255, 255, 0.08);
+	--ges-link: var(--ges-brand-green-bright);
+	--ges-link-visited: var(--ges-brand-green-dark);
+	--ges-link-hover: var(--ges-brand-green-light);
+	--ges-heading: inherit;
+	--ges-code-bg: rgba(0, 0, 0, 0.35);
+	--ges-code-text: #d8e8d0;
+	--ges-em-text: #c4cad0;
+}
+
+/* System fonts (no Google Fonts / Mukta) */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+select,
+textarea,
+.genesis-nav-menu a,
+.entry-content,
+.entry-title,
+.wp-caption-text,
+blockquote {
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+
+/* Slightly wider site shell on modern displays */
+.site-inner,
+.wrap {
+	max-width: 1280px;
+}
+
+/* Site footer — darker brushed-metal tile + readable link text (all pages) */
+.site-container .footer-widgets,
+.site-footer {
+	background-color: #141416 !important;
+	background-image:
+		linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.62) 0%,
+			rgba(0, 0, 0, 0.72) 100%
+		),
+		url(../images/BrushedMetalLightGrayHoriz.jpg) !important;
+	background-repeat: repeat;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	text-align: center;
+}
+
+.site-container .footer-widgets {
+	padding: 0;
+}
+
+.site-container .footer-widgets .wrap {
+	padding: 22px 20px;
+}
+
+.site-container .footer-widgets,
+.site-container .footer-widgets .wrap,
+.site-container .footer-widgets .textwidget,
+.site-container .footer-widgets p,
+.site-footer,
+.site-footer p {
+	color: var(--ges-text-muted) !important;
+	font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 0.01em;
+	line-height: 1.5;
+	margin-bottom: 0;
+	text-transform: none;
+}
+
+.site-container .footer-widgets a,
+.site-footer a {
+	background: transparent !important;
+	border-color: transparent !important;
+	color: var(--ges-brand-green-bright) !important;
+	text-decoration: none;
+	text-underline-offset: 0.15em;
+}
+
+.site-container .footer-widgets a:visited,
+.site-footer a:visited {
+	color: var(--ges-brand-green) !important;
+}
+
+.site-container .footer-widgets a:hover,
+.site-container .footer-widgets a:focus,
+.site-footer a:hover,
+.site-footer a:focus {
+	color: var(--ges-brand-gold-hover) !important;
+	text-decoration: underline;
+	text-decoration-color: var(--ges-brand-gold-hover);
+}
+
+.site-footer {
+	padding: 0 20px 12px;
+}
+
+/* Front page hero — darkening panel behind the lead text.
+   The theme's .image-section gradient is lightest at the top (rgba 0,0,0,0.2),
+   so the hero headline washes out over the bright header image. The lower
+   image sections read fine because their text sits over the darker part of the
+   same gradient. This panel gives the hero the same readable, darkened backing. */
+.front-page-1 .image-section .featured-content .entry-content {
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 8px;
+	box-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+	display: inline-block;
+	max-width: 900px;
+	padding: 30px 36px;
+	text-align: left;
+}
+
+.front-page-1 .image-section .featured-content .entry-content p:last-child {
+	margin-bottom: 0;
+}
+
+/* Hero repository link — match site links: bright logo green, rollover gold. */
+.front-page-1 .image-section .featured-content .entry-content a:not(.button),
+.front-page-1 .image-section .featured-content .entry-content a:not(.button) strong {
+	color: var(--ges-brand-green-bright);
+	text-decoration: none;
+	text-underline-offset: 0.15em;
+}
+
+.front-page-1 .image-section .featured-content .entry-content a:not(.button):hover,
+.front-page-1 .image-section .featured-content .entry-content a:not(.button):focus,
+.front-page-1 .image-section .featured-content .entry-content a:not(.button):hover strong,
+.front-page-1 .image-section .featured-content .entry-content a:not(.button):focus strong {
+	color: var(--ges-brand-gold-hover);
+	text-decoration: underline;
+	text-decoration-color: var(--ges-brand-gold-hover);
+}
+
+/* Front-page pillar labels — gold accent (green is reserved for links). */
+.front-page-3 .featured-content .entry-content strong,
+.front-page-5 .featured-content .entry-content strong {
+	color: var(--ges-brand-gold);
+}
+
+/* Front-page pillar card links — match site links: bright green, rollover gold. */
+.front-page-3 .featured-content .entry-content a,
+.front-page-5 .featured-content .entry-content a {
+	color: var(--ges-brand-green-bright);
+	text-decoration: none;
+	text-underline-offset: 0.15em;
+}
+
+.front-page-3 .featured-content .entry-content a:hover,
+.front-page-3 .featured-content .entry-content a:focus,
+.front-page-5 .featured-content .entry-content a:hover,
+.front-page-5 .featured-content .entry-content a:focus {
+	color: var(--ges-brand-gold-hover);
+	text-decoration: underline;
+	text-decoration-color: var(--ges-brand-gold-hover);
+}
+
+/* Front-page section-title link — match site links: bright green, rollover gold. */
+.front-page .ges-section-title a {
+	color: var(--ges-brand-green-bright);
+	text-decoration: none;
+	text-underline-offset: 0.12em;
+}
+
+.front-page .ges-section-title a:hover,
+.front-page .ges-section-title a:focus {
+	color: var(--ges-brand-gold-hover);
+	text-decoration: underline;
+	text-decoration-color: var(--ges-brand-gold-hover);
+}
+
+/* Inner pages dark theme (excludes Home front page; menu bar unchanged) */
+body:not(.front-page) {
+	color: var(--ges-text-primary);
+	--ges-accent-text: var(--ges-brand-gold);
+	--ges-heading: var(--ges-brand-gold);
+	--ges-link: var(--ges-brand-green-bright);
+	--ges-link-visited: var(--ges-brand-green);
+	--ges-link-hover: var(--ges-brand-gold-hover);
+}
+
+body:not(.front-page) .site-container {
+	background-color: #222226;
+	background-image:
+		linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.30) 0%,
+			rgba(0, 0, 0, 0.44) 14%,
+			rgba(0, 0, 0, 0.50) 24%,
+			rgba(0, 0, 0, 0.50) 100%
+		),
+		url(../images/BrushedMetalLightGrayHoriz.jpg);
+	background-repeat: repeat;
+	background-attachment: fixed;
+}
+
+body:not(.front-page).ges-content-hub .sidebar .widget {
+	background: var(--ges-surface);
+	color: var(--ges-text-primary);
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+	border: 1px solid var(--ges-surface-border);
+}
+
+body:not(.front-page).ges-content-hub .sidebar .widget-title,
+body:not(.front-page).ges-content-hub .sidebar .widget-title a {
+	color: var(--ges-heading);
+	text-decoration: none;
+}
+
+body:not(.front-page).ges-content-hub.page .entry-content,
+body:not(.front-page):not(.ges-content-hub).page .post,
+body:not(.front-page):not(.ges-content-hub).page .entry-content,
+body:not(.front-page).ges-content-hub.page article.post,
+body:not(.front-page).ges-offer-hub.page article.post,
+body:not(.front-page).single-post .entry-content,
+body:not(.front-page).archive .entry-content {
+	background: var(--ges-surface);
+	color: var(--ges-text-primary);
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+	border: 1px solid var(--ges-surface-border);
+}
+
+body:not(.front-page).ges-content-hub.page .ges-hub-loop-heading {
+	border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+body:not(.front-page).ges-content-hub.page .ges-hub-loop-deck {
+	color: var(--ges-text-muted);
+}
+
+body:not(.front-page) .page .entry-content a,
+body:not(.front-page) .single-post .entry-content a,
+body:not(.front-page) .archive .entry-content a {
+	color: var(--ges-link);
+	text-decoration: none;
+	text-underline-offset: 0.15em;
+}
+
+body:not(.front-page) .page .entry-content a:visited,
+body:not(.front-page) .single-post .entry-content a:visited,
+body:not(.front-page) .archive .entry-content a:visited {
+	color: var(--ges-link-visited);
+	text-decoration-color: rgba(108, 194, 74, 0.45);
+}
+
+body:not(.front-page) .page .entry-content a:hover,
+body:not(.front-page) .page .entry-content a:focus,
+body:not(.front-page) .page .entry-content a:active,
+body:not(.front-page) .single-post .entry-content a:hover,
+body:not(.front-page) .single-post .entry-content a:focus,
+body:not(.front-page) .single-post .entry-content a:active,
+body:not(.front-page) .archive .entry-content a:hover,
+body:not(.front-page) .archive .entry-content a:focus,
+body:not(.front-page) .archive .entry-content a:active {
+	color: var(--ges-link-hover);
+	text-decoration: underline;
+	text-decoration-color: var(--ges-link-hover);
+}
+
+body:not(.front-page) .page .entry-content strong,
+body:not(.front-page) .single-post .entry-content strong,
+body:not(.front-page) .archive .entry-content strong {
+	color: inherit;
+	font-weight: 600;
+}
+
+body:not(.front-page) .page .entry-content em,
+body:not(.front-page) .single-post .entry-content em,
+body:not(.front-page) .archive .entry-content em {
+	color: var(--ges-text-muted);
+}
+
+body:not(.front-page) .page .entry-content p.ges-page-lead strong,
+body:not(.front-page) .page .entry-content p.ges-page-deck strong,
+body:not(.front-page) .page .entry-content p.ges-page-pitch strong {
+	color: var(--ges-accent-text);
+	font-weight: 600;
+}
+
+body:not(.front-page) .page .entry-content p.ges-page-lead strong a,
+body:not(.front-page) .page .entry-content p.ges-page-deck strong a,
+body:not(.front-page) .page .entry-content p.ges-page-pitch strong a,
+body:not(.front-page) .single-post .entry-content p.ges-page-lead strong a,
+body:not(.front-page) .single-post .entry-content p.ges-page-deck strong a,
+body:not(.front-page) .single-post .entry-content p.ges-page-pitch strong a {
+	color: var(--ges-link);
+	text-decoration: none;
+	text-underline-offset: 0.15em;
+}
+
+body:not(.front-page) .page .entry-content p.ges-page-lead strong a:hover,
+body:not(.front-page) .page .entry-content p.ges-page-deck strong a:hover,
+body:not(.front-page) .page .entry-content p.ges-page-pitch strong a:hover,
+body:not(.front-page) .page .entry-content p.ges-page-lead strong a:focus,
+body:not(.front-page) .page .entry-content p.ges-page-deck strong a:focus,
+body:not(.front-page) .page .entry-content p.ges-page-pitch strong a:focus,
+body:not(.front-page) .single-post .entry-content p.ges-page-lead strong a:hover,
+body:not(.front-page) .single-post .entry-content p.ges-page-deck strong a:hover,
+body:not(.front-page) .single-post .entry-content p.ges-page-pitch strong a:hover,
+body:not(.front-page) .single-post .entry-content p.ges-page-lead strong a:focus,
+body:not(.front-page) .single-post .entry-content p.ges-page-deck strong a:focus,
+body:not(.front-page) .single-post .entry-content p.ges-page-pitch strong a:focus {
+	color: var(--ges-link-hover);
+	text-decoration: underline;
+}
+
+body:not(.front-page) .page .entry-content h1.ges-page-title,
+body:not(.front-page) .single-post .entry-content h1,
+body:not(.front-page) .page .entry-content h2,
+body:not(.front-page) .page .entry-content h3,
+body:not(.front-page) .single-post .entry-content h2,
+body:not(.front-page) .single-post .entry-content h3 {
+	color: var(--ges-heading);
+}
+
+body:not(.front-page) .entry-content :target {
+	color: var(--ges-heading);
+	scroll-margin-top: 1.5em;
+	outline: 2px solid rgba(240, 196, 25, 0.45);
+	outline-offset: 4px;
+}
+
+body:not(.front-page) ::selection {
+	background: rgba(240, 196, 25, 0.35);
+	color: var(--ges-text-primary);
+}
+
+body:not(.front-page) .ges-page-intro .two-thirds p.ges-page-deck {
+	color: var(--ges-text-muted);
+}
+
+body:not(.front-page) .ges-page-intro p.ges-page-pitch,
+body:not(.front-page) .ges-page-intro-pitch p.ges-page-pitch {
+	background-color: rgba(255, 255, 255, 0.12);
+	color: var(--ges-text-primary);
+}
+
+body:not(.front-page) .entry-content a:focus,
+body:not(.front-page) .entry-content button:focus,
+body:not(.front-page) .entry-content input:focus,
+body:not(.front-page) .entry-content select:focus,
+body:not(.front-page) .entry-content textarea:focus {
+	outline-color: var(--ges-brand-gold);
+}
+
+body:not(.front-page) .entry-title,
+body:not(.front-page) .entry-title a {
+	color: var(--ges-heading);
+}
+
+body:not(.front-page) .entry-title a:hover,
+body:not(.front-page) .entry-title a:focus {
+	color: var(--ges-link-hover) !important;
+}
+
+/* Marketing inner pages: full width, no sidebar */
+body:not(.ges-content-hub).page .content {
+	float: none;
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 24px 50px;
+}
+
+.full-width-content .content {
+	padding-left: 24px;
+	padding-right: 24px;
+}
+
+/* Marketing pages: hide sidebar */
+body:not(.ges-content-hub) .sidebar-primary {
+	display: none;
+}
+
+/* Content hubs: sidebar + Altitude content column (content-sidebar) */
+body.ges-content-hub.page .content {
+	float: left;
+	width: 700px;
+	max-width: none;
+	margin: 0;
+	padding: 0 0 50px;
+}
+
+body.ges-content-hub .sidebar-primary {
+	display: block;
+}
+
+body.ges-content-hub .sidebar .widget {
+	padding: 16px 20px;
+	margin-bottom: 24px;
+	border-radius: 3px;
+}
+
+body.ges-content-hub .sidebar .widget-title {
+	font-size: 18px;
+	font-weight: 600;
+	text-align: left;
+	margin-bottom: 0.75em;
+}
+
+/* Hub sidebar — reset Kirby li.cat-item post-card styling (altitude-pro/style.css) */
+body.ges-content-hub .sidebar li.cat-item,
+body.ges-content-hub .sidebar .widget_categories li.cat-item,
+body.ges-content-hub .sidebar .widget_GES_capability_tree li.cat-item,
+body.ges-content-hub .sidebar .widget_GES_capability_tree li.ges-cap-item,
+body.ges-content-hub .sidebar .widget_GES_capability_tree .jstree-node {
+	background: transparent !important;
+	box-shadow: none !important;
+	padding: 0 !important;
+	text-align: left !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	margin-bottom: 0;
+}
+
+body.ges-content-hub .sidebar .widget_categories .cat-list,
+body.ges-content-hub .sidebar .widget_categories ul,
+body.ges-content-hub .sidebar .widget_GES_capability_tree .ges-hub-topic-tree,
+body.ges-content-hub .sidebar .widget_GES_capability_tree .cat-list {
+	background: transparent;
+	box-shadow: none;
+	padding: 0;
+	list-style: none;
+	margin: 0;
+}
+
+body.ges-content-hub .sidebar .widget_categories li.cat-item {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.ges-content-hub .sidebar .widget_categories li.cat-item:last-child {
+	border-bottom: 0;
+}
+
+body.ges-content-hub .sidebar .widget_categories li.cat-item li {
+	border-bottom: 0;
+	margin-left: 0;
+}
+
+body.ges-content-hub .sidebar .widget_categories li.cat-item a,
+body.ges-content-hub .sidebar .widget_GES_capability_tree .cat-list a,
+body.ges-content-hub .sidebar .widget_GES_capability_tree .jstree-anchor {
+	color: var(--ges-brand-green);
+	font-weight: 600;
+	text-align: left;
+	box-shadow: none !important;
+	background: transparent !important;
+	border: 0 !important;
+	display: block;
+	padding: 8px 0;
+	text-decoration: none;
+}
+
+body.ges-content-hub .sidebar .widget_categories li.cat-item li.cat-item a,
+body.ges-content-hub .sidebar .widget_GES_capability_tree li.ges-cap-item a {
+	font-weight: 500;
+	font-size: 14px;
+	padding: 4px 0 4px 12px;
+}
+
+body.ges-content-hub .sidebar .widget_categories li.current-cat > a,
+body.ges-content-hub .sidebar .widget_categories li.cat-item a:hover,
+body.ges-content-hub .sidebar .widget_categories li.cat-item a:focus,
+body.ges-content-hub .sidebar .widget_GES_capability_tree .cat-list a:hover,
+body.ges-content-hub .sidebar .widget_GES_capability_tree .cat-list a:focus,
+body.ges-content-hub .sidebar .widget_GES_capability_tree .jstree-anchor:hover,
+body.ges-content-hub .sidebar .widget_GES_capability_tree .jstree-anchor:focus {
+	color: var(--ges-brand-gold-hover) !important;
+}
+
+body.ges-content-hub .sidebar .widget_categories .widget-wrap > ul > li.parent > a:before,
+body.ges-content-hub .sidebar .widget_categories .widget-wrap > ul > li.parent.opened > a:before {
+	content: none;
+}
+
+body.ges-content-hub .sidebar .widget_categories .widget-wrap > ul > li.cat-item > ul {
+	padding-bottom: 8px;
+	padding-left: 0;
+}
+
+body.ges-content-hub .sidebar .widget_GES_capability_tree .jstree-default .jstree-wholerow-clicked,
+body.ges-content-hub .sidebar .widget_GES_capability_tree .jstree-default .jstree-wholerow-hovered {
+	background: rgba(255, 255, 255, 0.06);
+}
+
+body.ges-content-hub .sidebar .widget_GES_capability_tree .jstree-default .jstree-anchor {
+	color: var(--ges-brand-green);
+}
+
+body.ges-content-hub .sidebar .widget_GES_capability_tree .jstree-default .jstree-clicked,
+body.ges-content-hub .sidebar .widget_GES_capability_tree .jstree-default .jstree-hovered {
+	color: var(--ges-brand-gold-hover);
+}
+
+body.ges-content-hub .sidebar .widget_GES_capability_tree .jstree {
+	min-height: 1.5em;
+	margin-left: 0;
+}
+
+body.ges-content-hub .sidebar .widget_GES_capability_tree .jstree-default .jstree-node {
+	margin-left: 10px;
+}
+
+body.ges-content-hub .sidebar .widget_GES_capability_tree .jstree-default > .jstree-container-ul > .jstree-node {
+	margin-left: 0;
+}
+
+body.ges-content-hub .sidebar .widget_GES_capability_tree .jstree-anchor {
+	display: inline-block;
+	height: auto !important;
+	line-height: 1.45 !important;
+	white-space: normal;
+}
+
+/* Hub pages: intro + post loop share the content column */
+body.ges-content-hub.page .entry-content {
+	text-align: left;
+	padding: 24px 32px 20px;
+	border-radius: 3px;
+	margin-bottom: 16px;
+}
+
+/* Hub pages: heading above Genesis post loop */
+body.ges-content-hub.page .ges-hub-loop-heading {
+	margin-top: 1.75em;
+	padding-top: 1.25em;
+	border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+body.ges-content-hub.page .ges-hub-loop-heading h2 {
+	margin: 0 0 0.5em;
+	font-size: 24px;
+	line-height: 1.25;
+}
+
+body.ges-content-hub.page .ges-hub-loop-deck {
+	margin: 0;
+	font-size: 16px;
+	color: var(--ges-em-text);
+}
+
+body.ges-content-hub.page .ges-page-title {
+	text-align: left;
+	font-size: 32px;
+	margin-bottom: 1em;
+}
+
+body.ges-content-hub.page .ges-page-intro {
+	margin-bottom: 1.25em;
+}
+
+body.ges-content-hub.content-sidebar .sidebar-primary {
+	float: right;
+	width: 280px;
+}
+
+body.ges-content-hub.content-sidebar .content {
+	float: left;
+	width: calc(100% - 300px);
+	max-width: none;
+}
+
+/* Banner hero is for full-width marketing pages only — not sidebar hub layout */
+body.ges-content-hub .ges-page-hero {
+	display: none;
+}
+
+/* page_blog.php emits an empty .archive-description (Altitude gives it
+   top+bottom 1px borders) above hub content — hide when it has no content. */
+.archive-description.blog-template-description:empty {
+	display: none;
+}
+
+/* Hub pages: post loop cards below intro (archive + offer hubs) */
+body.ges-content-hub.page article.post,
+body.ges-offer-hub.page article.post {
+	text-align: left;
+	padding: 20px 28px;
+	border-radius: 3px;
+	margin-bottom: 16px;
+}
+
+body.ges-content-hub.page article.post:first-of-type {
+	margin-top: 4px;
+}
+
+body.ges-content-hub.page article.post .entry-title {
+	font-size: 22px;
+	line-height: 1.25;
+	margin-bottom: 0.35em;
+}
+
+body:not(.ges-content-hub).page .post,
+body:not(.ges-content-hub).page .entry-content {
+	text-align: left;
+	padding: 24px 32px;
+	border-radius: 3px;
+}
+
+.page .entry-content p,
+.page .entry-content li {
+	text-align: left;
+}
+
+.page .entry-content ol,
+.page .entry-content ul {
+	margin-left: 1.5em;
+	padding-left: 0.5em;
+	text-align: left;
+}
+
+.page .entry-content h2 {
+	margin-top: 1.5em;
+	margin-bottom: 0.75em;
+	font-size: 28px;
+	line-height: 1.25;
+}
+
+.page .entry-content h3 {
+	margin-top: 1.25em;
+	font-size: 22px;
+	line-height: 1.3;
+}
+
+.page .entry-content p {
+	line-height: 1.55;
+	margin-bottom: 1em;
+}
+
+/* In-content page title (Genesis entry title hidden) */
+.page .entry-content h1.ges-page-title {
+	font-size: 36px;
+	line-height: 1.2;
+	text-align: center;
+	margin: 0 0 1.25em;
+}
+
+.ges-page-hero {
+	margin: 0 -32px 24px;
+	overflow: hidden;
+}
+
+.ges-page-hero img.ges-page-banner {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-height: 320px;
+	object-fit: cover;
+}
+
+.ges-page-intro {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+	column-gap: 2.564%;
+	margin-bottom: 1.5em;
+}
+
+.ges-page-intro .one-third.first,
+.ges-page-intro .two-thirds {
+	float: none;
+	margin-left: 0;
+	width: auto;
+}
+
+.ges-page-intro .one-third.first {
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.ges-page-intro .two-thirds {
+	grid-column: 2;
+	grid-row: 1;
+}
+
+.ges-page-intro > hr.clearfix {
+	display: none;
+}
+
+.ges-page-intro-pitch {
+	grid-column: 1 / -1;
+	grid-row: 2;
+	width: 100%;
+}
+
+.ges-page-intro img.ges-page-intro-image {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 4px;
+}
+
+.ges-page-intro .two-thirds {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.ges-page-intro .two-thirds p.ges-page-lead {
+	font-size: 28px;
+	line-height: 1.3;
+	font-weight: 600;
+	margin: 0;
+}
+
+.ges-page-intro .two-thirds p.ges-page-deck {
+	font-size: 18px;
+	line-height: 1.5;
+	font-weight: 400;
+	font-style: italic;
+	color: var(--ges-text-muted);
+	margin: 0.75em 0 0;
+	padding-left: 0.85em;
+	border-left: 3px solid var(--ges-brand-green);
+}
+
+.ges-page-intro .two-thirds p:last-child {
+	margin-bottom: 0;
+}
+
+.ges-page-intro p.ges-page-pitch,
+.ges-page-intro-pitch p.ges-page-pitch {
+	font-size: 22px;
+	line-height: 1.45;
+	font-weight: 400;
+	margin: 1em 0 0;
+	padding: 0.85em 1em;
+	background-color: rgba(108, 194, 74, 0.12);
+	border-radius: 4px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.ges-page-intro p.ges-page-pitch strong,
+.ges-page-intro-pitch p.ges-page-pitch strong {
+	font-weight: 600;
+}
+
+.page .entry-content a {
+	word-break: break-word;
+	color: var(--ges-brand-green-bright);
+	text-decoration: none;
+	text-underline-offset: 0.15em;
+}
+
+.page .entry-content a:hover,
+.page .entry-content a:focus {
+	color: var(--ges-accent);
+	text-decoration: underline;
+	text-decoration-color: var(--ges-accent);
+}
+
+/* Inline typography accents (body + lists; overrides Altitude black code chip) */
+.page .entry-content strong {
+	color: var(--ges-accent-text);
+	font-weight: 600;
+}
+
+.page .entry-content em {
+	color: var(--ges-em-text);
+	font-style: italic;
+}
+
+.page .entry-content code {
+	background-color: var(--ges-code-bg);
+	color: var(--ges-code-text);
+	font-family: Consolas, "Courier New", monospace;
+	font-size: 0.92em;
+	padding: 0.15em 0.4em;
+	border-radius: 3px;
+}
+
+.page .entry-content p.ges-page-lead,
+.page .entry-content p.ges-page-deck,
+.page .entry-content p.ges-page-pitch {
+	color: inherit;
+}
+
+.page .entry-content p.ges-page-lead strong,
+.page .entry-content p.ges-page-deck strong,
+.page .entry-content p.ges-page-pitch strong {
+	color: var(--ges-accent-text);
+	font-weight: 600;
+}
+
+.page-title {
+	text-align: center;
+}
+
+/* Single posts (Capability catalog etc.): tame Altitude's 80px h2 / 38px h3
+   and match the readable page typography scale + accents. */
+.single-post .entry-content h1 {
+	font-size: 30px;
+	line-height: 1.2;
+	margin-bottom: 0.6em;
+}
+
+.single-post .entry-content h2 {
+	margin-top: 1.5em;
+	margin-bottom: 0.6em;
+	font-size: 28px;
+	line-height: 1.25;
+}
+
+.single-post .entry-content h3 {
+	margin-top: 1.25em;
+	font-size: 22px;
+	line-height: 1.3;
+}
+
+.single-post .entry-content h4 {
+	margin-top: 1em;
+	font-size: 18px;
+	line-height: 1.35;
+}
+
+.single-post .entry-content p {
+	line-height: 1.55;
+	margin-bottom: 1em;
+}
+
+.single-post .entry-content ol,
+.single-post .entry-content ul {
+	margin-left: 1.5em;
+	padding-left: 0.5em;
+}
+
+/* Single-post body links match the public pages (see page link tokens above) */
+.single-post .entry-content a {
+	word-break: break-word;
+	color: var(--ges-link);
+	text-decoration: none;
+	text-underline-offset: 0.15em;
+}
+
+.single-post .entry-content a:visited {
+	color: var(--ges-link-visited);
+	text-decoration-color: rgba(108, 194, 74, 0.45);
+}
+
+.single-post .entry-content a:hover,
+.single-post .entry-content a:focus,
+.single-post .entry-content a:active {
+	color: var(--ges-link-hover);
+	text-decoration: underline;
+	text-decoration-color: var(--ges-link-hover);
+}
+
+.single-post .entry-content strong {
+	color: var(--ges-accent-text);
+	font-weight: 600;
+}
+
+.single-post .entry-content em {
+	color: var(--ges-em-text);
+	font-style: italic;
+}
+
+.single-post .entry-content code {
+	background-color: var(--ges-code-bg);
+	color: var(--ges-code-text);
+	font-family: Consolas, "Courier New", monospace;
+	font-size: 0.92em;
+	padding: 0.15em 0.4em;
+	border-radius: 3px;
+}
+
+.single-post .entry-title {
+	font-size: 34px;
+	line-height: 1.2;
+}
+
+/* Capability catalog posts: title + date live in the body, not the Genesis header */
+body.single-post.ges-capability-post .entry-header,
+body.single-post.ges-capability-post .entry-header p.entry-meta,
+body.single-post.ges-capability-post .entry-footer {
+	display: none;
+}
+
+body.single-post.ges-capability-post .entry-content {
+	padding: 24px 28px 32px;
+}
+
+body.single-post.ges-capability-post .entry-content strong {
+	font-weight: 400;
+}
+
+body.single-post.ges-capability-post .entry-content > h1:first-of-type {
+	color: var(--ges-heading);
+	font-size: 34px;
+	font-weight: 600;
+	line-height: 1.2;
+	margin: 0 0 0.75em;
+	padding: 0;
+	text-align: left;
+}
+
+/* Randomized intro figure on posts — floats beside copy, stacks on mobile */
+.ges-post-figure {
+	float: right;
+	width: 240px;
+	max-width: 40%;
+	margin: 0.2em 0 1em 1.5em;
+}
+
+.ges-post-figure img.ges-post-figure-image {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 6px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+}
+
+@media only screen and (max-width: 600px) {
+	.ges-post-figure {
+		float: none;
+		width: 100%;
+		max-width: 100%;
+		margin: 0 0 1.25em;
+	}
+}
+
+/* Archive / blog posts: left-align body, keep card */
+.single-post .entry-content,
+.archive .entry-content {
+	text-align: left;
+}
+
+.single-post .entry-content ol,
+.single-post .entry-content ul,
+.archive .entry-content ol,
+.archive .entry-content ul {
+	text-align: left;
+	margin-left: 1.5em;
+}
+
+/* Capability category "group" pages — clean catalog of titles + one-line summaries */
+body.ges-capability-archive .archive-description,
+body.ges-capability-archive .taxonomy-archive-description {
+	background: transparent;
+	box-shadow: none;
+	border: 0;
+	padding: 0;
+	margin: 0 0 1.5em;
+	text-align: left;
+}
+
+body.ges-capability-archive .archive-title {
+	color: var(--ges-brand-gold);
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 1.2;
+	text-align: left;
+	margin: 0 0 0.25em;
+}
+
+body.ges-capability-archive .archive-description p {
+	color: var(--ges-text-muted);
+	margin: 0;
+}
+
+/* Each entry is the same dark surface card used on pages and posts */
+body.ges-capability-archive.archive .entry {
+	background: var(--ges-surface);
+	color: var(--ges-text-primary);
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+	border: 1px solid var(--ges-surface-border);
+	border-radius: 3px;
+	padding: 20px 26px;
+	margin-bottom: 22px;
+}
+
+/* Reset the inner content/header so it sits flush on the card (no nested box) */
+body.ges-capability-archive.archive .entry > .entry-header,
+body.ges-capability-archive.archive .entry > .entry-content {
+	background: transparent;
+	box-shadow: none;
+	border: 0;
+	border-radius: 0;
+	padding: 0;
+	margin: 0;
+}
+
+body.ges-capability-archive .entry-header .entry-meta,
+body.ges-capability-archive .entry-header p.entry-meta,
+body.ges-capability-archive .entry-footer,
+body.ges-capability-archive .entry .post-edit-link {
+	display: none;
+}
+
+body.ges-capability-archive .entry-title {
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 1.25;
+	text-align: left;
+	margin: 0 0 0.4em;
+}
+
+body.ges-capability-archive .entry-title a {
+	color: var(--ges-brand-green);
+	text-decoration: none;
+}
+
+body.ges-capability-archive .entry-title a:hover,
+body.ges-capability-archive .entry-title a:focus {
+	color: var(--ges-brand-gold-hover);
+}
+
+body.ges-capability-archive .entry-content p {
+	color: var(--ges-text-muted);
+	margin: 0;
+}
+
+/* Altitude fixed header uses a heavy inset shadow that reads as double lines */
+.site-header {
+	box-shadow: none;
+}
+
+/* Header nav: logo row + grouped primary menu */
+@media only screen and (min-width: 1024px) {
+	.site-header > .wrap {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.site-header .title-area {
+		float: none;
+		flex: 0 0 auto;
+	}
+
+	.site-header .nav-primary {
+		clear: none;
+		flex: 1 1 420px;
+		min-width: 0;
+		text-align: right;
+	}
+
+	.site-header .nav-primary .genesis-nav-menu {
+		float: none;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: flex-end;
+		align-items: stretch;
+	}
+}
+
+.genesis-nav-menu > .menu-item > a {
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.3;
+	padding: 16px 11px;
+	color: var(--ges-brand-green) !important;
+}
+
+.site-header .genesis-nav-menu a,
+.site-header .genesis-nav-menu a:visited,
+.site-header .genesis-nav-menu a:hover,
+.site-header .genesis-nav-menu a:focus,
+.site-header .genesis-nav-menu li.current-menu-item > a,
+.site-header .genesis-nav-menu li.current-menu-ancestor > a,
+.genesis-responsive-menu .genesis-nav-menu .menu-item a,
+.genesis-responsive-menu .genesis-nav-menu .menu-item a:visited,
+.genesis-responsive-menu .genesis-nav-menu .menu-item a:hover,
+.genesis-responsive-menu .genesis-nav-menu .menu-item a:focus {
+	font-weight: 400 !important;
+}
+
+.genesis-nav-menu .menu-item-has-children > a::after {
+	content: " \25BE";
+	font-size: 0.75em;
+	opacity: 0.85;
+}
+
+.genesis-nav-menu .sub-menu {
+	background: rgba(0, 0, 0, 0.94);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+	min-width: 220px;
+}
+
+.genesis-nav-menu .sub-menu a {
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 0.02em;
+	padding: 12px 16px;
+	text-transform: none;
+	width: auto;
+	color: var(--ges-brand-green) !important;
+}
+
+.genesis-nav-menu .sub-menu a:hover,
+.genesis-nav-menu .sub-menu a:focus {
+	color: var(--ges-brand-gold-hover) !important;
+}
+
+.genesis-nav-menu .sub-menu .current-menu-item > a,
+.genesis-nav-menu .sub-menu .current-menu-ancestor > a {
+	color: var(--ges-brand-gold) !important;
+}
+
+.genesis-nav-menu .sub-menu .current-menu-item > a:hover,
+.genesis-nav-menu .sub-menu .current-menu-item > a:focus,
+.genesis-nav-menu .sub-menu .current-menu-ancestor > a:hover,
+.genesis-nav-menu .sub-menu .current-menu-ancestor > a:focus {
+	color: var(--ges-brand-green) !important;
+}
+
+/* Brand colors — override Kirby-Smith red in Altitude style.css */
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button,
+.site-container div.wpforms-container-full .wpforms-form input[type="submit"],
+.site-container div.wpforms-container-full .wpforms-form button[type="submit"],
+.widget .button,
+.footer-widgets .widget .button,
+.footer-widgets button,
+.footer-widgets input[type="button"],
+.footer-widgets input[type="reset"],
+.footer-widgets input[type="submit"] {
+	background: linear-gradient(
+		to bottom,
+		var(--ges-brand-green) 5%,
+		var(--ges-brand-green-dark) 100%
+	) !important;
+	background-color: var(--ges-brand-green-dark) !important;
+	border: 2px solid var(--ges-brand-green-text) !important;
+	border-radius: 5px !important;
+	color: #000 !important;
+}
+
+input[type="button"]:focus,
+input[type="button"]:hover,
+input[type="reset"]:focus,
+input[type="reset"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:hover,
+.button.clear:focus,
+.button.clear:hover,
+.button:focus,
+.button:hover,
+.footer-widgets .widget .button:focus,
+.footer-widgets .widget .button:hover,
+.footer-widgets button:focus,
+.footer-widgets button:hover,
+.footer-widgets input[type="button"]:focus,
+.footer-widgets input[type="button"]:hover,
+.footer-widgets input[type="reset"]:focus,
+.footer-widgets input[type="reset"]:hover,
+.footer-widgets input[type="submit"]:focus,
+.footer-widgets input[type="submit"]:hover,
+.site-container div.wpforms-container-full .wpforms-form input[type="submit"]:focus,
+.site-container div.wpforms-container-full .wpforms-form input[type="submit"]:hover,
+.site-container div.wpforms-container-full .wpforms-form button[type="submit"]:focus,
+.site-container div.wpforms-container-full .wpforms-form button[type="submit"]:hover,
+.widget .button.clear:focus,
+.widget .button.clear:hover,
+.widget .button:focus,
+.widget .button:hover,
+.image-section button:focus,
+.image-section button:hover,
+.image-section input[type="button"]:focus,
+.image-section input[type="button"]:hover,
+.image-section input[type="reset"]:focus,
+.image-section input[type="reset"]:hover,
+.image-section input[type="submit"]:focus,
+.image-section input[type="submit"]:hover,
+.image-section .widget .button:focus,
+.image-section .widget .button:hover {
+	background: linear-gradient(
+		to bottom,
+		var(--ges-brand-green-dark) 5%,
+		var(--ges-brand-green-light) 100%
+	) !important;
+	background-color: var(--ges-brand-green-dark) !important;
+	border-color: var(--ges-brand-green-light) !important;
+	color: var(--ges-brand-button-hover-text) !important;
+	opacity: 1 !important;
+	-webkit-text-fill-color: var(--ges-brand-button-hover-text) !important;
+}
+
+/* Selected link: gold, rollover to green */
+.genesis-nav-menu li.current-menu-item > a,
+.genesis-nav-menu li.current-menu-ancestor > a {
+	color: var(--ges-brand-gold) !important;
+}
+
+.genesis-nav-menu li.current-menu-item > a:hover,
+.genesis-nav-menu li.current-menu-item > a:focus,
+.genesis-nav-menu li.current-menu-ancestor > a:hover,
+.genesis-nav-menu li.current-menu-ancestor > a:focus {
+	color: var(--ges-brand-green) !important;
+}
+
+/* Other top-level links: rollover to yellow */
+.genesis-nav-menu > li > a:hover,
+.genesis-nav-menu > li > a:focus {
+	color: var(--ges-brand-gold-hover) !important;
+}
+
+.entry-title a:focus,
+.entry-title a:hover {
+	color: var(--ges-brand-green) !important;
+}
+
+@media only screen and (max-width: 1023px) {
+	body:not(.ges-content-hub).page .content {
+		max-width: 100%;
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	body:not(.ges-content-hub).page .entry-content {
+		padding: 16px 20px;
+	}
+
+	body.ges-content-hub.page .content {
+		float: none;
+		width: 100%;
+	}
+
+	body.ges-content-hub.content-sidebar .content {
+		width: 100%;
+	}
+
+	.ges-page-intro {
+		grid-template-columns: 1fr;
+		row-gap: 1em;
+	}
+
+	.ges-page-intro .one-third.first,
+	.ges-page-intro .two-thirds,
+	.ges-page-intro-pitch {
+		grid-column: 1;
+	}
+
+	.ges-page-intro .one-third.first {
+		grid-row: 1;
+	}
+
+	.ges-page-intro .two-thirds {
+		grid-row: 2;
+	}
+
+	.ges-page-intro-pitch {
+		grid-row: 3;
+	}
+
+	.ges-page-hero {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+
+	.genesis-nav-menu a {
+		font-size: 12px;
+		padding: 10px 8px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	body:not(.ges-content-hub).page .entry-content {
+		padding: 12px 16px;
+	}
+
+	.ges-page-hero {
+		margin-left: -16px;
+		margin-right: -16px;
+	}
+
+	.page .entry-content h1.ges-page-title {
+		font-size: 28px;
+	}
+
+	.ges-page-intro .two-thirds p.ges-page-lead {
+		font-size: 22px;
+	}
+
+	.ges-page-intro .two-thirds p.ges-page-deck {
+		font-size: 16px;
+	}
+
+	.ges-page-intro p.ges-page-pitch,
+	.ges-page-intro-pitch p.ges-page-pitch {
+		font-size: 18px;
+		padding: 0.75em 0.85em;
+	}
+
+	.page .entry-content h2 {
+		font-size: 24px;
+	}
+}

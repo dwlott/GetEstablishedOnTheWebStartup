@@ -1,0 +1,14 @@
+# Repository package ZIPs — local download assets; web bundle is too large for Git.
+Content/Website/Assets/Downloads/*.zip
+Workspace/Intake/*.zip
+
+# Stock photo master collection — large binaries kept local; track only the README.
+Workspace/Intake/Stock Photos/*
+!Workspace/Intake/Stock Photos/README.md
+
+# Local database snapshot workflow
+Content/Website/Database/*.sql
+Content/Website/Database/*.tmp.sql
+
+# Multi-repo Cursor/VS Code workspace files (local tooling)
+*.code-workspace
