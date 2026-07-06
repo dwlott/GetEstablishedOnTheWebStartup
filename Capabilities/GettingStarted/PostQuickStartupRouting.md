@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-06-10
+LastEdited: 2026-07-06
 -->
 
 # Post Quick Startup Routing
@@ -15,17 +15,39 @@ Read [AgentCapabilityGuide.md](../AgentCapabilityGuide.md) only to confirm.
 
 ## Quick Startup complete (say this)
 
+Close in **plain chat for the owner**. Do **not** end with a fenced worker
+handoff block unless the owner explicitly asked for **PlannerWorker** or
+**AssistedAgenticWorkflow** (see
+[AssistedAgenticWorkflow/PlannerWorkerWorkflow.md](../AssistedAgenticWorkflow/PlannerWorkerWorkflow.md)).
+
+**Default assumption:** there is **no planning agent waiting**. The same agent
+(or the owner in a new chat) may continue later — that is not an automatic
+handoff to another role.
+
 ```text
 Quick Startup is complete for this session.
 
+What I did:
+- (one line per boot-file update — prep, goals, references, preferences)
+
 Owner Goals are in Workspace/OwnerGoals.md.
 GitHub stays parked until you ask.
+
+Suggested next step (optional — you can do this now or later):
+- (one Capability or prompt from the routing table below)
+
+Indexing: (soft offer from GettingStarted step 10 — manual default; code-assisted optional later)
 ```
+
+Do **not** format the close as `Summary / Files Changed / Planning Files To Review /
+Next Recommended Task` unless the owner is in an explicit planner/worker loop.
 
 ## Route exactly one next task
 
 | If the owner's goals or answer emphasize... | Route | Entry |
 | --- | --- | --- |
+| Business plan inputs, North Star, offer/audience clarity | **BusinessPlan** | [Prompt.md](../BusinessPlan/Prompt.md) |
+| Draft the owner's one-page business website | **OnePageWebsite** | [Prompt.md](../OnePageWebsite/Prompt.md) — after essentials exist |
 | Review public website page drafts | **ContentReview** | [Prompt.md](../ContentReview/Prompt.md) |
 | Business clarity — audience, offer, tone, pages | **UserDiscoveryPrompt** | [UserDiscoveryPrompt.md](UserDiscoveryPrompt.md) |
 | Git status, push, new GitHub repo | **GitHubWorkflow** | [SetupPrompt.md](../GitHubWorkflow/SetupPrompt.md) — owner must ask |

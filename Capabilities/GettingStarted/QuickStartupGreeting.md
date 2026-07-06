@@ -70,13 +70,17 @@ website-only default.
 Follow [GettingStarted.md](GettingStarted.md) first-session order from step 4
 onward: write Owner Goals (replace scaffold row), prior-repo path in Import
 section if applicable, valuable references, optional reference review, **one**
-routed next task per [PostQuickStartupRouting.md](PostQuickStartupRouting.md),
-park GitHub, soft indexing offer.
+suggested next task per [PostQuickStartupRouting.md](PostQuickStartupRouting.md),
+park GitHub, soft indexing offer, then **close for the owner** (plain chat — not
+a planner handoff block).
 
 ## Do not
 
 - Stop to ask "should I overwrite leftover starter goals?" — run
   [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) instead.
+- End with a fenced worker handoff block — Quick Startup closes for the **owner**
+  in plain chat unless PlannerWorker workflow was explicitly requested.
+- Assume a **planning agent** is waiting to receive a handoff.
 - Substitute **UserDiscovery** questions (audience, offer, tone) for this
   greeting — route [UserDiscoveryPrompt.md](UserDiscoveryPrompt.md) **after**
   Owner Goals when business or page clarity is the next step.

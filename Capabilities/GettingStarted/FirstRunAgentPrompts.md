@@ -53,8 +53,9 @@ Workspace/OwnerGoals.md (replace the scaffold row).
 Ask about prior repository import; add two to five Suggested rows to
 Workspace/ValuableReferences.md when direction implies external sources.
 
-Offer optional reference review; route exactly one next task; park GitHub;
-end with the soft indexing offer from GettingStarted.md step 9.
+Offer optional reference review; suggest one next step (optional — now or later);
+park GitHub; end with the soft indexing offer and owner session close from
+PostQuickStartupRouting.md — not a planner handoff block.
 ```
 
 ## Cursor Or Claude Code (Local Folder — smoke test)

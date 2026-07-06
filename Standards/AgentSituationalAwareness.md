@@ -132,6 +132,20 @@ When booting in Cursor, **deprioritize** (do not treat as mandatory next steps):
 Still read **GoogleDriveLink** when the task is actually about Drive MCP,
 connectors, OAuth, or handoff **for ChatGPT** sessions.
 
+## Quick Startup And Default Single-Agent Sessions
+
+**Quick Startup** ([GettingStarted](../Capabilities/GettingStarted/GettingStarted.md))
+ends with a **plain owner summary** — not a fenced worker handoff. See
+[PostQuickStartupRouting.md](../Capabilities/GettingStarted/PostQuickStartupRouting.md).
+
+**Default assumption:** one agent (or the owner) continues when ready. **Do not**
+assume a separate **planning agent** is waiting unless the owner explicitly
+requested **PlannerWorker** or **AssistedAgenticWorkflow**.
+
+Fenced worker handoff blocks (`Summary`, `Files Changed`, `Next Recommended Task`, …)
+apply to **implementation worker passes** in that explicit loop — not to Quick
+Startup, casual chat, or owner Q&A.
+
 ## Instructions Codex And Claude Should Still Read
 
 Codex (outside Cursor) and Claude Code workers should:
@@ -139,7 +153,9 @@ Codex (outside Cursor) and Claude Code workers should:
 - Edit the **local** repository as source of truth;
 - Copy files to a cloud review surface **only when** the user or planner
   explicitly requests review sync;
-- End worker passes with the standard handoff block for the human/planner.
+- End **implementation worker passes** (explicit PlannerWorker loop) with the
+  standard handoff block for the human or planner. **Quick Startup** uses an
+  owner session close instead — see GettingStarted Rules.
 
 ## Layered Boot Order
 

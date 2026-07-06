@@ -68,18 +68,21 @@ Quality checks:
 - Reusable workflow rules stay in Capability files; owner-specific facts do
   not.
 
-Final response:
-End with exactly one fenced text handoff with these fields:
-Summary
-Files Changed
-Planning Files To Review
-Questions Added Or Changed
-Next Recommended Task
+Final response (Quick Startup):
+Close with the owner-facing session summary in
+[PostQuickStartupRouting.md](PostQuickStartupRouting.md) § Quick Startup complete.
+Do **not** assume a planning agent is waiting. Do **not** use a fenced worker
+handoff block unless the owner explicitly requested PlannerWorker workflow.
+
+Final response (other GettingStarted passes — not Quick Startup):
+End with a short plain-language summary and one optional next step. Use a fenced
+worker handoff only when the owner asked for PlannerWorker or AssistedAgenticWorkflow.
 ```
 
 ## Prompt History
 
 | Date | Ver | Change |
 | --- | ---: | --- |
+| 2026-07-06 | 3 | Quick Startup closes for the owner, not a planner handoff | Agents assumed a planning agent was waiting | Prompt, Rules, PostQuickStartupRouting |
 | 2026-07-06 | 2 | Workspace Adoption Prep on Quick Startup; auto-reset stale boot files | Adopted copies kept product-builder Owner Goals; agents stalled asking permission | Prompt, WorkspaceAdoptionPrep, Rules, QuickStartupGreeting, GettingStarted |
 | 2026-06-01 | 1 | Initial GettingStarted operate prompt |

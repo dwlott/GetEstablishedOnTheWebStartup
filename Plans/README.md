@@ -17,5 +17,6 @@ Setup guides and lightweight registers for this starter workspace.
 | [GoalsIdeasPlansCapabilitiesModel.md](GoalsIdeasPlansCapabilitiesModel.md) | How goals, ideas, and plans relate |
 | [Ideas.md](Ideas.md) | Idea register |
 | [OpenQuestions.md](OpenQuestions.md) | Non-blocking owner decisions |
+| [DansRepairServiceStartupCapture.md](DansRepairServiceStartupCapture.md) | Consumer adoption Quick Startup observations (Dan's Repair Service) |
 
 New planning files appear when the owner or an agent creates them from Owner Goals.

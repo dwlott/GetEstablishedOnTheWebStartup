@@ -155,6 +155,22 @@ at session start:
 During Quick Startup, if the owner already consented to startup, **proceed** to
 questions — do not re-ask "run Quick Startup now?"
 
+## Session Close (Not A Planner Handoff)
+
+Quick Startup ends with an **owner-facing session summary** in plain chat — not
+a fenced worker handoff block.
+
+- **Default:** assume **no planning agent** is waiting. The owner (or the same
+  agent in a later chat) may continue when ready.
+- Use the close shape in [PostQuickStartupRouting.md](PostQuickStartupRouting.md)
+  § Quick Startup complete.
+- Offer **one suggested next step** as optional ("now or later") — not a mandate
+  for another agent to pick up.
+- Use the standard fenced handoff block (`Summary`, `Files Changed`, …) **only**
+  when the owner explicitly requested **PlannerWorker** or
+  **AssistedAgenticWorkflow** — see
+  [PlannerWorkerWorkflow.md](../AssistedAgenticWorkflow/PlannerWorkerWorkflow.md).
+
 ## Data Boundaries
 
 - Do not invent owner facts, business claims, legal claims, pricing, proof, or

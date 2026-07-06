@@ -111,6 +111,12 @@ First session order:
    not block startup waiting for the decision. Manual indexing
    (`Capabilities/ManualIndexing/`) is the default either way.
 
+11. **Close the session for the owner** using
+    [PostQuickStartupRouting.md](PostQuickStartupRouting.md) § Quick Startup
+    complete. Do **not** end with a fenced worker handoff unless the owner
+    explicitly requested PlannerWorker workflow. Assume **no planning agent** is
+    waiting.
+
 ### Consent cascade (all agents)
 
 If the owner already agreed to Quick Startup, the startup sequence, or

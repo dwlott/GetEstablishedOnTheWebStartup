@@ -92,5 +92,6 @@ It does not provision new repository folders. There is no `Structure.md` or
 
 | Date | Ver | Change | Lesson / why | Files |
 | --- | ---: | --- | --- | --- |
+| 2026-07-06 | 3 | Quick Startup closes for owner, not planner handoff | Agents assumed a planning agent was waiting | Rules, PostQuickStartupRouting, Prompt, AgentSituationalAwareness |
 | 2026-07-06 | 2 | Workspace Adoption Prep — auto-reset stale boot files on Quick Startup | Adopted copies stalled on leftover template Owner Goals | WorkspaceAdoptionPrep, Rules, QuickStartupGreeting, GettingStarted |
 | 2026-06-01 | 1 | Initial Capability | First setup needs routable owner-goal capture without merging owner goals into Repository Goals | README, Rules, Prompt |
