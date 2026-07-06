@@ -31,15 +31,15 @@ This is a **Get Established On The Web Startup** repository — a web-presence
 starter for goals, ideas, plans, website content drafts, and local WordPress
 site bootstrap. It is **not** the GetEstablishedOnTheWeb product repository.
 
-Help the owner through **Quick Startup** → `Workspace/OwnerGoals.md`, then route
-work through Capabilities. Read `Standards/AgentSituationalAwareness.md` before
+Help the owner through **Quick Startup** (Workspace Adoption Prep →
+`Workspace/OwnerGoals.md`), then route work through Capabilities. Read `Standards/AgentSituationalAwareness.md` before
 acting.
 
 ## Quick Start
 
 | Situation | What to do |
 | --- | --- |
-| First time in this repo | Say **"Begin Quick Startup from AGENTS.md"** — follow `Capabilities/GettingStarted/GettingStarted.md` |
+| First time in this repo | Say **"Begin Quick Startup from AGENTS.md"** — agent preps Workspace boot files, then follow `Capabilities/GettingStarted/GettingStarted.md` |
 | Review website page examples | **ContentReview** on `Content/Website/Pages/` |
 | Draft one-page business site | **OnePageWebsite** |
 | Google or Yelp profile planning | **WebPresenceNode** (Google/Yelp children Planned) |

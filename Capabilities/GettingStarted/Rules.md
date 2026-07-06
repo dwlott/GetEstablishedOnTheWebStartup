@@ -5,10 +5,25 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-06-09
+LastEdited: 2026-07-06
 -->
 
 # GettingStarted Rules
+
+## Workspace Adoption Prep (First)
+
+When **Begin Quick Startup from AGENTS.md** fires, run
+[WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) **before** the greeting.
+
+- Reset stale starter boot files automatically when detected.
+- **Do not ask permission** to clear leftover product-builder or template goals.
+- Tell the owner in one line that prep ran, then display
+  [QuickStartupGreeting.md](QuickStartupGreeting.md).
+- Never block Quick Startup on a "keep these goals or rewrite?" choice.
+
+The shipped starter must ship scaffold-only `Workspace/OwnerGoals.md`. Adopted
+copies (folder rename, GitHub download, folder copy) may still carry stale rows —
+prep fixes that every time.
 
 ## Core Rule
 
@@ -35,7 +50,8 @@ repository stays organized, indexed, reusable, and safe.
 
 ## First Setup Questions
 
-**Canonical greeting and questions:** [QuickStartupGreeting.md](QuickStartupGreeting.md).
+**Canonical greeting and questions:** [QuickStartupGreeting.md](QuickStartupGreeting.md)
+(after [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md)).
 Agents **must display that file's opening and five numbered questions** — do not
 invent a different set (for example website-only or UserDiscovery-style questions).
 
@@ -194,6 +210,8 @@ A first getting-started pass is complete when:
 
 - [AgentSituationalAwareness.md](../../Standards/AgentSituationalAwareness.md)
 - [CloudOnlyPlanningAndMeasurementDevicePlan.md](../../Plans/CloudOnlyPlanningAndMeasurementDevicePlan.md)
+- [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md)
+- [QuickStartupGreeting.md](QuickStartupGreeting.md)
 - [EnvironmentAwareStartupPrompt.md](EnvironmentAwareStartupPrompt.md)
 - [OwnerGoalOperatingLoop.md](OwnerGoalOperatingLoop.md)
 - [EnvironmentDetectionQuestions.md](../SituationalAwareness/EnvironmentDetectionQuestions.md)

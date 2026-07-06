@@ -36,7 +36,7 @@ acting.
 
 | Situation | What to do |
 | --- | --- |
-| First time in this repo | Say **"Begin Quick Startup from AGENTS.md"** — then follow full first-session order in `Capabilities/GettingStarted/GettingStarted.md` |
+| First time in this repo | Say **"Begin Quick Startup from AGENTS.md"** — agent runs Workspace Adoption Prep, then full first-session order in `Capabilities/GettingStarted/GettingStarted.md` |
 | Returning with a task | Route via `Capabilities/RouterIndex.md` |
 | Not sure what's going on | Read `Standards/AgentSituationalAwareness.md` |
 | Want to capture an idea | Drop it in `Ideas/` |
@@ -44,9 +44,10 @@ acting.
 
 Before acting on any task: read this file, then `Standards/AgentSituationalAwareness.md`.
 
-**Full Quick Startup session:** setup questions → Owner Goals → optional prior-repo
-path note → valuable reference candidates → optional reference review → one routed
-next task → park GitHub → soft indexing offer. See GettingStarted first-session order.
+**Full Quick Startup session:** Workspace Adoption Prep (reset stale boot files) →
+setup questions → Owner Goals → optional prior-repo path note → valuable reference
+candidates → optional reference review → one routed next task → park GitHub →
+soft indexing offer. See GettingStarted first-session order.
 
 ## Primary Goal Of Repository
 

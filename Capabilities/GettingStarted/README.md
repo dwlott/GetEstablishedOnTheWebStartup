@@ -14,9 +14,10 @@ LastEdited: 2026-06-07
 - **Version:** 1
 - **Tier:** Archetype
 - **Purpose:** Help a new owner or agent run **Quick Startup**—the first
-  getting-started path: orient to the learning repository, collect three to five
-  **Owner Goals**, keep those goals separate from **Repository Goals**, and
-  route the next setup task through existing docs and Capabilities.
+  getting-started path: prep the Workspace boot files for an adopted copy, orient
+  to the learning repository, collect three to five **Owner Goals**, keep those
+  goals separate from **Repository Goals**, and route the next setup task through
+  existing docs and Capabilities.
 - **Inputs:** Current repository state; `Capabilities/GettingStarted/GettingStarted.md`;
   `Plans/UserSetupGuide.md`; `Plans/RepositoryGoals.md`;
   optional owner-provided setup goals.
@@ -71,14 +72,15 @@ It does not provision new repository folders. There is no `Structure.md` or
 | **SourceSummary** | Quick Startup and Owner Goals capture separate from Repository Goals |
 | **PromotionStatus** | Active |
 | **Dependencies** | RepositoryGoals, Workspace/OwnerGoals.md |
-| **RelatedFiles** | GettingStarted.md, Rules.md, Prompt.md |
-| **LastReviewed** | 2026-06-05 |
+| **RelatedFiles** | GettingStarted.md, WorkspaceAdoptionPrep.md, Rules.md, Prompt.md |
+| **LastReviewed** | 2026-07-06 |
 | **HarmonizationNotes** | Archetype tier; does not provision folders |
 
 ## Related
 
 - Canonical rules: [Rules.md](Rules.md)
 - Worker entry: [Prompt.md](Prompt.md)
+- Adoption prep: [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md)
 - Beginner entry point: [GettingStarted.md](GettingStarted.md)
 - Owner Goal operating loop: [OwnerGoalOperatingLoop.md](OwnerGoalOperatingLoop.md)
 - Fuller setup guide: [UserSetupGuide.md](../../Plans/UserSetupGuide.md)
@@ -90,4 +92,5 @@ It does not provision new repository folders. There is no `Structure.md` or
 
 | Date | Ver | Change | Lesson / why | Files |
 | --- | ---: | --- | --- | --- |
+| 2026-07-06 | 2 | Workspace Adoption Prep — auto-reset stale boot files on Quick Startup | Adopted copies stalled on leftover template Owner Goals | WorkspaceAdoptionPrep, Rules, QuickStartupGreeting, GettingStarted |
 | 2026-06-01 | 1 | Initial Capability | First setup needs routable owner-goal capture without merging owner goals into Repository Goals | README, Rules, Prompt |

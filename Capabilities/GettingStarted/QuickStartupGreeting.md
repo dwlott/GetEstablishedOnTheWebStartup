@@ -1,27 +1,29 @@
 <!--
 IndexTitle: Quick Startup Greeting
-IndexDescription: Canonical opening greeting and five setup questions agents display before Owner Goals capture.
+IndexDescription: Canonical opening greeting and five setup questions agents display after Workspace Adoption Prep.
 IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-06-10
+LastEdited: 2026-07-06
 -->
 
 # Quick Startup Greeting
 
-**Agents:** Display this greeting and these questions when Quick Startup begins.
-**Do not invent a different question set.** **Do not write** `Workspace/OwnerGoals.md`
-until the owner answers.
+**Agents:** Run [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) **first**
+(reset stale starter boot files automatically). Then display this greeting and
+these questions. **Do not invent a different question set.** **Do not ask**
+whether to overwrite leftover starter content — prep already handled that.
 
-Read `AGENTS.md` and [GettingStarted.md](GettingStarted.md) first. Confirm
-`Workspace/OwnerGoals.md` is empty or scaffold-only before treating this as a
-fresh first session.
+**Do not write** `Workspace/OwnerGoals.md` with real goals until the owner
+answers the five questions below.
+
+Read `AGENTS.md` and [GettingStarted.md](GettingStarted.md) first.
 
 ## Opening (display to owner)
 
 ```text
-Welcome — this is a fresh Get Established Workspace.
+Welcome — this workspace is ready for your project.
 
 This folder helps you capture Ideas, turn them into Plans, and reach outcomes
 you choose — with agents in small, reviewable steps. A website or online
@@ -48,8 +50,8 @@ website-only default.
    website-only.)
 
 2. What are the first three to five outcomes you want this workspace to produce?
-   (These become Owner Goals — practical results, not method-builder tasks
-   unless you are testing the product.)
+   (These become Owner Goals — practical results for your project, not
+   method-builder or starter-template tasks.)
 
 3. What should matter first in the next few sessions — repository organization,
    drafts, credibility, leads, reviews, or something else?
@@ -65,14 +67,16 @@ website-only default.
 
 ## After the owner answers
 
-Follow [GettingStarted.md](GettingStarted.md) first-session order from step 3
-onward: write Owner Goals, prior-repo path in Import section if applicable,
-valuable references, optional reference review, **one** routed next task per
-[PostQuickStartupRouting.md](PostQuickStartupRouting.md), park GitHub, soft
-indexing offer.
+Follow [GettingStarted.md](GettingStarted.md) first-session order from step 4
+onward: write Owner Goals (replace scaffold row), prior-repo path in Import
+section if applicable, valuable references, optional reference review, **one**
+routed next task per [PostQuickStartupRouting.md](PostQuickStartupRouting.md),
+park GitHub, soft indexing offer.
 
 ## Do not
 
+- Stop to ask "should I overwrite leftover starter goals?" — run
+  [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) instead.
 - Substitute **UserDiscovery** questions (audience, offer, tone) for this
   greeting — route [UserDiscoveryPrompt.md](UserDiscoveryPrompt.md) **after**
   Owner Goals when business or page clarity is the next step.
@@ -82,6 +86,7 @@ indexing offer.
 
 ## Related
 
+- [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) — reset stale boot files first
 - [Rules.md](Rules.md) — boundaries and routing
 - [FirstRunAgentPrompts.md](FirstRunAgentPrompts.md)
 - [Plans/FirstRunStreamlinePlan.md](../../Plans/FirstRunStreamlinePlan.md) — smoke observations

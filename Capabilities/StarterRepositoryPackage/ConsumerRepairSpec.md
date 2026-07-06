@@ -268,6 +268,7 @@ Do not copy product `Plans/` or host-only Capabilities.
 | `Plans/StartHere.md` | Consumer Plans orientation; Quick Startup via AGENTS.md; whitelist links only |
 | `Capabilities/GettingStarted/PostQuickStartupRouting.md` | Step 7 routing; no RepositoryScaffold for packaging validation |
 | `Capabilities/GettingStarted/QuickStartupGreeting.md` | Ship with GettingStarted; canonical opening + five questions |
+| `Capabilities/GettingStarted/WorkspaceAdoptionPrep.md` | Auto-reset stale boot files on Quick Startup; no permission ask |
 | `Automation/VerifyStarterPackage.ps1` | Copy from StarterRepositoryPackage; document in Automation/README |
 | `Capabilities/GettingStarted/GettingStarted.md` | Step 2 → QuickStartupGreeting; no invented questions; no Import* routing |
 | `Capabilities/GettingStarted/Rules.md` | Prior-repo row = manual copy only |

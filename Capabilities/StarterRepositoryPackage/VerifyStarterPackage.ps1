@@ -88,6 +88,16 @@ try {
     }
     if ($workspaceChildren.Count -le 4) { Add-Pass "Workspace boot-only ($($workspaceChildren.Count) items)" }
 
+    # --- OwnerGoals scaffold-only (no product-builder stale rows) ---
+    if (Test-Path "Workspace/OwnerGoals.md") {
+        $ownerGoals = Get-Content "Workspace/OwnerGoals.md" -Raw
+        if ($ownerGoals -notmatch '\*\(capture during Quick Startup\)\*\') {
+            Add-Failure "Workspace/OwnerGoals.md missing scaffold row *(capture during Quick Startup)*"
+        } elseif ($ownerGoals -match 'GetEstablishedOnTheWeb\.com|starter workspace|Build a Capability') {
+            Add-Failure "Workspace/OwnerGoals.md contains stale product-builder goals (reset to scaffold)"
+        } else { Add-Pass "Workspace/OwnerGoals.md scaffold-only" }
+    }
+
     # --- AGENTS.md consumer identity ---
     if (Test-Path "AGENTS.md") {
         $agents = Get-Content "AGENTS.md" -Raw

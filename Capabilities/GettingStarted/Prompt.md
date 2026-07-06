@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-06-01
+LastEdited: 2026-07-06
 -->
 
 # GettingStarted Prompt
@@ -27,17 +27,21 @@ Read first:
 - Capabilities/GettingStarted/README.md
 - Capabilities/GettingStarted/Rules.md
 - Capabilities/GettingStarted/GettingStarted.md
+- Capabilities/GettingStarted/WorkspaceAdoptionPrep.md
+- Capabilities/GettingStarted/QuickStartupGreeting.md
 - Plans/UserSetupGuide.md
 - Plans/RepositoryGoals.md
 - Plans/AgentTaskBacklog.md
 
 Goal:
 Make the getting-started path clear enough for a new owner or agent to use.
-Collect or request three to five practical owner setup goals, keep those
+On Quick Startup, run Workspace Adoption Prep first (reset stale boot files
+automatically), then collect three to five practical owner setup goals, keep those
 separate from Repository Goals, and route the next setup task through existing
 guides, prompts, or Capabilities.
 
 In scope:
+- Run WorkspaceAdoptionPrep when Quick Startup begins (no permission ask for stale template content).
 - Clarify beginner-facing setup guidance.
 - Confirm the read-first path.
 - Ask for or summarize three to five owner setup goals.
@@ -77,4 +81,5 @@ Next Recommended Task
 
 | Date | Ver | Change |
 | --- | ---: | --- |
+| 2026-07-06 | 2 | Workspace Adoption Prep on Quick Startup; auto-reset stale boot files | Adopted copies kept product-builder Owner Goals; agents stalled asking permission | Prompt, WorkspaceAdoptionPrep, Rules, QuickStartupGreeting, GettingStarted |
 | 2026-06-01 | 1 | Initial GettingStarted operate prompt |

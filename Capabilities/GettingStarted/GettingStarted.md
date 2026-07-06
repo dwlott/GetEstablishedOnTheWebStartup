@@ -3,7 +3,7 @@ IndexTitle: Getting Started
 IndexDescription: Beginner-friendly entry point for understanding Markdown, read-first files, and the repository workflow.
 IndexType: Setup
 IndexStatus: Active
-LastEdited: 2026-06-09
+LastEdited: 2026-07-06
 -->
 
 # Getting Started
@@ -65,7 +65,11 @@ Copy-ready prompts for Cursor, Claude, and ChatGPT:
 First session order:
 
 1. Read `AGENTS.md` and `README.md`.
-2. Display the opening and five setup questions from
+2. **Workspace Adoption Prep** — run [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md)
+   automatically. Reset stale starter boot files (Owner Goals, Valuable References,
+   Import rows) **without asking permission**. One-line notice to the owner, then
+   continue.
+3. Display the opening and five setup questions from
    [QuickStartupGreeting.md](QuickStartupGreeting.md) — **do not invent questions**.
    (Use [UserDiscoveryPrompt.md](UserDiscoveryPrompt.md) only **after** Owner Goals
    when business or page clarity is the next step.)
@@ -73,27 +77,28 @@ First session order:
    [Rules.md](Rules.md) §Profile-Aware Quick Startup — short environment
    interview, optional uploads if the user has files to share, persist to
    `Workspace/OwnerEnvironment.md`.
-3. Write three to five Owner Goals in `Workspace/OwnerGoals.md`.
-4. Ask: **Do you have a prior repository folder or archive to import from?**
+4. Write three to five Owner Goals in `Workspace/OwnerGoals.md` from the owner's
+   answers (replace the scaffold row).
+5. Ask: **Do you have a prior repository folder or archive to import from?**
    If yes, record the path in `Workspace/OwnerPreferences.md`, then route
    **ImportOwnerPreferencesFromRepository** first, then
    **ImportCapabilitiesFromRepository** (owner-approved module checklist).
    See [FirstRunAgentPrompts.md](FirstRunAgentPrompts.md).
-5. **Capture candidate valuable references** (two to five rows max for the first
+6. **Capture candidate valuable references** (two to five rows max for the first
    pass). Once direction is clear, add likely URLs or search terms to
    `Workspace/ValuableReferences.md` with `Confidence: Suggested` and short
    commentary (what each link is for). Do not tell the owner to "go find a URL"
    without offering a specific link or search term first — see
    [SituationalAwareness/Rules.md](../SituationalAwareness/Rules.md) section 9.
-6. **Offer reference review (optional).** Offer a short owner pass over
+7. **Offer reference review (optional).** Offer a short owner pass over
    Suggested rows — now or later — using
    [ReferenceReviewPrompt.md](ReferenceReviewPrompt.md). Do not block startup.
-7. Route **one** next task per
+8. Route **one** next task per
    [PostQuickStartupRouting.md](PostQuickStartupRouting.md) — then confirm in
    `Capabilities/AgentCapabilityGuide.md`. **Do not** route **RepositoryScaffold**
    for packaging validation or "consumer scaffold check."
-8. Park GitHub until the owner chooses.
-9. **Last step — offer indexing (soft).** Tell the owner, without strongly
+9. Park GitHub until the owner chooses.
+10. **Last step — offer indexing (soft).** Tell the owner, without strongly
    recommending it:
 
    > Newly created files will be indexed by an agent to speed up chat

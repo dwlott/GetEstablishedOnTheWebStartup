@@ -4,7 +4,7 @@ IndexDescription: Copy-ready agent prompts for Quick Startup across Cursor, Clau
 IndexType: Capability
 CapabilityName: GettingStarted
 IndexStatus: Active
-LastEdited: 2026-06-10
+LastEdited: 2026-07-06
 -->
 
 # First Run Agent Prompts
@@ -43,9 +43,12 @@ This is not an app launch.
 
 Read AGENTS.md, then Capabilities/GettingStarted/GettingStarted.md and Rules.md.
 
+Run WorkspaceAdoptionPrep.md first (reset stale boot files automatically — do not
+ask permission to overwrite leftover starter goals).
+
 Display the opening and five setup questions from QuickStartupGreeting.md (do not
-invent questions). Wait for owner answers before writing Workspace/OwnerGoals.md.
-Then capture three to five Owner Goals from their answers.
+invent questions). Wait for owner answers before writing real rows to
+Workspace/OwnerGoals.md (replace the scaffold row).
 
 Ask about prior repository import; add two to five Suggested rows to
 Workspace/ValuableReferences.md when direction implies external sources.
@@ -64,9 +67,9 @@ Repository folder: C:\Repositories\<YourProjectName>
 Begin Quick Startup from AGENTS.md. This is not an app launch.
 
 Read AGENTS.md, then Capabilities/GettingStarted/GettingStarted.md.
-Proceed through the first-session order — do not ask again whether to run
-Quick Startup if I already agreed. Follow through Owner Goals, valuable
-reference candidates, and the soft indexing offer.
+Run WorkspaceAdoptionPrep.md first, then proceed through the first-session order —
+do not ask again whether to run Quick Startup if I already agreed. Follow through
+Owner Goals, valuable reference candidates, and the soft indexing offer.
 ```
 
 ## Cursor Or Claude Code (Local Folder)
