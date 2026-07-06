@@ -98,12 +98,9 @@ Repositories under `Get-RepositoriesRoot` (edit `$names` each session):
 | GetEstablished | `(Get-RepositoryPath 'GetEstablished')` |
 | GetEstablishedStartup | `(Get-RepositoryPath 'GetEstablishedStartup')` |
 | GetEstablishedOnTheWeb | `(Get-RepositoryPath 'GetEstablishedOnTheWeb')` |
-| MoverCalcs | `(Get-RepositoryPath 'MoverCalcs')` |
-| US1Movers | `(Get-RepositoryPath 'US1Movers')` |
-| AgenticAICertPrep | `(Get-RepositoryPath 'AgenticAICertPrep')` |
-| AgentCommander | `(Get-RepositoryPath 'AgentCommander')` |
-| MetaToolExcel | `(Get-RepositoryPath 'MetaToolExcel')` |
-| Music | `(Get-RepositoryPath 'Music')` |
+| GetEstablishedOnTheWebStartup | `(Get-RepositoryPath 'GetEstablishedOnTheWebStartup')` |
+| `<YourRepoName>` | `(Get-RepositoryPath '<YourRepoName>')` |
+| `<AnotherRepo>` | `(Get-RepositoryPath '<AnotherRepo>')` |
 
 ```powershell
 . C:\Repositories\GetEstablished\Capabilities\GitHubWorkflow\RepositoryPaths.ps1
@@ -113,12 +110,9 @@ $names = @(
     'GetEstablished',
     'GetEstablishedStartup',
     'GetEstablishedOnTheWeb',
-    'MoverCalcs',
-    'US1Movers',
-    'AgenticAICertPrep',
-    'AgentCommander',
-    'MetaToolExcel',
-    'Music'
+    'GetEstablishedOnTheWebStartup',
+    '<YourRepoName>',
+    '<AnotherRepo>'
 )
 
 foreach ($name in $names) {
@@ -138,20 +132,13 @@ Follow-up review pass — status and diff only, no push:
 . C:\Repositories\GetEstablished\Capabilities\GitHubWorkflow\RepositoryPaths.ps1
 . (Join-Path (Get-RepositoryPath 'GetEstablished') 'Capabilities\GitHubWorkflow\RepoGitOutput.ps1')
 
-$names = @('MoverCalcs', 'US1Movers', 'GetEstablishedOnTheWeb')
+$names = @('<YourRepoName>', '<AnotherRepo>', 'GetEstablishedOnTheWeb')
 
 foreach ($name in $names) {
     Start-RepoGitLog (Get-RepositoryPath $name)
 
     Invoke-GitWithLog status
-
-    if ($name -eq 'MoverCalcs') {
-        Invoke-GitWithLog diff --name-status
-    }
-    else {
-        Invoke-GitWithLog push
-        Invoke-GitWithLog status
-    }
+    Invoke-GitWithLog diff --name-status
 
     Stop-RepoGitLog
 }

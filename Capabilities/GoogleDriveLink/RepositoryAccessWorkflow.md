@@ -135,8 +135,8 @@ files, a diff, or confirmation that the repository was refreshed.
 - Google Drive Desktop installation works.
 - Google Drive Desktop supports adding multiple Google accounts.
 - Google Drive Desktop reported support for up to four accounts.
-- Stream files creates a virtual Google Drive location. Observed example:
-  `dwlott@gmail.com - Google Drive (H:)`.
+- Stream files creates a virtual Google Drive location. Example:
+  `you@example.com - Google Drive (H:)`.
 - Mirror files can create a real local folder, but local mirroring is optional
   and not required for ChatGPT repository access.
 - Google Drive cloud visibility was proven by viewing files in Drive web and
@@ -194,7 +194,7 @@ files, a diff, or confirmation that the repository was refreshed.
 
 ## Tested But Non-Final Branches
 
-- Creating a separate MetaToolExcel Google Drive mirror worked as a concept,
+- Creating a separate specialty-repository Google Drive mirror worked as a concept,
   but the final ChatGPT connector path favored the connected personal Google
   account.
 - Mirroring to a local folder is useful for local tools, Cursor, Git, and
@@ -204,7 +204,7 @@ files, a diff, or confirmation that the repository was refreshed.
 - Direct nested-folder write was not proven, so do not present it as
   supported.
 - Google Cloud OAuth Desktop credentials are useful for local apps such as
-  MetaToolExcel or Python, but they are not the same thing as the ChatGPT
+  a specialty repository tool or Python, but they are not the same thing as the ChatGPT
   Google Drive App connector.
 
 ## Best Prompts

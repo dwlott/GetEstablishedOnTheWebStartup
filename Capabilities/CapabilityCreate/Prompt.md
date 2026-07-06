@@ -58,7 +58,7 @@ Required work:
     this pass includes an approved SetupPrompt for the NEW Capability only.
 
 Do not:
-- Copy US1 commissioned intake paths onto GEOTW without explicit owner ask.
+- Copy commissioned-instance intake paths onto GEOTW without explicit owner ask.
 - Store secrets or API keys in the repository.
 - Embed changelog or instructions inside the new Capability fenced Prompt block.
 

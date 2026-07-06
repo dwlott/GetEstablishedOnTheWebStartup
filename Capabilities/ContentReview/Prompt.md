@@ -83,4 +83,4 @@ Keep the review concise and actionable. Do not rewrite every page unless specifi
 ## Prompt history
 
 - **2026-05-28 (v1):** Migrated from `Docs/Prompts/ContentReviewPrompt.md`; added Rules.md reference, AgentPermissions.md in default page list, product-language check.
-- **2026-05-29 (v1):** Cross-pollination (CapabilityHarmonize Option A) — added a per-page Ready For Website recommendation using the shared vocabulary with US1 ContentReview.
+- **2026-05-29 (v1):** Cross-pollination (CapabilityHarmonize Option A) — added a per-page Ready For Website recommendation using the shared vocabulary with a commissioned instance's ContentReview.

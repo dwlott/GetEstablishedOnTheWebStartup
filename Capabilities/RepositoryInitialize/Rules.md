@@ -47,7 +47,7 @@ Defer to Capability **SetupPrompt.md**:
 Init must populate `Docs/Capabilities/README.md` with:
 
 - **Active** rows for copied modules (ChatToMarkdown, LocalAgentToolSetup, CapabilityCreate, ContentReview on archetype host; adjust per profile).
-- **Planned** rows for Indexing, ChatMemoryCapture, review prompts, commissioned modules (reference US1), CapabilityHarmonize.
+- **Planned** rows for Indexing, ChatMemoryCapture, review prompts, commissioned modules (reference a commissioned instance), CapabilityHarmonize.
 - **RepositoryInitialize** Active on GEOTW; Planned stubs on children pointing to parent or local copy.
 
 Do not create disk folders for Planned capabilities.

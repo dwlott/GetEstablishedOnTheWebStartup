@@ -43,7 +43,7 @@ Folder choices:
 - Docs/Maintenance/ for housekeeping, cleanup notes, future ideas, and proposed renames
 - Content/Website/Pages/ for framework-neutral website page drafts when the user targets a page
 - Owner/Notes/ or Owner/OpenQuestions/ for owner-specific material not meant as site pages
-- Do not use US1 envelope paths (Planning/, PossibleWebPages/, Inbox/)
+- Do not use commissioned envelope paths (Planning/, PossibleWebPages/, Inbox/)
 
 Rules:
 - Follow Docs/Capabilities/ChatToMarkdown/Rules.md for structure and metadata.
@@ -65,4 +65,4 @@ End with exactly one fenced text handoff: Summary, Files Changed, Planning Files
 ## Prompt history
 
 - **2026-05-30 (v1):** Added category-first destination and filename harmonization steps.
-- **2026-05-31 (v1):** Initial worker prompt; migrated from US1 ChatToMarkdown pattern with GEOTW folder map.
+- **2026-05-31 (v1):** Initial worker prompt; migrated from a commissioned-instance ChatToMarkdown pattern with GEOTW folder map.

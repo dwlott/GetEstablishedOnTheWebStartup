@@ -70,7 +70,7 @@ Examples:
 | --- | --- | --- |
 | `WebPresence` | Website, local profile basics, WordPress/publishing, starter support | [WebPresenceCapabilityPack.md](WebPresenceCapabilityPack.md) |
 | Future book-writing pack | Manuscript, chapter, review, citation workflows | Not implemented |
-| Code/system pack | Codebase standards, generated indexes, build/test workflows | Repo-specific, for example MoverCalcs |
+| Code/system pack | Codebase standards, generated indexes, build/test workflows | Repo-specific, for example a code repository |
 
 ## Repository Roles
 
@@ -78,7 +78,7 @@ Examples:
 | --- | --- | --- |
 | `GetEstablished` | Method host and current self-provisioning core host | Maintain universal core, standards, harmonization, and archetype-pack plans. |
 | `GetEstablishedOnTheWeb` | Product repository with canonical website content | Promote toward self-provisioning web-presence archetype host before producing `GetEstablishedOnTheWebStartup`. |
-| `US1Movers` | Commissioned web-presence instance | Keep commissioned rules local while adopting applicable core and web-presence patterns. |
+| A commissioned instance | Commissioned web-presence instance | Keep commissioned rules local while adopting applicable core and web-presence patterns. |
 
 ## Copy Rules
 

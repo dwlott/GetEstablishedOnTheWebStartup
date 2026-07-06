@@ -20,7 +20,7 @@ New Capabilities must follow [CapabilityMetadataStandard.md](../../Standards/Cap
 - **Do not put integration artifacts in `Owner/`** unless the Capability is explicitly about owner decisions (use `Owner/OpenQuestions/` or `Owner/Notes/` for questions, not for Dropbox sync folders or API notes).
 - **Do not store credentials** in the repository (`.env`, tokens, OAuth secrets). Document external setup in Rules or a vendor pointer sheet.
 - **One Capability per worker pass** unless the user approves a batch.
-- **Commissioned-only intake** (email, scan, tax) belongs on commissioned envelopes — tag Tier **Commissioned** and reference US1 patterns; do not provision US1 paths on the archetype host unless the owner explicitly adopts them on GEOTW.
+- **Commissioned-only intake** (email, scan, tax) belongs on commissioned envelopes — tag Tier **Commissioned** and reference commissioned-instance patterns; do not provision commissioned-instance paths on the archetype host unless the owner explicitly adopts them on GEOTW.
 
 ## When to run
 
@@ -82,9 +82,9 @@ copy-ready block and clearly state that repository write access was unavailable.
 | Work type | Prefer | Usually avoid |
 | --- | --- | --- |
 | Cloud files (Dropbox, Drive, OneDrive) | `Automation/` scripts or documented steps; `Docs/Project/` integration note; commissioned `Inbox/` only if true **intake** | `Owner/`, `Content/Website/Pages/` |
-| Email / scan intake | Commissioned `Inbox/<Channel>/` per US1 Structure specs | GEOTW parent unless owner adopts |
+| Email / scan intake | Commissioned `Inbox/<Channel>/` per commissioned-instance Structure specs | GEOTW parent unless owner adopts |
 | Website page draft | `Content/Website/Pages/` | `Docs/Capabilities/` body text |
-| Internal planning | `Docs/Project/` (GEOTW) or `Planning/` (US1 envelope) | Capability Prompt fenced blocks |
+| Internal planning | `Docs/Project/` (GEOTW) or `Planning/` (commissioned envelope) | Capability Prompt fenced blocks |
 | Owner decision | `Owner/OpenQuestions.md` | New Capability folder under `Owner/` |
 | Agent tool install | **LocalAgentToolSetup** vendor sheet | New duplicate Capability |
 | Index / inventory | **Indexing** `Indexes/` via Setup | Scatter index files in repo root |
@@ -117,11 +117,10 @@ After creating files:
 1. Add row to `Docs/Capabilities/README.md` with correct **Tier**, **Status**, **Entry**.
 2. Add intent row to `Docs/Capabilities/AgentCapabilityGuide.md`.
 3. Add row to root `AGENTS.md` Capability Discovery table when **Active**.
-4. On commissioned child: append **Capability Changelog** per US1 `CapabilityStandard.md` if that repo maintains it.
+4. On commissioned child: append **Capability Changelog** if that repo maintains it.
 5. Update [CrossRepoCapabilityGapMatrix.md](../../Project/CrossRepoCapabilityGapMatrix.md) only when user asked for cross-repo tracking or harmonize pass.
 
 ## Related
 
 - [Structure.md](Structure.md) — starter kit
 - [CapabilityProvisionedStructure.md](../../Standards/CapabilityProvisionedStructure.md)
-- US1 reference: `Docs/Standards/CapabilityStandard.md`

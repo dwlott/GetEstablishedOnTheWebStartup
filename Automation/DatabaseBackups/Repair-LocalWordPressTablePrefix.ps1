@@ -1,6 +1,7 @@
 param(
 	[string] $WpConfigPath = '',
-	[string] $ExpectedPrefix = 'Lr4_',
+	[string] $SiteKey = '',
+	[string] $ExpectedPrefix = 'wp_',
 	[switch] $Apply,
 	[string] $MysqlPath = ''
 )
@@ -97,7 +98,7 @@ ORDER BY table_name;
 	return $prefixes | Select-Object -Unique
 }
 
-$wpConfigPath = Get-MoverCalcsWpConfigPath -ExplicitPath $WpConfigPath
+$wpConfigPath = Get-SiteWpConfigPath -ExplicitPath $WpConfigPath -SiteKey $SiteKey
 $wpConfig = Get-Content -LiteralPath $wpConfigPath -Raw
 $dbName = Get-WpConfigDefine -Text $wpConfig -Name 'DB_NAME'
 $dbUser = Get-WpConfigDefine -Text $wpConfig -Name 'DB_USER'
@@ -115,13 +116,13 @@ Write-Host "expected prefix:         '$ExpectedPrefix'"
 
 $dbPrefixes = Get-DatabaseTablePrefixes -MysqlExe $mysqlExe -DbName $dbName -DbUser $dbUser -DbPassword $dbPassword -DbHost $dbHost
 if ($dbPrefixes.Count -eq 0) {
-	throw "No *_options table found in database '$dbName'. Import Content/Website/Database/movercalcs-local.sql.gz first."
+	throw "No *_options table found in database '$dbName'. Import your local WordPress database snapshot first."
 }
 
 Write-Host ("tables found with prefixes: {0}" -f (($dbPrefixes | ForEach-Object { "'$_'" }) -join ', '))
 
 $detectedPrefix = $null
-foreach ($candidate in @($ExpectedPrefix, 'Lr4_', 'lr4_', 'wp_')) {
+foreach ($candidate in @($ExpectedPrefix, 'wp_')) {
 	foreach ($dbPrefix in $dbPrefixes) {
 		if ($dbPrefix -eq $candidate -or $dbPrefix.ToLower() -eq $candidate.ToLower()) {
 			$detectedPrefix = $ExpectedPrefix
@@ -138,7 +139,7 @@ if (-not $detectedPrefix) {
 
 $needsFix = ($currentPrefix -ne $detectedPrefix)
 if (-not $needsFix) {
-	Write-Host 'Table prefix already matches. Reload http://localhost/movercalcs/ — if install screen persists, check DB_NAME or restore the snapshot.'
+	Write-Host 'Table prefix already matches. Reload your local site (http://localhost/<your site>/) — if the install screen persists, check DB_NAME or restore the snapshot.'
 	exit 0
 }
 
@@ -155,4 +156,4 @@ $updated = Set-WpTablePrefix -Text $wpConfig -NewPrefix $detectedPrefix
 Set-Content -LiteralPath $wpConfigPath -Value $updated -Encoding UTF8
 
 Write-Host "Updated wp-config.php (backup: $backupPath)"
-Write-Host 'Reload http://localhost/movercalcs/ — the WordPress install screen should be gone.'
+Write-Host 'Reload your local site (http://localhost/<your site>/) — the WordPress install screen should be gone.'

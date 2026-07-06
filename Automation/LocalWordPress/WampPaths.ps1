@@ -1,7 +1,28 @@
-# Shared WAMP path resolution for MoverCalcs local WordPress scripts.
+# Shared WAMP path resolution for local WordPress scripts.
 # Requires user env var WAMP_WWW_ROOT (e.g. C:\wamp\www) or a discoverable install.
+# Set WP_SITE_KEY to your WAMP site folder name (the folder under www that holds
+# wp-config.php), or pass -SiteKey to the calling script.
+
+function Get-WpSiteKey {
+	param([string] $ExplicitKey = '')
+
+	if ($ExplicitKey -and $ExplicitKey.Trim()) {
+		return $ExplicitKey.Trim()
+	}
+	if ($env:WP_SITE_KEY -and $env:WP_SITE_KEY.Trim()) {
+		return $env:WP_SITE_KEY.Trim()
+	}
+
+	throw @(
+		'WP_SITE_KEY is not set. Set the user environment variable WP_SITE_KEY to your'
+		'WAMP site folder name (the folder under www that contains wp-config.php),'
+		'or pass -SiteKey. See Workspace/OwnerPreferences.md.'
+	) -join ' '
+}
 
 function Get-WampWwwRoot {
+	param([string] $SiteKey = '')
+
 	if ($env:WAMP_WWW_ROOT -and $env:WAMP_WWW_ROOT.Trim()) {
 		return $env:WAMP_WWW_ROOT.Trim().TrimEnd('\', '/')
 	}
@@ -13,33 +34,47 @@ function Get-WampWwwRoot {
 		'D:\wamp64\www'
 	)
 
+	$key = ''
+	if ($SiteKey) { $key = $SiteKey.Trim() } elseif ($env:WP_SITE_KEY) { $key = $env:WP_SITE_KEY.Trim() }
+	if ($key) {
+		foreach ($candidate in $candidates) {
+			if (Test-Path -LiteralPath (Join-Path $candidate "$key\wp-config.php")) {
+				return $candidate
+			}
+		}
+	}
+
 	foreach ($candidate in $candidates) {
-		if (Test-Path -LiteralPath (Join-Path $candidate 'movercalcs\wp-config.php')) {
+		if (Test-Path -LiteralPath $candidate) {
 			return $candidate
 		}
 	}
 
 	throw @(
-		'WAMP_WWW_ROOT is not set and no MoverCalcs WordPress install was found.'
+		'WAMP_WWW_ROOT is not set and no WAMP www folder was found.'
 		'Set the user environment variable WAMP_WWW_ROOT to your WAMP www folder'
 		'(e.g. C:\wamp\www or G:\wamp64\www). See Workspace/OwnerPreferences.md.'
 	) -join ' '
 }
 
-function Get-MoverCalcsWpRoot {
-	return Join-Path (Get-WampWwwRoot) 'movercalcs'
+function Get-SiteWpRoot {
+	param([string] $SiteKey = '')
+
+	$key = Get-WpSiteKey -ExplicitKey $SiteKey
+	return Join-Path (Get-WampWwwRoot -SiteKey $key) $key
 }
 
-function Get-MoverCalcsWpConfigPath {
+function Get-SiteWpConfigPath {
 	param(
-		[string] $ExplicitPath = ''
+		[string] $ExplicitPath = '',
+		[string] $SiteKey = ''
 	)
 
 	if ($ExplicitPath -and (Test-Path -LiteralPath $ExplicitPath)) {
 		return (Resolve-Path -LiteralPath $ExplicitPath).Path
 	}
 
-	$config = Join-Path (Get-MoverCalcsWpRoot) 'wp-config.php'
+	$config = Join-Path (Get-SiteWpRoot -SiteKey $SiteKey) 'wp-config.php'
 	if (-not (Test-Path -LiteralPath $config)) {
 		throw "wp-config.php not found: $config"
 	}

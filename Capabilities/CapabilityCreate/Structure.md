@@ -75,7 +75,7 @@ Do **not** default to `Owner/` for scripts or API notes.
 
 ### Pattern 3 — Shared intake (commissioned envelope)
 
-Use when files arrive in bulk and need triage. Align with US1 `Inbox/` conventions.
+Use when files arrive in bulk and need triage. Align with a commissioned instance's `Inbox/` conventions.
 
 ```text
 Inbox/
@@ -87,7 +87,7 @@ Indexes/
   InboxFileIndex.md           (create or extend via Setup + Indexing)
 ```
 
-Only on repos where **EmailIntake** / envelope rules already apply or owner approved intake. See US1 `Docs/Capabilities/EmailIntake/Structure.md` for channel naming discipline.
+Only on repos where **EmailIntake** / envelope rules already apply or owner approved intake.
 
 ### Pattern 4 — Project-held integration spec
 

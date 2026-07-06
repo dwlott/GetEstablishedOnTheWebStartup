@@ -43,7 +43,7 @@ Which account should own the Google Drive connection?
 Options:
 
 * My personal Google account
-* A dedicated MetaToolExcel / GetEstablished Google account
+* A dedicated GetEstablished Google account
 * A Google Workspace account
 * Not decided yet
 

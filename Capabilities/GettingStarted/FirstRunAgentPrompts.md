@@ -138,8 +138,8 @@ help me draft Owner Goals for Workspace/OwnerGoals.md. Do not edit files yet.
 ## After Quick Startup — Prior Archive Import
 
 ```text
-Repository folder: C:\Repositories\US1Movers
-Source archive: C:\Repositories\US1MoversArchive
+Repository folder: C:\Repositories\<YourPriorRepo>
+Source archive: C:\Repositories\<YourPriorRepoArchive>
 
 Owner Goals are in Workspace/OwnerGoals.md.
 

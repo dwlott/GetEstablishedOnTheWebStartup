@@ -13,7 +13,7 @@ LastEdited: 2026-06-06
 Apply in **Step 1** of [WorkflowIndex.md](WorkflowIndex.md) immediately after
 reporting `git remote -v`. This is **required** when the packaging workspace
 was copied from the archetype host and still points at the host GitHub remote
-(for example `github.com/dwlott/GetEstablished.git`).
+(for example `github.com/<owner>/GetEstablished.git`).
 
 ## Why This Is Required
 

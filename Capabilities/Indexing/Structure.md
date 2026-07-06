@@ -51,7 +51,7 @@ Indexes/InboxFileIndex.md
 | Profile | Index source folders |
 | --- | --- |
 | archetypeHost (GetEstablished clean root) | `Plans/`, `Content/Website/Pages/`, `Workspace/` (pointers), optional Capability registry rows |
-| commissionedWebPresence | `Planning/`, `PossibleWebPages/` (US1 reference) |
+| commissionedWebPresence | `Planning/`, `PossibleWebPages/` (commissioned-instance reference) |
 | legacy envelope | `Docs/Project/`, `Owner/` — historical only; do not use on clean root |
 
 ## Health Check Domains

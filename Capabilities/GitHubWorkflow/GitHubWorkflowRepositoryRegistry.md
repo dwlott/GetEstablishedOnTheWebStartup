@@ -33,12 +33,9 @@ Get-RepositoryPath GetEstablished
 | GetEstablished | Method host; capabilities, plans, standards |
 | GetEstablishedStartup | Starter-package packaging and repair mirror |
 | GetEstablishedOnTheWeb | Product and website repository |
-| MoverCalcs | Mover calculations |
-| US1Movers | US1 Movers business repository |
-| AgenticAICertPrep | Agentic AI certification prep |
-| AgentCommander | Agent command tooling |
-| MetaToolExcel | Excel meta-tool |
-| Music | Music project |
+| GetEstablishedOnTheWebStartup | Web-presence starter repository |
+| `<YourRepoName>` | Example commissioned or code repository |
+| `<AnotherRepo>` | Example specialty repository |
 
 ## Setup paths
 
@@ -73,12 +70,9 @@ $names = @(
     'GetEstablished',
     'GetEstablishedStartup',
     'GetEstablishedOnTheWeb',
-    'MoverCalcs',
-    'US1Movers',
-    'AgenticAICertPrep',
-    'AgentCommander',
-    'MetaToolExcel',
-    'Music'
+    'GetEstablishedOnTheWebStartup',
+    '<YourRepoName>',
+    '<AnotherRepo>'
 )
 
 foreach ($name in $names) {

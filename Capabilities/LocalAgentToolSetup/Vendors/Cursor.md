@@ -45,7 +45,7 @@ Offer to walk these in order. User may skip items.
 
 - [ ] **Word wrap:** `editor.wordWrap` = `on` (see official settings docs); toggle **Alt+Z** in editor
 - [ ] **Editor comfort:** optional rulers, autosave, diff wrap (user preference)
-- [ ] **Open workspace:** clone or open GetEstablished (and optional US1Movers multi-root)
+- [ ] **Open workspace:** clone or open GetEstablished (and an optional second repo as a multi-root workspace)
 - [ ] **Read repository rules:** root `AGENTS.md`, then
       `Standards/AgentSituationalAwareness.md` (Cursor: no Drive mirror per pass)
 - [ ] **Modes:** Ask (plan/review), Plan (structured plan), Agent (worker edits), Debug — modes do not auto-switch; say the mode on mic when recording
@@ -70,7 +70,7 @@ Produce full JSON in a **copy-ready fenced block** when asked. Offer to write th
 
 ## GEOTW repository hooks
 
-- Multi-repo example: see US1Movers `Docs/Setup/ParentWorkflowLink.md` and `Planning/CursorWorkspaceForGetEstablishedAndUS1Movers.md` in that repo when both roots are used.
+- Multi-repo example: when both roots are used, keep the parent/child workflow links in each repo's own setup docs.
 - This repository does not store the user's Cursor user settings.
 
 ## Recording / YouTube

@@ -1,8 +1,9 @@
 param(
-	[string] $BluehostDatabaseName = 'mindfxa6_movercalcs',
-	[string] $ExpectedTablePrefix = 'lr4_',
-	[string] $PublicUrl = 'https://movercalcs.com',
-	[string] $LocalUrl = 'http://localhost/movercalcs',
+	[string] $SiteKey = '',
+	[string] $BluehostDatabaseName = 'youraccount_yoursite',
+	[string] $ExpectedTablePrefix = 'wp_',
+	[string] $PublicUrl = 'https://your-site.example',
+	[string] $LocalUrl = 'http://localhost/yoursite',
 	[string] $OutputPath = '',
 	[string] $WorkDirectory = '',
 	[switch] $Force,
@@ -95,7 +96,7 @@ function Invoke-PythonAdapter {
 }
 
 $repoRoot = Get-RepoRoot
-$wpConfigPath = Get-MoverCalcsWpConfigPath
+$wpConfigPath = Get-SiteWpConfigPath -SiteKey $SiteKey
 $wpConfig = Get-Content -LiteralPath $wpConfigPath -Raw
 $localDbName = Get-WpConfigDefine -Text $wpConfig -Name 'DB_NAME'
 $localDbUser = Get-WpConfigDefine -Text $wpConfig -Name 'DB_USER'
@@ -103,10 +104,10 @@ $localDbHost = Get-WpConfigDefine -Text $wpConfig -Name 'DB_HOST'
 $localPrefix = Get-WpTablePrefix -Text $wpConfig
 
 if (-not $WorkDirectory) {
-	$WorkDirectory = Join-Path ([System.IO.Path]::GetTempPath()) 'MoverCalcsBluehostPrep'
+	$WorkDirectory = Join-Path ([System.IO.Path]::GetTempPath()) 'WordPressBluehostPrep'
 }
 if (-not $OutputPath) {
-	$OutputPath = Join-Path (Join-Path $env:USERPROFILE 'Downloads') 'movercalcs-bluehost-ready.sql'
+	$OutputPath = Join-Path (Join-Path $env:USERPROFILE 'Downloads') 'wordpress-bluehost-ready.sql'
 }
 
 $WorkDirectory = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($WorkDirectory)
@@ -119,12 +120,12 @@ if (-not (Test-Path -LiteralPath $outputDirectory)) {
 }
 
 $timestamp = Get-Date -Format 'yyyyMMdd-HHmmss'
-$exportGzip = Join-Path $WorkDirectory "movercalcs-local-export-$timestamp.sql.gz"
-$rawSql = Join-Path $WorkDirectory "movercalcs-local-export-$timestamp.sql"
+$exportGzip = Join-Path $WorkDirectory "wordpress-local-export-$timestamp.sql.gz"
+$rawSql = Join-Path $WorkDirectory "wordpress-local-export-$timestamp.sql"
 $reportPath = "$OutputPath.report.json"
 $adapterPath = Join-Path $PSScriptRoot 'prepare_bluehost_sql.py'
 
-Write-Host 'MoverCalcs Bluehost database prep'
+Write-Host 'WordPress Bluehost database prep'
 Write-Host "  Local wp-config:       $wpConfigPath"
 Write-Host "  Local database:        $localDbName @ $localDbHost"
 Write-Host "  Local database user:   $localDbUser"

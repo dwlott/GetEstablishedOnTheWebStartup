@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Prepare a local MoverCalcs WordPress SQL dump for Bluehost import.
+Prepare a local WordPress SQL dump for Bluehost import.
 
 The script rewrites SQL string literals from the local WAMP URL to the public
 site URL, verifies the WordPress table prefix, and refuses to edit serialized
@@ -219,10 +219,10 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
-    parser.add_argument("--local-url", default="http://localhost/movercalcs")
-    parser.add_argument("--public-url", default="https://movercalcs.com")
-    parser.add_argument("--target-database", default="mindfxa6_movercalcs")
-    parser.add_argument("--expected-prefix", default="lr4_")
+    parser.add_argument("--local-url", default="http://localhost/yoursite")
+    parser.add_argument("--public-url", default="https://your-site.example")
+    parser.add_argument("--target-database", default="youraccount_yoursite")
+    parser.add_argument("--expected-prefix", default="wp_")
     parser.add_argument("--report", type=Path)
     return parser.parse_args()
 

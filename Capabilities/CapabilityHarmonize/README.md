@@ -48,7 +48,7 @@ Keep it a **head start**, not a ledger: capture durable lessons in the target Ca
 ## Clean-Root Migration
 
 For repository tree harmonization, use [CleanRootMigration.md](CleanRootMigration.md).
-It captures lessons from the US1Movers clean-root migration: map legacy roots
+It captures lessons from a commissioned instance's clean-root migration: map legacy roots
 before moving, preserve commissioned content under standard roots, refresh boot
 and routing files, remove compatibility-bridge language after migration, and
 smoke-test workflow intents before calling the pass complete.
@@ -83,8 +83,7 @@ Keep this separate from clean-root migration:
 - Self-provisioning model: [SelfProvisioningRepositoryModel.md](../../Plans/SelfProvisioningRepositoryModel.md)
 - WebPresence pack: [WebPresenceCapabilityPack.md](../../Plans/WebPresenceCapabilityPack.md)
 - Cross-repo inventory artifact: [CrossRepoCapabilityGapMatrix.md](../../Plans/CrossRepoCapabilityGapMatrix.md)
-- In-repo reference instance: US1Movers `Capabilities/CapabilityHarmonize/`
-- Clean-root migration case study: US1Movers `Plans/US1CleanRootMigrationReport.md`
+- Reference instance: a commissioned instance's `Capabilities/CapabilityHarmonize/`
 - Meta companions: [CapabilityCreate](../CapabilityCreate/README.md), [CapabilityDefinition](../CapabilityDefinition/README.md)
 - Tiers: [RepositoryArchetypeAndCapabilityTiers.md](../../Standards/RepositoryArchetypeAndCapabilityTiers.md)
 
@@ -92,6 +91,6 @@ Keep this separate from clean-root migration:
 
 | Date | Ver | Change | Lesson / why | Files |
 | --- | ---: | --- | --- | --- |
-| 2026-05-28 | 1 | Initial canonical CapabilityHarmonize meta-module (cross-repo compare + best-of-both blend) | One consistent comparison method; US1 instance is the reference | README, Rules, Prompt |
-| 2026-06-19 | 2 | Added clean-root migration playbook from US1Movers harmonization lessons | Tree parity needs a repeatable checklist so commissioned repos can converge without re-deriving path moves, link refreshes, and smoke tests | README, Rules, Prompt, CleanRootMigration |
+| 2026-05-28 | 1 | Initial canonical CapabilityHarmonize meta-module (cross-repo compare + best-of-both blend) | One consistent comparison method; a commissioned instance is the reference | README, Rules, Prompt |
+| 2026-06-19 | 2 | Added clean-root migration playbook from a commissioned instance's harmonization lessons | Tree parity needs a repeatable checklist so commissioned repos can converge without re-deriving path moves, link refreshes, and smoke tests | README, Rules, Prompt, CleanRootMigration |
 | 2026-06-19 | 3 | Added self-provisioning readiness comparison mode | Mature archetype hosts need a readiness compare distinct from tree migration | README, Rules, Prompt |

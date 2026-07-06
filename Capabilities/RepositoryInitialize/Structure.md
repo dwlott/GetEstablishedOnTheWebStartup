@@ -66,9 +66,9 @@ Planning/README.md                        <- source archive pointer only
 PossibleWebPages/README.md
 ```
 
-Registry includes commissioned **Planned** rows (EmailIntake, ScanIntake, TaxPlanningQuestions) with US1 reference paths — **no** Inbox mkdir.
+Registry includes commissioned **Planned** rows (EmailIntake, ScanIntake, TaxPlanningQuestions) with commissioned-instance reference paths — **no** Inbox mkdir.
 
-Copy Active universal capabilities from GEOTW; add Indexing as Planned with US1 reference for envelope Rules.
+Copy Active universal capabilities from GEOTW; add Indexing as Planned with a commissioned-instance reference for envelope Rules.
 
 ## Profile: agenticMeta
 

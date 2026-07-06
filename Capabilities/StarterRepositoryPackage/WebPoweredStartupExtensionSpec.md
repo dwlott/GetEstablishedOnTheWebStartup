@@ -13,10 +13,8 @@ LastEdited: 2026-07-06
 Apply **after** [WebPresenceStartupRepairSpec.md](WebPresenceStartupRepairSpec.md) base packaging
 into `C:\Repositories\GetEstablishedOnTheWebStartup`.
 
-This pass adds generalized WordPress bootstrap ops proven on MoverCalcsWeb and
-GEOTW localhost — without copying site-specific content or breaking source repos.
-
-Generalization matrix: [WebPoweredGeneralizationMatrix.md](../../Plans/WebPoweredGeneralizationMatrix.md).
+This pass adds generalized WordPress bootstrap ops proven on an existing WordPress
+project and GEOTW localhost — without copying site-specific content or breaking source repos.
 
 ## Expected Outcome (extension)
 
@@ -35,7 +33,7 @@ Generalization matrix: [WebPoweredGeneralizationMatrix.md](../../Plans/WebPowere
 Copy or create in startup workspace:
 
 ```text
-Capabilities/MirrorWebAssets/                    <- MoverCalcsWeb (generalized)
+Capabilities/MirrorWebAssets/                    <- generalized from an existing WordPress project
 Capabilities/WordPressWebsite/                   <- NEW starter-safe
 Capabilities/WordPressContentUpdate/             <- NEW starter-safe
 Capabilities/StudioPressGenesisChildTheme/       <- NEW starter-safe
@@ -48,11 +46,11 @@ repo keeps Draft status until separate owner promotion.
 ## ADD — Automation
 
 ```text
-Automation/MirrorWebAssets/                      <- MoverCalcsWeb
-Automation/WordPressSave/                        <- MoverCalcsWeb
-Automation/DatabaseBackups/                      <- GEOTW canonical + MCW repair script
-Automation/BluehostDatabasePrep/                 <- MoverCalcsWeb (generalized)
-Automation/LocalWordPress/WampPaths.ps1          <- MoverCalcsWeb
+Automation/MirrorWebAssets/                      <- generalized from an existing WordPress project
+Automation/WordPressSave/                        <- generalized from an existing WordPress project
+Automation/DatabaseBackups/                      <- GEOTW canonical + repair script
+Automation/BluehostDatabasePrep/                 <- generalized from an existing WordPress project
+Automation/LocalWordPress/WampPaths.ps1          <- generalized from an existing WordPress project
 Automation/VerifyStarterPackage.ps1              <- GetEstablishedStartup + WebPresenceWordPress profile
 ```
 
@@ -61,11 +59,9 @@ Update `Automation/README.md` to list all folders above.
 ## ADD — Plans
 
 ```text
-Plans/LocalWordPressSetupPlan.md                 <- MoverCalcsWeb (generalized)
-Plans/WordPressSaveWorkflow.md                   <- MoverCalcsWeb (generalized)
+Plans/LocalWordPressSetupPlan.md                 <- generalized from an existing WordPress project
+Plans/WordPressSaveWorkflow.md                   <- generalized from an existing WordPress project
 Plans/WordPressWebsiteCapabilityGroupPlan.md     <- NEW
-Plans/WebPoweredStartupHarmonizationReport.md    <- pass results
-Plans/WebPoweredGeneralizationMatrix.md          <- copy from GEOTW
 ```
 
 ## ADD — Workspace
@@ -101,11 +97,11 @@ Content/Website/Theme/README.md                  <- placeholder for saved theme 
 
 | Token | Replace with |
 | --- | --- |
-| `movercalcs` | `{siteKey}` in docs and manifest templates |
+| `yoursite` | `{siteKey}` in docs and manifest templates |
 | `geotw` script prefix | `ges` in startup `Workspace/LocalWordPressBuild/` |
 | `getestablishedontheweb` | `{siteKey}` in templates |
-| `movercalcs.com` | `{productionUrl}` |
-| `http://localhost/movercalcs` | `{localUrl}` |
+| `your-site.example` | `{productionUrl}` |
+| `http://localhost/yoursite` | `{localUrl}` |
 
 Scripts must read `site-manifest.json` for runtime values where feasible.
 
@@ -147,10 +143,9 @@ Run:
 
 - No DNS, CF7, analytics, or public launch without owner approval.
 - No `--write` WordPress build without owner approval + DB backup.
-- Do not edit MoverCalcsWeb or GEOTW product WAMP paths during this pass.
+- Do not edit source WordPress project or GEOTW product WAMP paths during this pass.
 
 ## Related
 
 - [WebPresenceStartupRepairSpec.md](WebPresenceStartupRepairSpec.md)
 - [WebPresenceBootSnippets.md](WebPresenceBootSnippets.md)
-- [WebPoweredGeneralizationMatrix.md](../../Plans/WebPoweredGeneralizationMatrix.md)

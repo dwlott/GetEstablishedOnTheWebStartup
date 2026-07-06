@@ -27,7 +27,7 @@ Include:
 - Unsupported or hype-like claims to revise
 - Non-blocking items for `Plans/OpenQuestions.md`
 - Prioritized next-step checklist (review-only unless user approves edits)
-- Ready For Website recommendation per page: `No`, `Partial`, `AdvanceToOwnerReview`, `ReadyForExtract`, or `OnHold` (owner judgment; never `ReadyForExtract` without owner review of claims and tone). Shared vocabulary with US1 ContentReview.
+- Ready For Website recommendation per page: `No`, `Partial`, `AdvanceToOwnerReview`, `ReadyForExtract`, or `OnHold` (owner judgment; never `ReadyForExtract` without owner review of claims and tone). Shared vocabulary with a commissioned instance's ContentReview.
 
 ## Learned constraints
 
@@ -45,4 +45,3 @@ Include:
 - [Prompt.md](Prompt.md)
 - [RepositoryGoals.md](../../Plans/RepositoryGoals.md)
 - [RepositoryQualityReviewPlan.md](../../Plans/RepositoryQualityReviewPlan.md)
-- US1 child Capability (moving-business rules): US1Movers `Docs/Capabilities/ContentReview/Rules.md`

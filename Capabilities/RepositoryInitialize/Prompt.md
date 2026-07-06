@@ -41,7 +41,7 @@ Required work:
 8. Docs/Project/OpenQuestions.md — light starter rows if missing.
 9. Docs/Setup/README.md; ParentWorkflowLink.md when profile is commissionedWebPresence or agenticMeta.
 10. Copy Active Capability folders from GEOTW template per profile (ChatToMarkdown, LocalAgentToolSetup, CapabilityCreate, ContentReview on web profiles). Adjust Prompt.md repository name and Rules folder map. Set ParentCapability in README where copied.
-11. Add Planned registry rows for Indexing, ChatMemoryCapture, review prompts, commissioned modules (reference US1), CapabilityHarmonize — no disk folders for Planned.
+11. Add Planned registry rows for Indexing, ChatMemoryCapture, review prompts, commissioned modules (reference a commissioned instance), CapabilityHarmonize — no disk folders for Planned.
 12. Profile-specific paths from Structure.md only (README stubs for meta folders on agenticMeta, etc.).
 13. Do NOT mkdir Inbox/, Indexes/, or commissioned intake paths unless user also asked to run a Capability Setup in this session.
 14. Preserve existing user files (for example Docs/Workflows/ on Agentic).

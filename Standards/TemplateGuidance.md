@@ -24,7 +24,7 @@ GetEstablished is the **Get Established archetype host** (web presence for busin
 | Setup markdowns, standards, review prompts | Envelope body copy from a live commissioned repo |
 | Template and [RepositoryArchetypeAndCapabilityTiers.md](RepositoryArchetypeAndCapabilityTiers.md) | Provisioned inbox paths unless you commission them |
 
-**US1Movers** is the reference **commissioned** instance (first real business on the template). See [RepositoryArchetypeAndCapabilityTiers.md](RepositoryArchetypeAndCapabilityTiers.md) for tier rules — not live paths in other repositories.
+A **commissioned instance** is the reference **commissioned** instance (a real business on the template). See [RepositoryArchetypeAndCapabilityTiers.md](RepositoryArchetypeAndCapabilityTiers.md) for tier rules — not live paths in other repositories.
 
 **Other archetypes** (for example Write a Book) reuse **universal** ideas but need different archetype Capabilities and folder structures—not this website template.
 

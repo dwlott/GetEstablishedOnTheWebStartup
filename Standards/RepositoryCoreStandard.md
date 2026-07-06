@@ -15,7 +15,7 @@ Define how **Get Established On The Web** and related repositories package workf
 This standard is **parent-generic**. It does not include customer-specific folders, business intake paths, or code-repo VBA rules. Those belong in envelope or code repositories.
 
 **Capability tiers:** [RepositoryArchetypeAndCapabilityTiers.md](RepositoryArchetypeAndCapabilityTiers.md) (Universal, Archetype, Commissioned).  
-**Reference commissioned instance:** US1Movers `Docs/Standards/CapabilityStandard.md` and `Docs/Capabilities/`.  
+**Reference commissioned instance:** a commissioned instance's `CapabilityStandard.md` and Capabilities.  
 **Comparison map:** [CrossRepoCapabilityGapMatrix.md](../Project/CrossRepoCapabilityGapMatrix.md).
 
 ## Repository Roles
@@ -23,8 +23,8 @@ This standard is **parent-generic**. It does not include customer-specific folde
 | Role | Example | Workflow packaging | Owner content |
 | --- | --- | --- | --- |
 | **Archetype host (parent)** | GetEstablishedOnTheWeb | Archetype + universal catalog; legacy `Docs/Prompts/` during migration | `Owner/` for product; teaches Get Established |
-| **Commissioned instance** | US1Movers | Universal + archetype adopters + commissioned Capabilities | `Planning/`, `PossibleWebPages/`, `Owner/` |
-| **Code / system repo** | MoverCalcs | `Automation/AgentCommands/` + standards + generated indexes | Plans, VBA, outputs — not web-presence Capabilities |
+| **Commissioned instance** | a commissioned instance | Universal + archetype adopters + commissioned Capabilities | `Planning/`, `PossibleWebPages/`, `Owner/` |
+| **Code / system repo** | a code repository | `Automation/AgentCommands/` + standards + generated indexes | Plans, VBA, outputs — not web-presence Capabilities |
 
 Child repositories should read the parent standard and declare **ParentCapability** when adapting a workflow module.
 
@@ -66,7 +66,7 @@ Every repository using Capabilities must maintain:
 - `Docs/Capabilities/README.md` — registry table (required)
 - `Docs/Capabilities/SkillRegistry.md` — Skill discovery table when any Skill
   is planned, active, or runtime-adapted
-- Optional: intent routing guide (US1 uses `AgentCapabilityGuide.md`)
+- Optional: intent routing guide (a commissioned instance uses `AgentCapabilityGuide.md`)
 
 Open the registry before starting a workflow task. Registry columns should stay comparable across repos:
 
@@ -86,7 +86,7 @@ GetEstablishedOnTheWeb registry is in migration stub form until prompts move und
 
 Three tiers explain which modules belong on the parent archetype host versus a commissioned child. Full definitions: [RepositoryArchetypeAndCapabilityTiers.md](RepositoryArchetypeAndCapabilityTiers.md).
 
-| Tier | GetEstablishedOnTheWeb | Commissioned child (example US1) |
+| Tier | GetEstablishedOnTheWeb | Commissioned child (a commissioned instance) |
 | --- | --- | --- |
 | **Universal** | Catalog; migrate from prompts (ChatToMarkdown, Indexing, LocalAgentToolSetup) | Often **Active** first |
 | **Archetype** | Product website, reviews, template, setup markdowns | Adopted; may diverge (ContentReview) |
@@ -157,7 +157,7 @@ This section is **not required** for Capabilities that only operate on repositor
 - Maintains [CrossRepoCapabilityGapMatrix.md](../Project/CrossRepoCapabilityGapMatrix.md).
 - Does not store child customer material.
 
-**Child (commissioned instances such as US1Movers):**
+**Child (commissioned instances):**
 
 - Adopts or diverges from parent Capabilities.
 - Documents divergence in README when `ParentCapability` is set:
@@ -190,7 +190,7 @@ Some Capabilities need folders that must not be created during unrelated agent t
 
 **Parent template:** Document the pattern only. Do not create envelope intake folders (for example mail or scan inboxes) on GetEstablishedOnTheWeb unless a future approved Capability needs them. See [CapabilityProvisionedStructure.md](CapabilityProvisionedStructure.md).
 
-**Commissioned instance:** May provision paths such as `Inbox/<Channel>/Incoming/` per commissioned Capability `Structure.md`. See US1 `CapabilityProvisionedStructure.md` (envelope detail).
+**Commissioned instance:** May provision paths such as `Inbox/<Channel>/Incoming/` per commissioned Capability `Structure.md`. See [CapabilityProvisionedStructure.md](CapabilityProvisionedStructure.md) (envelope detail).
 
 Skills follow the same provisioned-structure rule. A Skill may include
 `scripts/`, `prompts/`, `examples/`, generated-output paths, or runtime adapter
@@ -203,9 +203,9 @@ Repositories use different index mechanisms. Do not merge them without an explic
 
 | Profile | Typical repo | Source of truth | Agent rule |
 | --- | --- | --- | --- |
-| **Markdown metadata** | GEOTW, US1 | `<!-- Index: ... -->` on folder READMEs; metadata block on important `.md` files | Refresh map and housekeeping; future index builder |
-| **Chat and source indexes** | US1 envelope | `Indexes/*.md` (for example chat markdown, followthrough, inbox file ledger) | Run **Indexing** Capability; do not move `Planning/` bodies during index-only passes |
-| **Generated code indexes** | MoverCalcs | `Indexes/VBAIndexes/*.tsv`, `Indexes/RepoIndexes/` | Index-first reads; regenerate with index builders after source edits — never hand-edit generated TSV |
+| **Markdown metadata** | GEOTW, commissioned | `<!-- Index: ... -->` on folder READMEs; metadata block on important `.md` files | Refresh map and housekeeping; future index builder |
+| **Chat and source indexes** | commissioned envelope | `Indexes/*.md` (for example chat markdown, followthrough, inbox file ledger) | Run **Indexing** Capability; do not move `Planning/` bodies during index-only passes |
+| **Generated code indexes** | a code repository | `Indexes/VBAIndexes/*.tsv`, `Indexes/RepoIndexes/` | Index-first reads; regenerate with index builders after source edits — never hand-edit generated TSV |
 
 When a Capability named **Indexing** exists, its `Rules.md` must state which profile it uses.
 
@@ -218,13 +218,13 @@ Align with [RepositoryQualityReviewPlan.md](../Project/RepositoryQualityReviewPl
 
 Quality **review** workflows may stay as `Docs/Prompts/*ReviewPrompt.md` until migrated. Prefer the `Review*` Capability prefix when migrating (for example `ReviewRepositoryStructure`).
 
-## Code Repository Profile (MoverCalcs)
+## Code Repository Profile
 
-MoverCalcs does not use `Docs/Capabilities/` for primary workflows. Equivalent modules live under `Automation/AgentCommands/` with launchers and durable outputs under `Docs/Plans/`.
+A code repository does not use `Docs/Capabilities/` for primary workflows. Equivalent modules live under `Automation/AgentCommands/` with launchers and durable outputs under `Docs/Plans/`.
 
 Cross-repo comparison maps:
 
-| Canonical name | MoverCalcs module |
+| Canonical name | Code repository module |
 | --- | --- |
 | RepositoryStructureReview | `RepositoryAudit` + repository enhancement workflow |
 | VBAAudit / enhancement | VBA audit + enhancement workflow |
@@ -264,4 +264,3 @@ Before a workflow task on any repo in this family:
 - [MarkdownIndexMetadataStandard.md](MarkdownIndexMetadataStandard.md)
 - [FolderReadmeStandard.md](FolderReadmeStandard.md)
 - [NamingStandard.md](NamingStandard.md)
-- US1 (reference): `CapabilityStandard.md`, `CapabilityProvisionedStructure.md`

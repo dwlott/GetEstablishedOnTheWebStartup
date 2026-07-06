@@ -37,10 +37,10 @@ Author new Capabilities with **CapabilityCreate** ([Prompt.md](../Capabilities/C
 | Repository role | Provisioned paths |
 | --- | --- |
 | **Archetype host** (GetEstablishedOnTheWeb) | Document pattern; Indexing Setup when adopted; no business inboxes unless a future approved Capability needs them |
-| **Commissioned child** (for example US1Movers) | EmailIntake, ScanIntake, and other commissioned `Structure.md` specs |
+| **Commissioned child** (a commissioned instance) | EmailIntake, ScanIntake, and other commissioned `Structure.md` specs |
 | **New repo via RepositoryInitialize** | Core shell only; Capability paths via each Capability's Setup |
 
-Commissioned reference implementations: US1Movers `Docs/Capabilities/EmailIntake/`, `ScanIntake/`.
+Commissioned reference implementations live on a commissioned instance's `EmailIntake/` and `ScanIntake/` Capabilities.
 
 ## Lazy Init Routing
 
@@ -53,11 +53,10 @@ Commissioned reference implementations: US1Movers `Docs/Capabilities/EmailIntake
 
 ## Indexing Profile
 
-When **Indexing** provisions `Indexes/`, use [Indexing/Structure.md](../Capabilities/Indexing/Structure.md) on this repository or the envelope reference on US1Movers.
+When **Indexing** provisions `Indexes/`, use [Indexing/Structure.md](../Capabilities/Indexing/Structure.md) on this repository or the envelope reference on a commissioned instance.
 
 ## Related
 
 - [RepositoryCoreStandard.md](RepositoryCoreStandard.md)
 - [RepositoryArchetypeAndCapabilityTiers.md](RepositoryArchetypeAndCapabilityTiers.md)
 - [AgentCapabilityGuide.md](../Capabilities/AgentCapabilityGuide.md)
-- US1 detail: US1Movers `Docs/Standards/CapabilityProvisionedStructure.md`

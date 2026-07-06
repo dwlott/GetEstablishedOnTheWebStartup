@@ -244,7 +244,7 @@ Possible later behavior:
 - one-command trusted refresh after user-approved policy exists;
 - stronger manifest comparison and stale-copy detection;
 - multi-repository source/destination registry;
-- support for US1Movers and other repository copies;
+- support for other repository copies;
 - optional scheduled reminder, but not silent destructive sync.
 
 ## Open Questions

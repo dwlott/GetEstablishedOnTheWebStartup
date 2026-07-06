@@ -62,8 +62,7 @@ outputs (`Content/OnePageBusinessWebsite/` when used).
 
 Explain **parallel repository offers**: free **GetEstablishedStartup** magnet,
 paid **GetEstablishedOnTheWebStartup**, and future **specialty for-sale repos**
-(MoverCalcs, MetaToolExcel, GithubAgenticAICertPrep) — gracefully, without
-invented ship dates or pricing.
+— gracefully, without invented ship dates or pricing.
 
 ### 7. Grounded proof
 

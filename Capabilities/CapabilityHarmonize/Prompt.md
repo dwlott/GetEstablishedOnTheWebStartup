@@ -107,5 +107,5 @@ Next Recommended Task.
 ## Prompt history
 
 - **2026-05-28 (v1):** Initial canonical compare-and-blend prompt. Cross-repo capable; emphasizes strengths, goals, and best-of-both options over change tracking.
-- **2026-06-19 (v2):** Added clean-root tree harmonization routing to the US1-derived migration playbook.
+- **2026-06-19 (v2):** Added clean-root tree harmonization routing to the commissioned-instance-derived migration playbook.
 - **2026-06-19 (v3):** Added self-provisioning readiness and Capability-pack comparison mode.

@@ -129,9 +129,7 @@ Create a short report in `Plans/` with:
 5. smoke-test results;
 6. follow-up notes.
 
-Reference case study: US1Movers `Plans/US1CleanRootMigrationReport.md`.
-
-## Lessons From US1Movers
+## Lessons From A Clean-Root Migration
 
 - A bridge-only compatibility pass reduces immediate risk but leaves friction for
   future agents. Full tree parity removes most path translation.

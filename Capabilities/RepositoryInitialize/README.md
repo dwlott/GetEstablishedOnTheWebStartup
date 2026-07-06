@@ -24,9 +24,9 @@ LastEdited: 2026-06-07
 | Profile | Use for |
 | --- | --- |
 | `archetypeHost` | GetEstablishedOnTheWeb-like parent |
-| `commissionedWebPresence` | Business envelope (US1-like) |
+| `commissionedWebPresence` | Business envelope (commissioned-instance-like) |
 | `agenticMeta` | Multi-agent workflow hub (Agentic) |
-| `codeRepo` | MoverCalcs-style; Automation profile only |
+| `codeRepo` | code-repository-style; Automation profile only |
 
 See [Rules.md](Rules.md) for per-profile registry and folder rules.
 

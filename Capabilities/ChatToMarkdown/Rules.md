@@ -10,7 +10,7 @@ LastEdited: 2026-06-01
 
 # ChatToMarkdown Rules
 
-Canonical home for GEOTW chat conversion structure. Adapted from US1Movers ChatToMarkdown (Universal tier).
+Canonical home for GEOTW chat conversion structure. Adapted from a commissioned instance's ChatToMarkdown (Universal tier).
 
 Do not embed a second copy of this rules file or a nested `# Title` / `## Document Metadata` template inside converted documents.
 
@@ -64,7 +64,7 @@ Routing rules:
 - Do not create Capability-owned provisioned folders such as `Inbox/` or
   `Indexes/` during ChatToMarkdown conversion.
 
-**Not on GEOTW:** US1 envelope folders (`Planning/`, `PossibleWebPages/`, commissioned inbox paths). Commissioned instances document those in their own Capability Rules.
+**Not on GEOTW:** commissioned envelope folders (`Planning/`, `PossibleWebPages/`, commissioned inbox paths). Commissioned instances document those in their own Capability Rules.
 
 ## Filename Harmonization
 

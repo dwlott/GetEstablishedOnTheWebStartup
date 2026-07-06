@@ -43,7 +43,7 @@ Do not merge public-site decisions with user-output platform choices.
 | Repository offer model | **Parallel products** on one shelf — not a serial purchase ladder | [RepositoryOfferLadder.md](RepositoryOfferLadder.md) (2026-06-14) |
 | GetEstablishedStartup commercial posture | **Free magnet** — lead-in download; harmonized core instructions | [RepositoryOfferLadder.md](RepositoryOfferLadder.md) (2026-06-14) |
 | GetEstablishedOnTheWebStartup commercial posture | **First paid repository product** — for sale; includes web + WordPress/StudioPress Capabilities | [RepositoryOfferLadder.md](RepositoryOfferLadder.md) (2026-06-14) |
-| Future specialty repositories | Additional **parallel for-sale** offers (MoverCalcs, MetaToolExcel, …) on same GEOTW storefront | [RepositoryOfferLadder.md](RepositoryOfferLadder.md) (2026-06-14) |
+| Future specialty repositories | Additional **parallel for-sale** offers on the same GEOTW storefront | [RepositoryOfferLadder.md](RepositoryOfferLadder.md) (2026-06-14) |
 | Repository hub pages Phase 1 | Slug `/getestablished/`; title **GetEstablished**; parallel to future `/get-established-on-the-web/` | [RepositoryOfferPagesPlan.md](RepositoryOfferPagesPlan.md) (2026-06-14) |
 
 ## Open — Launch And Build
@@ -54,9 +54,9 @@ Do not merge public-site decisions with user-output platform choices.
 | Bluehost / WordPress admin / Genesis + Altitude access | [WordPressBuildChecklist.md](WordPressBuildChecklist.md) prerequisite | Owner confirms at build session | Open (production); local WAMP done |
 | **GetEstablishedStartup** free download URL | Free-magnet CTA on `/getestablished/` and Offers | GitHub template or ZIP when owner publishes | Open |
 | **GetEstablishedOnTheWebStartup** purchase/download path | Paid product CTA; repo may not exist on GitHub yet | Named offer on site; price and delivery TBD — do not invent | Open |
-| GithubAgenticAICertPrep repo offer timing | Future GEOTW companion repo | Mention on Offers/About only when ready | Open |
+| Future companion repo offer timing | Future GEOTW companion repo | Mention on Offers/About only when ready | Open |
 | Capability harmonization on GitHub (community model) | Long-term downloadable Capabilities story | Planning language only until model defined | Open |
-| MoverCalcs / MetaToolExcel companion repo packaging | Showcase on GEOTW; apps on separate sites | Harmony story now; download paths later | Open |
+| Specialty companion repo packaging | Showcase on GEOTW; apps on separate sites | Harmony story now; download paths later | Open |
 | Front-page section link paths | `FrontPageHero.md` / `FrontPageCta.md` hardcode local subdir `/getestablishedontheweb/...`; wrong at production domain root | Fix via sync-side href rewrite or templating during the build pass (not by editing local-staging paths now) | Open |
 | DNS / SSL / public launch sign-off | Launch gate | No public launch without owner approval | Open |
 | Analytics and privacy tooling | Post-launch | None until separately approved | Open |

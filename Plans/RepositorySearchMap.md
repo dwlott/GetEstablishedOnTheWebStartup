@@ -55,5 +55,5 @@ Workspace/LocalWordPressBuild/site-manifest.json
 ## Not In This Starter
 
 - GEOTW product-only Intake, Archive, production dry-runs
-- MoverCalcs commissioned content or inventory automation
+- Commissioned content or inventory automation for other projects
 - Live production launch without owner build-pass approval
