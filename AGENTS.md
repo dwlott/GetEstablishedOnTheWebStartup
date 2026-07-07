@@ -87,7 +87,7 @@ On every new pass, before editing:
 
 | Signal | Action |
 | --- | --- |
-| **Begin Quick Startup from AGENTS.md** | WorkspaceAdoptionPrep → GettingStarted → OwnerGoals → ValuableReferences |
+| **Begin Quick Startup from AGENTS.md** | WorkspaceAdoptionPrep (boot files, OpenQuestions, git remote) → GettingStarted → OwnerGoals → ValuableReferences |
 | Review website page examples | **ContentReview** |
 | Draft one-page business website | **OnePageWebsite** |
 | Web listing/profile node | **WebPresenceNode** |

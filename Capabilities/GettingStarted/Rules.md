@@ -15,7 +15,10 @@ LastEdited: 2026-07-06
 When **Begin Quick Startup from AGENTS.md** fires, run
 [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) **before** the greeting.
 
-- Reset stale starter boot files automatically when detected.
+- Reset stale starter boot files and stale `Plans/OpenQuestions.md` automatically when detected.
+- If `origin` points at the starter template while the folder name differs, run
+  `git remote -v` and **ask the owner to choose** before the greeting (see
+  [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) § Git Remote Safety).
 - **Do not ask permission** to clear leftover product-builder or template goals.
 - Tell the owner in one line that prep ran, then display
   [QuickStartupGreeting.md](QuickStartupGreeting.md).

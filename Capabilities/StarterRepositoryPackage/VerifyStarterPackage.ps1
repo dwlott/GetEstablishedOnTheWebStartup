@@ -91,11 +91,21 @@ try {
     # --- OwnerGoals scaffold-only (no product-builder stale rows) ---
     if (Test-Path "Workspace/OwnerGoals.md") {
         $ownerGoals = Get-Content "Workspace/OwnerGoals.md" -Raw
-        if ($ownerGoals -notmatch '\*\(capture during Quick Startup\)\*\') {
+        if ($ownerGoals -notmatch 'capture during Quick Startup') {
             Add-Failure "Workspace/OwnerGoals.md missing scaffold row *(capture during Quick Startup)*"
         } elseif ($ownerGoals -match 'GetEstablishedOnTheWeb\.com|starter workspace|Build a Capability') {
             Add-Failure "Workspace/OwnerGoals.md contains stale product-builder goals (reset to scaffold)"
         } else { Add-Pass "Workspace/OwnerGoals.md scaffold-only" }
+    }
+
+    # --- OpenQuestions consumer scaffold (no GEOTW product leakage) ---
+    if (Test-Path "Plans/OpenQuestions.md") {
+        $openQ = Get-Content "Plans/OpenQuestions.md" -Raw
+        if ($openQ -match 'GetEstablishedOnTheWeb product repository|RepositoryOfferLadder|Bluehost production|GetEstablishedStartup free download') {
+            Add-Failure "Plans/OpenQuestions.md contains stale product-builder content (reset to consumer scaffold)"
+        } elseif ($openQ -notmatch 'capture as work proceeds') {
+            Add-Failure "Plans/OpenQuestions.md missing consumer scaffold row *(capture as work proceeds)*"
+        } else { Add-Pass "Plans/OpenQuestions.md consumer scaffold" }
     }
 
     # --- AGENTS.md consumer identity ---

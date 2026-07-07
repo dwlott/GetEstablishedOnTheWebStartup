@@ -29,9 +29,11 @@ Quick Startup is complete for this session.
 
 What I did:
 - (one line per boot-file update — prep, goals, references, preferences)
+- (git remote adoption if resolved — e.g. parked starter-template)
 
 Owner Goals are in Workspace/OwnerGoals.md.
-GitHub stays parked until you ask.
+GitHub: (parked starter-template | new repo connected | local-only | unchanged — match OwnerPreferences).
+Do not push until the owner explicitly asks.
 
 Suggested next step (optional — you can do this now or later):
 - (one Capability or prompt from the routing table below)

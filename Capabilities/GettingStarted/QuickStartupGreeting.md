@@ -11,8 +11,10 @@ LastEdited: 2026-07-06
 # Quick Startup Greeting
 
 **Agents:** Run [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) **first**
-(reset stale starter boot files automatically). Then display this greeting and
-these questions. **Do not invent a different question set.** **Do not ask**
+(reset stale starter boot files and stale Open Questions automatically; check
+`git remote -v` when `.git/` exists). If `origin` still points at the starter
+template, resolve with the owner **before** these questions. Then display this
+greeting and these questions. **Do not invent a different question set.** **Do not ask**
 whether to overwrite leftover starter content — prep already handled that.
 
 **Do not write** `Workspace/OwnerGoals.md` with real goals until the owner

@@ -67,8 +67,11 @@ First session order:
 1. Read `AGENTS.md` and `README.md`.
 2. **Workspace Adoption Prep** — run [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md)
    automatically. Reset stale starter boot files (Owner Goals, Valuable References,
-   Import rows) **without asking permission**. One-line notice to the owner, then
-   continue.
+   Import rows, stale `Plans/OpenQuestions.md`) **without asking permission**.
+   If `.git/` exists and `origin` still points at the starter template, run
+   `git remote -v` and **ask the owner to choose** before the five setup questions
+   (park as `starter-template`, new GitHub repo, remove origin, or leave as-is).
+   One-line notice to the owner, then continue.
 3. Display the opening and five setup questions from
    [QuickStartupGreeting.md](QuickStartupGreeting.md) — **do not invent questions**.
    (Use [UserDiscoveryPrompt.md](UserDiscoveryPrompt.md) only **after** Owner Goals

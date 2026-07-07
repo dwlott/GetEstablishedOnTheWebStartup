@@ -13,6 +13,22 @@ Consumer adoption test: copy **GetEstablishedOnTheWebStartup** →
 Claude Code. Use this file to feed **GettingStarted** and **StarterRepositoryPackage**
 improvements.
 
+## Pass 3 — Git remote miss (2026-07-06)
+
+Claude surfaced **after** Quick Startup work began: `origin` still pointed at
+`GetEstablishedOnTheWebStartup` while folder was `DansRepairService`. UI showed
+wrong project name and Create-PR target.
+
+| Fix in starter | Status |
+| --- | --- |
+| Git remote detection in **WorkspaceAdoptionPrep** | Added — ask owner before greeting |
+| **`Plans/OpenQuestions.md`** consumer scaffold + auto-reset on adopt | Added |
+| **`Workspace/Documents/`** intake guidance | Added to Workspace/README |
+| Record adoption choice in **OwnerPreferences** § Git remote | Added |
+
+**Recommended owner choice for folder copies:** park `origin` as `starter-template`,
+then **GitHubWorkflow** when ready for `dwlott/DansRepairService`.
+
 ## Pass 2 — Validated (2026-07-06)
 
 | Behavior | Result |
