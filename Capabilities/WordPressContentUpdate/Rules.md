@@ -2,17 +2,29 @@
 
 ## Scope
 
-In scope: starter-safe local WordPress work per site-manifest.json and Plans.
+Markdown and manifest sync into local WordPress via `Workspace/LocalWordPressBuild/ges-*.php`.
 
-Out of scope unless owner approves: production launch, DNS, CF7, analytics.
+In scope:
 
-## Before Any Pass
+- Editing manifests for the **owner's** site map
+- Running starter sync scripts with `--only`
+- Dry-run before owner-approved write passes
 
-1. Read Workspace/LocalWordPressBuild/site-manifest.json.
-2. Confirm owner approved the pass scope.
-3. Route through **WordPressWebsite** when unsure which child Capability owns the task.
+Out of scope:
+
+- Full GEOTW product sync (capability catalog, offer hubs, messaging) — scripts not shipped
+- `--write` without **WordPressMigrationBackup** first
+- Production deploy
+
+## Manifest edit rules
+
+| File | Commission site |
+| --- | --- |
+| `content-manifest.php` | Owner categories/archives only; remove showcase/MoverCalcs rows |
+| `nav-menu-manifest.php` | Owner nav; remove Get Listed / Use AI unless owner wants them |
+| `page-layout-manifest.php` | Slugs that exist in `Content/Website/Pages/` |
 
 ## Related
 
 - [Prompt.md](Prompt.md)
-- [WorkflowIndex.md](WorkflowIndex.md)
+- [../WordPressWebsite/NewCommissionSiteChecklist.md](../WordPressWebsite/NewCommissionSiteChecklist.md)

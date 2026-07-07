@@ -2,17 +2,23 @@
 
 ## Scope
 
-In scope: starter-safe local WordPress work per site-manifest.json and Plans.
+Pre-experiment backup: local database snapshot and optional web-asset mirror.
 
-Out of scope unless owner approves: production launch, DNS, CF7, analytics.
+Required before:
 
-## Before Any Pass
+- Owner-approved `--write` content sync passes
+- Bluehost prep export
+- Bulk manifest-driven rebuilds
 
-1. Read Workspace/LocalWordPressBuild/site-manifest.json.
-2. Confirm owner approved the pass scope.
-3. Route through **WordPressWebsite** when unsure which child Capability owns the task.
+## Commands
+
+| Action | Script |
+| --- | --- |
+| DB snapshot | `Automation/DatabaseBackups/Export-LocalWordPressDatabase.ps1` |
+| Table prefix repair | `Automation/DatabaseBackups/Repair-LocalWordPressTablePrefix.ps1` |
+| Uploads/theme backup | `Automation/MirrorWebAssets/Mirror-WebAssetsToDropbox.ps1` |
 
 ## Related
 
 - [Prompt.md](Prompt.md)
-- [WorkflowIndex.md](WorkflowIndex.md)
+- [../WordPressWebsite/NewCommissionSiteChecklist.md](../WordPressWebsite/NewCommissionSiteChecklist.md) — phase 3

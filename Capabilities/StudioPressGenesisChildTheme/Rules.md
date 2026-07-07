@@ -2,17 +2,20 @@
 
 ## Scope
 
-In scope: starter-safe local WordPress work per site-manifest.json and Plans.
+Genesis + Altitude Pro **child-theme overlay** only.
 
-Out of scope unless owner approves: production launch, DNS, CF7, analytics.
+In scope:
 
-## Before Any Pass
+- `ges-altitude-custom.css`, `ges-customizations.php`, `ges-site-links.php`
+- `ges-theme-css-sync.php` staging to WAMP
+- WordPress Save paths under `Content/Website/Theme/altitude-pro/`
 
-1. Read Workspace/LocalWordPressBuild/site-manifest.json.
-2. Confirm owner approved the pass scope.
-3. Route through **WordPressWebsite** when unsure which child Capability owns the task.
+Out of scope:
+
+- Editing Genesis parent or StudioPress core files
+- Plugin installs unless owner approves in LocalWordPressSetupPlan
 
 ## Related
 
 - [Prompt.md](Prompt.md)
-- [WorkflowIndex.md](WorkflowIndex.md)
+- [../WordPressContentUpdate/Prompt.md](../WordPressContentUpdate/Prompt.md)

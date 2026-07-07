@@ -6,12 +6,11 @@
  * PHP subprocess so one failure does not abort the rest. Prints a summary.
  *
  * Usage:
- *   G:\wamp64\bin\php\php8.3.14\php.exe ges-sync-all.php
+ *   php ges-build.php
+ *   php ges-build.php --only=ges-theme-css-sync,ges-content-setup,ges-nav-menu-sync
  *
- * Options:
- *   --skip-messaging   Skip ges-messaging-sync.php (front-page widget step can
- *                      fail when the home sections use Featured Page widgets).
- *   --only=a,b,c       Run only the named scripts (basename without .php).
+ * Starter package: use --only with scripts that exist on disk. Full step list
+ * below includes GEOTW product steps not shipped in GetEstablishedOnTheWebStartup.
  */
 
 if ( php_sapi_name() !== 'cli' ) {

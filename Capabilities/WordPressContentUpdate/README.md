@@ -1,31 +1,32 @@
 <!--
 IndexTitle: WordPressContentUpdate Capability
-IndexDescription: Sync approved Markdown and manifests into WordPress when owner approves a build pass.
+IndexDescription: Sync Markdown and manifests into local WordPress when owner approves a build pass.
 IndexType: Capability
 CapabilityName: WordPressContentUpdate
-CapabilityVersion: 1
+CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-07-06
+LastEdited: 2026-07-07
 -->
 
 # WordPressContentUpdate Capability
 
-- **Version:** 1
+- **Version:** 2
 - **Tier:** Archetype
-- **Purpose:** Sync approved Markdown and manifests into WordPress when owner approves a build pass.
-- **WhenToUse:** Owner approves ges-build.php --write or a scoped content sync.
+- **Purpose:** Gate and run Markdown/manifest sync via starter `ges-*` scripts.
+- **WhenToUse:** Owner approves syncing repo content into local WAMP WordPress.
 
 ## Start Here
 
-[WorkflowIndex.md](WorkflowIndex.md) → [Rules.md](Rules.md) → [Prompt.md](Prompt.md)
+[../WordPressWebsite/NewCommissionSiteChecklist.md](../WordPressWebsite/NewCommissionSiteChecklist.md) (phases 2–4)
 
-## Related Plans
+→ [WorkflowIndex.md](WorkflowIndex.md) → [Rules.md](Rules.md) → [Prompt.md](Prompt.md)
 
-- [Plans/LocalWordPressSetupPlan.md](../../Plans/LocalWordPressSetupPlan.md)
-- [Plans/WordPressSaveWorkflow.md](../../Plans/WordPressSaveWorkflow.md)
-- [Plans/WordPressWebsiteCapabilityGroupPlan.md](../../Plans/WordPressWebsiteCapabilityGroupPlan.md)
+## Starter script set
+
+Use `ges-build.php --only=` with: `ges-theme-css-sync`, `ges-content-setup`,
+`ges-nav-menu-sync`, and optionally `ges-front-page-sync`.
 
 ## Stop Conditions
 
-- No --write without owner approval and database backup.
-- No production launch, DNS, CF7, or analytics without owner build-pass approval.
+- Backup required before destructive or `--write` passes.
+- Manifests must match owner site, not GEOTW product showcase defaults.

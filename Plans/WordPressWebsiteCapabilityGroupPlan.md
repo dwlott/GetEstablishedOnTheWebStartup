@@ -3,7 +3,7 @@ IndexTitle: WordPress Website Capability Group Plan
 IndexDescription: Starter-safe WordPress Capability group — parent router and child workflows for local site bootstrap.
 IndexType: Project
 IndexStatus: Active
-LastEdited: 2026-07-06
+LastEdited: 2026-07-07
 -->
 
 # WordPress Website Capability Group Plan
@@ -26,14 +26,37 @@ GEOTW product repo keeps these as Draft until separately promoted.
 ## Workflow Chain
 
 ```text
-site-manifest.json configured
+NewCommissionSiteChecklist (WordPressWebsite)
+  → site-manifest.json configured
   → LocalWordPressSetupPlan (WAMP install)
+  → Replace GEOTW showcase manifests with owner site map
   → MirrorWebAssets restore (optional)
   → WordPressMigrationBackup (before --write)
-  → ges-build.php (dry-run, then --write when approved)
+  → ges-build.php --only= (starter script set)
   → WordPress Save (inverse capture)
   → BluehostDatabasePrep (when migrating)
 ```
+
+## Commission site vs product showcase
+
+| Profile | Manifests | Build |
+| --- | --- | --- |
+| **Commission site** (Dan's Repair, etc.) | Owner pages/nav; trim GEOTW examples | `ges-build.php --only=ges-theme-css-sync,ges-content-setup,ges-nav-menu-sync` |
+| **GEOTW product showcase** | Use product repo `GetEstablishedOnTheWeb`, not this starter | Full geotw/ges product sync pack |
+
+Checklist: [Capabilities/WordPressWebsite/NewCommissionSiteChecklist.md](../Capabilities/WordPressWebsite/NewCommissionSiteChecklist.md)
+
+## Starter scripts on disk
+
+```text
+ges-theme-css-sync.php
+ges-content-setup.php
+ges-front-page-sync.php
+ges-nav-menu-sync.php
+```
+
+Product-only steps referenced by full `ges-build.php` (catalog, offer hubs, messaging)
+are **not shipped** in this starter — always use `--only`.
 
 ## Owner Configuration
 

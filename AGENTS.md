@@ -29,6 +29,7 @@ acting.
 | Save local WordPress to Git + Dropbox | **WordPress Save** — `Plans/WordPressSaveWorkflow.md` |
 | Local WordPress build (owner-approved) | `Workspace/LocalWordPressBuild/ges-build.php` |
 | Configure new site | Edit `site-manifest.json` + `WebAssetsSites.json` |
+| New commission site bootstrap | **WordPressWebsite** → `NewCommissionSiteChecklist.md` |
 | Git status, commit, push | **GitHubWorkflow** (owner must ask for commit/push) |
 | Not sure what's going on | **SituationalAwareness** Rules |
 

@@ -1,5 +1,8 @@
 # StudioPressGenesisChildTheme Workflow Index
 
-1. Read [README.md](README.md)
-2. Read [Rules.md](Rules.md)
-3. Run [Prompt.md](Prompt.md)
+1. [README.md](README.md)
+2. [Rules.md](Rules.md)
+3. [Prompt.md](Prompt.md)
+4. `Workspace/Reference/WordPressGenesisOperatingGuide/`
+
+Sync via **WordPressContentUpdate** → `ges-theme-css-sync.php`.
