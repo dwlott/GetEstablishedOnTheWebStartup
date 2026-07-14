@@ -1,30 +1,27 @@
 <!--
 IndexTitle: Capability Registry
-IndexDescription: Product repository registry for GetEstablishedOnTheWeb with self-provisioning startup test Capabilities.
+IndexDescription: Startup repository Capability registry for GetEstablishedOnTheWebStartup (WebPresence + WordPress extension).
 IndexType: README
 IndexStatus: Active
-LastEdited: 2026-06-19
+LastEdited: 2026-07-14
 -->
 
 # Capability Registry
 
 ## Purpose
 
-This **product repository** holds the GEOTW website/publishing Capability set
-plus a bounded self-provisioning set for the `GetEstablishedOnTheWebStartup`
-provisioning test.
+This is the **GetEstablishedOnTheWebStartup** web-presence starter registry —
+not the GetEstablishedOnTheWeb product repository and not a customer site.
 
-Full method Capability development lives on the method host:
-`C:\Repositories\GetEstablished\Capabilities\`.
-
-Receive updates via [GEOTWCoreReleaseWorkflow.md](../Plans/GEOTWCoreReleaseWorkflow.md).
+Website page examples under `Content/Website/Pages/` come from building
+**GetEstablishedOnTheWeb**. Do not import examples from DansRepairService,
+MoverCalcs.com, US1Movers, or other customer websites.
 
 ## How To Use
 
 1. Match user intent via [RouterIndex.md](RouterIndex.md) (read first).
 2. Confirm in [AgentCapabilityGuide.md](AgentCapabilityGuide.md).
 3. Open the Capability folder; read `README.md`, then `Prompt.md` / `Rules.md`.
-4. For method-only tasks not listed here, switch to the **GetEstablished** host repo.
 
 ## Registry Columns
 
@@ -63,7 +60,12 @@ Receive updates via [GEOTWCoreReleaseWorkflow.md](../Plans/GEOTWCoreReleaseWorkf
 | Universal | CapabilityHarmonize | Compare Capabilities, trees, packs, or self-provisioning readiness | Active | [Prompt](CapabilityHarmonize/Prompt.md) | [Rules](CapabilityHarmonize/Rules.md) |
 | Universal | CapabilityAudit | Audit catalog, routing, and startup readiness | Active | [AuditChecklist](CapabilityAudit/AuditChecklist.md) | [Rules](CapabilityAudit/Rules.md) |
 | Archetype | RepositoryInitialize | Initialize related web-presence repository shells | Active | [Prompt](RepositoryInitialize/Prompt.md) | [Rules](RepositoryInitialize/Rules.md) |
-| Archetype | StarterRepositoryPackage | Package `GetEstablishedOnTheWebStartup` from GEOTW workspace copy | Active | [WorkflowIndex](StarterRepositoryPackage/WorkflowIndex.md) | [Rules](StarterRepositoryPackage/Rules.md) |
+| Archetype | StarterRepositoryPackage | Re-package this starter (advanced) | Active | [WorkflowIndex](StarterRepositoryPackage/WorkflowIndex.md) | [Rules](StarterRepositoryPackage/Rules.md) |
+| Universal | MirrorWebAssets | Mirror WordPress uploads/theme to Dropbox | Active | [WorkflowIndex](MirrorWebAssets/WorkflowIndex.md) | [Rules](MirrorWebAssets/Rules.md) |
+| Archetype | WordPressWebsite | Local WordPress bootstrap; site-manifest | Active | [Prompt](WordPressWebsite/Prompt.md) | [Rules](WordPressWebsite/Rules.md) |
+| Archetype | WordPressContentUpdate | Sync Markdown to WordPress; ges-build | Active | [Prompt](WordPressContentUpdate/Prompt.md) | [Rules](WordPressContentUpdate/Rules.md) |
+| Archetype | StudioPressGenesisChildTheme | Genesis child theme / Altitude hooks | Active | [Prompt](StudioPressGenesisChildTheme/Prompt.md) | [Rules](StudioPressGenesisChildTheme/Rules.md) |
+| Universal | WordPressMigrationBackup | Backup before WordPress experiments | Active | [Prompt](WordPressMigrationBackup/Prompt.md) | [Rules](WordPressMigrationBackup/Rules.md) |
 
 ## Planned WebPresence Capabilities
 
@@ -74,27 +76,23 @@ Receive updates via [GEOTWCoreReleaseWorkflow.md](../Plans/GEOTWCoreReleaseWorkf
 
 ### Indexing Modes Note
 
-**ManualIndexing** is the default on this product repo. **CodeAssistedIndexing**
-is not shipped here — stay on manual indexing silently.
+**ManualIndexing** is the default. **CodeAssistedIndexing** is not shipped here.
 
-## Host-Only Capabilities (not on disk here)
+### Not shipped (intentional)
 
-Develop and route on `C:\Repositories\GetEstablished`:
-
-CapabilityDefinition, RepositoryLearning, RepositorySpawn, ImportCapabilitiesFromRepository,
-ImportOwnerPreferencesFromRepository, ChatMemoryCapture, CodeAssistedIndexing,
-OneDriveLink.
+| Item | Why |
+| --- | --- |
+| AltitudeProOverlay / High Altitude method | Commissioned-site theme product — not starter |
+| MoversForumParticipation | Product/community host ops — not starter |
+| Customer deploy profiles | Belong on the owner's project repo after adopt |
 
 ## Parity
 
 Capability folders with `README.md` must match registry rows and RouterIndex
-rows. Re-run after each [GEOTWCoreReleaseWorkflow.md](../Plans/GEOTWCoreReleaseWorkflow.md)
-or self-provisioning receive pass.
+rows. See [Plans/StartupRepositoryAudit-20260714.md](../Plans/StartupRepositoryAudit-20260714.md).
 
 ## Related
 
 - [AgentCapabilityGuide.md](AgentCapabilityGuide.md)
 - [RouterIndex.md](RouterIndex.md)
-- Host registry: `C:\Repositories\GetEstablished\Capabilities\README.md`
 - [CapabilityMetadataStandard.md](../Standards/CapabilityMetadataStandard.md)
-- [../Plans/GEOTWSelfProvisioningPromotionPlan.md](../Plans/GEOTWSelfProvisioningPromotionPlan.md)

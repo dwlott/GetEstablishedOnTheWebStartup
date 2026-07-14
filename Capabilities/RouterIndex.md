@@ -1,6 +1,6 @@
 <!--
 IndexTitle: Capability Router Index
-IndexDescription: GEOTW product repo compact router with self-provisioning startup test Capabilities.
+IndexDescription: Startup repository compact router for GetEstablishedOnTheWebStartup (WebPresence + WordPress extension).
 IndexType: Capability
 IndexStatus: Active
 LastEdited: 2026-06-19

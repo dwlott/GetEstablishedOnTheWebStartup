@@ -29,14 +29,22 @@ C:\Repositories\<YourWebProjectName>
 - WebPresence Capability pack (ContentReview, OnePageWebsite, WebPresenceNode, …)
 - Self-provisioning core (CapabilityHarmonize, StarterRepositoryPackage, …)
 - WordPress bootstrap: `ges-build.php`, WordPress Save, MirrorWebAssets
-- Example website pages under `Content/Website/Pages/`
+- Example website pages under `Content/Website/Pages/` from building
+  **GetEstablishedOnTheWeb** (not from customer sites)
+
+## Example source rule
+
+Website examples come from building **GetEstablishedOnTheWeb** only. Do not use
+DansRepairService, MoverCalcs.com, US1Movers, or other customer websites as
+templates for this starter.
 
 ## Boot
 
 1. [AGENTS.md](AGENTS.md)
 2. [Capabilities/RouterIndex.md](Capabilities/RouterIndex.md)
 3. [Plans/AgentTaskBacklog.md](Plans/AgentTaskBacklog.md)
-4. [Workspace/LocalWordPressBuild/site-manifest.json](Workspace/LocalWordPressBuild/site-manifest.json)
+4. [Plans/StartupRepositoryAudit-20260714.md](Plans/StartupRepositoryAudit-20260714.md)
+5. [Workspace/LocalWordPressBuild/site-manifest.json](Workspace/LocalWordPressBuild/site-manifest.json)
 
 ## Learn More
 

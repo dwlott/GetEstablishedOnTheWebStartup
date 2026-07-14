@@ -21,7 +21,9 @@ this doc is the product-repo reference until promoted.
 Genesis renders `h1.entry-title` in `header.entry-header`. GEOTW instead:
 
 1. Sets post meta `_genesis_hide_title` on synced pages (Customizer **Hide Title**).
-2. Adds `genesis_title_hidden` filter for inner pages in `geotw-customizations.php`.
+2. Adds `genesis_title_hidden` filter for inner pages in theme customizations
+   (`ges-customizations.php` in this starter; `geotw-customizations.php` on the
+   product site).
 3. Renders `<h1 class="geotw-page-title">` inside page HTML from Markdown `# Title`.
 
 Body class: `genesis-title-hidden`. One H1 per page for accessibility.

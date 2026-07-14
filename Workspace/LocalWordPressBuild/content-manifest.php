@@ -2,6 +2,9 @@
 /**
  * Declarative GES post categories, archive pages, and sample posts.
  * Uses slugs only — numeric category IDs are resolved at runtime.
+ *
+ * Starter template: examples from building GetEstablishedOnTheWeb only.
+ * Do not add customer-site categories (DansRepairService, MoverCalcs.com, etc.).
  */
 
 return array(
@@ -11,12 +14,6 @@ return array(
 			'name'        => 'Get Established Showcase',
 			'description' => 'Repository and method proof posts for the Get Established showcase.',
 			'purpose'     => 'Get Established repository / method showcase',
-		),
-		array(
-			'slug'        => 'movercalcs',
-			'name'        => 'MoverCalcs',
-			'description' => 'MoverCalcs web funnel case study posts.',
-			'purpose'     => 'MoverCalcs web funnel case study',
 		),
 		array(
 			'slug'        => 'updates',
@@ -68,17 +65,7 @@ return array(
 			'page_template'  => 'page_blog.php',
 			'add_to_nav'     => false,
 			'nav_title'      => 'Showcase',
-			'intro_html'     => '<h2>Get Established Showcase</h2><p>Posts that show the Get Established repository and method in action — starter outcomes, guided setup milestones, and proof from real work.</p>',
-		),
-		array(
-			'slug'           => 'movercalcs',
-			'title'          => 'MoverCalcs',
-			'category_slug'  => 'movercalcs',
-			'query_args'     => 'showposts=10&cat={cat_id}',
-			'page_template'  => 'page_blog.php',
-			'add_to_nav'     => false,
-			'nav_title'      => 'MoverCalcs',
-			'intro_html'     => '<h2>MoverCalcs</h2><p>Case study posts about the MoverCalcs web funnel built while developing the GetEstablished platform.</p>',
+			'intro_html'     => '<h2>Get Established Showcase</h2><p>Posts that show the Get Established repository and method in action — starter outcomes, guided setup milestones, and proof from building GetEstablishedOnTheWeb.</p>',
 		),
 		array(
 			'slug'           => 'updates',
@@ -108,8 +95,6 @@ return array(
 			'page_template'       => 'page_blog.php',
 			'add_to_nav'          => false,
 			'nav_title'           => 'Capabilities',
-			// Build the hub intro (image + lead/deck + body) from Git Markdown via
-			// GES_build_page_html (page-layout-manifest 'capabilities' entry).
 			'build_from_markdown' => 'Capabilities.md',
 			'intro_html'          => '<h2>Capability Catalog</h2><p>Reference summaries for <strong>GetEstablished Capabilities</strong> — reusable workflow modules in the repository pattern. Agent Rules stay in Git; these posts explain what each module helps with and when to use it.</p><p>Use the sidebar <strong>Browse by Topic</strong> tree to filter by Universal or Web modules. Start with <a href="/method/">The Get Established Method</a>.</p>',
 		),
@@ -119,13 +104,7 @@ return array(
 			'slug'          => 'showcase-welcome-post',
 			'title'         => 'Welcome to the Get Established Showcase',
 			'category_slug' => 'get-established-showcase',
-			'content'       => '<p>This sample post proves the Genesis <code>query_args</code> archive workflow on local GES. Replace with real showcase content from repository milestones.</p>',
-		),
-		array(
-			'slug'          => 'movercalcs-overview-post',
-			'title'         => 'MoverCalcs Funnel Overview',
-			'category_slug' => 'movercalcs',
-			'content'       => '<p>Sample case study post for the MoverCalcs category. Describe the funnel pages and what was learned building on the GetEstablished method.</p>',
+			'content'       => '<p>This sample post proves the Genesis <code>query_args</code> archive workflow on local GES. Replace with real showcase content from building GetEstablishedOnTheWeb.</p>',
 		),
 		array(
 			'slug'          => 'site-progress-update',

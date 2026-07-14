@@ -11,11 +11,14 @@ LastEdited: 2026-05-23
 
 ## Purpose
 
-This folder holds plain Markdown source drafts for future website pages.
+This folder holds plain Markdown **example** page drafts from building
+**GetEstablishedOnTheWeb**. Adapt them for the owner's business; do not copy
+customer websites (DansRepairService, MoverCalcs.com, US1Movers, etc.) into
+this starter as templates.
 
 ## What Belongs Here
 
-- Framework-neutral page drafts.
+- Framework-neutral page drafts (GEOTW product examples until replaced).
 - Page-specific notes that help future content refinement.
 - Drafts that can later be adapted into a website build.
 
@@ -25,6 +28,7 @@ This folder holds plain Markdown source drafts for future website pages.
 - Generated website output.
 - General project planning files.
 - Automation scripts.
+- Customer-site content or deploy notes.
 
 ## Important Files
 
@@ -38,5 +42,8 @@ This folder holds plain Markdown source drafts for future website pages.
 - `About.md` - project background draft.
 
 ## Agent Notes
+
+Treat every file here as an **example** until the owner rewrites it. ContentReview
+checks clarity and claims — do not invent pricing, licensing, or ranking claims.
 
 Preserve these files as source content. Keep edits practical, credible, and free of unsupported hype.

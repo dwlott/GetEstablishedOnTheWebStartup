@@ -8,6 +8,9 @@ LastEdited: 2026-06-27
 
 # The Get Established Method
 
+> **Starter example:** method page from building **GetEstablishedOnTheWeb**.
+> Adapt or replace for your business.
+
 **Get Established On The Web** is the public home for practical web help, repository
 offers, and the **GetEstablished** method — the bedrock workflow behind every package.
 

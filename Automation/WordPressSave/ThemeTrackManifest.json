@@ -5,26 +5,20 @@
   "themeRelativeRoot": "wp-content/themes/altitude-pro",
   "gitTrackedFiles": [
     {
-      "themeRelative": "geotw-custom/geotw-altitude-custom.css",
+      "themeRelative": "ges-custom/ges-altitude-custom.css",
       "repoRelative": "Workspace/LocalWordPressBuild/ges-altitude-custom.css",
       "category": "css",
       "role": "Primary Altitude overlay CSS (canonical repo copy for build sync)"
     },
     {
-      "themeRelative": "geotw-custom/ges-customizations.php",
+      "themeRelative": "ges-custom/ges-customizations.php",
       "repoRelative": "Workspace/LocalWordPressBuild/ges-customizations.php",
       "category": "php",
-      "role": "Site-specific theme hooks"
+      "role": "Site-specific theme hooks; enqueues overlay CSS"
     },
     {
-      "themeRelative": "geotw-custom/geotw-customizations.php",
-      "repoRelative": "Content/Website/Theme/altitude-pro/geotw-custom/geotw-customizations.php",
-      "category": "php",
-      "role": "Enqueues custom CSS and theme helpers"
-    },
-    {
-      "themeRelative": "geotw-custom/geotw-site-links.php",
-      "repoRelative": "Content/Website/Theme/altitude-pro/geotw-custom/geotw-site-links.php",
+      "themeRelative": "ges-custom/ges-site-links.php",
+      "repoRelative": "Workspace/LocalWordPressBuild/ges-site-links.php",
       "category": "php",
       "role": "Link and new-tab resolution helpers"
     },
@@ -32,13 +26,13 @@
       "themeRelative": "functions.php",
       "repoRelative": "Content/Website/Theme/altitude-pro/functions.php",
       "category": "php",
-      "role": "Child theme functions.php"
+      "role": "Child theme functions.php (saved when present)"
     },
     {
       "themeRelative": "style.css",
       "repoRelative": "Content/Website/Theme/altitude-pro/style.css",
       "category": "css",
-      "role": "Child theme stylesheet"
+      "role": "Child theme stylesheet (saved when present)"
     }
   ],
   "gitOptionalFiles": [

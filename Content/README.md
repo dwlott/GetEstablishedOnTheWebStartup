@@ -2,34 +2,37 @@
 
 ## Purpose
 
-Content holds project-specific publishable website, product, and publishing source material. For GetEstablished, this includes source drafts and structured copy that may later become public website or product-facing content.
+Content holds **example** website and one-page drafts for this **startup**
+repository. Adopters review and replace them with their own business copy.
 
-Content is not Workspace. It should contain material intended for eventual publishing or product use, not private scratch notes, owner inbox material, or temporary working files.
+## Example source rule
+
+Page drafts under `Content/Website/Pages/` are examples from building
+**GetEstablishedOnTheWeb** (the product site).
+
+Do **not** treat DansRepairService, MoverCalcs.com, US1Movers, or other
+customer websites as example sources for this starter.
 
 ## What Belongs Here
 
-- Framework-neutral website content drafts.
-- Product, offer, page, and publishing source content.
-- Content blocks, copy drafts, page source files, and publishing inputs.
-- Content that should remain easy to inspect before any build or publishing step.
+- Framework-neutral website content drafts (GEOTW-derived examples until replaced).
+- One-page business website inputs under `OnePageBusinessWebsite/`.
+- Content blocks that stay easy to inspect before a WordPress build pass.
 
 ## What Does Not Belong Here
 
-- Project planning documents, audits, or backlog notes. Use `Plans`.
-- Owner-specific scratch work, inbox material, raw references, or private drafts. Use `Workspace`.
-- Reusable prompts or workflows. Use `Capabilities`, `Plans`, or future `Skills` depending on role.
-- Website framework files or generated output before a build approach is chosen.
-- Automation scripts. Use `Automation`.
+- Project planning documents — use `Plans`.
+- Owner scratch / private uploads — use `Workspace`.
+- Customer-site capture logs or deploy profiles.
+- Automation scripts — use `Automation`.
 
 ## Important Folders
 
-- `Website` - source content for the public website.
-- `OnePageBusinessWebsite` - source content and inputs for the one-page business website direction.
-
-## Reuse Boundary
-
-Old project Content should not be reused unchanged when creating a new project unless the owner intentionally adapts it. Treat Content as project-specific by default, even when the structure or approach may inspire reusable capability guidance later.
+- `Website` — example public page drafts (from building GetEstablishedOnTheWeb).
+- `OnePageBusinessWebsite` — scaffold for the owner's one-page site.
+- `Website/Theme`, `Website/Database` — placeholders for WordPress save outputs.
 
 ## Agent Notes
 
-Keep content plain and framework-neutral unless the user explicitly asks for a website build phase. Promote reusable content patterns into `Capabilities` or `Standards` only after the project-specific content is stable.
+Keep content plain unless the owner approves a WordPress `--write` build.
+When adapting examples, rewrite for the owner's business — do not invent claims.

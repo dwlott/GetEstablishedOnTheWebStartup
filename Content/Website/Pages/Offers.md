@@ -8,6 +8,9 @@ LastEdited: 2026-06-27
 
 # Offers
 
+> **Starter example:** product offer copy from building **GetEstablishedOnTheWeb**.
+> Adapt or replace for your business.
+
 Get Established On The Web promotes practical web establishment first. The main
 repository offer is **GetEstablishedOnTheWebStartup**. For people who do not want
 the web or WordPress Capability group, **GetEstablishedStartup** is the lighter

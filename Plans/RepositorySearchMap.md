@@ -25,7 +25,8 @@ Workspace/LocalWordPressBuild/site-manifest.json
 
 | Need | Look first |
 | --- | --- |
-| Public page drafts | `Content/Website/Pages/` |
+| Public page drafts (GEOTW examples) | `Content/Website/Pages/` |
+| Startup audit | `Plans/StartupRepositoryAudit-20260714.md` |
 | One-page business website | `Content/OnePageBusinessWebsite/` |
 | Website outcomes | `Plans/WebsiteGoals.md` |
 | WordPress setup | `Plans/LocalWordPressSetupPlan.md` |
@@ -55,5 +56,8 @@ Workspace/LocalWordPressBuild/site-manifest.json
 ## Not In This Starter
 
 - GEOTW product-only Intake, Archive, production dry-runs
-- Commissioned content or inventory automation for other projects
+- Commissioned content, AltitudeProOverlay / High Altitude theme recipes
+- Customer-site examples (DansRepairService, MoverCalcs.com, US1Movers, …)
 - Live production launch without owner build-pass approval
+
+**Example rule:** page drafts come from building GetEstablishedOnTheWeb only.

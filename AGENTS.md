@@ -110,10 +110,15 @@ group (Active in this starter).
 - WordPress `--write` build, DNS, CF7, analytics, or public launch without
   owner build-pass approval.
 - Treating this starter as the GetEstablishedOnTheWeb product repository.
+- Using DansRepairService, MoverCalcs.com, US1Movers, or other customer sites as
+  example templates (examples come from building GetEstablishedOnTheWeb only).
 - Inventing legal, pricing, licensing, insurance, ranking, or revenue claims.
+- Shipping AltitudeProOverlay / High Altitude commissioned theme recipes into
+  this starter (those stay on commissioned project repos).
 
 ## Related
 
 - [Plans/WebsiteGoals.md](Plans/WebsiteGoals.md)
 - [Plans/WordPressWebsiteCapabilityGroupPlan.md](Plans/WordPressWebsiteCapabilityGroupPlan.md)
 - [Plans/UserSetupGuide.md](Plans/UserSetupGuide.md)
+- [Plans/StartupRepositoryAudit-20260714.md](Plans/StartupRepositoryAudit-20260714.md)

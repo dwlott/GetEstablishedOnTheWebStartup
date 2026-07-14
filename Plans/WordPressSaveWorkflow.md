@@ -72,12 +72,11 @@ copied. Unchanged stock Altitude files are never saved.
 
 | Category | WAMP path (under `altitude-pro/`) | Repository path | Role |
 | --- | --- | --- | --- |
-| CSS | `geotw-custom/geotw-altitude-custom.css` | `Workspace/LocalWordPressBuild/mc-altitude-custom.css` | Primary custom overlay CSS |
-| PHP | `geotw-custom/mc-customizations.php` | `Workspace/LocalWordPressBuild/mc-customizations.php` | Inventory/theme hooks |
-| PHP | `geotw-custom/geotw-customizations.php` | `Content/Website/Theme/altitude-pro/geotw-custom/geotw-customizations.php` | CSS enqueue loader |
-| PHP | `geotw-custom/geotw-site-links.php` | `Content/Website/Theme/altitude-pro/geotw-custom/geotw-site-links.php` | Link helpers |
-| PHP | `functions.php` | `Content/Website/Theme/altitude-pro/functions.php` | Child theme functions (mc require) |
-| CSS | `style.css` | `Content/Website/Theme/altitude-pro/style.css` | Child theme stylesheet |
+| CSS | `ges-custom/ges-altitude-custom.css` | `Workspace/LocalWordPressBuild/ges-altitude-custom.css` | Primary custom overlay CSS |
+| PHP | `ges-custom/ges-customizations.php` | `Workspace/LocalWordPressBuild/ges-customizations.php` | Theme hooks / CSS enqueue |
+| PHP | `ges-custom/ges-site-links.php` | `Workspace/LocalWordPressBuild/ges-site-links.php` | Link helpers |
+| PHP | `functions.php` | `Content/Website/Theme/altitude-pro/functions.php` | Child theme functions (when saved) |
+| CSS | `style.css` | `Content/Website/Theme/altitude-pro/style.css` | Child theme stylesheet (when saved) |
 
 #### Optional Git-tracked templates (save when modified)
 
@@ -120,22 +119,16 @@ Runs [`Mirror-WebAssetsToDropbox.ps1`](../Automation/MirrorWebAssets/Mirror-WebA
 | `%WAMP_WWW_ROOT%\{siteKey}\wp-content\themes\altitude-pro\images` | `C:\Users\dwlot\Dropbox\Webs\{siteKey}\altitude-pro\images` |
 | Full child theme (restore bundle) | `C:\Users\dwlot\Dropbox\Webs\{siteKey}\altitude-pro` |
 
-The full `altitude-pro` mirror includes `geotw-custom/`, `images/`, and templates
+The full `altitude-pro` mirror includes `ges-custom/`, `images/`, and templates
 for one-step restore via
 [`Restore-WebAssetsFromDropbox.ps1`](../Automation/MirrorWebAssets/Restore-WebAssetsFromDropbox.ps1).
 
-#### Current theme images (Dropbox, not Git)
+#### Theme images (Dropbox, not Git)
 
-Observed on this PC (2026-07-02):
+Stage brand images under the theme `images/` folder on WAMP; they mirror to
+Dropbox with MirrorWebAssets. Do not commit large binaries to Git.
 
-| File | Approx. size | Role |
-| --- | --- | --- |
-| `images/favicon.ico` | 29 KB | Favicon |
-| `images/{siteKey}-site-icon-512.png` | 29 KB | Site icon |
-| `images/truck-capacity-chart.png` | 47 KB | Front-page chart asset |
-
-Media library files under `uploads/` (~2,400 files, ~97 MB on this PC) also mirror
-to Dropbox only.
+Media library files under `uploads/` also mirror to Dropbox only.
 
 ## Restore Handoff (inverse workflow)
 
@@ -143,7 +136,7 @@ to Dropbox only.
 | --- | --- |
 | Database from Git | Import `Content/Website/Database/{siteKey}-local.sql.gz` — see Database README |
 | Theme/uploads from Dropbox | `Restore-WebAssetsFromDropbox.ps1 -SiteKey {siteKey}` |
-| Markdown → WordPress (build) | `Workspace/LocalWordPressBuild/mc-sync-all.php --write` (owner-approved) |
+| Markdown → WordPress (build) | `Workspace/LocalWordPressBuild/ges-build.php --write` (owner-approved) |
 
 Typical new-PC sequence:
 

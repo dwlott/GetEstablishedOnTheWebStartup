@@ -5,20 +5,24 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-07-06
+LastEdited: 2026-07-14
 -->
 
 # Workspace Adoption Prep
 
 **Agents run this automatically** at the start of Quick Startup — before the
 greeting and before asking whether to overwrite anything. This is how an adopted
-copy (for example `DansRepairService` copied from `GetEstablishedOnTheWebStartup`
-to build `dansrepairservice.com`) becomes **this owner's** workspace instead of
-still carrying the starter template's goals or Git remote.
+copy of `GetEstablishedOnTheWebStartup` (renamed to the owner's project folder)
+becomes **this owner's** workspace instead of still carrying the starter
+template's goals or Git remote.
 
 Do **not** ask the owner for permission to reset stale scaffold content. Reset,
 tell them briefly what you did, then continue with
 [QuickStartupGreeting.md](QuickStartupGreeting.md).
+
+**Example references** in this starter come from building
+**GetEstablishedOnTheWeb** only. Do not cite DansRepairService, MoverCalcs.com,
+US1Movers, or other customer websites as templates.
 
 ## When To Run
 
@@ -31,11 +35,11 @@ Also run when **any** stale signal is present (see detection below).
 
 | Signal | Example |
 | --- | --- |
-| Owner Goals register is not scaffold-only | Rows about GetEstablishedOnTheWeb.com, building Capabilities, publishing the starter, harmonizing the product repo |
+| Owner Goals register is not scaffold-only | Rows about GetEstablishedOnTheWeb.com product launch, building Capabilities, publishing the starter |
 | Valuable References has non-scaffold rows | Real URLs left from a prior project or template smoke test |
 | Import section has a prior source path | `Last source path` is not `*(none yet)*` on a fresh adopt |
 | Local repository root is still a placeholder | `<YourWebProjectName>`, `<YourProjectName>`, or `GetEstablishedOnTheWebStartup` while the folder name differs |
-| **`Plans/OpenQuestions.md` is product-builder content** | GEOTW storefront, Bluehost production, free-magnet download URLs, method-host paths |
+| **`Plans/OpenQuestions.md` is product-builder content** | GEOTW storefront launch decisions, free-magnet download URLs, method-host paths |
 | **`origin` still points at the starter template** | `git remote -v` shows `GetEstablishedOnTheWebStartup`, archetype host, or product repo while the local folder name differs |
 
 ## What To Reset (automatic)
@@ -72,7 +76,7 @@ Reset **Import** only:
 ```
 
 If **Local repository root** is still a placeholder, set it to the actual
-repository folder path (for example `C:\Repositories\DansRepairService`).
+repository folder path (for example `C:\Repositories\<YourWebProjectName>`).
 
 Do **not** wipe WAMP, mirror, or WordPress sections the owner may have already
 filled in during a resumed session.
@@ -100,7 +104,7 @@ git status -sb
 - `GetEstablished` (archetype host)
 
 …while the local folder name is **not** that repository name (for example folder
-`DansRepairService` but remote `…/GetEstablishedOnTheWebStartup.git`).
+`MyBusinessSite` but remote `…/GetEstablishedOnTheWebStartup.git`).
 
 When stale, **stop before the five setup questions** and ask the owner to choose.
 Do **not** commit or push until resolved. Explain in plain language: pushing now
@@ -136,7 +140,8 @@ See [Workspace/README.md](../../Workspace/README.md).
 
 ## What NOT To Reset
 
-- `Content/` — example website drafts stay until the owner replaces them
+- `Content/` — **GetEstablishedOnTheWeb example drafts** stay until the owner
+  replaces them (see `Content/README.md`)
 - `Capabilities/`, `Plans/` machinery (except stale `OpenQuestions.md` per §4)
 - Owner Goals the owner **already captured in this session's chat** before prep
   ran (rare — prep runs first)
@@ -180,3 +185,4 @@ content or a starter-template `origin` after folder copy or `git clone`.
 - [../GitHubWorkflow/SetupPrompt.md](../GitHubWorkflow/SetupPrompt.md)
 - [../StarterRepositoryPackage/AgentConfigDetach.md](../StarterRepositoryPackage/AgentConfigDetach.md)
 - [../StarterRepositoryPackage/ConsumerRepairSpec.md](../StarterRepositoryPackage/ConsumerRepairSpec.md)
+- [../../Plans/StartupRepositoryAudit-20260714.md](../../Plans/StartupRepositoryAudit-20260714.md)

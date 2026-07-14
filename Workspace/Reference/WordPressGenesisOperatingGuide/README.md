@@ -8,8 +8,11 @@ LastEdited: 2026-06-22
 
 # WordPress Genesis Operating Guide
 
-Operating reference for **GetEstablishedOnTheWeb** WordPress builds using the
-owner's proven **kirby-smith** patterns:
+Operating reference from building **GetEstablishedOnTheWeb** WordPress (Genesis
++ Altitude). In this **startup** repo, prefer `ges-*` script and CSS names under
+`Workspace/LocalWordPressBuild/`. Do not import customer-site theme recipes.
+
+Owner's proven **kirby-smith** patterns:
 
 - Genesis **`query_args`** archive pages
 - Category and media **ID** workflow (Reveal IDs)

@@ -8,6 +8,10 @@ LastEdited: 2026-06-27
 
 # About
 
+> **Starter example:** this page is product copy from building
+> **GetEstablishedOnTheWeb**. Adapt or replace for your business. Do not replace
+> it with customer-site templates.
+
 Get Established On The Web helps people, businesses, bands, and projects **get established on the web** — with practical basics first and a deeper repository method when you are ready.
 
 ## The Practical Mission

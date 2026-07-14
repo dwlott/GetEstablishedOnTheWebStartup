@@ -1,6 +1,6 @@
 <!--
 IndexTitle: Agent Capability Guide
-IndexDescription: Product repository intent routing with self-provisioning startup test Capabilities.
+IndexDescription: Startup repository intent routing for GetEstablishedOnTheWebStartup.
 IndexType: Capability
 IndexStatus: Active
 LastEdited: 2026-06-19
