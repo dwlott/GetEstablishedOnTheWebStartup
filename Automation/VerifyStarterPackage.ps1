@@ -14,7 +14,7 @@ $failures = @()
 switch ($Profile) {
     'Consumer' { $ExpectedCaps = 12; $ExpectedPlans = 10 }
     'WebPresence' { $ExpectedCaps = 26; $ExpectedPlans = 14 }
-    'WebPresenceWordPress' { $ExpectedCaps = 31; $ExpectedPlans = 19 }
+    'WebPresenceWordPress' { $ExpectedCaps = 31; $ExpectedPlans = 24 }
 }
 
 function Add-Failure([string]$Message) {
@@ -30,9 +30,33 @@ Push-Location $Root
 try {
     Write-Host "VerifyStarterPackage: $Root (Profile: $Profile)`n"
 
-    foreach ($path in @(".git", "Intake")) {
-        if (Test-Path $path) { Add-Failure "Host path still present: $path" }
-        else { Add-Pass "Absent: $path" }
+    if (Test-Path "Intake") {
+        Add-Failure "Host path still present: Intake"
+    } else { Add-Pass "Absent: Intake" }
+
+    # Packaging workspace: .git absent. Adopted starter: own remote OK.
+    # Fail only when origin still points at the archetype product host.
+    if (-not (Test-Path ".git")) {
+        Add-Pass "Absent: .git (packaging workspace)"
+    } else {
+        $originUrl = ''
+        try {
+            $originUrl = (& git remote get-url origin 2>$null)
+            if (-not $originUrl) { $originUrl = '' }
+        } catch { $originUrl = '' }
+
+        $isHostRemote = $false
+        if ($Profile -eq 'Consumer') {
+            if ($originUrl -match 'GetEstablished\.git' -and $originUrl -notmatch 'Startup') { $isHostRemote = $true }
+        } else {
+            if ($originUrl -match 'GetEstablishedOnTheWeb\.git' -and $originUrl -notmatch 'Startup') { $isHostRemote = $true }
+        }
+
+        if ($isHostRemote) {
+            Add-Failure "Host git remote still present: $originUrl"
+        } else {
+            Add-Pass "Git OK (adopted starter or non-host remote)"
+        }
     }
 
     if ($Profile -eq 'Consumer') {
@@ -93,6 +117,7 @@ try {
             "Workspace/LocalWordPressBuild/site-manifest.json",
             "Capabilities/MirrorWebAssets/README.md",
             "Automation/WordPressSave/Save-LocalWordPress.ps1",
+            "Automation/LocalWordPress/WampPaths.ps1",
             "Automation/DatabaseBackups/Export-LocalWordPressDatabase.ps1",
             "Plans/WordPressSaveWorkflow.md",
             "Plans/LocalWordPressSetupPlan.md",
@@ -100,6 +125,14 @@ try {
         )) {
             if (-not (Test-Path $path)) { Add-Failure "Missing WordPress layer file: $path" }
             else { Add-Pass "Present: $path" }
+        }
+
+        foreach ($path in @(
+            "Capabilities/AltitudeProOverlay",
+            "Capabilities/WordPressSave"
+        )) {
+            if (Test-Path $path) { Add-Failure "Commissioned-only Cap must stay out of starter: $path" }
+            else { Add-Pass "Absent (intentional): $path" }
         }
     }
 

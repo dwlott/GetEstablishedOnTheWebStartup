@@ -3,9 +3,9 @@ IndexTitle: WebPresence Boot Snippets
 IndexDescription: Minimal templates for GetEstablishedOnTheWebStartup AGENTS.md and AgentTaskBacklog.md during packaging repair.
 IndexType: Capability
 CapabilityName: StarterRepositoryPackage
-CapabilityVersion: 1
+CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-07-06
+LastEdited: 2026-07-16
 -->
 
 # WebPresence Boot Snippets
@@ -45,8 +45,10 @@ acting.
 | Google or Yelp profile planning | **WebPresenceNode** (Google/Yelp children Planned) |
 | Mirror Git repository refresh | **MirrorToWindows** — reads `Workspace/OwnerPreferences.md` |
 | WordPress asset backup/restore | **MirrorWebAssets** |
-| Save local WordPress to Git + Dropbox | **WordPress Save** — `Plans/WordPressSaveWorkflow.md` |
+| Save local WordPress to Git + Dropbox | **WordPress Save** — `Plans/WordPressSaveWorkflow.md` + `Automation/WordPressSave/` |
+| Create / update pages or posts | **WordPressContentUpdate** — hide Genesis title; `h1.ges-page-title`; **Intro Photo → Intro Hero → Intro Body → Intro Pitch** via `page-layout-manifest.php` |
 | Local WordPress build (owner-approved) | `Workspace/LocalWordPressBuild/ges-build.php` |
+| Theme CSS / High Altitude (after commission) | Project repo only — **AltitudeProOverlay** is not shipped here |
 | Git status, commit, push | **GitHubWorkflow** (owner must ask for commit/push) |
 | Not sure what's going on | **SituationalAwareness** Rules |
 

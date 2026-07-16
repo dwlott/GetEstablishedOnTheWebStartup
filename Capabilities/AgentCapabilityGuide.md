@@ -3,7 +3,7 @@ IndexTitle: Agent Capability Guide
 IndexDescription: Startup repository intent routing for GetEstablishedOnTheWebStartup.
 IndexType: Capability
 IndexStatus: Active
-LastEdited: 2026-06-19
+LastEdited: 2026-07-16
 -->
 
 # Agent Capability Guide
@@ -84,8 +84,10 @@ Use after [AGENTS.md](../AGENTS.md) for workflow tasks on the
 | Planning a vendor listing/profile node | **WebPresenceNode** | individual one-off page edits |
 | Planning **Google Business Profile** | **WebPresenceNode** first; `GoogleBusinessProfile` only for planned child boundaries | GoogleDriveLink |
 | Mirror repository / Git repo to Dropbox | **MirrorToWindows** | MirrorWebAssets (uploads/theme only) |
-| WordPress save after local edits | `Plans/WordPressSaveWorkflow.md` | ges-build --write without backup |
+| WordPress save after local edits | `Plans/WordPressSaveWorkflow.md` + `Automation/WordPressSave/` | Inventing a `Capabilities/WordPressSave/` Cap in this starter |
+| Create / update pages or posts | **WordPressContentUpdate** (intro stack) | Skipping intro stack or inventing alternate layouts |
 | Local WordPress build | **WordPressContentUpdate** | Production launch without approval |
+| High Altitude / branded theme overlay | Commissioned project Cap (**AltitudeProOverlay**) | Shipping AltitudeProOverlay into this starter |
 
 ## Expected Outputs
 

@@ -3,9 +3,9 @@ IndexTitle: Web-Powered Startup Extension Spec
 IndexDescription: ADD matrix for generalized WordPress ops on GetEstablishedOnTheWebStartup after base WebPresence packaging.
 IndexType: Capability
 CapabilityName: StarterRepositoryPackage
-CapabilityVersion: 1
+CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-07-06
+LastEdited: 2026-07-16
 -->
 
 # Web-Powered Startup Extension Spec
@@ -21,10 +21,12 @@ project and GEOTW localhost — without copying site-specific content or breakin
 | Item | Target |
 | --- | --- |
 | Capability folders (extension) | +5 (`MirrorWebAssets`, WordPress group ×4) |
-| Total Capability folders | ~31 (26 base + 5 extension) |
-| Plans files (extension) | +4 |
-| Total Plans files | ~18 |
+| Total Capability folders | **31** (26 base + 5 extension) |
+| Plans files (extension) | WordPress setup / Save / group plan (+ audit & model docs kept) |
+| Total Plans files | **24** (see repair-spec whitelist) |
 | `Workspace/LocalWordPressBuild/` | Present with `ges-*` scripts |
+| WordPress Save | `Plans/` + `Automation/WordPressSave/` — **not** `Capabilities/WordPressSave/` |
+| AltitudeProOverlay | **Do not add** (commissioned repos only) |
 | `Workspace/Reference/WordPressGenesisOperatingGuide/` | Curated starter subset |
 | Production launch | Still out of scope |
 

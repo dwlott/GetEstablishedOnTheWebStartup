@@ -83,6 +83,7 @@ MoverCalcs.com, US1Movers, or other customer websites.
 | Item | Why |
 | --- | --- |
 | AltitudeProOverlay / High Altitude method | Commissioned-site theme product — not starter |
+| `Capabilities/WordPressSave/` | Starter keeps **Plans + Automation** only (`Plans/WordPressSaveWorkflow.md`, `Automation/WordPressSave/`) |
 | MoversForumParticipation | Product/community host ops — not starter |
 | Customer deploy profiles | Belong on the owner's project repo after adopt |
 

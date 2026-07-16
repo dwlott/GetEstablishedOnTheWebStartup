@@ -5,13 +5,13 @@ IndexType: Capability
 CapabilityName: WordPressWebsite
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-07-07
+LastEdited: 2026-07-16
 -->
 
 # New Commission Site Checklist
 
-Use when adopting this starter for a **new business site** (for example Dan's Repair
-Service) — not when maintaining the GetEstablishedOnTheWeb product showcase.
+Use when adopting this starter for a **new business site** — not when maintaining
+the GetEstablishedOnTheWeb product showcase.
 
 Route through **WordPressWebsite** first; delegate steps to child Capabilities.
 
@@ -44,10 +44,12 @@ The starter ships **GEOTW showcase** manifests and pages. Replace before build:
 | `Content/Website/Pages/` | Draft owner's pages (or use **OnePageWebsite** → adapt) |
 | `content-manifest.php` | Trim to owner's categories/archives, or empty arrays |
 | `nav-menu-manifest.php` | Owner nav tree (Services, About, Contact — not Get Listed / Use AI) |
-| `page-layout-manifest.php` | Owner page slugs only |
+| `page-layout-manifest.php` | Owner page slugs only; every page uses intro stack (**Photo → Hero → Body → Pitch**, `intro_paragraphs` => 2) |
 | `Workspace/SiteDeployProfiles/` | Add `{SiteKey}.md`; remove product-only profiles if confusing |
 
 Do **not** run a full build until manifests match the owner's site map.
+Do **not** copy another customer's commissioned theme Cap (AltitudeProOverlay)
+into this starter — promote that Cap on the project repo after adopt.
 
 ## Phase 3 — Backup gate (before any write)
 
@@ -102,9 +104,11 @@ shipped in this starter — always use `--only` until a product sync pack is add
 | --- | --- |
 | New local business site | This checklist → **WordPressWebsite** |
 | Sync Markdown to WordPress | **WordPressContentUpdate** |
-| Theme CSS / Altitude overlay | **StudioPressGenesisChildTheme** |
+| Theme CSS / Genesis child basics | **StudioPressGenesisChildTheme** |
+| High Altitude / branded overlay CSS | Commissioned project Cap (**AltitudeProOverlay**) — not in this starter |
 | Backup before experiment | **WordPressMigrationBackup** |
 | Large uploads/theme handoff | **MirrorWebAssets** |
+| WordPress Save (theme + DB + Dropbox) | `Plans/WordPressSaveWorkflow.md` |
 | GEOTW product showcase site | Use product repo, not this starter |
 
 ## Related

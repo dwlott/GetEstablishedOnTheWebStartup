@@ -88,12 +88,19 @@ $dbResult = $null
 if ($runDatabase) {
 	Write-Host '=== Step 2 — Database snapshot to Git ==='
 
+	# Derive this site's wp-config.php from the manifest (never the export
+	# script's own default, which may point at a different local site).
+	. (Join-Path $PSScriptRoot '..\LocalWordPress\WampPaths.ps1')
+	$wpConfigPath = Join-Path (Get-WampWwwRoot -SiteKey $manifest.wpSiteFolder) "$($manifest.wpSiteFolder)\wp-config.php"
+	$dbOutputPath = Join-Path $repoRoot ($dbTarget -replace '/', '\')
+
 	if ($WhatIf) {
 		Write-Host '  would run: Export-LocalWordPressDatabase.ps1'
+		Write-Host "  wp-config: $wpConfigPath"
 		Write-Host "  target:    $dbTarget"
 	}
 	else {
-		$dbResult = & $dbExportScript
+		$dbResult = & $dbExportScript -WpConfigPath $wpConfigPath -OutputPath $dbOutputPath
 		$dbResult | Format-List
 	}
 

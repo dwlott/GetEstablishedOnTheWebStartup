@@ -3,9 +3,9 @@ IndexTitle: Starter Repository Package Workflow Index
 IndexDescription: Runnable repair index for packaging workspace to consumer starter repository.
 IndexType: Capability
 CapabilityName: StarterRepositoryPackage
-CapabilityVersion: 2
+CapabilityVersion: 3
 IndexStatus: Active
-LastEdited: 2026-06-19
+LastEdited: 2026-07-16
 -->
 
 # Starter Repository Package Workflow Index
@@ -16,7 +16,10 @@ profile.
 
 Deterministic lists: **[ConsumerRepairSpec.md](ConsumerRepairSpec.md)** and
 **[WebPresenceStartupRepairSpec.md](WebPresenceStartupRepairSpec.md)**.
-Boot templates: **[ConsumerBootSnippets.md](ConsumerBootSnippets.md)**.
+WordPress layer (GEOTWStartup): **[WebPoweredStartupExtensionSpec.md](WebPoweredStartupExtensionSpec.md)**
+after base WebPresence repair.
+Boot templates: **[ConsumerBootSnippets.md](ConsumerBootSnippets.md)** /
+**[WebPresenceBootSnippets.md](WebPresenceBootSnippets.md)**.
 
 If `Capabilities/StarterRepositoryPackage/` were removed, these instructions
 would be lost. Operational steps live in this Capability.
@@ -194,7 +197,7 @@ Remove host-only Capability folders **before** registry rewrite.
 | Profile | Spec | Target count |
 | --- | --- | --- |
 | `GetEstablishedStartup` | [ConsumerRepairSpec.md](ConsumerRepairSpec.md) § E, § F | **11** or **12** |
-| `GetEstablishedOnTheWebStartup` | [WebPresenceStartupRepairSpec.md](WebPresenceStartupRepairSpec.md) § Keep Matrix | **24** |
+| `GetEstablishedOnTheWebStartup` | [WebPresenceStartupRepairSpec.md](WebPresenceStartupRepairSpec.md) § Keep Matrix | **26** base, then **31** after Step 2e |
 
 **GetEstablishedStartup:** full list [ConsumerRepairSpec.md](ConsumerRepairSpec.md) § E.
 **Keep** consumer core (§ F). Apply GoogleDriveLink choice from Step 0.
@@ -210,11 +213,25 @@ Record removed Capability paths in handoff.
 | Profile | Spec | Target count |
 | --- | --- | --- |
 | `GetEstablishedStartup` | [ConsumerRepairSpec.md](ConsumerRepairSpec.md) § G | **10** |
-| `GetEstablishedOnTheWebStartup` | [WebPresenceStartupRepairSpec.md](WebPresenceStartupRepairSpec.md) § Keep Matrix | **14** (+ extension spec additions) |
+| `GetEstablishedOnTheWebStartup` | [WebPresenceStartupRepairSpec.md](WebPresenceStartupRepairSpec.md) § Keep Matrix | **24** (after Step 2e) |
 
 Delete all other `Plans/*.md` in the packaging workspace not listed in the active spec.
 
 Record Plans removed count in handoff.
+
+---
+
+## Step 2e — WebPowered Extension (`GetEstablishedOnTheWebStartup` only)
+
+Required for the shipped WebPresenceWordPress profile. Apply
+**[WebPoweredStartupExtensionSpec.md](WebPoweredStartupExtensionSpec.md)** ADD
+matrix after Steps 2c–2d:
+
+- +5 WordPress Capability folders → **31** total
+- `Workspace/LocalWordPressBuild/` + WordPress Save **Plans + Automation**
+- Do **not** add `Capabilities/AltitudeProOverlay/` or `Capabilities/WordPressSave/`
+
+Skip this step for `GetEstablishedStartup`.
 
 ---
 
@@ -313,13 +330,15 @@ match starter tree.
 Run **`VerifyStarterPackage.ps1`** — must exit **0** before **Package ready**.
 
 ```powershell
+# Prefer the packaging workspace copy (shipped under Automation/)
 powershell -NoProfile -ExecutionPolicy Bypass -File `
-  C:\Repositories\GetEstablished\Capabilities\StarterRepositoryPackage\VerifyStarterPackage.ps1 `
-  -Root <PackagingWorkspacePath>
+  <PackagingWorkspacePath>\Automation\VerifyStarterPackage.ps1 `
+  -Root <PackagingWorkspacePath> `
+  -Profile WebPresenceWordPress   # or Consumer / WebPresence
 ```
 
-Also run [PackageChecklist.md](PackageChecklist.md) checkboxes and
-[ConsumerRepairSpec.md](ConsumerRepairSpec.md) § K.
+Also run [PackageChecklist.md](PackageChecklist.md) checkboxes and the active
+repair spec Verification section.
 
 Confirm [ScaffoldPolicy.md](ScaffoldPolicy.md): Workspace contains boot files only.
 No root `*.placeholder` or `STRUCTURE_MANIFEST.md`.
@@ -327,11 +346,16 @@ No root `*.placeholder` or `STRUCTURE_MANIFEST.md`.
 **If verify fails:** do not mark **Package ready**. Fix blockers, re-run Step 6,
 then Step 6b only after pass.
 
-**Parity:**
+**Parity (by profile):**
+
+| Profile | Caps | Plans |
+| --- | --- | --- |
+| `GetEstablishedStartup` | 12 | 10 |
+| `GetEstablishedOnTheWebStartup` (base) | 26 | 14 |
+| `GetEstablishedOnTheWebStartup` + WebPowered | **31** | **24** |
 
 - Capability folder count = RouterIndex rows
-- Plans count = 10
-- `AgentTaskBacklog.md` Ready Next = Quick Startup
+- `AgentTaskBacklog.md` Ready Next = Quick Startup (+ site-manifest for WP)
 
 Set handoff status: **Package ready** | **Package not ready** (list blockers).
 
@@ -404,7 +428,10 @@ found** — do not leave learnings only in chat. See [Rules.md](Rules.md).
 ## Related
 
 - [ConsumerRepairSpec.md](ConsumerRepairSpec.md)
+- [WebPresenceStartupRepairSpec.md](WebPresenceStartupRepairSpec.md)
+- [WebPoweredStartupExtensionSpec.md](WebPoweredStartupExtensionSpec.md)
 - [ConsumerBootSnippets.md](ConsumerBootSnippets.md)
+- [WebPresenceBootSnippets.md](WebPresenceBootSnippets.md)
 - [Rules.md](Rules.md)
 - [ScaffoldPolicy.md](ScaffoldPolicy.md)
 - [AgentConfigDetach.md](AgentConfigDetach.md)

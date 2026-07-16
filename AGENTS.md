@@ -3,7 +3,7 @@ IndexTitle: Repository Instructions
 IndexDescription: Agent boot for GetEstablishedOnTheWebStartup web-presence and WordPress bootstrap starter.
 IndexType: Workflow
 IndexStatus: Active
-LastEdited: 2026-07-06
+LastEdited: 2026-07-16
 -->
 
 # Repository Instructions
@@ -26,10 +26,12 @@ acting.
 | Google or Yelp profile planning | **WebPresenceNode** (Google/Yelp children Planned) |
 | Mirror Git repository refresh | **MirrorToWindows** — reads `Workspace/OwnerPreferences.md` |
 | WordPress asset backup/restore | **MirrorWebAssets** |
-| Save local WordPress to Git + Dropbox | **WordPress Save** — `Plans/WordPressSaveWorkflow.md` |
+| Save local WordPress to Git + Dropbox | **WordPress Save** — `Plans/WordPressSaveWorkflow.md` + `Automation/WordPressSave/` |
+| Create / update pages or posts | **WordPressContentUpdate** — hide Genesis title; `h1.ges-page-title`; stack **Intro Photo → Intro Hero → Intro Body → Intro Pitch** via `page-layout-manifest.php` (`intro_paragraphs` => 2) |
 | Local WordPress build (owner-approved) | `Workspace/LocalWordPressBuild/ges-build.php` |
 | Configure new site | Edit `site-manifest.json` + `WebAssetsSites.json` |
 | New commission site bootstrap | **WordPressWebsite** → `NewCommissionSiteChecklist.md` |
+| Theme CSS / High Altitude (after commission) | Promote to a project repo — **AltitudeProOverlay** is not shipped in this starter |
 | Git status, commit, push | **GitHubWorkflow** (owner must ask for commit/push) |
 | Not sure what's going on | **SituationalAwareness** Rules |
 
@@ -92,26 +94,28 @@ On every new pass, before editing:
 | Review website page examples | **ContentReview** |
 | Draft one-page business website | **OnePageWebsite** |
 | Web listing/profile node | **WebPresenceNode** |
-| WordPress save after local edits | `Plans/WordPressSaveWorkflow.md` |
+| WordPress save after local edits | `Plans/WordPressSaveWorkflow.md` (no `Capabilities/WordPressSave/` folder here) |
+| Create / update pages or posts | **WordPressContentUpdate** intro stack + `page-layout-manifest.php` |
 | Mirror uploads/theme to Dropbox | **MirrorWebAssets** |
 | Git commit, push, branch | **GitHubWorkflow** |
 | Save chat to markdown | **ChatToMarkdown** |
 | Index new files (default) | **ManualIndexing** |
-| Package another startup copy | **StarterRepositoryPackage** + WebPresenceStartupRepairSpec |
+| Package another startup copy | **StarterRepositoryPackage** — WebPresenceStartupRepairSpec → WebPoweredStartupExtensionSpec |
 
 ## Capability Discovery
 
 Map workflow requests through `Capabilities/RouterIndex.md`. Shipped Capabilities
-include WebPresence pack, self-provisioning core, MirrorWebAssets, and WordPress
-group (Active in this starter).
+include WebPresence pack, self-provisioning core, MirrorWebAssets, and the
+WordPress group (Active). WordPress Save is **Plans + Automation only**.
+**AltitudeProOverlay** / High Altitude stay on commissioned project repos.
 
 ## Stop Conditions
 
 - WordPress `--write` build, DNS, CF7, analytics, or public launch without
   owner build-pass approval.
 - Treating this starter as the GetEstablishedOnTheWeb product repository.
-- Using DansRepairService, MoverCalcs.com, US1Movers, or other customer sites as
-  example templates (examples come from building GetEstablishedOnTheWeb only).
+- Using customer project repos as example templates (examples come from
+  GetEstablishedOnTheWeb product drafts only).
 - Inventing legal, pricing, licensing, insurance, ranking, or revenue claims.
 - Shipping AltitudeProOverlay / High Altitude commissioned theme recipes into
   this starter (those stay on commissioned project repos).
@@ -122,3 +126,4 @@ group (Active in this starter).
 - [Plans/WordPressWebsiteCapabilityGroupPlan.md](Plans/WordPressWebsiteCapabilityGroupPlan.md)
 - [Plans/UserSetupGuide.md](Plans/UserSetupGuide.md)
 - [Plans/StartupRepositoryAudit-20260714.md](Plans/StartupRepositoryAudit-20260714.md)
+- [Plans/StartupModernizationAudit-20260716.md](Plans/StartupModernizationAudit-20260716.md)
