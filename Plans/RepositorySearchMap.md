@@ -3,7 +3,7 @@ IndexTitle: Repository Search Map
 IndexDescription: Boot and search map for GetEstablishedOnTheWebStartup web-presence starter.
 IndexType: Project
 IndexStatus: Active
-LastEdited: 2026-07-06
+LastEdited: 2026-07-23
 -->
 
 # Repository Search Map
@@ -30,6 +30,8 @@ Workspace/LocalWordPressBuild/site-manifest.json
 | One-page business website | `Content/OnePageBusinessWebsite/` |
 | Website outcomes | `Plans/WebsiteGoals.md` |
 | WordPress setup | `Plans/LocalWordPressSetupPlan.md` |
+| WampServer / MAMP install | `Capabilities/WordPressWebsite/WampServerAndMampSetup.md` |
+| WAMP/MAMP full guide | `Workspace/Reference/WampServer-and-MAMP-Installation-Migration-Guide.md` |
 | WordPress save workflow | `Plans/WordPressSaveWorkflow.md` |
 | WordPress Capability group | `Plans/WordPressWebsiteCapabilityGroupPlan.md` |
 | Local build orchestrator | `Workspace/LocalWordPressBuild/ges-build.php` |

@@ -51,6 +51,7 @@ Use after [AGENTS.md](../AGENTS.md) for workflow tasks on the
 | Plan Google Business Profile setup/readiness | **GoogleBusinessProfile** | [README](GoogleBusinessProfile/README.md) | Planned | Archetype | No credentials or ranking promises |
 | Plan Yelp Business Page setup/readiness | **YelpBusinessProfile** | [README](YelpBusinessProfile/README.md) | Planned | Archetype | No review solicitation or lead promises |
 | Bootstrap local WordPress site; configure site-manifest | **WordPressWebsite** | [NewCommissionSiteChecklist](WordPressWebsite/NewCommissionSiteChecklist.md) | Active | Archetype | site-manifest.json |
+| Install WampServer (Windows) or MAMP (macOS) *(optional offer)* | **WordPressWebsite** | [WampServerAndMampSetup](WordPressWebsite/WampServerAndMampSetup.md) | Active | Archetype | Offer; skip if stack already running |
 | Sync Markdown/manifests to WordPress (`ges-build`) | **WordPressContentUpdate** | [Prompt](WordPressContentUpdate/Prompt.md) | Active | Archetype | Owner-approved --write |
 | Genesis child theme / Altitude overlay work | **StudioPressGenesisChildTheme** | [Prompt](StudioPressGenesisChildTheme/Prompt.md) | Active | Archetype | Theme boundaries |
 | Backup before WordPress experiments; Bluehost SQL prep | **WordPressMigrationBackup** | [Prompt](WordPressMigrationBackup/Prompt.md) | Active | Universal | DB snapshot first; serialize-aware prep |
@@ -88,6 +89,7 @@ Use after [AGENTS.md](../AGENTS.md) for workflow tasks on the
 | Bluehost / production SQL prep | **WordPressMigrationBackup** + BluehostDatabasePrep | DNS/import without owner approval |
 | Create / update pages or posts | **WordPressContentUpdate** (intro stack) | Skipping intro stack or inventing alternate layouts |
 | Local WordPress build | **WordPressContentUpdate** | Production launch without approval |
+| Install WampServer / MAMP stack *(optional)* | **WordPressWebsite** → WampServerAndMampSetup | Forcing install when stack already runs |
 | High Altitude / branded theme overlay | Commissioned project Cap (**AltitudeProOverlay**) | Shipping AltitudeProOverlay into this starter |
 
 ## Expected Outputs

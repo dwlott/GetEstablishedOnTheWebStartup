@@ -26,6 +26,7 @@ acting.
 | Google or Yelp profile planning | **WebPresenceNode** (Google/Yelp children Planned) |
 | Mirror Git repository refresh | **MirrorToWindows** — reads `Workspace/OwnerPreferences.md` |
 | WordPress asset backup/restore | **MirrorWebAssets** |
+| Install WampServer (Windows) or MAMP (macOS) *(optional offer)* | **WordPressWebsite** → [WampServerAndMampSetup.md](Capabilities/WordPressWebsite/WampServerAndMampSetup.md) |
 | Save local WordPress to Git + Dropbox | **WordPress Save** — `Plans/WordPressSaveWorkflow.md` + `Automation/WordPressSave/` |
 | Prepare SQL for Bluehost / production import | **WordPressMigrationBackup** + `Automation/BluehostDatabasePrep/` + `Workspace/SiteDeployProfiles/` |
 | Create / update pages or posts | **WordPressContentUpdate** — hide Genesis title; `h1.ges-page-title`; stack **Intro Photo → Intro Hero → Intro Body → Intro Pitch** via `page-layout-manifest.php` (`intro_paragraphs` => 2) |
@@ -97,6 +98,7 @@ On every new pass, before editing:
 | Web listing/profile node | **WebPresenceNode** |
 | WordPress save after local edits | `Plans/WordPressSaveWorkflow.md` (no `Capabilities/WordPressSave/` folder here) |
 | Prepare Bluehost / production DB SQL | **WordPressMigrationBackup** + BluehostDatabasePrep |
+| Install / migrate WampServer or MAMP *(optional)* | **WordPressWebsite** → WampServerAndMampSetup |
 | Create / update pages or posts | **WordPressContentUpdate** intro stack + `page-layout-manifest.php` |
 | Mirror uploads/theme to Dropbox | **MirrorWebAssets** |
 | Git commit, push, branch | **GitHubWorkflow** |

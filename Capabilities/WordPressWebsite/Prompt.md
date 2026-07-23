@@ -15,20 +15,24 @@ Read [Rules.md](Rules.md) and [NewCommissionSiteChecklist.md](NewCommissionSiteC
 
 Read first:
 - Capabilities/WordPressWebsite/NewCommissionSiteChecklist.md
+- Capabilities/WordPressWebsite/WampServerAndMampSetup.md
 - Workspace/LocalWordPressBuild/site-manifest.json
 - Plans/LocalWordPressSetupPlan.md
 
 Goal: Configure or advance local WordPress bootstrap for {siteKey}.
 
 Checklist (report pass/fail per row):
+[ ] Offered optional WampServer/MAMP setup (accepted / skipped / already running)
+[ ] If accepted: stack installed; localhost / start page loads; paths in OwnerPreferences
 [ ] site-manifest.json filled (siteKey, localUrl, tablePrefix lowercase)
 [ ] WebAssetsSites.json + ThemeTrackManifest.json match siteKey
-[ ] WAMP install complete and site loads
+[ ] WordPress on local stack loads at {localUrl}
 [ ] GEOTW showcase manifests replaced or trimmed for owner site map
 [ ] Backup taken if --write build requested (WordPressMigrationBackup)
 [ ] Build uses ges-build.php --only= (starter script set only)
 
 Route child work:
+- Stack install → WampServerAndMampSetup (Aviatechno / official MAMP)
 - Backup → WordPressMigrationBackup
 - ges-build / Markdown sync → WordPressContentUpdate
 - Theme CSS / Altitude → StudioPressGenesisChildTheme

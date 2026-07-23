@@ -19,6 +19,8 @@ LastEdited: 2026-07-07
 
 **New business site?** → [NewCommissionSiteChecklist.md](NewCommissionSiteChecklist.md)
 
+**Need WampServer / MAMP first?** → [WampServerAndMampSetup.md](WampServerAndMampSetup.md)
+
 Then [WorkflowIndex.md](WorkflowIndex.md) → [Rules.md](Rules.md) → [Prompt.md](Prompt.md)
 
 ## Child Capabilities

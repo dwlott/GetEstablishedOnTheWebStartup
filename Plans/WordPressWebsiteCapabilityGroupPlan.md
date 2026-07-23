@@ -3,7 +3,7 @@ IndexTitle: WordPress Website Capability Group Plan
 IndexDescription: Starter-safe WordPress Capability group — parent router and child workflows for local site bootstrap.
 IndexType: Project
 IndexStatus: Active
-LastEdited: 2026-07-07
+LastEdited: 2026-07-23
 -->
 
 # WordPress Website Capability Group Plan
@@ -27,8 +27,9 @@ GEOTW product repo keeps these as Draft until separately promoted.
 
 ```text
 NewCommissionSiteChecklist (WordPressWebsite)
+  → WampServerAndMampSetup (optional offer — stack install if owner wants it)
   → site-manifest.json configured
-  → LocalWordPressSetupPlan (WAMP install)
+  → LocalWordPressSetupPlan (WordPress on WAMP/MAMP)
   → Replace GEOTW showcase manifests with owner site map
   → MirrorWebAssets restore (optional)
   → WordPressMigrationBackup (before --write)

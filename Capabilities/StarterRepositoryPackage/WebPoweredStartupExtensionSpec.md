@@ -86,6 +86,9 @@ Workspace/Reference/WordPressGenesisOperatingGuide/
   README.md
   Pages/01-GenesisQueryArgsAndArchivePages.md
   Pages/11-GEOTWPageInteriors.md                 <- rename context to generic in README
+
+Workspace/Reference/WampServer-and-MAMP-Installation-Migration-Guide.md
+Capabilities/WordPressWebsite/WampServerAndMampSetup.md
 ```
 
 ## ADD — Content

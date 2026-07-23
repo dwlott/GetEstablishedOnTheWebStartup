@@ -7,6 +7,8 @@
 In scope:
 
 - New commission site configuration (manifests, WAMP mapping, checklist)
+- WampServer (Windows) / MAMP (macOS) stack install routing via
+  [WampServerAndMampSetup.md](WampServerAndMampSetup.md)
 - Routing to child Capabilities (ContentUpdate, MigrationBackup, ChildTheme, MirrorWebAssets)
 - Safety gates before `--write` builds
 
@@ -19,9 +21,11 @@ Out of scope unless owner approves:
 ## Before any pass
 
 1. Read [NewCommissionSiteChecklist.md](NewCommissionSiteChecklist.md).
-2. Read `Workspace/LocalWordPressBuild/site-manifest.json`.
-3. Confirm whether this is a **commission site** or mistaken product-showcase work.
-4. Route child Capabilities; do not duplicate their scripts here.
+2. **Offer** (do not force) [WampServerAndMampSetup.md](WampServerAndMampSetup.md)
+   when the stack may be missing or the owner asks about install/migration.
+3. Read `Workspace/LocalWordPressBuild/site-manifest.json`.
+4. Confirm whether this is a **commission site** or mistaken product-showcase work.
+5. Route child Capabilities; do not duplicate their scripts here.
 
 ## Table prefix
 
@@ -33,3 +37,4 @@ for example `m7k_`). Record in `site-manifest.json`.
 - [Prompt.md](Prompt.md)
 - [WorkflowIndex.md](WorkflowIndex.md)
 - [NewCommissionSiteChecklist.md](NewCommissionSiteChecklist.md)
+- [WampServerAndMampSetup.md](WampServerAndMampSetup.md)

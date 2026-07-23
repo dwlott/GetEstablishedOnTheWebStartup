@@ -3,21 +3,33 @@ IndexTitle: Local WordPress Setup Plan
 IndexDescription: Local WAMP development setup for a WordPress site built from this starter, using a Genesis child theme.
 IndexType: Project
 IndexStatus: Active
-LastEdited: 2026-07-06
+LastEdited: 2026-07-23
 -->
 
 # Local WordPress Setup Plan
 
 Local-first development plan for a WordPress site built from this starter. This
-pass is **local WAMP only** — no host, no deployment, no production work until the
-owner approves a build pass.
+pass is **local WAMP / MAMP only** — no host, no deployment, no production work
+until the owner approves a build pass.
 
 This repository is a planning/content/source repository derived from the
 **GetEstablishedOnTheWebStartup** scaffold (see `AGENTS.md`). The runnable
-WordPress site lives **outside** this repository in the WAMP web root.
+WordPress site lives **outside** this repository in the WAMP (or MAMP) web root.
 
 Replace `{siteKey}` below with your own site folder name (the folder under the
 WAMP `www` directory that holds `wp-config.php`).
+
+## Optional — local stack
+
+**Offer** WampServer (Windows) or MAMP (macOS) setup when the owner needs it;
+skip if the stack is already running. Entry:
+[WampServerAndMampSetup.md](../Capabilities/WordPressWebsite/WampServerAndMampSetup.md).
+Full guide:
+[WampServer-and-MAMP-Installation-Migration-Guide.md](../Workspace/Reference/WampServer-and-MAMP-Installation-Migration-Guide.md).
+
+WordPress install still requires a running local server (`http://localhost/` or
+the MAMP start URL) and database service — obtain that via this optional step or
+the owner's existing install.
 
 ## Local WAMP Facts (template)
 

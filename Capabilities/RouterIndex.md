@@ -42,7 +42,7 @@ a user prompt to a Capability. Confirm in [AgentCapabilityGuide.md](AgentCapabil
 | GoogleBusinessProfile | Google Business Profile setup/readiness guidance *(child/specialized; route general work through WebPresenceNode first)* | [README](GoogleBusinessProfile/README.md) | Archetype / Planned |
 | YelpBusinessProfile | Yelp Business Page setup/readiness guidance *(child/specialized; route general work through WebPresenceNode first)* | [README](YelpBusinessProfile/README.md) | Archetype / Planned |
 | MirrorWebAssets | mirror WordPress uploads/theme, backup web assets, restore from Dropbox | [WorkflowIndex](MirrorWebAssets/WorkflowIndex.md) | Universal / Active |
-| WordPressWebsite | WordPress site bootstrap, site-manifest, local WAMP setup | [Prompt](WordPressWebsite/Prompt.md) | Archetype / Active |
+| WordPressWebsite | WordPress site bootstrap, site-manifest, local WAMP/MAMP, optional WampServer/MAMP install offer | [Prompt](WordPressWebsite/Prompt.md) / [WampSetup](WordPressWebsite/WampServerAndMampSetup.md) | Archetype / Active |
 | WordPressContentUpdate | sync Markdown to WordPress, ges-build, content update | [Prompt](WordPressContentUpdate/Prompt.md) | Archetype / Active |
 | StudioPressGenesisChildTheme | Genesis child theme, Altitude overlay, theme CSS | [Prompt](StudioPressGenesisChildTheme/Prompt.md) | Archetype / Active |
 | WordPressMigrationBackup | backup before WordPress experiments, Bluehost SQL prep, database snapshot | [Prompt](WordPressMigrationBackup/Prompt.md) | Universal / Active |

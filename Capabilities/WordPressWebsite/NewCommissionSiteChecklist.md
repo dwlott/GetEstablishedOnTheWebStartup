@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: WordPressWebsite
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-07-16
+LastEdited: 2026-07-23
 -->
 
 # New Commission Site Checklist
@@ -26,14 +26,18 @@ Route through **WordPressWebsite** first; delegate steps to child Capabilities.
 | 0.5 | Match theme save targets | `Automation/WordPressSave/ThemeTrackManifest.json` |
 | 0.6 | Record WAMP root and mirror paths | `Workspace/OwnerPreferences.md` |
 
-## Phase 1 — WAMP install
+## Phase 1 — Local stack + WordPress install
 
 | Step | Action | Reference |
 | --- | --- | --- |
-| 1.1 | Fresh WordPress on WAMP (Genesis + Altitude child) | [LocalWordPressSetupPlan.md](../../Plans/LocalWordPressSetupPlan.md) |
+| 1.0 | **Optional — offer:** Install **WampServer** (Windows) or **MAMP** (macOS) if the owner wants stack help or has no local server yet. Skip when already installed and running. | [WampServerAndMampSetup.md](WampServerAndMampSetup.md) |
+| 1.1 | Fresh WordPress on the local stack (Genesis + Altitude child) | [LocalWordPressSetupPlan.md](../../Plans/LocalWordPressSetupPlan.md) |
 | 1.2 | Use **lowercase** table prefix at install (3–4 chars + `_`) | Install screen |
 | 1.3 | Confirm site loads at `{localUrl}` | Browser |
-| 1.4 | Optional: restore uploads/theme from Dropbox | **MirrorWebAssets** |
+| 1.4 | Record `WAMP_WWW_ROOT` / MAMP htdocs + ports in OwnerPreferences (if not already set) | `Workspace/OwnerPreferences.md` |
+| 1.5 | Optional: restore uploads/theme from Dropbox | **MirrorWebAssets** |
+
+At Phase 1 start, **offer** step 1.0 once (do not force it). Example: “Local stack: install/migrate WampServer or MAMP now, or skip if yours is already running?”
 
 ## Phase 2 — Replace GEOTW example content (required for commission sites)
 
