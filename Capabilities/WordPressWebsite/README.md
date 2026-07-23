@@ -33,7 +33,8 @@ Then [WorkflowIndex.md](WorkflowIndex.md) → [Rules.md](Rules.md) → [Prompt.m
 ## Related Plans
 
 - [Plans/LocalWordPressSetupPlan.md](../../Plans/LocalWordPressSetupPlan.md)
-- [Plans/WordPressSaveWorkflow.md](../../Plans/WordPressSaveWorkflow.md)
+- [Plans/WordPressSaveWorkflow.md](../../Plans/WordPressSaveWorkflow.md) + `Automation/WordPressSave/`
+- [Plans/CrossRepoCapabilityGapMatrix.md](../../Plans/CrossRepoCapabilityGapMatrix.md)
 - [Plans/WordPressWebsiteCapabilityGroupPlan.md](../../Plans/WordPressWebsiteCapabilityGroupPlan.md)
 
 ## Stop Conditions

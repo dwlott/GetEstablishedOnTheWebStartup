@@ -14,7 +14,7 @@ $failures = @()
 switch ($Profile) {
     'Consumer' { $ExpectedCaps = 12; $ExpectedPlans = 10 }
     'WebPresence' { $ExpectedCaps = 26; $ExpectedPlans = 14 }
-    'WebPresenceWordPress' { $ExpectedCaps = 31; $ExpectedPlans = 24 }
+    'WebPresenceWordPress' { $ExpectedCaps = 31; $ExpectedPlans = 25 }
 }
 
 function Add-Failure([string]$Message) {

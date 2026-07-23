@@ -45,7 +45,7 @@ a user prompt to a Capability. Confirm in [AgentCapabilityGuide.md](AgentCapabil
 | WordPressWebsite | WordPress site bootstrap, site-manifest, local WAMP setup | [Prompt](WordPressWebsite/Prompt.md) | Archetype / Active |
 | WordPressContentUpdate | sync Markdown to WordPress, ges-build, content update | [Prompt](WordPressContentUpdate/Prompt.md) | Archetype / Active |
 | StudioPressGenesisChildTheme | Genesis child theme, Altitude overlay, theme CSS | [Prompt](StudioPressGenesisChildTheme/Prompt.md) | Archetype / Active |
-| WordPressMigrationBackup | backup before WordPress experiments, database snapshot | [Prompt](WordPressMigrationBackup/Prompt.md) | Universal / Active |
+| WordPressMigrationBackup | backup before WordPress experiments, Bluehost SQL prep, database snapshot | [Prompt](WordPressMigrationBackup/Prompt.md) | Universal / Active |
 
 ## Parity
 

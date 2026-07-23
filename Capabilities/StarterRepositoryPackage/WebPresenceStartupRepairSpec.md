@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: StarterRepositoryPackage
 CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-07-16
+LastEdited: 2026-07-23
 -->
 
 # WebPresence Startup Repair Spec
@@ -42,7 +42,7 @@ Boot templates: [WebPresenceBootSnippets.md](WebPresenceBootSnippets.md).
 | Git metadata | Removed from packaging workspace (owner re-inits after adopt) |
 | Agent runtime config | `.cursor/`, `.claude/` removed at package time |
 | Capability folders | **31** (26 base + 5 WordPress extension) |
-| Plans Markdown files | **24** (see whitelist) |
+| Plans Markdown files | **25** (see whitelist) |
 | WordPress Save | `Plans/WordPressSaveWorkflow.md` + `Automation/WordPressSave/` — **not** `Capabilities/WordPressSave/` |
 | AltitudeProOverlay / High Altitude | **Absent** (commissioned repos only) |
 | Example content | GEOTW product drafts under `Content/Website/Pages/` only |
@@ -134,9 +134,10 @@ Plans/GoalsIdeasPlansCapabilitiesModel.md
 Plans/Ideas.md
 Plans/RepositoryGoals.md
 Plans/SampleUserJourney.md
+Plans/CrossRepoCapabilityGapMatrix.md
 ```
 
-(Count = **24** Markdown files under `Plans/` including `README.md`.)
+(Count = **25** Markdown files under `Plans/` including `README.md`.)
 
 ## Remove Matrix (Phase 1 — base)
 

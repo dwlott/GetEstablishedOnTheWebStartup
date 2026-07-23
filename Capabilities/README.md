@@ -65,7 +65,7 @@ MoverCalcs.com, US1Movers, or other customer websites.
 | Archetype | WordPressWebsite | Local WordPress bootstrap; site-manifest | Active | [Prompt](WordPressWebsite/Prompt.md) | [Rules](WordPressWebsite/Rules.md) |
 | Archetype | WordPressContentUpdate | Sync Markdown to WordPress; ges-build | Active | [Prompt](WordPressContentUpdate/Prompt.md) | [Rules](WordPressContentUpdate/Rules.md) |
 | Archetype | StudioPressGenesisChildTheme | Genesis child theme / Altitude hooks | Active | [Prompt](StudioPressGenesisChildTheme/Prompt.md) | [Rules](StudioPressGenesisChildTheme/Rules.md) |
-| Universal | WordPressMigrationBackup | Backup before WordPress experiments | Active | [Prompt](WordPressMigrationBackup/Prompt.md) | [Rules](WordPressMigrationBackup/Rules.md) |
+| Universal | WordPressMigrationBackup | Backup before WP experiments; Bluehost SQL prep | Active | [Prompt](WordPressMigrationBackup/Prompt.md) | [Rules](WordPressMigrationBackup/Rules.md) |
 
 ## Planned WebPresence Capabilities
 

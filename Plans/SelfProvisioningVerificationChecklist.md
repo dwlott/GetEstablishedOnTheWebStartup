@@ -42,8 +42,9 @@ GEOTW receive or promotion pass.
   self-provisioning core.
 - `Plans/WebPresenceCapabilityPack.md` lists the WebPresence pack and marks
   Google/Yelp as planned until promoted.
-- `Capabilities/StarterRepositoryPackage/` names `GetEstablishedStartup` as the
-  active profile and `GetEstablishedOnTheWebStartup` as planned.
+- `Capabilities/StarterRepositoryPackage/` names `GetEstablishedStartup` and
+  `GetEstablishedOnTheWebStartup` as **Active** profiles (each with its repair
+  spec).
 - `Capabilities/CapabilityHarmonize/` supports self-provisioning readiness
   comparison separately from clean-root migration.
 - `Capabilities/README.md`, `RouterIndex.md`, and `AgentCapabilityGuide.md`
@@ -55,8 +56,9 @@ GEOTW receive or promotion pass.
 - GEOTW receive docs identify self-provisioning promotion as a staged pass, not
   a bulk host copy.
 - GEOTW registry/router/guide match folders on disk after any future receive.
-- `GetEstablishedOnTheWebStartup` is routed as planned or active only after a
-  WebPresence starter repair spec exists.
+- `GetEstablishedOnTheWebStartup` uses
+  `WebPresenceStartupRepairSpec.md`; router/registry include the WordPress
+  group and Planned WordPressSave / AltitudeProOverlay shells.
 - GEOTW does not receive bulk host `Plans/`, private host automation, Intake,
   Archive history, or commissioned-only material by default.
 

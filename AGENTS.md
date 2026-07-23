@@ -3,7 +3,7 @@ IndexTitle: Repository Instructions
 IndexDescription: Agent boot for GetEstablishedOnTheWebStartup web-presence and WordPress bootstrap starter.
 IndexType: Workflow
 IndexStatus: Active
-LastEdited: 2026-07-16
+LastEdited: 2026-07-23
 -->
 
 # Repository Instructions
@@ -27,6 +27,7 @@ acting.
 | Mirror Git repository refresh | **MirrorToWindows** — reads `Workspace/OwnerPreferences.md` |
 | WordPress asset backup/restore | **MirrorWebAssets** |
 | Save local WordPress to Git + Dropbox | **WordPress Save** — `Plans/WordPressSaveWorkflow.md` + `Automation/WordPressSave/` |
+| Prepare SQL for Bluehost / production import | **WordPressMigrationBackup** + `Automation/BluehostDatabasePrep/` + `Workspace/SiteDeployProfiles/` |
 | Create / update pages or posts | **WordPressContentUpdate** — hide Genesis title; `h1.ges-page-title`; stack **Intro Photo → Intro Hero → Intro Body → Intro Pitch** via `page-layout-manifest.php` (`intro_paragraphs` => 2) |
 | Local WordPress build (owner-approved) | `Workspace/LocalWordPressBuild/ges-build.php` |
 | Configure new site | Edit `site-manifest.json` + `WebAssetsSites.json` |
@@ -95,6 +96,7 @@ On every new pass, before editing:
 | Draft one-page business website | **OnePageWebsite** |
 | Web listing/profile node | **WebPresenceNode** |
 | WordPress save after local edits | `Plans/WordPressSaveWorkflow.md` (no `Capabilities/WordPressSave/` folder here) |
+| Prepare Bluehost / production DB SQL | **WordPressMigrationBackup** + BluehostDatabasePrep |
 | Create / update pages or posts | **WordPressContentUpdate** intro stack + `page-layout-manifest.php` |
 | Mirror uploads/theme to Dropbox | **MirrorWebAssets** |
 | Git commit, push, branch | **GitHubWorkflow** |

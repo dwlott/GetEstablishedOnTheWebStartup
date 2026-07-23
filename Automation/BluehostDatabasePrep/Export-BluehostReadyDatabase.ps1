@@ -146,7 +146,7 @@ if (-not $Force) {
 }
 
 $exportScript = Join-Path $repoRoot 'Automation\DatabaseBackups\Export-LocalWordPressDatabase.ps1'
-$exportResult = & $exportScript -OutputPath $exportGzip -MysqldumpPath $MysqldumpPath
+$exportResult = & $exportScript -WpConfigPath $wpConfigPath -OutputPath $exportGzip -MysqldumpPath $MysqldumpPath
 $exportResult | Format-List
 
 Expand-GzipFile -SourcePath $exportGzip -DestinationPath $rawSql

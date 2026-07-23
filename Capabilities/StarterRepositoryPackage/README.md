@@ -68,10 +68,10 @@ core repair and growth-map orientation after download.
 | Profile | Archetype host | Status | Notes |
 | --- | --- | --- | --- |
 | `GetEstablishedStartup` | `C:\Repositories\GetEstablished` | Active/current spec | Uses [ConsumerRepairSpec.md](ConsumerRepairSpec.md). |
-| `GetEstablishedOnTheWebStartup` | `C:\Repositories\GetEstablishedOnTheWeb` | Planned | Requires GEOTW self-provisioning core and a WebPresence packaging profile before use. |
+| `GetEstablishedOnTheWebStartup` | `C:\Repositories\GetEstablishedOnTheWeb` | Active | Uses [WebPresenceStartupRepairSpec.md](WebPresenceStartupRepairSpec.md). |
 
-Do not run a planned profile until its repair spec, keep/remove lists, identity
-rewrites, and verification checklist exist.
+Do not run a profile that is still Planned or missing a repair spec, keep/remove
+lists, identity rewrites, and verification checklist.
 
 ## Related
 
@@ -100,3 +100,4 @@ rewrites, and verification checklist exist.
 | 2026-06-07 | 3.1 | `Workspace/ValuableReferences.md` in starter boot; Quick Startup reference ladder | Cert prep smoke test deferred URL discovery to owner | ConsumerRepairSpec, ScaffoldPolicy, PackageChecklist, GettingStarted |
 | 2026-06-07 | 3.2 | VerifyStarterPackage.ps1; remove placeholder traps; consumer StartHere.md | Smoke test agent read AGENTS.md.placeholder; StartHere linked missing Plans | VerifyStarterPackage.ps1, ConsumerRepairSpec, WorkflowIndex, PackageChecklist |
 | 2026-06-19 | 2 | Generalized wording for archetype-specific starter profiles | GEOTW should be able to define `GetEstablishedOnTheWebStartup` after self-provisioning promotion without breaking current GetEstablishedStartup repair rules | README, WorkflowIndex, ConsumerRepairSpec |
+| 2026-07-23 | 2.1 | Profile Active; DRS Bluehost lessons blended; Save/Overlay stay Plans+Automation / commissioned-only | Honor WebPresenceWordPress packaging; absorb Universal go-live lessons without Cap shells | README, WebPresenceStartupRepairSpec, BluehostDatabasePrep |

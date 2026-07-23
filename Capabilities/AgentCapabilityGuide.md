@@ -53,7 +53,7 @@ Use after [AGENTS.md](../AGENTS.md) for workflow tasks on the
 | Bootstrap local WordPress site; configure site-manifest | **WordPressWebsite** | [NewCommissionSiteChecklist](WordPressWebsite/NewCommissionSiteChecklist.md) | Active | Archetype | site-manifest.json |
 | Sync Markdown/manifests to WordPress (`ges-build`) | **WordPressContentUpdate** | [Prompt](WordPressContentUpdate/Prompt.md) | Active | Archetype | Owner-approved --write |
 | Genesis child theme / Altitude overlay work | **StudioPressGenesisChildTheme** | [Prompt](StudioPressGenesisChildTheme/Prompt.md) | Active | Archetype | Theme boundaries |
-| Backup before WordPress experiments | **WordPressMigrationBackup** | [Prompt](WordPressMigrationBackup/Prompt.md) | Active | Universal | DB snapshot first |
+| Backup before WordPress experiments; Bluehost SQL prep | **WordPressMigrationBackup** | [Prompt](WordPressMigrationBackup/Prompt.md) | Active | Universal | DB snapshot first; serialize-aware prep |
 | Mirror WordPress uploads/theme to Dropbox | **MirrorWebAssets** | [WorkflowIndex](MirrorWebAssets/WorkflowIndex.md) | Active | Universal | WebAssetsSites.json |
 
 ### Not on this starter
@@ -85,6 +85,7 @@ Use after [AGENTS.md](../AGENTS.md) for workflow tasks on the
 | Planning **Google Business Profile** | **WebPresenceNode** first; `GoogleBusinessProfile` only for planned child boundaries | GoogleDriveLink |
 | Mirror repository / Git repo to Dropbox | **MirrorToWindows** | MirrorWebAssets (uploads/theme only) |
 | WordPress save after local edits | `Plans/WordPressSaveWorkflow.md` + `Automation/WordPressSave/` | Inventing a `Capabilities/WordPressSave/` Cap in this starter |
+| Bluehost / production SQL prep | **WordPressMigrationBackup** + BluehostDatabasePrep | DNS/import without owner approval |
 | Create / update pages or posts | **WordPressContentUpdate** (intro stack) | Skipping intro stack or inventing alternate layouts |
 | Local WordPress build | **WordPressContentUpdate** | Production launch without approval |
 | High Altitude / branded theme overlay | Commissioned project Cap (**AltitudeProOverlay**) | Shipping AltitudeProOverlay into this starter |

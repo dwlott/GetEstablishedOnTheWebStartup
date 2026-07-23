@@ -23,7 +23,7 @@ project and GEOTW localhost — without copying site-specific content or breakin
 | Capability folders (extension) | +5 (`MirrorWebAssets`, WordPress group ×4) |
 | Total Capability folders | **31** (26 base + 5 extension) |
 | Plans files (extension) | WordPress setup / Save / group plan (+ audit & model docs kept) |
-| Total Plans files | **24** (see repair-spec whitelist) |
+| Total Plans files | **25** (see repair-spec whitelist; includes CrossRepoCapabilityGapMatrix) |
 | `Workspace/LocalWordPressBuild/` | Present with `ges-*` scripts |
 | WordPress Save | `Plans/` + `Automation/WordPressSave/` — **not** `Capabilities/WordPressSave/` |
 | AltitudeProOverlay | **Do not add** (commissioned repos only) |
