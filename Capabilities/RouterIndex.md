@@ -46,6 +46,7 @@ a user prompt to a Capability. Confirm in [AgentCapabilityGuide.md](AgentCapabil
 | WordPressContentUpdate | sync Markdown to WordPress, ges-build, content update | [Prompt](WordPressContentUpdate/Prompt.md) | Archetype / Active |
 | StudioPressGenesisChildTheme | Genesis child theme, Altitude overlay, theme CSS | [Prompt](StudioPressGenesisChildTheme/Prompt.md) | Archetype / Active |
 | WordPressMigrationBackup | backup before WordPress experiments, Bluehost SQL prep, database snapshot | [Prompt](WordPressMigrationBackup/Prompt.md) | Universal / Active |
+| CPanelEmail | cPanel email, Bluehost mailbox, forwarder, Thunderbird IMAP/SMTP, Connect Devices | [Prompt](CPanelEmail/Prompt.md) | Universal / Active |
 
 ## Parity
 

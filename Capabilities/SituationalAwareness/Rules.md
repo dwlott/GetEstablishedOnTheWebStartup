@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: SituationalAwareness
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-06-12
+LastEdited: 2026-07-24
 -->
 
 # SituationalAwareness Rules
@@ -97,15 +97,15 @@ supervised pass cycles and handoff shape.
 
 | Surface | Role |
 | --- | --- |
-| `C:\Repositories\GetEstablished` | **Write target** — active clean root; method host; source of truth |
-| `C:\Repositories\GetEstablishedOnTheWeb` | **Product repo** — canonical `Content/Website/` and Phase 4 publishing |
-| `C:\Repositories\GetEstablished\Intake\GetEstablishedOnTheWeb` | **Reference only** — not source of truth |
-| `/Repositories/GetEstablished` (Dropbox) | **Inspection only** — optional cloud review; not Git |
-| Google Drive (cloud) | Optional review surface — not connected to Git; on-demand copy only |
+| This folder (e.g. `C:\Repositories\GetEstablishedOnTheWebStartup` or adopted `C:\Repositories\<YourWebProjectName>`) | **Write target** — this starter or adopted project; source of truth |
+| `C:\Repositories\DansRepairService` / `C:\Repositories\US1Movers` | **Reference** — proven commission patterns (do not copy customer content into starter) |
+| `C:\Repositories\GetEstablished` | **Method host** — reference only unless owner scopes work there |
+| `C:\Repositories\GetEstablishedOnTheWeb` | **Product repo** — example page source; not this folder |
+| Dropbox / Google Drive (cloud) | Optional review — not connected to Git; on-demand copy only |
 
-Do not confuse **GetEstablished** (method host) with **GetEstablishedOnTheWeb**
-(product repo at `C:\Repositories\GetEstablishedOnTheWeb`) or the Intake snapshot
-(legacy reference).
+Do not confuse **this starter / adopted project** with **GetEstablished** (method
+host) or **GetEstablishedOnTheWeb** (product). After `Copy-StartupToProject`, the
+write target is the new project folder.
 
 ## 4. Connector / Environment
 

@@ -72,8 +72,9 @@ copies, and not backups (GitHub is backup).
 
 ## Cursor Rule (this chat and normal Cursor use)
 
-When you are operating **inside Cursor** with
-`C:\Repositories\GetEstablished` (and optional sibling roots) open in the workspace:
+When you are operating **inside Cursor** with this starter or an adopted project
+(for example `C:\Repositories\GetEstablishedOnTheWebStartup` or
+`C:\Repositories\<YourWebProjectName>`) open in the workspace:
 
 1. **Treat the local repository as the source of truth.** Read and edit files
    in the workspace directly.

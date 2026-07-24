@@ -3,7 +3,7 @@ IndexTitle: Repository Search Map
 IndexDescription: Boot and search map for GetEstablishedOnTheWebStartup web-presence starter.
 IndexType: Project
 IndexStatus: Active
-LastEdited: 2026-07-23
+LastEdited: 2026-07-24
 -->
 
 # Repository Search Map
@@ -18,7 +18,9 @@ Standards/AgentSituationalAwareness.md
 Plans/RepositorySearchMap.md
 Plans/AgentTaskBacklog.md
 Capabilities/RouterIndex.md
+Capabilities/WordPressWebsite/NewCommissionSiteChecklist.md
 Workspace/LocalWordPressBuild/site-manifest.json
+Workspace/SiteDeployProfiles/_TEMPLATE.md
 ```
 
 ## Key Locations
@@ -26,19 +28,23 @@ Workspace/LocalWordPressBuild/site-manifest.json
 | Need | Look first |
 | --- | --- |
 | Public page drafts (GEOTW examples) | `Content/Website/Pages/` |
-| Startup audit | `Plans/StartupRepositoryAudit-20260714.md` |
+| New commission checklist | `Capabilities/WordPressWebsite/NewCommissionSiteChecklist.md` |
 | One-page business website | `Content/OnePageBusinessWebsite/` |
 | Website outcomes | `Plans/WebsiteGoals.md` |
 | WordPress setup | `Plans/LocalWordPressSetupPlan.md` |
 | WampServer / MAMP install | `Capabilities/WordPressWebsite/WampServerAndMampSetup.md` |
 | WAMP/MAMP full guide | `Workspace/Reference/WampServer-and-MAMP-Installation-Migration-Guide.md` |
 | WordPress save workflow | `Plans/WordPressSaveWorkflow.md` |
+| Migration / Bluehost re-push | `Plans/WordPressMigrationCapabilityPlan.md` |
+| High Altitude method pointer | `Plans/HighAltitudeThemeMethod.md` |
 | WordPress Capability group | `Plans/WordPressWebsiteCapabilityGroupPlan.md` |
 | Local build orchestrator | `Workspace/LocalWordPressBuild/ges-build.php` |
 | Site configuration | `Workspace/LocalWordPressBuild/site-manifest.json` |
+| Deploy profile template | `Workspace/SiteDeployProfiles/_TEMPLATE.md` |
 | Asset mirror manifest | `Automation/MirrorWebAssets/WebAssetsSites.json` |
 | DB snapshot | `Automation/DatabaseBackups/Export-LocalWordPressDatabase.ps1` |
 | Bluehost SQL export | `Automation/BluehostDatabasePrep/` |
+| cPanel email / Thunderbird | `Capabilities/CPanelEmail/` |
 | Genesis operating guide | `Workspace/Reference/WordPressGenesisOperatingGuide/` |
 | Owner WAMP/mirror settings | `Workspace/OwnerPreferences.md` |
 | Capability routing | `Capabilities/AgentCapabilityGuide.md` |
@@ -58,8 +64,5 @@ Workspace/LocalWordPressBuild/site-manifest.json
 ## Not In This Starter
 
 - GEOTW product-only Intake, Archive, production dry-runs
-- Commissioned content, AltitudeProOverlay / High Altitude theme recipes
-- Customer-site examples (DansRepairService, MoverCalcs.com, US1Movers, …)
-- Live production launch without owner build-pass approval
-
-**Example rule:** page drafts come from building GetEstablishedOnTheWeb only.
+- Commissioned Cap `AltitudeProOverlay` / full High Altitude CSS (pointer plan only)
+- Customer-site content examples (DansRepairService, MoverCalcs.com, US1Movers, …)

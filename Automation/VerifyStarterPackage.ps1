@@ -14,7 +14,7 @@ $failures = @()
 switch ($Profile) {
     'Consumer' { $ExpectedCaps = 12; $ExpectedPlans = 10 }
     'WebPresence' { $ExpectedCaps = 26; $ExpectedPlans = 14 }
-    'WebPresenceWordPress' { $ExpectedCaps = 31; $ExpectedPlans = 25 }
+    'WebPresenceWordPress' { $ExpectedCaps = 32; $ExpectedPlans = 27 }
 }
 
 function Add-Failure([string]$Message) {
@@ -121,7 +121,11 @@ try {
             "Automation/DatabaseBackups/Export-LocalWordPressDatabase.ps1",
             "Plans/WordPressSaveWorkflow.md",
             "Plans/LocalWordPressSetupPlan.md",
-            "Plans/WordPressWebsiteCapabilityGroupPlan.md"
+            "Plans/WordPressWebsiteCapabilityGroupPlan.md",
+            "Plans/WordPressMigrationCapabilityPlan.md",
+            "Plans/HighAltitudeThemeMethod.md",
+            "Workspace/SiteDeployProfiles/_TEMPLATE.md",
+            "Capabilities/CPanelEmail/Prompt.md"
         )) {
             if (-not (Test-Path $path)) { Add-Failure "Missing WordPress layer file: $path" }
             else { Add-Pass "Present: $path" }

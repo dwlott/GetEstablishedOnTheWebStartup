@@ -22,15 +22,14 @@ Do not store credentials, tokens, or API secrets here.
 
 ## Git remote (adoption)
 
-Set during [Workspace Adoption Prep](../Capabilities/GettingStarted/WorkspaceAdoptionPrep.md)
-when an adopted copy still points at the starter template.
+Set during [Workspace Adoption Prep](../Capabilities/GettingStarted/WorkspaceAdoptionPrep.md).
+Preferred: copy without `.git` (`Automation/Copy-StartupToProject.ps1`).
 
 | Field | Value |
 | --- | --- |
-| Starter template remote parked as | *(none yet — e.g. starter-template)* |
 | Origin remote URL | *(none yet)* |
 | GitHub repository name | *(none yet)* |
-| Adoption choice | *(none yet — park / new repo / remove origin / leave as-is)* |
+| Adoption choice | *(none yet — fresh-copy-no-git / removed-starter-git / already-project-remote)* |
 
 ## Connectors
 

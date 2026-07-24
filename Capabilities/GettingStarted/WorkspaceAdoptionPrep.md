@@ -1,11 +1,11 @@
 <!--
 IndexTitle: Workspace Adoption Prep
-IndexDescription: Automatic reset of stale starter boot files and git-remote safety when Quick Startup begins in an adopted copy.
+IndexDescription: Automatic reset of stale starter boot files and fresh-Git detach when Quick Startup begins in an adopted copy.
 IndexType: Capability
 CapabilityName: GettingStarted
-CapabilityVersion: 1
+CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-07-14
+LastEdited: 2026-07-16
 -->
 
 # Workspace Adoption Prep
@@ -19,6 +19,11 @@ template's goals or Git remote.
 Do **not** ask the owner for permission to reset stale scaffold content. Reset,
 tell them briefly what you did, then continue with
 [QuickStartupGreeting.md](QuickStartupGreeting.md).
+
+**Preferred adopt path:** copy the starter **without** `.git` (delete `.git`
+after an Explorer copy, or run
+`Automation/Copy-StartupToProject.ps1`). Then Quick Startup never inherits the
+starter remote.
 
 **Example references** in this starter come from building
 **GetEstablishedOnTheWeb** only. Do not cite DansRepairService, MoverCalcs.com,
@@ -88,42 +93,65 @@ decisions, method-host paths), replace the file with the consumer scaffold from
 the shipped starter `Plans/OpenQuestions.md` template — one Open row and empty
 Decided table. Do **not** preserve host history in adopted copies.
 
-## Git Remote Safety (detect — owner chooses)
+## Git After Folder Copy (automatic — no stop-and-ask)
 
-After boot-file reset, if `.git/` exists, run:
+Preferred owner workflow (document this; do not invent a third path):
+
+```text
+1. Copy GetEstablishedOnTheWebStartup → C:\Repositories\<YourProjectName>
+   (or run Automation\Copy-StartupToProject.ps1 -DestinationName <YourProjectName>)
+2. Delete the copied .git folder if it is still there
+3. Open the new folder → Begin Quick Startup from AGENTS.md
+4. Connect GitHub later via GitHubWorkflow (git init + new repo)
+```
+
+After boot-file reset, check Git state:
 
 ```powershell
+Test-Path .git
+# if .git exists:
 git remote -v
 git status -sb
 ```
 
-**Stale origin** when `origin` fetch/push URL contains any of:
+### Case A — No `.git/` (ideal)
+
+Record in `Workspace/OwnerPreferences.md` § Git remote:
+
+| Field | Value |
+| --- | --- |
+| Adoption choice | fresh-copy-no-git |
+| Origin remote URL | *(none yet)* |
+
+Continue straight to the greeting. Offer GitHub connect later — do **not** block.
+
+### Case B — Stale starter / host remote (auto-detach)
+
+**Stale** when `.git/` exists, the local folder name is **not** the starter/host
+name, and `origin` URL contains any of:
 
 - `GetEstablishedOnTheWebStartup`
-- `GetEstablishedOnTheWeb` (product repo)
-- `GetEstablished` (archetype host)
+- `GetEstablishedOnTheWeb` (product repo, not `…Startup`)
+- `GetEstablished` (archetype host, not `…Startup`)
 
-…while the local folder name is **not** that repository name (for example folder
-`MyBusinessSite` but remote `…/GetEstablishedOnTheWebStartup.git`).
+**Default action (do this automatically — do not ask):**
 
-When stale, **stop before the five setup questions** and ask the owner to choose.
-Do **not** commit or push until resolved. Explain in plain language: pushing now
-would send this project's content to the **starter template** repository.
+1. Tell the owner in one line: the copy still had the starter Git history/remote;
+   removing `.git` so this project starts clean.
+2. `Remove-Item -Recurse -Force .git`
+3. `git init` (local-only empty repo; no `origin` yet)
+4. Record adoption choice `removed-starter-git` in OwnerPreferences
+5. Continue with the greeting — **do not stop** for park / new-repo / leave-as-is
 
-**Present these options (numbered):**
+Owner can connect a new GitHub remote later via **GitHubWorkflow**.
 
-1. **Park it (recommended default)** — rename `origin` to `starter-template` so
-   accidental pushes to the template are blocked; keep the URL as reference.
-2. **Create new GitHub repo now** — use **GitHubWorkflow**
-   ([SetupPrompt.md](../GitHubWorkflow/SetupPrompt.md)) with `gh repo create` for
-   the owner's project name; set `origin` to the new repo.
-3. **Remove origin entirely** — local-only Git until the owner connects GitHub later.
-4. **Leave as-is for now** — owner accepts the risk; record that choice; never push
-   without explicit owner request.
-5. **Other** — owner describes a different approach.
+**Exception — only ask** if the owner already said they want to keep starter
+history, or `origin` already points at a **different** project remote that
+matches the folder name. Do not auto-delete in those cases.
 
-After the owner chooses, record in `Workspace/OwnerPreferences.md` § Git remote
-(adoption). Then continue with [QuickStartupGreeting.md](QuickStartupGreeting.md).
+### Case C — `.git/` present, origin already matches this project
+
+Leave Git alone. Continue.
 
 **Never** push to a starter-template or archetype-host remote during adoption prep.
 
@@ -155,10 +183,8 @@ I reset leftover starter goals, references, and open questions so this workspace
 matches your project.
 ```
 
-If git remote was stale and the owner resolved it, add one line about what changed
-(for example "Parked starter template remote as starter-template.").
-
-If git remote still needs a choice, ask that **before** the greeting.
+If starter `.git` was removed, add one line (for example "Removed the copied
+starter `.git` so this project is not linked to GetEstablishedOnTheWebStartup.").
 
 Otherwise:
 
@@ -175,13 +201,18 @@ The shipped starter must ship with scaffold-only boot files and consumer
 `Plans/OpenQuestions.md`. Repair passes use
 [StarterRepositoryPackage/ConsumerRepairSpec.md](../StarterRepositoryPackage/ConsumerRepairSpec.md)
 § H reset lists. This prep catches copies that still inherited product-builder
-content or a starter-template `origin` after folder copy or `git clone`.
+content or a starter-template `.git` after Explorer folder copy.
+
+New project copies should use
+[Automation/Copy-StartupToProject.ps1](../../Automation/Copy-StartupToProject.ps1)
+(or delete `.git` after copy) so Case B is rare.
 
 ## Related
 
 - [QuickStartupGreeting.md](QuickStartupGreeting.md)
 - [GettingStarted.md](GettingStarted.md)
 - [Rules.md](Rules.md)
+- [../../Automation/Copy-StartupToProject.ps1](../../Automation/Copy-StartupToProject.ps1)
 - [../GitHubWorkflow/SetupPrompt.md](../GitHubWorkflow/SetupPrompt.md)
 - [../StarterRepositoryPackage/AgentConfigDetach.md](../StarterRepositoryPackage/AgentConfigDetach.md)
 - [../StarterRepositoryPackage/ConsumerRepairSpec.md](../StarterRepositoryPackage/ConsumerRepairSpec.md)

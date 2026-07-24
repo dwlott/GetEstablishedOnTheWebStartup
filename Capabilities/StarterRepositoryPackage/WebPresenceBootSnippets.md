@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: StarterRepositoryPackage
 CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-07-16
+LastEdited: 2026-07-24
 -->
 
 # WebPresence Boot Snippets
@@ -40,15 +40,21 @@ acting.
 | Situation | What to do |
 | --- | --- |
 | First time in this repo | Say **"Begin Quick Startup from AGENTS.md"** — agent preps Workspace boot files, then follow `Capabilities/GettingStarted/GettingStarted.md` |
+| Start a **new** project from this starter | `Automation/Copy-StartupToProject.ps1 -DestinationName YourProject` (no `.git`) — or Explorer copy then delete `.git` |
 | Review website page examples | **ContentReview** on `Content/Website/Pages/` |
 | Draft one-page business site | **OnePageWebsite** |
 | Google or Yelp profile planning | **WebPresenceNode** (Google/Yelp children Planned) |
+| New commission site bootstrap | **WordPressWebsite** → `NewCommissionSiteChecklist.md` |
+| Site deploy profile (Bluehost fields) | Copy `Workspace/SiteDeployProfiles/_TEMPLATE.md` → `{SiteKey}.md` |
+| Bluehost SQL prep (not go-live) | `Automation/BluehostDatabasePrep/` + deploy profile |
+| Production push / re-push notes | `Plans/WordPressMigrationCapabilityPlan.md` (owner-gated) |
+| cPanel mailbox / forwarder / Thunderbird | **CPanelEmail** |
+| High Altitude theme (after commission) | `Plans/HighAltitudeThemeMethod.md` — promote Cap on project repo |
 | Mirror Git repository refresh | **MirrorToWindows** — reads `Workspace/OwnerPreferences.md` |
 | WordPress asset backup/restore | **MirrorWebAssets** |
 | Save local WordPress to Git + Dropbox | **WordPress Save** — `Plans/WordPressSaveWorkflow.md` + `Automation/WordPressSave/` |
 | Create / update pages or posts | **WordPressContentUpdate** — hide Genesis title; `h1.ges-page-title`; **Intro Photo → Intro Hero → Intro Body → Intro Pitch** via `page-layout-manifest.php` |
 | Local WordPress build (owner-approved) | `Workspace/LocalWordPressBuild/ges-build.php` |
-| Theme CSS / High Altitude (after commission) | Project repo only — **AltitudeProOverlay** is not shipped here |
 | Git status, commit, push | **GitHubWorkflow** (owner must ask for commit/push) |
 | Not sure what's going on | **SituationalAwareness** Rules |
 

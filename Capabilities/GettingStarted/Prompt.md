@@ -35,13 +35,13 @@ Read first:
 
 Goal:
 Make the getting-started path clear enough for a new owner or agent to use.
-On Quick Startup, run Workspace Adoption Prep first (reset stale boot files
-automatically), then collect three to five practical owner setup goals, keep those
-separate from Repository Goals, and route the next setup task through existing
-guides, prompts, or Capabilities.
+On Quick Startup, run Workspace Adoption Prep first (reset stale boot files;
+auto-remove starter `.git` on renamed folder copies), then collect three to five
+practical owner setup goals, keep those separate from Repository Goals, and route
+the next setup task through existing guides, prompts, or Capabilities.
 
 In scope:
-- Run WorkspaceAdoptionPrep when Quick Startup begins (no permission ask for stale template content).
+- Run WorkspaceAdoptionPrep when Quick Startup begins (no permission ask for stale template content; auto-detach starter `.git` on renamed copies).
 - Clarify beginner-facing setup guidance.
 - Confirm the read-first path.
 - Ask for or summarize three to five owner setup goals.

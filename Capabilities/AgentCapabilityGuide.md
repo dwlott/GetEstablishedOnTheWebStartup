@@ -56,6 +56,7 @@ Use after [AGENTS.md](../AGENTS.md) for workflow tasks on the
 | Genesis child theme / Altitude overlay work | **StudioPressGenesisChildTheme** | [Prompt](StudioPressGenesisChildTheme/Prompt.md) | Active | Archetype | Theme boundaries |
 | Backup before WordPress experiments; Bluehost SQL prep | **WordPressMigrationBackup** | [Prompt](WordPressMigrationBackup/Prompt.md) | Active | Universal | DB snapshot first; serialize-aware prep |
 | Mirror WordPress uploads/theme to Dropbox | **MirrorWebAssets** | [WorkflowIndex](MirrorWebAssets/WorkflowIndex.md) | Active | Universal | WebAssetsSites.json |
+| cPanel/Bluehost email; mailbox limit; forwarder; Thunderbird setup | **CPanelEmail** | [Prompt](CPanelEmail/Prompt.md) | Active | Universal | Rules.md mailbox vs forwarder |
 
 ### Not on this starter
 
@@ -90,7 +91,10 @@ Use after [AGENTS.md](../AGENTS.md) for workflow tasks on the
 | Create / update pages or posts | **WordPressContentUpdate** (intro stack) | Skipping intro stack or inventing alternate layouts |
 | Local WordPress build | **WordPressContentUpdate** | Production launch without approval |
 | Install WampServer / MAMP stack *(optional)* | **WordPressWebsite** → WampServerAndMampSetup | Forcing install when stack already runs |
-| High Altitude / branded theme overlay | Commissioned project Cap (**AltitudeProOverlay**) | Shipping AltitudeProOverlay into this starter |
+| High Altitude / branded theme overlay | `Plans/HighAltitudeThemeMethod.md` then promote Cap on **project** repo | Shipping AltitudeProOverlay into this starter |
+| Extra address at mailbox limit (no new inbox) | **CPanelEmail** (forwarder) | Creating another full mailbox |
+| Desktop mail client IMAP/SMTP on Bluehost | **CPanelEmail** | LocalAgentToolSetup |
+| Bluehost SQL prep / Path A re-push | `SiteDeployProfiles` + `BluehostDatabasePrep` + migration plan | Production import without owner build-pass |
 
 ## Expected Outputs
 
@@ -120,6 +124,7 @@ Use after [AGENTS.md](../AGENTS.md) for workflow tasks on the
 | StarterRepositoryPackage | Repaired startup workspace and provisioning test report |
 | GoogleBusinessProfile | Planned checklist/readiness guidance |
 | YelpBusinessProfile | Planned checklist/readiness guidance |
+| CPanelEmail | cPanel steps; Thunderbird manual settings; forwarder/send-as guidance |
 
 ## Situational Awareness (Always On)
 

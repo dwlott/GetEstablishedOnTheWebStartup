@@ -29,7 +29,7 @@ Quick Startup is complete for this session.
 
 What I did:
 - (one line per boot-file update — prep, goals, references, preferences)
-- (git remote adoption if resolved — e.g. parked starter-template)
+- (git: fresh-copy-no-git or removed-starter-git — connect GitHub later)
 
 Owner Goals are in Workspace/OwnerGoals.md.
 GitHub: (parked starter-template | new repo connected | local-only | unchanged — match OwnerPreferences).

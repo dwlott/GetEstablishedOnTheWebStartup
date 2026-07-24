@@ -227,7 +227,7 @@ Required for the shipped WebPresenceWordPress profile. Apply
 **[WebPoweredStartupExtensionSpec.md](WebPoweredStartupExtensionSpec.md)** ADD
 matrix after Steps 2c–2d:
 
-- +5 WordPress Capability folders → **31** total
+- WordPress Capability folders + CPanelEmail → **32** total (verify with `-Profile WebPresenceWordPress`)
 - `Workspace/LocalWordPressBuild/` + WordPress Save **Plans + Automation**
 - Do **not** add `Capabilities/AltitudeProOverlay/` or `Capabilities/WordPressSave/`
 

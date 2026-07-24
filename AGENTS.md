@@ -3,7 +3,7 @@ IndexTitle: Repository Instructions
 IndexDescription: Agent boot for GetEstablishedOnTheWebStartup web-presence and WordPress bootstrap starter.
 IndexType: Workflow
 IndexStatus: Active
-LastEdited: 2026-07-23
+LastEdited: 2026-07-24
 -->
 
 # Repository Instructions
@@ -21,9 +21,17 @@ acting.
 | Situation | What to do |
 | --- | --- |
 | First time in this repo | Say **"Begin Quick Startup from AGENTS.md"** — agent preps Workspace boot files, then follow `Capabilities/GettingStarted/GettingStarted.md` |
+| Start a **new** project from this starter | `Automation/Copy-StartupToProject.ps1 -DestinationName YourProject` (no `.git`) — or Explorer copy then **delete `.git`** — then Quick Startup in the new folder |
 | Review website page examples | **ContentReview** on `Content/Website/Pages/` |
 | Draft one-page business site | **OnePageWebsite** |
 | Google or Yelp profile planning | **WebPresenceNode** (Google/Yelp children Planned) |
+| New commission site bootstrap | **WordPressWebsite** → `NewCommissionSiteChecklist.md` |
+| Configure new site | Edit `site-manifest.json` + `WebAssetsSites.json` |
+| Site deploy profile (Bluehost fields) | Copy `Workspace/SiteDeployProfiles/_TEMPLATE.md` → `{SiteKey}.md` |
+| Bluehost SQL prep (not go-live) | `Automation/BluehostDatabasePrep/` + deploy profile |
+| Production push / re-push notes | `Plans/WordPressMigrationCapabilityPlan.md` (owner-gated) |
+| cPanel mailbox / forwarder / Thunderbird | **CPanelEmail** |
+| High Altitude theme (after commission) | `Plans/HighAltitudeThemeMethod.md` — promote **AltitudeProOverlay** on the **project** repo (not shipped here) |
 | Mirror Git repository refresh | **MirrorToWindows** — reads `Workspace/OwnerPreferences.md` |
 | WordPress asset backup/restore | **MirrorWebAssets** |
 | Install WampServer (Windows) or MAMP (macOS) *(optional offer)* | **WordPressWebsite** → [WampServerAndMampSetup.md](Capabilities/WordPressWebsite/WampServerAndMampSetup.md) |
@@ -31,9 +39,6 @@ acting.
 | Prepare SQL for Bluehost / production import | **WordPressMigrationBackup** + `Automation/BluehostDatabasePrep/` + `Workspace/SiteDeployProfiles/` |
 | Create / update pages or posts | **WordPressContentUpdate** — hide Genesis title; `h1.ges-page-title`; stack **Intro Photo → Intro Hero → Intro Body → Intro Pitch** via `page-layout-manifest.php` (`intro_paragraphs` => 2) |
 | Local WordPress build (owner-approved) | `Workspace/LocalWordPressBuild/ges-build.php` |
-| Configure new site | Edit `site-manifest.json` + `WebAssetsSites.json` |
-| New commission site bootstrap | **WordPressWebsite** → `NewCommissionSiteChecklist.md` |
-| Theme CSS / High Altitude (after commission) | Promote to a project repo — **AltitudeProOverlay** is not shipped in this starter |
 | Git status, commit, push | **GitHubWorkflow** (owner must ask for commit/push) |
 | Not sure what's going on | **SituationalAwareness** Rules |
 
@@ -56,10 +61,17 @@ Formal chain: **Goals** → **Ideas** → **Plans** → implemented work.
 The active local repository root is **this folder** — for example:
 
 ```text
+C:\Repositories\GetEstablishedOnTheWebStartup
+```
+
+Or after copy:
+
+```text
 C:\Repositories\<YourWebProjectName>
 ```
 
-Do not assume the root is `C:\Repositories\GetEstablishedOnTheWeb`.
+Do not assume the root is `C:\Repositories\GetEstablishedOnTheWeb` or
+`C:\Repositories\GetEstablished`.
 
 When the owner references **`agents.md`**, read **`AGENTS.md`** at the repository
 root (case-insensitive intent).
@@ -96,6 +108,10 @@ On every new pass, before editing:
 | Review website page examples | **ContentReview** |
 | Draft one-page business website | **OnePageWebsite** |
 | Web listing/profile node | **WebPresenceNode** |
+| New commission / site-manifest | **WordPressWebsite** / NewCommissionSiteChecklist |
+| Bluehost SQL / deploy profile | `SiteDeployProfiles` + `BluehostDatabasePrep` |
+| cPanel email / Thunderbird | **CPanelEmail** |
+| High Altitude theme method | `Plans/HighAltitudeThemeMethod.md` (Cap on project repo) |
 | WordPress save after local edits | `Plans/WordPressSaveWorkflow.md` (no `Capabilities/WordPressSave/` folder here) |
 | Prepare Bluehost / production DB SQL | **WordPressMigrationBackup** + BluehostDatabasePrep |
 | Install / migrate WampServer or MAMP *(optional)* | **WordPressWebsite** → WampServerAndMampSetup |
@@ -109,9 +125,10 @@ On every new pass, before editing:
 ## Capability Discovery
 
 Map workflow requests through `Capabilities/RouterIndex.md`. Shipped Capabilities
-include WebPresence pack, self-provisioning core, MirrorWebAssets, and the
-WordPress group (Active). WordPress Save is **Plans + Automation only**.
-**AltitudeProOverlay** / High Altitude stay on commissioned project repos.
+include WebPresence pack, self-provisioning core, MirrorWebAssets, CPanelEmail,
+and the WordPress group (Active). WordPress Save is **Plans + Automation only**.
+**AltitudeProOverlay** Cap stays on commissioned project repos — see
+`Plans/HighAltitudeThemeMethod.md`.
 
 ## Stop Conditions
 
@@ -121,13 +138,15 @@ WordPress group (Active). WordPress Save is **Plans + Automation only**.
 - Using customer project repos as example templates (examples come from
   GetEstablishedOnTheWeb product drafts only).
 - Inventing legal, pricing, licensing, insurance, ranking, or revenue claims.
-- Shipping AltitudeProOverlay / High Altitude commissioned theme recipes into
-  this starter (those stay on commissioned project repos).
+- Shipping AltitudeProOverlay / full High Altitude CSS recipes into this starter.
+- Full production DB overwrite without a production backup when the live site
+  already has data.
 
 ## Related
 
 - [Plans/WebsiteGoals.md](Plans/WebsiteGoals.md)
 - [Plans/WordPressWebsiteCapabilityGroupPlan.md](Plans/WordPressWebsiteCapabilityGroupPlan.md)
+- [Plans/WordPressMigrationCapabilityPlan.md](Plans/WordPressMigrationCapabilityPlan.md)
+- [Plans/HighAltitudeThemeMethod.md](Plans/HighAltitudeThemeMethod.md)
 - [Plans/UserSetupGuide.md](Plans/UserSetupGuide.md)
-- [Plans/StartupRepositoryAudit-20260714.md](Plans/StartupRepositoryAudit-20260714.md)
-- [Plans/StartupModernizationAudit-20260716.md](Plans/StartupModernizationAudit-20260716.md)
+- [Capabilities/WordPressWebsite/NewCommissionSiteChecklist.md](Capabilities/WordPressWebsite/NewCommissionSiteChecklist.md)

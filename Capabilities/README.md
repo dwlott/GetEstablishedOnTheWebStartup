@@ -66,6 +66,7 @@ MoverCalcs.com, US1Movers, or other customer websites.
 | Archetype | WordPressContentUpdate | Sync Markdown to WordPress; ges-build | Active | [Prompt](WordPressContentUpdate/Prompt.md) | [Rules](WordPressContentUpdate/Rules.md) |
 | Archetype | StudioPressGenesisChildTheme | Genesis child theme / Altitude hooks | Active | [Prompt](StudioPressGenesisChildTheme/Prompt.md) | [Rules](StudioPressGenesisChildTheme/Rules.md) |
 | Universal | WordPressMigrationBackup | Backup before WP experiments; Bluehost SQL prep | Active | [Prompt](WordPressMigrationBackup/Prompt.md) | [Rules](WordPressMigrationBackup/Rules.md) |
+| Universal | CPanelEmail | cPanel/Bluehost mailboxes, forwarders, Thunderbird | Active | [Prompt](CPanelEmail/Prompt.md) | [Rules](CPanelEmail/Rules.md) |
 
 ## Planned WebPresence Capabilities
 
@@ -82,7 +83,7 @@ MoverCalcs.com, US1Movers, or other customer websites.
 
 | Item | Why |
 | --- | --- |
-| AltitudeProOverlay / High Altitude method | Commissioned-site theme product — not starter |
+| AltitudeProOverlay Cap / full High Altitude CSS | Commissioned-site theme Cap — not starter; see `Plans/HighAltitudeThemeMethod.md` pointer |
 | `Capabilities/WordPressSave/` | Starter keeps **Plans + Automation** only (`Plans/WordPressSaveWorkflow.md`, `Automation/WordPressSave/`) |
 | MoversForumParticipation | Product/community host ops — not starter |
 | Customer deploy profiles | Belong on the owner's project repo after adopt |

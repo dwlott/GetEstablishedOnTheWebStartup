@@ -68,9 +68,9 @@ First session order:
 2. **Workspace Adoption Prep** — run [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md)
    automatically. Reset stale starter boot files (Owner Goals, Valuable References,
    Import rows, stale `Plans/OpenQuestions.md`) **without asking permission**.
-   If `.git/` exists and `origin` still points at the starter template, run
-   `git remote -v` and **ask the owner to choose** before the five setup questions
-   (park as `starter-template`, new GitHub repo, remove origin, or leave as-is).
+   Prefer copies made with `Automation/Copy-StartupToProject.ps1` (no `.git`).
+   If a renamed folder still has starter/host `origin`, **remove `.git` and
+   `git init` automatically** — do not stop for remote choices; connect GitHub later.
    One-line notice to the owner, then continue.
 3. Display the opening and five setup questions from
    [QuickStartupGreeting.md](QuickStartupGreeting.md) — **do not invent questions**.

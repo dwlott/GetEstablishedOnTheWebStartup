@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: WordPressWebsite
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-07-23
+LastEdited: 2026-07-24
 -->
 
 # New Commission Site Checklist
@@ -19,12 +19,14 @@ Route through **WordPressWebsite** first; delegate steps to child Capabilities.
 
 | Step | Owner / agent action | File or Capability |
 | --- | --- | --- |
-| 0.1 | Clone or copy this starter; rename folder to the project | Local Git root |
+| 0.1 | Copy starter **without** `.git` — `Automation/Copy-StartupToProject.ps1 -DestinationName YourProject` (or Explorer copy then delete `.git`) | Local project folder |
 | 0.2 | Run Quick Startup; capture Owner Goals | **GettingStarted** |
 | 0.3 | Set `siteKey`, `localUrl`, `tablePrefix` (lowercase random, e.g. `m7k_`) | `Workspace/LocalWordPressBuild/site-manifest.json` |
 | 0.4 | Match WAMP folder and Dropbox site key | `Automation/MirrorWebAssets/WebAssetsSites.json` |
 | 0.5 | Match theme save targets | `Automation/WordPressSave/ThemeTrackManifest.json` |
 | 0.6 | Record WAMP root and mirror paths | `Workspace/OwnerPreferences.md` |
+| 0.7 | Copy deploy profile template → `{SiteKey}.md`; fill Bluehost/local fields | `Workspace/SiteDeployProfiles/_TEMPLATE.md` |
+| 0.8 | Optional: mailbox / forwarder / Thunderbird plan | **CPanelEmail** |
 
 ## Phase 1 — Local stack + WordPress install
 
@@ -49,11 +51,12 @@ The starter ships **GEOTW showcase** manifests and pages. Replace before build:
 | `content-manifest.php` | Trim to owner's categories/archives, or empty arrays |
 | `nav-menu-manifest.php` | Owner nav tree (Services, About, Contact — not Get Listed / Use AI) |
 | `page-layout-manifest.php` | Owner page slugs only; every page uses intro stack (**Photo → Hero → Body → Pitch**, `intro_paragraphs` => 2) |
-| `Workspace/SiteDeployProfiles/` | Add `{SiteKey}.md`; remove product-only profiles if confusing |
+| `Workspace/SiteDeployProfiles/` | Keep `{SiteKey}.md`; do not leave product-only profiles |
 
 Do **not** run a full build until manifests match the owner's site map.
 Do **not** copy another customer's commissioned theme Cap (AltitudeProOverlay)
-into this starter — promote that Cap on the project repo after adopt.
+into this starter — promote that Cap on the project repo after adopt (see
+HighAltitudeThemeMethod).
 
 ## Phase 3 — Backup gate (before any write)
 
@@ -97,10 +100,14 @@ shipped in this starter — always use `--only` until a product sync pack is add
 
 ## Phase 6 — Production (later, owner-approved)
 
-| Step | Action |
-| --- | --- |
-| 6.1 | Bluehost-ready SQL export | `Automation/BluehostDatabasePrep/` |
-| 6.2 | DNS, CF7, analytics | Out of scope until build-pass |
+| Step | Action | Reference |
+| --- | --- | --- |
+| 6.1 | Fill/confirm deploy profile | `Workspace/SiteDeployProfiles/{SiteKey}.md` |
+| 6.2 | Bluehost-ready SQL export | `Automation/BluehostDatabasePrep/` |
+| 6.3 | First go-live vs re-push of live site | [WordPressMigrationCapabilityPlan.md](../../Plans/WordPressMigrationCapabilityPlan.md) |
+| 6.4 | If live site already has data: **back up production** before import | Path A re-push |
+| 6.5 | Import SQL; copy theme + uploads; Permalinks; smoke-test | Owner build-pass |
+| 6.6 | DNS, CF7, analytics | Out of scope until build-pass |
 
 ## Disambiguation
 
@@ -109,10 +116,11 @@ shipped in this starter — always use `--only` until a product sync pack is add
 | New local business site | This checklist → **WordPressWebsite** |
 | Sync Markdown to WordPress | **WordPressContentUpdate** |
 | Theme CSS / Genesis child basics | **StudioPressGenesisChildTheme** |
-| High Altitude / branded overlay CSS | Commissioned project Cap (**AltitudeProOverlay**) — not in this starter |
+| High Altitude / branded overlay CSS | Method plan → promote **AltitudeProOverlay** on project repo |
 | Backup before experiment | **WordPressMigrationBackup** |
 | Large uploads/theme handoff | **MirrorWebAssets** |
 | WordPress Save (theme + DB + Dropbox) | `Plans/WordPressSaveWorkflow.md` |
+| Bluehost mailbox / Thunderbird | **CPanelEmail** |
 | GEOTW product showcase site | Use product repo, not this starter |
 
 ## Related
@@ -120,4 +128,7 @@ shipped in this starter — always use `--only` until a product sync pack is add
 - [Prompt.md](Prompt.md)
 - [Rules.md](Rules.md)
 - [../WordPressContentUpdate/Prompt.md](../WordPressContentUpdate/Prompt.md)
+- [../CPanelEmail/Prompt.md](../CPanelEmail/Prompt.md)
 - [../../Plans/WordPressWebsiteCapabilityGroupPlan.md](../../Plans/WordPressWebsiteCapabilityGroupPlan.md)
+- [../../Plans/WordPressMigrationCapabilityPlan.md](../../Plans/WordPressMigrationCapabilityPlan.md)
+- [../../Plans/HighAltitudeThemeMethod.md](../../Plans/HighAltitudeThemeMethod.md)

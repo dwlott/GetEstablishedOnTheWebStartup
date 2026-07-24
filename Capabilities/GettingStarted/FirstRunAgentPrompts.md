@@ -44,10 +44,9 @@ This is not an app launch.
 Read AGENTS.md, then Capabilities/GettingStarted/GettingStarted.md and Rules.md.
 
 Run WorkspaceAdoptionPrep.md first (reset stale boot files and OpenQuestions
-automatically — do not ask permission). If git remote -v shows origin still
-points at GetEstablishedOnTheWebStartup while this folder is a different project,
-ask me to choose before the five questions (park as starter-template, new repo,
-remove origin, or leave as-is).
+automatically — do not ask permission). Prefer copies made without .git
+(Copy-StartupToProject.ps1). If this folder still has starter/host origin,
+remove .git and git init automatically — do not stop for remote choices.
 
 Display the opening and five setup questions from QuickStartupGreeting.md (do not
 invent questions). Wait for owner answers before writing real rows to

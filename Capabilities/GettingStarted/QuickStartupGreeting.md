@@ -5,17 +5,17 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-07-06
+LastEdited: 2026-07-16
 -->
 
 # Quick Startup Greeting
 
 **Agents:** Run [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) **first**
-(reset stale starter boot files and stale Open Questions automatically; check
-`git remote -v` when `.git/` exists). If `origin` still points at the starter
-template, resolve with the owner **before** these questions. Then display this
-greeting and these questions. **Do not invent a different question set.** **Do not ask**
-whether to overwrite leftover starter content — prep already handled that.
+(reset stale starter boot files and stale Open Questions automatically; if a
+renamed folder still has starter `.git`/`origin`, remove `.git` and `git init`
+automatically). Then display this greeting and these questions. **Do not invent
+a different question set.** **Do not ask** whether to overwrite leftover starter
+content — prep already handled that.
 
 **Do not write** `Workspace/OwnerGoals.md` with real goals until the owner
 answers the five questions below.
