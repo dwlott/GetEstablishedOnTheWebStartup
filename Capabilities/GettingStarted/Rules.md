@@ -17,14 +17,15 @@ When **Begin Quick Startup from AGENTS.md** fires, run
 
 - Reset stale starter boot files and stale `Plans/OpenQuestions.md` automatically when detected.
 - Prefer folder copies **without** `.git` (`Copy-StartupToProject.ps1` or delete
-  `.git` after Explorer copy).
-- If a renamed folder still has starter/host `origin`, **auto-remove `.git` and
-  `git init`** — do not stop for park/new-repo choices (see
-  [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) § Git After Folder Copy).
+  `.git` after Explorer copy — [HowToAdoptThisStarter.md](HowToAdoptThisStarter.md)).
+- If this adopted folder still has starter-template Git metadata, **detach it**
+  (default: remove `.git`) and continue. **Do not** present a blocking Git menu.
+- If `.git` is already gone, record that and continue — do not run git commands.
 - **Do not ask permission** to clear leftover product-builder or template goals.
 - Tell the owner in one line that prep ran, then display
   [QuickStartupGreeting.md](QuickStartupGreeting.md).
-- Never block Quick Startup on a "keep these goals or rewrite?" choice.
+- Never block Quick Startup on a "keep these goals or rewrite?" choice or a
+  Git-remote multiple-choice.
 
 The shipped starter must ship scaffold-only `Workspace/OwnerGoals.md`. Adopted
 copies (folder rename, GitHub download, folder copy) may still carry stale rows —
@@ -199,6 +200,8 @@ GettingStarted may:
 
 - clarify read-first paths;
 - update setup navigation;
+- run Workspace Adoption Prep (including Git detach on adopted copies);
+- provision `Indexes/` and run **ManualIndexing** at the end of first session;
 - route the next task to an existing Capability or prompt;
 - keep setup guidance beginner-friendly;
 - update planning notes when a getting-started decision is resolved.
@@ -208,11 +211,11 @@ GettingStarted must not:
 - build the website;
 - choose a platform;
 - add dependencies or automation;
-- create generated indexes;
 - create Skills or runtime adapters;
-- provision new folders;
+- provision Workspace project folders beyond documented intake paths;
 - move owner content;
-- commit or push unless explicitly instructed.
+- commit or push unless explicitly instructed;
+- block Quick Startup on a Git-remote multiple-choice.
 
 ## Good Enough Standard
 
@@ -222,6 +225,8 @@ A first getting-started pass is complete when:
 - three to five owner goals are requested or captured in chat;
 - zero to five **Suggested** valuable reference rows are captured when direction
   implies external canonical sources (optional but encouraged);
+- `Indexes/` exists and first-session files are indexed (unless the owner
+  already declined);
 - Repository Goals remain separate and linked;
 - the next setup task is routed to one existing guide, prompt, or Capability;
 - no unapproved structure, platform, automation, or publishing decision is

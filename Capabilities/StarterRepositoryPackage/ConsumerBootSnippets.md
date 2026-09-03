@@ -47,7 +47,7 @@ Before acting on any task: read this file, then `Standards/AgentSituationalAware
 **Full Quick Startup session:** Workspace Adoption Prep (reset stale boot files) →
 setup questions → Owner Goals → optional prior-repo path note → valuable reference
 candidates → optional reference review → one routed next task → park GitHub →
-soft indexing offer. See GettingStarted first-session order.
+index workspace. See GettingStarted first-session order.
 
 ## Primary Goal Of Repository
 
@@ -115,7 +115,7 @@ New human users: `README.md` → `Capabilities/GettingStarted/GettingStarted.md`
 
 | Signal | Action |
 | --- | --- |
-| **Begin Quick Startup from AGENTS.md** (case-insensitive) | GettingStarted → OwnerGoals → ValuableReferences → soft indexing offer |
+| **Begin Quick Startup from AGENTS.md** (case-insensitive) | GettingStarted → Adoption Prep → OwnerGoals → ValuableReferences → ManualIndexing |
 | First setup; owner goals | `Capabilities/GettingStarted/` |
 | User pastes prior handoff; who has the ball? | `Capabilities/SituationalAwareness/Rules.md` section 2 |
 | Git commit, push, branch | `Capabilities/GitHubWorkflow/` |

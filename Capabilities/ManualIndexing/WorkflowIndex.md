@@ -19,6 +19,7 @@ If `Capabilities/ManualIndexing/` were removed, these instructions would be lost
 | Need | Step |
 | --- | --- |
 | Refresh `Indexes/` after new files | [Prompt.md](Prompt.md) |
+| End of Quick Startup (default) | Provision `Indexes/` if missing, then refresh — no extra owner ask |
 | Confirm index format / columns | [../Indexing/Structure.md](../Indexing/Structure.md) |
 | Validate before refresh (read-only) | [../Indexing/IndexHealthCheck.md](../Indexing/IndexHealthCheck.md) |
 | Provision `Indexes/` first time | [../Indexing/SetupPrompt.md](../Indexing/SetupPrompt.md) |

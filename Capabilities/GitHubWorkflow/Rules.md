@@ -98,6 +98,16 @@ Do not commit credentials, API keys, tokens, local `.env` files, scans, generate
 
 Use `.gitignore` guidance before the first commit when local-only folders are present.
 
+## Adopted Startup Folder
+
+If Quick Startup detached starter Git (or the owner deleted `.git` after copying
+a Startup folder), this directory may not be a Git repository yet. That is
+expected. Start with `git init`, then add **the owner's** `origin` — never the
+starter template URL. If `git` reports "not a git repository", do not run
+`git remote remove`.
+
+See [HowToAdoptThisStarter.md](../GettingStarted/HowToAdoptThisStarter.md).
+
 ## Remote Rules
 
 - If `git remote -v` shows no `origin`, use `git remote add origin ...`.

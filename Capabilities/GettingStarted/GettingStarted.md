@@ -3,7 +3,7 @@ IndexTitle: Getting Started
 IndexDescription: Beginner-friendly entry point for understanding Markdown, read-first files, and the repository workflow.
 IndexType: Setup
 IndexStatus: Active
-LastEdited: 2026-07-06
+LastEdited: 2026-09-03
 -->
 
 # Getting Started
@@ -62,16 +62,18 @@ case-insensitively, then read `AGENTS.md` and route to this Capability — not
 Copy-ready prompts for Cursor, Claude, and ChatGPT:
 [FirstRunAgentPrompts.md](FirstRunAgentPrompts.md).
 
+Owners who **copied** this Startup folder: delete `.git` in the new folder first —
+[HowToAdoptThisStarter.md](HowToAdoptThisStarter.md).
+
 First session order:
 
 1. Read `AGENTS.md` and `README.md`.
 2. **Workspace Adoption Prep** — run [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md)
-   automatically. Reset stale starter boot files (Owner Goals, Valuable References,
-   Import rows, stale `Plans/OpenQuestions.md`) **without asking permission**.
-   Prefer copies made with `Automation/Copy-StartupToProject.ps1` (no `.git`).
-   If a renamed folder still has starter/host `origin`, **remove `.git` and
-   `git init` automatically** — do not stop for remote choices; connect GitHub later.
-   One-line notice to the owner, then continue.
+   automatically. Reset stale starter boot files **without asking**. Prefer
+   copies made with `Automation/Copy-StartupToProject.ps1` (no `.git`). If this
+   folder still has starter-template Git metadata, **detach it** (default:
+   remove `.git`) and continue — **do not** stop for a Git-remote menu. If
+   `.git` is already gone, that is success; do not run git commands.
 3. Display the opening and five setup questions from
    [QuickStartupGreeting.md](QuickStartupGreeting.md) — **do not invent questions**.
    (Use [UserDiscoveryPrompt.md](UserDiscoveryPrompt.md) only **after** Owner Goals
@@ -100,20 +102,15 @@ First session order:
    [PostQuickStartupRouting.md](PostQuickStartupRouting.md) — then confirm in
    `Capabilities/AgentCapabilityGuide.md`. **Do not** route **RepositoryScaffold**
    for packaging validation or "consumer scaffold check."
-9. Park GitHub until the owner chooses.
-10. **Last step — offer indexing (soft).** Tell the owner, without strongly
-   recommending it:
-
-   > Newly created files will be indexed by an agent to speed up chat
-   > processing. This works well when the repository is used only a few times a
-   > day. If the repository is being used more heavily, code-assisted indexing
-   > can be offered. It's okay to wait on this decision — I'll offer it again
-   > when I think it would help.
-
-   Record the choice in `Workspace/OwnerPreferences.md` (Indexing section). Do
-   not block startup waiting for the decision. Manual indexing
-   (`Capabilities/ManualIndexing/`) is the default either way.
-
+9. Park GitHub until the owner chooses (`git init` later via **GitHubWorkflow**
+   if Adoption Prep removed `.git`).
+10. **Index this workspace (default).** Provision `Indexes/` if missing
+    ([../Indexing/SetupPrompt.md](../Indexing/SetupPrompt.md) +
+    [../Indexing/Structure.md](../Indexing/Structure.md)), then refresh via
+    [../ManualIndexing/WorkflowIndex.md](../ManualIndexing/WorkflowIndex.md).
+    Index Owner Goals, preferences, valuable references, and any new Workspace
+    files from this session. Tell the owner indexes are ready. Skip only if the
+    owner already declined indexing in `OwnerPreferences.md`.
 11. **Close the session for the owner** using
     [PostQuickStartupRouting.md](PostQuickStartupRouting.md) § Quick Startup
     complete. Do **not** end with a fenced worker handoff unless the owner

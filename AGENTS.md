@@ -20,7 +20,7 @@ acting.
 
 | Situation | What to do |
 | --- | --- |
-| First time in this repo | Say **"Begin Quick Startup from AGENTS.md"** — agent preps Workspace boot files, then follow `Capabilities/GettingStarted/GettingStarted.md` |
+| First time in this repo | If you copied this folder, delete `.git` in the **new** copy first ([HowToAdoptThisStarter.md](Capabilities/GettingStarted/HowToAdoptThisStarter.md)). Say **"Begin Quick Startup from AGENTS.md"** — agent preps boot files, detaches starter Git without blocking, then follow `Capabilities/GettingStarted/GettingStarted.md` |
 | Start a **new** project from this starter | `Automation/Copy-StartupToProject.ps1 -DestinationName YourProject` (no `.git`) — or Explorer copy then **delete `.git`** — then Quick Startup in the new folder |
 | Review website page examples | **ContentReview** on `Content/Website/Pages/` |
 | Draft one-page business site | **OnePageWebsite** |
@@ -104,7 +104,7 @@ On every new pass, before editing:
 
 | Signal | Action |
 | --- | --- |
-| **Begin Quick Startup from AGENTS.md** | WorkspaceAdoptionPrep (boot files, OpenQuestions, git remote) → GettingStarted → OwnerGoals → ValuableReferences |
+| **Begin Quick Startup from AGENTS.md** | WorkspaceAdoptionPrep (boot files, OpenQuestions, auto Git detach) → GettingStarted → OwnerGoals → ValuableReferences → ManualIndexing |
 | Review website page examples | **ContentReview** |
 | Draft one-page business website | **OnePageWebsite** |
 | Web listing/profile node | **WebPresenceNode** |

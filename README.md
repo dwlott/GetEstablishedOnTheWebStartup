@@ -31,7 +31,12 @@ via **GitHubWorkflow** (`git init` + new repo).
 
 ## First Session (already in this folder)
 
-Say **"Begin Quick Startup from AGENTS.md"** in your agent chat.
+If you **copied** this folder to a new project name, delete `.git` in the
+**new** folder first — [HowToAdoptThisStarter.md](Capabilities/GettingStarted/HowToAdoptThisStarter.md).
+Then say **"Begin Quick Startup from AGENTS.md"** in your agent chat.
+
+The agent will detach leftover starter Git if you forgot, capture Owner Goals,
+and **index** the workspace. It will not stop to ask about the starter remote.
 
 Path example after adoption:
 

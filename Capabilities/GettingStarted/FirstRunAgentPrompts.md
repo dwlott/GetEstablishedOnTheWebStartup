@@ -56,7 +56,8 @@ Ask about prior repository import; add two to five Suggested rows to
 Workspace/ValuableReferences.md when direction implies external sources.
 
 Offer optional reference review; suggest one next step (optional — now or later);
-park GitHub; end with the soft indexing offer and owner session close from
+park GitHub; detach starter Git if needed (do not block); index the workspace
+by default; then owner session close from
 PostQuickStartupRouting.md — not a planner handoff block.
 ```
 
@@ -72,7 +73,7 @@ Begin Quick Startup from AGENTS.md. This is not an app launch.
 Read AGENTS.md, then Capabilities/GettingStarted/GettingStarted.md.
 Run WorkspaceAdoptionPrep.md first, then proceed through the first-session order —
 do not ask again whether to run Quick Startup if I already agreed. Follow through
-Owner Goals, valuable reference candidates, and the soft indexing offer.
+Owner Goals, valuable reference candidates, and default first-session indexing.
 ```
 
 ## Cursor Or Claude Code (Local Folder)
@@ -94,12 +95,9 @@ search term first.
 Offer optional reference review (ReferenceReviewPrompt.md), then recommend
 exactly one focused next task. Do not start GitHub setup unless I ask.
 
-As the last step, offer indexing softly (do not strongly recommend): newly
-created files will be indexed by an agent to speed up chat processing; this
-works well when the repository is used only a few times a day; if used more
-heavily, code-assisted indexing can be offered. Say it's okay to wait and that
-you will offer it again when it would help. Record my choice in
-Workspace/OwnerPreferences.md; do not block startup on it.
+As the last step, index the workspace: create Indexes/ if missing, then
+refresh ManualIndexing for files written this session. Tell me indexes are
+ready. Skip only if I already declined indexing.
 ```
 
 ## Claude Code — Boot With Memory Awareness

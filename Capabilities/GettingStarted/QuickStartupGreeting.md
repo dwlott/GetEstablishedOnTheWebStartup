@@ -11,11 +11,10 @@ LastEdited: 2026-07-16
 # Quick Startup Greeting
 
 **Agents:** Run [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) **first**
-(reset stale starter boot files and stale Open Questions automatically; if a
-renamed folder still has starter `.git`/`origin`, remove `.git` and `git init`
-automatically). Then display this greeting and these questions. **Do not invent
-a different question set.** **Do not ask** whether to overwrite leftover starter
-content — prep already handled that.
+(reset stale starter boot files; detach starter Git automatically — do not
+block on a remote menu). Then display this greeting and these questions.
+**Do not invent a different question set.** **Do not ask**
+whether to overwrite leftover starter content — prep already handled that.
 
 **Do not write** `Workspace/OwnerGoals.md` with real goals until the owner
 answers the five questions below.
@@ -73,8 +72,8 @@ Follow [GettingStarted.md](GettingStarted.md) first-session order from step 4
 onward: write Owner Goals (replace scaffold row), prior-repo path in Import
 section if applicable, valuable references, optional reference review, **one**
 suggested next task per [PostQuickStartupRouting.md](PostQuickStartupRouting.md),
-park GitHub, soft indexing offer, then **close for the owner** (plain chat — not
-a planner handoff block).
+park GitHub, **index the workspace by default**, then **close for the owner**
+(plain chat — not a planner handoff block).
 
 ## Do not
 

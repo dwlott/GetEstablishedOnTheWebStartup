@@ -32,13 +32,12 @@ What I did:
 - (git: fresh-copy-no-git or removed-starter-git — connect GitHub later)
 
 Owner Goals are in Workspace/OwnerGoals.md.
-GitHub: (parked starter-template | new repo connected | local-only | unchanged — match OwnerPreferences).
+Indexes were refreshed (or Indexes/ was created) for this session's files.
+GitHub: (plain folder / no .git | new repo connected | local-only | unchanged — match OwnerPreferences).
 Do not push until the owner explicitly asks.
 
 Suggested next step (optional — you can do this now or later):
 - (one Capability or prompt from the routing table below)
-
-Indexing: (soft offer from GettingStarted step 10 — manual default; code-assisted optional later)
 ```
 
 Do **not** format the close as `Summary / Files Changed / Planning Files To Review /

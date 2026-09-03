@@ -15,7 +15,7 @@ a user prompt to a Capability. Confirm in [AgentCapabilityGuide.md](AgentCapabil
 
 | Capability | Intent keywords | Entry | Tier / Status |
 | --- | --- | --- | --- |
-| GettingStarted | first setup, owner goals, quick startup, Begin Quick Startup from AGENTS.md | [Prompt](GettingStarted/Prompt.md) | Archetype / Active |
+| GettingStarted | first setup, owner goals, quick startup, Begin Quick Startup from AGENTS.md, adopt starter copy, folder copy, delete .git | [Prompt](GettingStarted/Prompt.md) | Archetype / Active |
 | BusinessPlan | business plan, North Star goal, clarify goals, business-plan inputs, discovery | [Prompt](BusinessPlan/Prompt.md) | Archetype / Active |
 | ContentReview | review public website page drafts, clarity, claims | [Prompt](ContentReview/Prompt.md) | Archetype / Active |
 | OnePageWebsite | draft owner's one-page business website | [Prompt](OnePageWebsite/Prompt.md) | Archetype / Active |

@@ -82,6 +82,8 @@ It does not provision new repository folders. There is no `Structure.md` or
 - Worker entry: [Prompt.md](Prompt.md)
 - Adoption prep: [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md)
 - Beginner entry point: [GettingStarted.md](GettingStarted.md)
+- Adopt a Startup copy: [HowToAdoptThisStarter.md](HowToAdoptThisStarter.md)
+- Adoption prep: [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md)
 - Owner Goal operating loop: [OwnerGoalOperatingLoop.md](OwnerGoalOperatingLoop.md)
 - Fuller setup guide: [UserSetupGuide.md](../../Plans/UserSetupGuide.md)
 - Repository North Star: [RepositoryGoals.md](../../Plans/RepositoryGoals.md)
