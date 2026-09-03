@@ -3,9 +3,9 @@ IndexTitle: WordPressMigrationBackup Capability
 IndexDescription: Backup database and assets before WordPress experiments and Bluehost export.
 IndexType: Capability
 CapabilityName: WordPressMigrationBackup
-CapabilityVersion: 3
+CapabilityVersion: 4
 IndexStatus: Active
-LastEdited: 2026-07-23
+LastEdited: 2026-09-03
 -->
 
 # WordPressMigrationBackup Capability
@@ -28,7 +28,7 @@ LastEdited: 2026-07-23
 
 ## Related Plans
 
-- [Plans/WordPressSaveWorkflow.md](../../Plans/WordPressSaveWorkflow.md)
+- [WordPressSave](../WordPressSave/README.md)
 - [Plans/WordPressWebsiteCapabilityGroupPlan.md](../../Plans/WordPressWebsiteCapabilityGroupPlan.md)
 - [Plans/CrossRepoCapabilityGapMatrix.md](../../Plans/CrossRepoCapabilityGapMatrix.md)
 
@@ -46,20 +46,21 @@ LastEdited: 2026-07-23
 | **CreatedFrom** | Starter + commissioned Bluehost go-live lessons 2026-07-14 |
 | **SourceSummary** | Pre-write / pre-migrate backups; points at BluehostDatabasePrep automation |
 | **PromotionStatus** | Active |
-| **Dependencies** | SiteDeployProfiles (host DB name, prefix); WordPress Save Plans+Automation for local snapshot |
+| **Dependencies** | SiteDeployProfiles (host DB name, prefix); **WordPressSave** for local snapshot |
 | **RelatedFiles** | WorkflowIndex.md, Rules.md, Prompt.md |
-| **LastReviewed** | 2026-07-23 |
-| **HarmonizationNotes** | Serialize-aware replace + SiteDeployProfiles pattern; keep credentials out of Git |
+| **LastReviewed** | 2026-09-03 |
+| **HarmonizationNotes** | MoverCalcsWeb Bluehost hardening blended; prefix guard; Downloads-only default |
 
 ## Capability Changelog
 
 | Date | Ver | Change | Lesson / why | Files |
 | --- | ---: | --- | --- | --- |
+| 2026-09-03 | 4 | Blended MoverCalcsWeb Bluehost hardening | Serialized PHP rewrite, prefix case normalization, `-AdditionalReplacement`, Downloads-only output | Rules, Automation/BluehostDatabasePrep |
 | 2026-07-23 | 3 | Blended Bluehost prep path from commissioned go-live (CapabilityHarmonize Option B) | Naive SQL string replace fails on PHP-serialized widgets/theme_mods; temp DB + search-replace-urls.php then adapter | README, Rules, Prompt, Automation/BluehostDatabasePrep |
 | 2026-07-07 | 2 | Capability active on starter | Pre-write backup gate | Capability folder |
 | 2026-07-06 | 1 | Capability scaffold | Pre-write backup gate for local WP experiments | Capability folder |
 
 ## Related
 
-- [Plans/WordPressSaveWorkflow.md](../../Plans/WordPressSaveWorkflow.md)
+- [WordPressSave](../WordPressSave/README.md)
 - [MirrorWebAssets](../MirrorWebAssets/README.md)

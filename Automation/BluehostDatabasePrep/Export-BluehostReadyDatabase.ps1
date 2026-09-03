@@ -1,5 +1,6 @@
 param(
 	[string] $SiteKey = '',
+	[string] $SiteLabel = '',
 	[string] $BluehostDatabaseName = 'youraccount_yoursite',
 	[string] $ExpectedTablePrefix = 'wp_',
 	[string] $PublicUrl = 'https://your-site.example',
@@ -8,7 +9,9 @@ param(
 	[string] $WorkDirectory = '',
 	[switch] $Force,
 	[switch] $KeepIntermediate,
-	[string] $MysqldumpPath = ''
+	[switch] $AllowCustomOutputPath,
+	[string] $MysqldumpPath = '',
+	[string[]] $AdditionalReplacement = @()
 )
 
 $ErrorActionPreference = 'Stop'
@@ -80,7 +83,10 @@ function Invoke-PythonAdapter {
 		$output = & $py.Source @args 2>&1
 		$code = $LASTEXITCODE
 		$output | ForEach-Object { Write-Host $_ }
-		return [int]$code
+		if ($code -eq 0) {
+			return 0
+		}
+		Write-Warning "The Python launcher failed with exit code $code; trying python.exe directly."
 	}
 
 	$python = Get-Command python -ErrorAction SilentlyContinue
@@ -103,12 +109,28 @@ $localDbUser = Get-WpConfigDefine -Text $wpConfig -Name 'DB_USER'
 $localDbHost = Get-WpConfigDefine -Text $wpConfig -Name 'DB_HOST'
 $localPrefix = Get-WpTablePrefix -Text $wpConfig
 
+if ($localPrefix -ne $ExpectedTablePrefix) {
+	throw "Local table prefix '$localPrefix' does not match -ExpectedTablePrefix '$ExpectedTablePrefix'. Fix SiteDeployProfiles or wp-config before export."
+}
+
+if (-not $SiteLabel) {
+	$SiteLabel = if ($SiteKey) { $SiteKey } else { 'WordPress site' }
+}
+
 if (-not $WorkDirectory) {
 	$WorkDirectory = Join-Path ([System.IO.Path]::GetTempPath()) 'WordPressBluehostPrep'
 }
 if (-not $OutputPath) {
 	$OutputPath = Join-Path (Join-Path $env:USERPROFILE 'Downloads') 'wordpress-bluehost-ready.sql'
 }
+
+$downloadsDirectory = [System.IO.Path]::GetFullPath((Join-Path $env:USERPROFILE 'Downloads')).TrimEnd('\')
+$requestedOutputPath = [System.IO.Path]::GetFullPath($OutputPath)
+$isInDownloads = $requestedOutputPath.StartsWith($downloadsDirectory + '\', [System.StringComparison]::OrdinalIgnoreCase)
+if (-not $isInDownloads -and -not $AllowCustomOutputPath) {
+	throw "Bluehost-ready SQL must be written under '$downloadsDirectory'. Use -AllowCustomOutputPath only for an intentional test export."
+}
+$OutputPath = $requestedOutputPath
 
 $WorkDirectory = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($WorkDirectory)
 $outputDirectory = Split-Path -Parent $OutputPath
@@ -124,8 +146,17 @@ $exportGzip = Join-Path $WorkDirectory "wordpress-local-export-$timestamp.sql.gz
 $rawSql = Join-Path $WorkDirectory "wordpress-local-export-$timestamp.sql"
 $reportPath = "$OutputPath.report.json"
 $adapterPath = Join-Path $PSScriptRoot 'prepare_bluehost_sql.py'
+$effectiveAdditionalReplacement = @($AdditionalReplacement)
+$localPath = ([System.Uri]($LocalUrl.TrimEnd('/') + '/')).AbsolutePath.TrimEnd('/')
+$publicPath = ([System.Uri]($PublicUrl.TrimEnd('/') + '/')).AbsolutePath.TrimEnd('/')
+if ($localPath -and $publicPath -eq '') {
+	$pathMapping = "$localPath/=/"
+	if (-not ($effectiveAdditionalReplacement -contains $pathMapping)) {
+		$effectiveAdditionalReplacement += $pathMapping
+	}
+}
 
-Write-Host 'WordPress Bluehost database prep'
+Write-Host "$SiteLabel Bluehost database prep"
 Write-Host "  Local wp-config:       $wpConfigPath"
 Write-Host "  Local database:        $localDbName @ $localDbHost"
 Write-Host "  Local database user:   $localDbUser"
@@ -134,7 +165,11 @@ Write-Host ''
 Write-Host "  Bluehost database:     $BluehostDatabaseName"
 Write-Host "  Bluehost table prefix: $ExpectedTablePrefix"
 Write-Host "  Replace URL:           $LocalUrl -> $PublicUrl"
+foreach ($replacement in $effectiveAdditionalReplacement) {
+	Write-Host "  Additional URL map:    $replacement"
+}
 Write-Host "  Output SQL:            $OutputPath"
+Write-Host "  Output policy:         Downloads folder required"
 Write-Host "  Report:                $reportPath"
 Write-Host ''
 
@@ -160,6 +195,12 @@ $adapterArgs = @(
 	'--expected-prefix', $ExpectedTablePrefix,
 	'--report', $reportPath
 )
+$localUri = [System.Uri]($LocalUrl.TrimEnd('/') + '/')
+$localAssetPath = $localUri.AbsolutePath.TrimEnd('/') + '/wp-content/'
+$adapterArgs += @('--additional-replacement', "$localAssetPath=/wp-content/")
+foreach ($replacement in $effectiveAdditionalReplacement) {
+	$adapterArgs += @('--additional-replacement', $replacement)
+}
 
 $exitCode = Invoke-PythonAdapter -AdapterPath $adapterPath -AdapterArgs $adapterArgs
 if ($exitCode -ne 0) {

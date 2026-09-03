@@ -14,7 +14,7 @@ $failures = @()
 switch ($Profile) {
     'Consumer' { $ExpectedCaps = 12; $ExpectedPlans = 10 }
     'WebPresence' { $ExpectedCaps = 26; $ExpectedPlans = 14 }
-    'WebPresenceWordPress' { $ExpectedCaps = 32; $ExpectedPlans = 27 }
+    'WebPresenceWordPress' { $ExpectedCaps = 33; $ExpectedPlans = 28 }
 }
 
 function Add-Failure([string]$Message) {
@@ -125,15 +125,16 @@ try {
             "Plans/WordPressMigrationCapabilityPlan.md",
             "Plans/HighAltitudeThemeMethod.md",
             "Workspace/SiteDeployProfiles/_TEMPLATE.md",
-            "Capabilities/CPanelEmail/Prompt.md"
+            "Capabilities/CPanelEmail/Prompt.md",
+            "Capabilities/WordPressSave/README.md",
+            "Plans/WordPressMailDeliveryPlan.md"
         )) {
             if (-not (Test-Path $path)) { Add-Failure "Missing WordPress layer file: $path" }
             else { Add-Pass "Present: $path" }
         }
 
         foreach ($path in @(
-            "Capabilities/AltitudeProOverlay",
-            "Capabilities/WordPressSave"
+            "Capabilities/AltitudeProOverlay"
         )) {
             if (Test-Path $path) { Add-Failure "Commissioned-only Cap must stay out of starter: $path" }
             else { Add-Pass "Absent (intentional): $path" }

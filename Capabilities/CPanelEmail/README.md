@@ -50,5 +50,6 @@ Operates on **external** cPanel and the owner's mail client. Does not provision 
 
 - [Rules.md](Rules.md)
 - [Prompt.md](Prompt.md)
+- [WordPressMailDeliveryPlan.md](../../Plans/WordPressMailDeliveryPlan.md) — mailboxes vs WordPress outbound vs DNS
 - [AgentCapabilityGuide.md](../AgentCapabilityGuide.md)
 - [CapabilityMetadataStandard.md](../../Standards/CapabilityMetadataStandard.md)

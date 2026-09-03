@@ -3,7 +3,7 @@ IndexTitle: Agent Capability Guide
 IndexDescription: Startup repository intent routing for GetEstablishedOnTheWebStartup.
 IndexType: Capability
 IndexStatus: Active
-LastEdited: 2026-07-16
+LastEdited: 2026-09-03
 -->
 
 # Agent Capability Guide
@@ -55,6 +55,7 @@ Use after [AGENTS.md](../AGENTS.md) for workflow tasks on the
 | Sync Markdown/manifests to WordPress (`ges-build`) | **WordPressContentUpdate** | [Prompt](WordPressContentUpdate/Prompt.md) | Active | Archetype | Owner-approved --write |
 | Genesis child theme / Altitude overlay work | **StudioPressGenesisChildTheme** | [Prompt](StudioPressGenesisChildTheme/Prompt.md) | Active | Archetype | Theme boundaries |
 | Backup before WordPress experiments; Bluehost SQL prep | **WordPressMigrationBackup** | [Prompt](WordPressMigrationBackup/Prompt.md) | Active | Universal | DB snapshot first; serialize-aware prep |
+| WordPress save after local WAMP/wp-admin edits | **WordPressSave** | [Prompt](WordPressSave/Prompt.md) | Active | Universal | Owner must request; ThemeTrackManifest.json |
 | Mirror WordPress uploads/theme to Dropbox | **MirrorWebAssets** | [WorkflowIndex](MirrorWebAssets/WorkflowIndex.md) | Active | Universal | WebAssetsSites.json |
 | cPanel/Bluehost email; mailbox limit; forwarder; Thunderbird setup | **CPanelEmail** | [Prompt](CPanelEmail/Prompt.md) | Active | Universal | Rules.md mailbox vs forwarder |
 
@@ -86,7 +87,7 @@ Use after [AGENTS.md](../AGENTS.md) for workflow tasks on the
 | Planning a vendor listing/profile node | **WebPresenceNode** | individual one-off page edits |
 | Planning **Google Business Profile** | **WebPresenceNode** first; `GoogleBusinessProfile` only for planned child boundaries | GoogleDriveLink |
 | Mirror repository / Git repo to Dropbox | **MirrorToWindows** | MirrorWebAssets (uploads/theme only) |
-| WordPress save after local edits | `Plans/WordPressSaveWorkflow.md` + `Automation/WordPressSave/` | Inventing a `Capabilities/WordPressSave/` Cap in this starter |
+| WordPress save after local edits | **WordPressSave** | **WordPressContentUpdate** (Git-first path) |
 | Bluehost / production SQL prep | **WordPressMigrationBackup** + BluehostDatabasePrep | DNS/import without owner approval |
 | Create / update pages or posts | **WordPressContentUpdate** (intro stack) | Skipping intro stack or inventing alternate layouts |
 | Local WordPress build | **WordPressContentUpdate** | Production launch without approval |
@@ -125,6 +126,7 @@ Use after [AGENTS.md](../AGENTS.md) for workflow tasks on the
 | GoogleBusinessProfile | Planned checklist/readiness guidance |
 | YelpBusinessProfile | Planned checklist/readiness guidance |
 | CPanelEmail | cPanel steps; Thunderbird manual settings; forwarder/send-as guidance |
+| WordPressSave | Theme + DB snapshot report; Dropbox mirror status; no commit unless owner asked |
 
 ## Situational Awareness (Always On)
 

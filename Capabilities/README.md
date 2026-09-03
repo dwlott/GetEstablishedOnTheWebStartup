@@ -3,7 +3,7 @@ IndexTitle: Capability Registry
 IndexDescription: Startup repository Capability registry for GetEstablishedOnTheWebStartup (WebPresence + WordPress extension).
 IndexType: README
 IndexStatus: Active
-LastEdited: 2026-07-14
+LastEdited: 2026-09-03
 -->
 
 # Capability Registry
@@ -66,6 +66,7 @@ MoverCalcs.com, US1Movers, or other customer websites.
 | Archetype | WordPressContentUpdate | Sync Markdown to WordPress; ges-build | Active | [Prompt](WordPressContentUpdate/Prompt.md) | [Rules](WordPressContentUpdate/Rules.md) |
 | Archetype | StudioPressGenesisChildTheme | Genesis child theme / Altitude hooks | Active | [Prompt](StudioPressGenesisChildTheme/Prompt.md) | [Rules](StudioPressGenesisChildTheme/Rules.md) |
 | Universal | WordPressMigrationBackup | Backup before WP experiments; Bluehost SQL prep | Active | [Prompt](WordPressMigrationBackup/Prompt.md) | [Rules](WordPressMigrationBackup/Rules.md) |
+| Universal | WordPressSave | Persist local WAMP theme + DB to Git; Dropbox mirror | Active | [Prompt](WordPressSave/Prompt.md) | [Rules](WordPressSave/Rules.md) |
 | Universal | CPanelEmail | cPanel/Bluehost mailboxes, forwarders, Thunderbird | Active | [Prompt](CPanelEmail/Prompt.md) | [Rules](CPanelEmail/Rules.md) |
 
 ## Planned WebPresence Capabilities
@@ -84,7 +85,6 @@ MoverCalcs.com, US1Movers, or other customer websites.
 | Item | Why |
 | --- | --- |
 | AltitudeProOverlay Cap / full High Altitude CSS | Commissioned-site theme Cap — not starter; see `Plans/HighAltitudeThemeMethod.md` pointer |
-| `Capabilities/WordPressSave/` | Starter keeps **Plans + Automation** only (`Plans/WordPressSaveWorkflow.md`, `Automation/WordPressSave/`) |
 | MoversForumParticipation | Product/community host ops — not starter |
 | Customer deploy profiles | Belong on the owner's project repo after adopt |
 

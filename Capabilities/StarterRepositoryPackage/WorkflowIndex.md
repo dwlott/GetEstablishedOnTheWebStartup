@@ -227,9 +227,9 @@ Required for the shipped WebPresenceWordPress profile. Apply
 **[WebPoweredStartupExtensionSpec.md](WebPoweredStartupExtensionSpec.md)** ADD
 matrix after Steps 2c–2d:
 
-- WordPress Capability folders + CPanelEmail → **32** total (verify with `-Profile WebPresenceWordPress`)
-- `Workspace/LocalWordPressBuild/` + WordPress Save **Plans + Automation**
-- Do **not** add `Capabilities/AltitudeProOverlay/` or `Capabilities/WordPressSave/`
+- WordPress Capability folders + CPanelEmail + **WordPressSave** → **33** total (verify with `-Profile WebPresenceWordPress`)
+- `Workspace/LocalWordPressBuild/` + WordPressSave Capability + pointer plan
+- Do **not** add `Capabilities/AltitudeProOverlay/`
 
 Skip this step for `GetEstablishedStartup`.
 

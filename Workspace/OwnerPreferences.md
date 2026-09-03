@@ -68,7 +68,7 @@ Preferred: copy without `.git` (`Automation/Copy-StartupToProject.ps1`).
 .\Automation\WordPressSave\Save-LocalWordPress.ps1
 ```
 
-Preview: add `-WhatIf`. See [Plans/WordPressSaveWorkflow.md](../Plans/WordPressSaveWorkflow.md).
+Preview: add `-WhatIf`. Capability: [WordPressSave](../Capabilities/WordPressSave/README.md).
 
 ## Related
 

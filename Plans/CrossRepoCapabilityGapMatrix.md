@@ -3,7 +3,7 @@ IndexTitle: Cross-Repo Capability Gap Matrix
 IndexDescription: Living inventory for CapabilityHarmonize passes involving GetEstablishedOnTheWebStartup.
 IndexType: Project
 IndexStatus: Active
-LastEdited: 2026-07-23
+LastEdited: 2026-09-03
 -->
 
 # Cross-Repo Capability Gap Matrix
@@ -16,8 +16,9 @@ Capability is promoted, blended, or intentionally diverges.
 | Repo | Path | Archetype | Notes |
 | --- | --- | --- | --- |
 | **GetEstablishedOnTheWebStartup** | `C:\Repositories\GetEstablishedOnTheWebStartup` | WebPresence + WordPress starter | This file — packaging + Universal lesson target |
-| **DansRepairService** | `C:\Repositories\DansRepairService` | Commissioned instance | Latest go-live reference (2026-07-14); keep site data local |
-| **GetEstablishedOnTheWeb** | Product host (when present) | Product / archetype host | Source for packaging profile |
+| **MoverCalcsWeb** | `C:\Repositories\MoverCalcsWeb` | Commissioned (help + forum) | Bluehost hardening + multi-site WordPressSave source |
+| **GetEstablishedOnTheWeb** | Product host | Product / archetype host | MoversForumParticipation v2; packaging source |
+| **GetEstablished** | General method host | Non-web (books, resumes) | Not a WordPress method home |
 
 ## How To Use
 
@@ -33,32 +34,42 @@ profiles in the starter.
 
 ## I. Self-Provisioning And Packaging
 
-| Area | DansRepairService | GEOTWStartup | Reconcile? | Notes |
+| Area | MoverCalcsWeb | GEOTWStartup | Reconcile? | Notes |
 | --- | --- | --- | --- | --- |
 | Self-provisioning core | Present | Present | Done | Required Yes set on both |
-| Starter packaging | Consumer + WebPresence specs | WebPresenceWordPress (31 Caps) | Done | Two-phase repair + WebPowered extension |
-| VerifyStarterPackage | Present | WebPresenceWordPress profile | Intentional | Starter verify includes OpenQuestions checks |
+| Starter packaging | N/A | WebPresenceWordPress (**33** Caps) | Done | WordPressSave promoted 2026-09-03 |
+| VerifyStarterPackage | N/A | WebPresenceWordPress profile | Intentional | Expects `Capabilities/WordPressSave/` |
 
 ## II. WordPress Group
 
-| Capability | DansRepairService | GEOTWStartup | Reconcile? | Harmonize action |
+| Capability | MoverCalcsWeb | GEOTWStartup | Reconcile? | Harmonize action |
 | --- | --- | --- | --- | --- |
-| WordPressMigrationBackup | Active + Bluehost lessons | Active v3 (blended 2026-07-23) | Done | Serialize-aware prep + SiteDeployProfiles |
-| WordPressSave | Commissioned Active Cap | **Plans + Automation only** | Intentional | Do not add `Capabilities/WordPressSave/` here |
-| AltitudeProOverlay | Commissioned Active | **Not shipped** | Intentional | Commissioned project repos only; Genesis holds archetype defaults |
-| StudioPressGenesisChildTheme | Active + overlay pointer | Active + 360×76 / 1200 defaults | Done | CommonTweaks stay on project repos |
+| WordPressMigrationBackup | Plan-level | **Active v4** (blended 2026-09-03) | Done | MoverCalcsWeb hardening ported |
+| WordPressSave | **Active** — help + forum tracks | **Active v1** — single-site | Intentional | Promoted from MC pattern 2026-09-03 |
+| BluehostDatabasePrep | Hardened source | Blended scripts + README | Done | Serialized rewrite, prefix guard |
+| BluehostEmailDelivery | **Active** | N/A | Intentional | Never copy; see `Plans/WordPressMailDeliveryPlan.md` |
+| CPanelEmail | N/A | **Active** | Intentional | Starter mailboxes/forwarders |
+| AltitudeProOverlay | Commissioned Active | **Not shipped** | Intentional | Commissioned project repos only |
+| StudioPressGenesisChildTheme | Folded into overlay | Active + defaults | Done | CommonTweaks stay on project repos |
 | MirrorWebAssets | Active | Active | Intentional | Per-repo site manifests |
-| SiteDeployProfiles | Filled DRS profile | Template README only | Intentional | Do not copy filled host profiles |
+| SiteDeployProfiles | Filled MC profiles | Template README only | Intentional | Do not copy filled host profiles |
 
-## III. Harmonization Log
+## III. Forum (GEOTW product, not starter)
+
+| Capability | GetEstablishedOnTheWeb | MoverCalcsWeb | Notes |
+| --- | --- | --- | --- |
+| MoversForumParticipation | **Active v2** (2026-09-03) | N/A | Not shipped on starter |
+| AltitudeForumCapability | N/A | **Active** | Never copy to starter |
+
+## IV. Harmonization Log
 
 | Date | Change |
 | --- | --- |
-| 2026-07-23 | DRS → GEOTWStartup: Bluehost serialize-aware prep + gap matrix; Cap shells for Save/Overlay deferred per WebPresenceWordPress packaging |
+| 2026-09-03 | WordPressSave Cap promoted; Bluehost SQL hardening; WordPressMailDeliveryPlan on this starter (GetEstablished is non-web) |
+| 2026-07-23 | DRS → GEOTWStartup: Bluehost serialize-aware prep; Save deferred per packaging |
 
 ## Related
 
-- [SelfProvisioningRepositoryModel.md](SelfProvisioningRepositoryModel.md)
-- [StartupModernizationAudit-20260716.md](StartupModernizationAudit-20260716.md)
-- [Capabilities/CapabilityHarmonize/README.md](../Capabilities/CapabilityHarmonize/README.md)
-- [Capabilities/StarterRepositoryPackage/WebPresenceStartupRepairSpec.md](../Capabilities/StarterRepositoryPackage/WebPresenceStartupRepairSpec.md)
+- `C:\Repositories\GetEstablishedOnTheWeb\Plans\CrossRepoCapabilityGapMatrix.md` — product + forum participant view
+- `C:\Repositories\MoverCalcsWeb\Plans\CrossRepoCapabilityGapMatrix.md` — commissioned reference
+- [WordPressMailDeliveryPlan.md](WordPressMailDeliveryPlan.md) — mailboxes vs WordPress outbound vs DNS

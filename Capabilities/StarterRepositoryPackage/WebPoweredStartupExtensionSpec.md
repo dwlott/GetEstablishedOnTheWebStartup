@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: StarterRepositoryPackage
 CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-07-16
+LastEdited: 2026-09-03
 -->
 
 # Web-Powered Startup Extension Spec
@@ -20,12 +20,12 @@ project and GEOTW localhost — without copying site-specific content or breakin
 
 | Item | Target |
 | --- | --- |
-| Capability folders (extension) | +5 (`MirrorWebAssets`, WordPress group ×4) |
-| Total Capability folders | **31** (26 base + 5 extension) |
+| Capability folders (extension) | +6 (`MirrorWebAssets`, WordPress group ×5 incl. WordPressSave) |
+| Total Capability folders | **33** (26 base + 6 extension + CPanelEmail) |
 | Plans files (extension) | WordPress setup / Save / group plan (+ audit & model docs kept) |
 | Total Plans files | **25** (see repair-spec whitelist; includes CrossRepoCapabilityGapMatrix) |
 | `Workspace/LocalWordPressBuild/` | Present with `ges-*` scripts |
-| WordPress Save | `Plans/` + `Automation/WordPressSave/` — **not** `Capabilities/WordPressSave/` |
+| WordPress Save | **WordPressSave** Capability + `Plans/WordPressSaveWorkflow.md` pointer + `Automation/WordPressSave/` |
 | AltitudeProOverlay | **Do not add** (commissioned repos only) |
 | `Workspace/Reference/WordPressGenesisOperatingGuide/` | Curated starter subset |
 | Production launch | Still out of scope |
@@ -40,6 +40,7 @@ Capabilities/WordPressWebsite/                   <- NEW starter-safe
 Capabilities/WordPressContentUpdate/             <- NEW starter-safe
 Capabilities/StudioPressGenesisChildTheme/       <- NEW starter-safe
 Capabilities/WordPressMigrationBackup/           <- NEW starter-safe
+Capabilities/WordPressSave/                      <- promoted single-site (2026-09-03)
 ```
 
 Promote WordPress group to **Active** in startup registry only. GEOTW product
@@ -64,6 +65,7 @@ Update `Automation/README.md` to list all folders above.
 Plans/LocalWordPressSetupPlan.md                 <- generalized from an existing WordPress project
 Plans/WordPressSaveWorkflow.md                   <- generalized from an existing WordPress project
 Plans/WordPressWebsiteCapabilityGroupPlan.md     <- NEW
+Plans/WordPressMailDeliveryPlan.md               <- NEW (2026-09-03)
 ```
 
 ## ADD — Workspace

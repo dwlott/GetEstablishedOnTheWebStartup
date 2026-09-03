@@ -34,7 +34,7 @@ Workspace/SiteDeployProfiles/_TEMPLATE.md
 | WordPress setup | `Plans/LocalWordPressSetupPlan.md` |
 | WampServer / MAMP install | `Capabilities/WordPressWebsite/WampServerAndMampSetup.md` |
 | WAMP/MAMP full guide | `Workspace/Reference/WampServer-and-MAMP-Installation-Migration-Guide.md` |
-| WordPress save workflow | `Plans/WordPressSaveWorkflow.md` |
+| WordPress save workflow | `Capabilities/WordPressSave/` (pointer: `Plans/WordPressSaveWorkflow.md`) |
 | Migration / Bluehost re-push | `Plans/WordPressMigrationCapabilityPlan.md` |
 | High Altitude method pointer | `Plans/HighAltitudeThemeMethod.md` |
 | WordPress Capability group | `Plans/WordPressWebsiteCapabilityGroupPlan.md` |
@@ -45,6 +45,7 @@ Workspace/SiteDeployProfiles/_TEMPLATE.md
 | DB snapshot | `Automation/DatabaseBackups/Export-LocalWordPressDatabase.ps1` |
 | Bluehost SQL export | `Automation/BluehostDatabasePrep/` |
 | cPanel email / Thunderbird | `Capabilities/CPanelEmail/` |
+| WordPress mail vs DNS vs mailbox | `Plans/WordPressMailDeliveryPlan.md` |
 | Genesis operating guide | `Workspace/Reference/WordPressGenesisOperatingGuide/` |
 | Owner WAMP/mirror settings | `Workspace/OwnerPreferences.md` |
 | Capability routing | `Capabilities/AgentCapabilityGuide.md` |

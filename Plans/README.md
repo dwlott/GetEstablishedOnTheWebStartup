@@ -21,6 +21,7 @@ Setup guides and lightweight registers for this **startup** workspace.
 | [LocalWordPressSetupPlan.md](LocalWordPressSetupPlan.md) | Local WAMP WordPress bootstrap |
 | [WordPressSaveWorkflow.md](WordPressSaveWorkflow.md) | Save local WP theme + DB to Git / Dropbox |
 | [WordPressWebsiteCapabilityGroupPlan.md](WordPressWebsiteCapabilityGroupPlan.md) | WordPress Capability group |
+| [WordPressMailDeliveryPlan.md](WordPressMailDeliveryPlan.md) | cPanel mailboxes vs WordPress outbound vs DNS |
 | [RepositorySearchMap.md](RepositorySearchMap.md) | Where to put new files |
 | [AgentTaskBacklog.md](AgentTaskBacklog.md) | Ready-next task queue |
 | [StartupRepositoryAudit-20260714.md](StartupRepositoryAudit-20260714.md) | Startup shape audit (this pass) |

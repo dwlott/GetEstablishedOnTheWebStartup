@@ -3,7 +3,7 @@ IndexTitle: Repository Instructions
 IndexDescription: Agent boot for GetEstablishedOnTheWebStartup web-presence and WordPress bootstrap starter.
 IndexType: Workflow
 IndexStatus: Active
-LastEdited: 2026-07-24
+LastEdited: 2026-09-03
 -->
 
 # Repository Instructions
@@ -35,7 +35,7 @@ acting.
 | Mirror Git repository refresh | **MirrorToWindows** — reads `Workspace/OwnerPreferences.md` |
 | WordPress asset backup/restore | **MirrorWebAssets** |
 | Install WampServer (Windows) or MAMP (macOS) *(optional offer)* | **WordPressWebsite** → [WampServerAndMampSetup.md](Capabilities/WordPressWebsite/WampServerAndMampSetup.md) |
-| Save local WordPress to Git + Dropbox | **WordPress Save** — `Plans/WordPressSaveWorkflow.md` + `Automation/WordPressSave/` |
+| Save local WordPress to Git + Dropbox | **WordPressSave** |
 | Prepare SQL for Bluehost / production import | **WordPressMigrationBackup** + `Automation/BluehostDatabasePrep/` + `Workspace/SiteDeployProfiles/` |
 | Create / update pages or posts | **WordPressContentUpdate** — hide Genesis title; `h1.ges-page-title`; stack **Intro Photo → Intro Hero → Intro Body → Intro Pitch** via `page-layout-manifest.php` (`intro_paragraphs` => 2) |
 | Local WordPress build (owner-approved) | `Workspace/LocalWordPressBuild/ges-build.php` |
@@ -112,7 +112,7 @@ On every new pass, before editing:
 | Bluehost SQL / deploy profile | `SiteDeployProfiles` + `BluehostDatabasePrep` |
 | cPanel email / Thunderbird | **CPanelEmail** |
 | High Altitude theme method | `Plans/HighAltitudeThemeMethod.md` (Cap on project repo) |
-| WordPress save after local edits | `Plans/WordPressSaveWorkflow.md` (no `Capabilities/WordPressSave/` folder here) |
+| WordPress save after local edits | **WordPressSave** |
 | Prepare Bluehost / production DB SQL | **WordPressMigrationBackup** + BluehostDatabasePrep |
 | Install / migrate WampServer or MAMP *(optional)* | **WordPressWebsite** → WampServerAndMampSetup |
 | Create / update pages or posts | **WordPressContentUpdate** intro stack + `page-layout-manifest.php` |
@@ -126,8 +126,7 @@ On every new pass, before editing:
 
 Map workflow requests through `Capabilities/RouterIndex.md`. Shipped Capabilities
 include WebPresence pack, self-provisioning core, MirrorWebAssets, CPanelEmail,
-and the WordPress group (Active). WordPress Save is **Plans + Automation only**.
-**AltitudeProOverlay** Cap stays on commissioned project repos — see
+and the WordPress group (Active, including **WordPressSave**). **AltitudeProOverlay** Cap stays on commissioned project repos — see
 `Plans/HighAltitudeThemeMethod.md`.
 
 ## Stop Conditions

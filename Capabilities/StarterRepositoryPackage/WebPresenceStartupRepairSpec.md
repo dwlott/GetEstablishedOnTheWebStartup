@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: StarterRepositoryPackage
 CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-07-23
+LastEdited: 2026-09-03
 -->
 
 # WebPresence Startup Repair Spec
@@ -15,7 +15,7 @@ Use this spec to repair a fresh copy of
 `C:\Repositories\GetEstablishedOnTheWebStartup`.
 
 Starter profile: `GetEstablishedOnTheWebStartup`  
-Verify profile: **`WebPresenceWordPress`** (31 Capabilities; WordPress layer present)
+Verify profile: **`WebPresenceWordPress`** (33 Capabilities; WordPress layer + WordPressSave)
 
 This is a packaging profile for the downloadable / cloneable starter — not a
 public product repository and not a commissioned customer site.
@@ -25,7 +25,7 @@ public product repository and not a commissioned customer site.
 | Phase | Spec | Result |
 | --- | --- | --- |
 | **1 — Base WebPresence** | This file (Keep / Remove / Identity) | Starter-safe WebPresence pack; no host `.git` / agent runtime |
-| **2 — WebPowered extension** | [WebPoweredStartupExtensionSpec.md](WebPoweredStartupExtensionSpec.md) | +5 WordPress Caps, `Workspace/LocalWordPressBuild/`, WordPress Save **Plans + Automation** |
+| **2 — WebPowered extension** | [WebPoweredStartupExtensionSpec.md](WebPoweredStartupExtensionSpec.md) | +6 WordPress Caps (incl. WordPressSave), `Workspace/LocalWordPressBuild/` |
 
 Always apply Phase 2 after Phase 1 for the current shipped starter. Phase 1 may
 remove `Workspace/LocalWordPressBuild/` at robocopy time; Phase 2 **re-adds** it
@@ -41,9 +41,9 @@ Boot templates: [WebPresenceBootSnippets.md](WebPresenceBootSnippets.md).
 | Startup workspace | `C:\Repositories\GetEstablishedOnTheWebStartup` |
 | Git metadata | Removed from packaging workspace (owner re-inits after adopt) |
 | Agent runtime config | `.cursor/`, `.claude/` removed at package time |
-| Capability folders | **31** (26 base + 5 WordPress extension) |
-| Plans Markdown files | **25** (see whitelist) |
-| WordPress Save | `Plans/WordPressSaveWorkflow.md` + `Automation/WordPressSave/` — **not** `Capabilities/WordPressSave/` |
+| Capability folders | **33** (26 base + 6 WordPress extension + CPanelEmail) |
+| Plans Markdown files | **28** (see whitelist) |
+| WordPress Save | **WordPressSave** Capability + pointer plan + `Automation/WordPressSave/` |
 | AltitudeProOverlay / High Altitude | **Absent** (commissioned repos only) |
 | Example content | GEOTW product drafts under `Content/Website/Pages/` only |
 | Production launch | Out of scope |
@@ -105,6 +105,7 @@ Capabilities/WordPressWebsite/
 Capabilities/WordPressContentUpdate/
 Capabilities/StudioPressGenesisChildTheme/
 Capabilities/WordPressMigrationBackup/
+Capabilities/WordPressSave/
 ```
 
 ### Plans files (final whitelist)
@@ -135,9 +136,10 @@ Plans/Ideas.md
 Plans/RepositoryGoals.md
 Plans/SampleUserJourney.md
 Plans/CrossRepoCapabilityGapMatrix.md
+Plans/WordPressMailDeliveryPlan.md
 ```
 
-(Count = **25** Markdown files under `Plans/` including `README.md`.)
+(Count = **28** Markdown files under `Plans/` including `README.md`.)
 
 ## Remove Matrix (Phase 1 — base)
 
@@ -156,7 +158,6 @@ Capabilities/CodeAssistedIndexing/
 Capabilities/ImportCapabilitiesFromRepository/
 Capabilities/ImportOwnerPreferencesFromRepository/
 Capabilities/AltitudeProOverlay/
-Capabilities/WordPressSave/
 Workspace/LocalWordPressBuild.md
 Workspace/Intake/
 Workspace/Legacy/
@@ -169,7 +170,6 @@ stripped in base robocopy excludes, then **restored** by
 Do **not** copy commissioned-only surfaces into the starter:
 
 - `Capabilities/AltitudeProOverlay/` / High Altitude method plans
-- `Capabilities/WordPressSave/` (commissioned Cap folder — starter uses Plans + Automation)
 - Customer deploy profiles (`DansRepairService`, `US1Movers`, etc.)
 
 ## Robocopy Exclude List (copy time)
@@ -212,7 +212,7 @@ Then run Phase 1 identity rewrite + Phase 2 WebPowered ADD matrix.
 | `Workspace/ValuableReferences.md` | Create if missing; empty register |
 | `Capabilities/README.md` | Startup registry + WordPress extension + “not shipped” commissioned Caps |
 | `Capabilities/RouterIndex.md` | One row per kept Capability folder (31) |
-| `Capabilities/AgentCapabilityGuide.md` | Starter routing; WordPress Save = Plans+Automation |
+| `Capabilities/AgentCapabilityGuide.md` | Starter routing; **WordPressSave** Capability |
 
 ## Status Rules
 
@@ -236,7 +236,7 @@ cd C:\Repositories\GetEstablishedOnTheWebStartup
 
 Expected:
 
-- Capability folder count **31** equals RouterIndex / registry.
-- WordPress layer files present (ges-build, site-manifest, WordPressSave script, Plans).
-- No `Capabilities/AltitudeProOverlay/` or `Capabilities/WordPressSave/`.
+- Capability folder count **33** equals RouterIndex / registry.
+- WordPress layer files present (ges-build, site-manifest, WordPressSave Cap + script, pointer plan).
+- No `Capabilities/AltitudeProOverlay/`.
 - `AGENTS.md` / `README.md` read as starter, not product host.

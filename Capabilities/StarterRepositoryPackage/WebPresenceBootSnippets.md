@@ -52,7 +52,7 @@ acting.
 | High Altitude theme (after commission) | `Plans/HighAltitudeThemeMethod.md` — promote Cap on project repo |
 | Mirror Git repository refresh | **MirrorToWindows** — reads `Workspace/OwnerPreferences.md` |
 | WordPress asset backup/restore | **MirrorWebAssets** |
-| Save local WordPress to Git + Dropbox | **WordPress Save** — `Plans/WordPressSaveWorkflow.md` + `Automation/WordPressSave/` |
+| Save local WordPress to Git + Dropbox | **WordPressSave** |
 | Create / update pages or posts | **WordPressContentUpdate** — hide Genesis title; `h1.ges-page-title`; **Intro Photo → Intro Hero → Intro Body → Intro Pitch** via `page-layout-manifest.php` |
 | Local WordPress build (owner-approved) | `Workspace/LocalWordPressBuild/ges-build.php` |
 | Git status, commit, push | **GitHubWorkflow** (owner must ask for commit/push) |

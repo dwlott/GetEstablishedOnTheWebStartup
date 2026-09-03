@@ -95,7 +95,7 @@ shipped in this starter — always use `--only` until a product sync pack is add
 | Step | Action |
 | --- | --- |
 | 5.1 | Edit in wp-admin / Customizer as needed |
-| 5.2 | Run WordPress Save | `Automation/WordPressSave/Save-LocalWordPress.ps1` |
+| 5.2 | Run WordPress Save | **WordPressSave** → `Save-LocalWordPress.ps1` |
 | 5.3 | Commit Git changes when owner asks | **GitHubWorkflow** |
 
 ## Phase 6 — Production (later, owner-approved)
@@ -119,7 +119,7 @@ shipped in this starter — always use `--only` until a product sync pack is add
 | High Altitude / branded overlay CSS | Method plan → promote **AltitudeProOverlay** on project repo |
 | Backup before experiment | **WordPressMigrationBackup** |
 | Large uploads/theme handoff | **MirrorWebAssets** |
-| WordPress Save (theme + DB + Dropbox) | `Plans/WordPressSaveWorkflow.md` |
+| WordPress Save (theme + DB + Dropbox) | **WordPressSave** |
 | Bluehost mailbox / Thunderbird | **CPanelEmail** |
 | GEOTW product showcase site | Use product repo, not this starter |
 
