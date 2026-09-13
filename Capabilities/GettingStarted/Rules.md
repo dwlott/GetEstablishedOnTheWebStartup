@@ -26,10 +26,28 @@ When **Begin Quick Startup from AGENTS.md** fires, run
   [QuickStartupGreeting.md](QuickStartupGreeting.md).
 - Never block Quick Startup on a "keep these goals or rewrite?" choice or a
   Git-remote multiple-choice.
+- After indexing, run the final mode-gated adopted-project identity cleanup
+  described in RepositoryIdentityTemplate.md. The canonical Startup checkout
+  keeps its Startup identity; only an adopted copy receives identity rewrites.
 
 The shipped starter must ship scaffold-only `Workspace/OwnerGoals.md`. Adopted
 copies (folder rename, GitHub download, folder copy) may still carry stale rows —
 prep fixes that every time.
+
+## Repository Identity Cleanup (Last Operational Step)
+
+Use RepositoryIdentityTemplate.md to classify the current root as the canonical
+template, product repository, or adopted project. Do not infer identity from a
+folder name alone.
+
+For an adopted project, create Workspace/RepositoryIdentity.md, rewrite only
+the active boot and routing surfaces in the template allowlist, and run:
+
+    .\Automation\Test-AdoptedRepositoryIdentity.ps1
+
+Preserve source-template, product-packaging, historical, and related-repository
+references when their purpose is explicit. Stop and report if the project name,
+root, source of truth, or identity mode is unknown.
 
 ## Core Rule
 

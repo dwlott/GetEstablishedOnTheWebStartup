@@ -57,7 +57,8 @@ Workspace/ValuableReferences.md when direction implies external sources.
 
 Offer optional reference review; suggest one next step (optional — now or later);
 park GitHub; detach starter Git if needed (do not block); index the workspace
-by default; then owner session close from
+by default; run the final mode-gated identity cleanup from
+RepositoryIdentityTemplate.md; then owner session close from
 PostQuickStartupRouting.md — not a planner handoff block.
 ```
 
@@ -74,6 +75,8 @@ Read AGENTS.md, then Capabilities/GettingStarted/GettingStarted.md.
 Run WorkspaceAdoptionPrep.md first, then proceed through the first-session order —
 do not ask again whether to run Quick Startup if I already agreed. Follow through
 Owner Goals, valuable reference candidates, and default first-session indexing.
+Then run the final mode-gated identity cleanup from
+RepositoryIdentityTemplate.md before the owner-facing close.
 ```
 
 ## Cursor Or Claude Code (Local Folder)
@@ -97,7 +100,15 @@ exactly one focused next task. Do not start GitHub setup unless I ask.
 
 As the last step, index the workspace: create Indexes/ if missing, then
 refresh ManualIndexing for files written this session. Tell me indexes are
-ready. Skip only if I already declined indexing.
+ready. Skip only if I already declined indexing. Offer indexing softly and
+record the choice in Workspace/OwnerPreferences.md; do not block startup on it.
+
+As the last operational step before the owner-facing close, classify the
+repository using RepositoryIdentityTemplate.md. Preserve identity in the
+canonical Startup repository. In an adopted project, create
+Workspace/RepositoryIdentity.md, rewrite only the allowlisted active identity
+surfaces, and run Automation/Test-AdoptedRepositoryIdentity.ps1. Do not remove
+intentional packaging or source-template references.
 ```
 
 ## Claude Code — Boot With Memory Awareness

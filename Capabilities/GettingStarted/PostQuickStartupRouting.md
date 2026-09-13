@@ -10,7 +10,8 @@ LastEdited: 2026-07-06
 
 # Post Quick Startup Routing
 
-Use at **GettingStarted first-session step 7** after Owner Goals are written.
+Use after the final adopted-project identity cleanup and Owner Goals are
+written.
 Read [AgentCapabilityGuide.md](../AgentCapabilityGuide.md) only to confirm.
 
 ## Quick Startup complete (say this)
@@ -38,6 +39,9 @@ Do not push until the owner explicitly asks.
 
 Suggested next step (optional — you can do this now or later):
 - (one Capability or prompt from the routing table below)
+
+Indexing: (soft offer from GettingStarted step 10 — manual default; code-assisted optional later)
+Identity: (canonical-template | product | adopted-project) — (recorded or not applicable)
 ```
 
 Do **not** format the close as `Summary / Files Changed / Planning Files To Review /

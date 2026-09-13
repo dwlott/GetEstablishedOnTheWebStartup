@@ -28,6 +28,7 @@ Read first:
 - Capabilities/GettingStarted/Rules.md
 - Capabilities/GettingStarted/GettingStarted.md
 - Capabilities/GettingStarted/WorkspaceAdoptionPrep.md
+- Capabilities/GettingStarted/RepositoryIdentityTemplate.md
 - Capabilities/GettingStarted/QuickStartupGreeting.md
 - Plans/UserSetupGuide.md
 - Plans/RepositoryGoals.md
@@ -38,7 +39,8 @@ Make the getting-started path clear enough for a new owner or agent to use.
 On Quick Startup, run Workspace Adoption Prep first (reset stale boot files;
 auto-remove starter `.git` on renamed folder copies), then collect three to five
 practical owner setup goals, keep those separate from Repository Goals, and route
-the next setup task through existing guides, prompts, or Capabilities.
+the next setup task through existing guides, prompts, or Capabilities, and
+finish with mode-gated adopted-project identity cleanup.
 
 In scope:
 - Run WorkspaceAdoptionPrep when Quick Startup begins (no permission ask for stale template content; auto-detach starter `.git` on renamed copies).
@@ -67,6 +69,8 @@ Quality checks:
   by creating folders during this pass.
 - Reusable workflow rules stay in Capability files; owner-specific facts do
   not.
+- Do not rewrite the canonical Startup repository as though it were an adopted
+  project.
 
 Final response (Quick Startup):
 Close with the owner-facing session summary in

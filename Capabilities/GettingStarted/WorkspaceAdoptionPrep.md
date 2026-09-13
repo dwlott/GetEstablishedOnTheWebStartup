@@ -229,6 +229,18 @@ Shipped starters should omit `.git/` (repair Option A). Folder copies of a
 
 Repair passes: [StarterRepositoryPackage](../StarterRepositoryPackage/WorkflowIndex.md).
 
+## Adopted Identity Handoff
+
+After the normal reset and Git safety work, classify the root using
+RepositoryIdentityTemplate.md. The canonical Startup checkout is never
+rewritten. An adopted project receives Workspace/RepositoryIdentity.md and the
+allowlisted active-surface cleanup as the last operational Quick Startup step.
+
+Do not use a global text replacement. Preserve references that explain the
+source template, product packaging, historical work, or related repositories.
+Run .\Automation\Test-AdoptedRepositoryIdentity.ps1 after cleanup and report
+the mode and result.
+
 ## Related
 
 - [HowToAdoptThisStarter.md](HowToAdoptThisStarter.md)

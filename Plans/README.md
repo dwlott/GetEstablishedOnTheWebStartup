@@ -30,3 +30,6 @@ Setup guides and lightweight registers for this **startup** workspace.
 not from customer sites (DansRepairService, MoverCalcs.com, US1Movers, etc.).
 
 New planning files appear when the owner or an agent creates them from Owner Goals.
+
+Current identity plan:
+[QuickStartupAdoptedIdentityCleanupPlan.md](QuickStartupAdoptedIdentityCleanupPlan.md)

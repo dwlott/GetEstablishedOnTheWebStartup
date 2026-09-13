@@ -111,7 +111,17 @@ First session order:
     Index Owner Goals, preferences, valuable references, and any new Workspace
     files from this session. Tell the owner indexes are ready. Skip only if the
     owner already declined indexing in `OwnerPreferences.md`.
-11. **Close the session for the owner** using
+11. **Last operational step — adopted-project identity cleanup.** Confirm the
+    current identity mode using RepositoryIdentityTemplate.md. If this is the
+    canonical Startup repository, preserve its Startup identity. If this is an
+    adopted project, create or update Workspace/RepositoryIdentity.md, rewrite
+    only the active identity surfaces listed in that template, and run
+    Automation/Test-AdoptedRepositoryIdentity.ps1. Do not remove intentional
+    source-template, packaging, historical, or related-repository references.
+    If the project name, root, or source of truth is unknown, stop and report
+    the missing decision.
+
+12. **Close the session for the owner** using
     [PostQuickStartupRouting.md](PostQuickStartupRouting.md) § Quick Startup
     complete. Do **not** end with a fenced worker handoff unless the owner
     explicitly requested PlannerWorker workflow. Assume **no planning agent** is

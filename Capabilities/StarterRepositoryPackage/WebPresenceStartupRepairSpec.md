@@ -200,6 +200,12 @@ Then run Phase 1 identity rewrite + Phase 2 WebPowered ADD matrix.
 
 ## Identity Rewrite Rules
 
+The canonical Startup package retains Startup identity. Adopted-project
+identity cleanup happens later, during Quick Startup in the copied project.
+That phase uses RepositoryIdentityTemplate.md, creates
+Workspace/RepositoryIdentity.md, rewrites only active boot and routing
+surfaces, and runs Automation/Test-AdoptedRepositoryIdentity.ps1.
+
 | File | Startup identity |
 | --- | --- |
 | `AGENTS.md` | WebPresence + WordPress bootstrap starter; SoT is the adopted workspace |

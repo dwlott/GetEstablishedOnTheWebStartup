@@ -10,6 +10,18 @@ LastEdited: 2026-06-06
 
 # CapabilityAudit Checklist
 
+## Repository Identity Audit
+
+- [ ] Confirm repository root and Git remote before interpreting identity.
+- [ ] Classify the repository as canonical-template, product, or
+      adopted-project.
+- [ ] For adopted projects, verify Workspace/RepositoryIdentity.md exists and
+      agrees with the active root, branch, remote, and source of truth.
+- [ ] Check active boot, router, guide, backlog, and GettingStarted files for
+      stale template identity.
+- [ ] Preserve intentional packaging, provenance, and historical references.
+- [ ] Run Automation/Test-AdoptedRepositoryIdentity.ps1 when present.
+
 **Start here** for a review-only audit pass. Read [Rules.md](Rules.md) first.
 Use [AuditReportTemplate.md](AuditReportTemplate.md) for durable output and
 [StalePlanDetection.md](StalePlanDetection.md) for Plans health.
