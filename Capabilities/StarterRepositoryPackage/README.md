@@ -6,10 +6,15 @@ IndexType: Capability
 CapabilityName: StarterRepositoryPackage
 CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-06-19
+LastEdited: 2026-10-10
 -->
 
 # StarterRepositoryPackage Capability
+
+For maintenance of an existing Startup template before the next project copy,
+use [StartupAdoptionReadinessWorkflow.md](StartupAdoptionReadinessWorkflow.md).
+It preserves canonical Git and owner scaffolds; a fresh packaging build uses
+the separate repair workflow below.
 
 - **Version:** 2
 - **Tier:** Archetype (runs for an archetype host; output is a **starter repository**)

@@ -28,6 +28,7 @@ Workspace/SiteDeployProfiles/_TEMPLATE.md
 | Need | Look first |
 | --- | --- |
 | Public page drafts (GEOTW examples) | `Content/Website/Pages/` |
+| Prepare Startup adoption instructions | [StartupAdoptionReadinessWorkflow.md](../Capabilities/StarterRepositoryPackage/StartupAdoptionReadinessWorkflow.md) |
 | Adopt a new project copy | `Capabilities/GettingStarted/HowToAdoptThisStarter.md` |
 | Adopted project identity | `Capabilities/GettingStarted/RepositoryIdentityTemplate.md` + `Automation/Test-AdoptedRepositoryIdentity.ps1` |
 | New commission checklist | `Capabilities/WordPressWebsite/NewCommissionSiteChecklist.md` |

@@ -5,10 +5,15 @@ IndexType: Capability
 CapabilityName: StarterRepositoryPackage
 CapabilityVersion: 3
 IndexStatus: Active
-LastEdited: 2026-07-16
+LastEdited: 2026-10-10
 -->
 
 # Starter Repository Package Workflow Index
+
+**Maintaining an existing canonical Startup before a project copy?** Use
+[StartupAdoptionReadinessWorkflow.md](StartupAdoptionReadinessWorkflow.md).
+The steps below rebuild a packaging workspace from a host copy; do not apply
+their Git-detach or trimming steps to the maintained canonical Startup checkout.
 
 **Start here.** Runnable repair pass to turn a **packaging workspace** (manual
 copy of an archetype host) into a **starter repository** for a named starter
