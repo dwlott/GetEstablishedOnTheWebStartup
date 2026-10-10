@@ -3,7 +3,7 @@ IndexTitle: Getting Started
 IndexDescription: Beginner-friendly entry point for understanding Markdown, read-first files, and the repository workflow.
 IndexType: Setup
 IndexStatus: Active
-LastEdited: 2026-09-03
+LastEdited: 2026-10-10
 -->
 
 # Getting Started
@@ -62,18 +62,23 @@ case-insensitively, then read `AGENTS.md` and route to this Capability — not
 Copy-ready prompts for Cursor, Claude, and ChatGPT:
 [FirstRunAgentPrompts.md](FirstRunAgentPrompts.md).
 
-Owners who **copied** this Startup folder: delete `.git` in the new folder first —
+Owners starting a new project: prefer a copy without `.git` using
+`Automation/Copy-StartupToProject.ps1`; for Explorer copies, remove `.git` only
+in the confirmed new copy —
 [HowToAdoptThisStarter.md](HowToAdoptThisStarter.md).
 
 First session order:
 
 1. Read `AGENTS.md` and `README.md`.
-2. **Workspace Adoption Prep** — run [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md)
-   automatically. Reset stale starter boot files **without asking**. Prefer
-   copies made with `Automation/Copy-StartupToProject.ps1` (no `.git`). If this
-   folder still has starter-template Git metadata, **detach it** (default:
-   remove `.git`) and continue — **do not** stop for a Git-remote menu. If
-   `.git` is already gone, that is success; do not run git commands.
+
+2. **Workspace Adoption Prep** — read [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md)
+   and classify the active root before changes. Run resets and Git detach only
+   in a confirmed adopted Startup copy; preserve canonical and established
+   repositories. Prefer `Automation/Copy-StartupToProject.ps1` (no `.git`).
+   Reset stale template content only, preserve captured project goals, detach
+   stale starter Git, and continue without a blocking Git menu. A missing
+   `.git` is success; a project's own remote stays intact.
+
 3. Display the opening and five setup questions from
    [QuickStartupGreeting.md](QuickStartupGreeting.md) — **do not invent questions**.
    (Use [UserDiscoveryPrompt.md](UserDiscoveryPrompt.md) only **after** Owner Goals
@@ -85,9 +90,9 @@ First session order:
 4. Write three to five Owner Goals in `Workspace/OwnerGoals.md` from the owner's
    answers (replace the scaffold row).
 5. Ask: **Do you have a prior repository folder or archive to import from?**
-   If yes, record the path in `Workspace/OwnerPreferences.md`, then route
-   **ImportOwnerPreferencesFromRepository** first, then
-   **ImportCapabilitiesFromRepository** (owner-approved module checklist).
+   If yes, record the path in `Workspace/OwnerPreferences.md`. Inspect the
+   local registry before selecting an import workflow; do not route to absent
+   modules. Review proposed files and obtain authorization before copying.
    See [FirstRunAgentPrompts.md](FirstRunAgentPrompts.md).
 6. **Capture candidate valuable references** (two to five rows max for the first
    pass). Once direction is clear, add likely URLs or search terms to
@@ -104,22 +109,19 @@ First session order:
    for packaging validation or "consumer scaffold check."
 9. Park GitHub until the owner chooses (`git init` later via **GitHubWorkflow**
    if Adoption Prep removed `.git`).
-10. **Index this workspace (default).** Provision `Indexes/` if missing
-    ([../Indexing/SetupPrompt.md](../Indexing/SetupPrompt.md) +
-    [../Indexing/Structure.md](../Indexing/Structure.md)), then refresh via
-    [../ManualIndexing/WorkflowIndex.md](../ManualIndexing/WorkflowIndex.md).
-    Index Owner Goals, preferences, valuable references, and any new Workspace
-    files from this session. Tell the owner indexes are ready. Skip only if the
-    owner already declined indexing in `OwnerPreferences.md`.
-11. **Last operational step — adopted-project identity cleanup.** Confirm the
-    current identity mode using RepositoryIdentityTemplate.md. If this is the
-    canonical Startup repository, preserve its Startup identity. If this is an
-    adopted project, create or update Workspace/RepositoryIdentity.md, rewrite
-    only the active identity surfaces listed in that template, and run
-    Automation/Test-AdoptedRepositoryIdentity.ps1. Do not remove intentional
-    source-template, packaging, historical, or related-repository references.
-    If the project name, root, or source of truth is unknown, stop and report
-    the missing decision.
+
+10. **Offer indexing (optional).** If the owner accepts and `Indexes/` is absent,
+    follow [../Indexing/SetupPrompt.md](../Indexing/SetupPrompt.md) and
+    [../Indexing/Structure.md](../Indexing/Structure.md). Refresh existing indexes
+    through [../ManualIndexing/WorkflowIndex.md](../ManualIndexing/WorkflowIndex.md).
+    Record a decision to defer; it does not block startup.
+11. **Finalize adopted-project identity.** In a confirmed adopted copy, complete
+    `Workspace/RepositoryIdentity.md` using
+    [RepositoryIdentityTemplate.md](RepositoryIdentityTemplate.md), rewrite only
+    allowlisted active identity statements, and run
+    `Automation/Test-AdoptedRepositoryIdentity.ps1`. Preserve intentional
+    source-template and packaging references. Include changed identity and boot
+    files in any accepted index refresh. Skip this phase in canonical repositories.
 
 12. **Close the session for the owner** using
     [PostQuickStartupRouting.md](PostQuickStartupRouting.md) § Quick Startup

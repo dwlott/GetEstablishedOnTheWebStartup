@@ -3,7 +3,7 @@ IndexTitle: Profile-Aware Quick Startup Prompt
 IndexDescription: Copy-ready Quick Startup with environment interview and operating profile recommendation.
 IndexType: Prompt
 IndexStatus: Active
-LastEdited: 2026-06-09
+LastEdited: 2026-10-10
 -->
 
 # Profile-Aware Quick Startup Prompt
@@ -18,6 +18,11 @@ Formal terms: [NamingStandard.md](../../Standards/NamingStandard.md)
 Start Quick Startup with environment awareness.
 
 Read AGENTS.md and Capabilities/GettingStarted/GettingStarted.md.
+When local access exists, classify the active root using WorkspaceAdoptionPrep
+and RepositoryIdentityTemplate before any reset or Git change. Apply prep only
+to a confirmed adopted copy; preserve canonical and established projects.
+After capture, offer optional indexing and finalize verified adopted identity.
+Without local write access, draft the record for the local worker to complete.
 
 1. Ask briefly about my environment (device, OS, Git/GitHub access, cloud tools,
    technical comfort, workflow preference). Use
@@ -35,7 +40,7 @@ Read AGENTS.md and Capabilities/GettingStarted/GettingStarted.md.
    block if I have no local clone yet).
 
 5. Route exactly one next task using the profile-appropriate Capabilities:
-   - Remote-only / GitHub-then-local: GitHubWorkflow (CloudOnlyGitHubWorkflow), ChatMemoryCapture
+   - Remote-only / GitHub-then-local: GitHubWorkflow (CloudOnlyGitHubWorkflow), InstructionCapture or ChatToMarkdown
    - Dual-surface: GettingStarted + GitHubWorkflow
    - Local-primary: GettingStarted + optional LocalAgentToolSetup
 
@@ -50,5 +55,4 @@ Read AGENTS.md and Capabilities/GettingStarted/GettingStarted.md.
 - [Rules.md](Rules.md)
 - [FirstRunAgentPrompts.md](FirstRunAgentPrompts.md)
 - [EnvironmentDetectionQuestions.md](../SituationalAwareness/EnvironmentDetectionQuestions.md)
-- [CloudOnlyPlanningAndMeasurementDevicePlan.md](../../Plans/CloudOnlyPlanningAndMeasurementDevicePlan.md)
 

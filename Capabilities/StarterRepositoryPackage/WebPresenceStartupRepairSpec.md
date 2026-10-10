@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: StarterRepositoryPackage
 CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-09-03
+LastEdited: 2026-10-10
 -->
 
 # WebPresence Startup Repair Spec
@@ -42,7 +42,7 @@ Boot templates: [WebPresenceBootSnippets.md](WebPresenceBootSnippets.md).
 | Git metadata | Removed from packaging workspace (owner re-inits after adopt) |
 | Agent runtime config | `.cursor/`, `.claude/` removed at package time |
 | Capability folders | **33** (26 base + 6 WordPress extension + CPanelEmail) |
-| Plans Markdown files | **28** (see whitelist) |
+| Plans Markdown files | **29** (see whitelist) |
 | WordPress Save | **WordPressSave** Capability + pointer plan + `Automation/WordPressSave/` |
 | AltitudeProOverlay / High Altitude | **Absent** (commissioned repos only) |
 | Example content | GEOTW product drafts under `Content/Website/Pages/` only |
@@ -137,9 +137,12 @@ Plans/RepositoryGoals.md
 Plans/SampleUserJourney.md
 Plans/CrossRepoCapabilityGapMatrix.md
 Plans/WordPressMailDeliveryPlan.md
+Plans/HighAltitudeThemeMethod.md
+Plans/WordPressMigrationCapabilityPlan.md
+Plans/QuickStartupAdoptedIdentityCleanupPlan.md
 ```
 
-(Count = **28** Markdown files under `Plans/` including `README.md`.)
+(Count = **29** Markdown files under `Plans/` including `README.md`.)
 
 ## Remove Matrix (Phase 1 — base)
 
@@ -217,7 +220,7 @@ surfaces, and runs Automation/Test-AdoptedRepositoryIdentity.ps1.
 | `Workspace/OwnerPreferences.md` | Fresh WAMP/mirror rows; no private owner paths |
 | `Workspace/ValuableReferences.md` | Create if missing; empty register |
 | `Capabilities/README.md` | Startup registry + WordPress extension + “not shipped” commissioned Caps |
-| `Capabilities/RouterIndex.md` | One row per kept Capability folder (31) |
+| `Capabilities/RouterIndex.md` | One row per kept Capability folder (33) |
 | `Capabilities/AgentCapabilityGuide.md` | Starter routing; **WordPressSave** Capability |
 
 ## Status Rules

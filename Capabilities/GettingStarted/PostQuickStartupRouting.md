@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-07-06
+LastEdited: 2026-10-10
 -->
 
 # Post Quick Startup Routing
@@ -33,15 +33,14 @@ What I did:
 - (git: fresh-copy-no-git or removed-starter-git — connect GitHub later)
 
 Owner Goals are in Workspace/OwnerGoals.md.
-Indexes were refreshed (or Indexes/ was created) for this session's files.
+Indexing: (accepted and completed | existing indexes refreshed | deferred — match the recorded choice).
 GitHub: (plain folder / no .git | new repo connected | local-only | unchanged — match OwnerPreferences).
 Do not push until the owner explicitly asks.
 
 Suggested next step (optional — you can do this now or later):
 - (one Capability or prompt from the routing table below)
 
-Indexing: (soft offer from GettingStarted step 10 — manual default; code-assisted optional later)
-Identity: (canonical-template | product | adopted-project) — (recorded or not applicable)
+Identity: (canonical-template | product | adopted-project) — (verification result; record path or not applicable).
 ```
 
 Do **not** format the close as `Summary / Files Changed / Planning Files To Review /
@@ -69,19 +68,18 @@ or **distribution**:
    readiness.
 2. **Do not** search for a `VerifyStarterPackage` Capability — it is not in the
    registry.
-3. Tell the owner this download is already the **Get Established Workspace**
-   consumer tree. Re-verify if needed:
+
+3. For template package checks, use the explicit WordPress starter profile:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\Automation\VerifyStarterPackage.ps1
+.\Automation\VerifyStarterPackage.ps1 -Root (Get-Location).Path -Profile WebPresenceWordPress
 ```
 
-(If the script is absent, the owner received a pre-validated package; method-host
-repair is documented on the GetEstablished archetype host.)
-
-4. **Next owner actions** (pick one): connect **GitHubWorkflow**; run
-   **ContentReview** on sample pages; use the repo for real project work; or
-   (packaging operator only) ZIP for distribution on the method host.
+   This checks template structure, not adopted-project identity. In an adopted
+   project, use `Automation/Test-AdoptedRepositoryIdentity.ps1` for identity.
+   Package readiness does not authorize distribution or production changes.
+4. Route one next task from the owner's goals. Do not run adoption mutations in
+   the canonical template for a smoke test; create a temporary copy first.
 
 ## Default when unclear
 
@@ -92,4 +90,4 @@ if business direction is still open — not RepositoryScaffold.
 
 - [GettingStarted.md](GettingStarted.md) — first-session order step 7
 - [QuickStartupGreeting.md](QuickStartupGreeting.md)
-- [Plans/GetEstablishedStartupPostDialogImprovementPlan.md](../../Plans/GetEstablishedStartupPostDialogImprovementPlan.md)
+- [RepositoryIdentityTemplate.md](RepositoryIdentityTemplate.md)

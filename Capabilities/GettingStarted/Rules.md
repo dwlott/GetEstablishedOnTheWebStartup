@@ -5,49 +5,45 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-07-16
+LastEdited: 2026-10-10
 -->
 
 # GettingStarted Rules
 
+
 ## Workspace Adoption Prep (First)
 
-When **Begin Quick Startup from AGENTS.md** fires, run
-[WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) **before** the greeting.
+When **Begin Quick Startup from AGENTS.md** fires, read
+[WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) before the greeting.
+Classify the active root using [RepositoryIdentityTemplate.md](RepositoryIdentityTemplate.md).
+Run resets and Git detach only in a confirmed adopted Startup copy. Preserve
+the canonical Startup, the product repository, and established projects.
+Folder name alone never authorizes adoption mutations.
 
-- Reset stale starter boot files and stale `Plans/OpenQuestions.md` automatically when detected.
-- Prefer folder copies **without** `.git` (`Copy-StartupToProject.ps1` or delete
-  `.git` after Explorer copy — [HowToAdoptThisStarter.md](HowToAdoptThisStarter.md)).
-- If this adopted folder still has starter-template Git metadata, **detach it**
-  (default: remove `.git`) and continue. **Do not** present a blocking Git menu.
-- If `.git` is already gone, record that and continue — do not run git commands.
-- **Do not ask permission** to clear leftover product-builder or template goals.
-- Tell the owner in one line that prep ran, then display
-  [QuickStartupGreeting.md](QuickStartupGreeting.md).
-- Never block Quick Startup on a "keep these goals or rewrite?" choice or a
-  Git-remote multiple-choice.
-- After indexing, run the final mode-gated adopted-project identity cleanup
-  described in RepositoryIdentityTemplate.md. The canonical Startup checkout
-  keeps its Startup identity; only an adopted copy receives identity rewrites.
-
-The shipped starter must ship scaffold-only `Workspace/OwnerGoals.md`. Adopted
-copies (folder rename, GitHub download, folder copy) may still carry stale rows —
-prep fixes that every time.
+- Prefer copies made without `.git` using `Automation/Copy-StartupToProject.ps1`.
+- Confirm a noncanonical folder is the owner's adopted copy if it has no
+  adopted-project identity record. An owner statement in this session counts.
+- In that confirmed copy, reset only stale template content. Preserve goals
+  and preferences already captured for the project or a resumed session.
+- If stale starter Git metadata remains, detach it automatically as documented;
+  do not present a blocking Git menu. Preserve the project's own Git remote.
+- If `.git` is absent, record that and continue without Git commands.
+- State what prep did, then display [QuickStartupGreeting.md](QuickStartupGreeting.md).
 
 ## Repository Identity Cleanup (Last Operational Step)
 
-Use RepositoryIdentityTemplate.md to classify the current root as the canonical
-template, product repository, or adopted project. Do not infer identity from a
-folder name alone.
+After goals and preferences, and the optional indexing decision, every
+confirmed adopted project must create or complete `Workspace/RepositoryIdentity.md`.
+Use the seven-field schema and active-surface allowlist in
+[RepositoryIdentityTemplate.md](RepositoryIdentityTemplate.md), then run:
 
-For an adopted project, create Workspace/RepositoryIdentity.md, rewrite only
-the active boot and routing surfaces in the template allowlist, and run:
+```powershell
+.\Automation\Test-AdoptedRepositoryIdentity.ps1 -Root (Get-Location).Path
+```
 
-    .\Automation\Test-AdoptedRepositoryIdentity.ps1
-
-Preserve source-template, product-packaging, historical, and related-repository
-references when their purpose is explicit. Stop and report if the project name,
-root, source of truth, or identity mode is unknown.
+Preserve intentional source-template, packaging, historical, and related-repo
+references. Skip this adopted rewrite in both canonical repositories.
+Resolve missing identity information before declaring Quick Startup complete.
 
 ## Core Rule
 
@@ -148,8 +144,8 @@ summarize from `ValuableReferences.md`; do not duplicate an unmanaged link dump.
 | Website draft review | `ContentReview` Capability |
 | Identity, audience, offer, proof, or first pages | `Capabilities/GettingStarted/UserDiscoveryPrompt.md` |
 | Business-plan inputs; North Star goal capture | `BusinessPlan` Capability (`Capabilities/BusinessPlan/Prompt.md`) |
-| Save important chat decisions | `ChatMemoryCapture` or `ChatToMarkdown` as appropriate |
-| Prior repo, archive, or import from old folder | **ImportOwnerPreferencesFromRepository** then **ImportCapabilitiesFromRepository** (owner checklist per module) |
+| Save important chat decisions | `InstructionCapture` or `ChatToMarkdown` as appropriate |
+| Prior repo, archive, or import from old folder | Record source path; inspect local routing, review proposed files, and obtain authorization before copying |
 
 If no owner goals are available, ask for three to five practical setup goals
 before selecting optional Capabilities.
@@ -219,7 +215,9 @@ GettingStarted may:
 - clarify read-first paths;
 - update setup navigation;
 - run Workspace Adoption Prep (including Git detach on adopted copies);
-- provision `Indexes/` and run **ManualIndexing** at the end of first session;
+- offer **Indexing Setup** when `Indexes/` is absent; create it only when
+  the owner accepts, then refresh through **ManualIndexing**; refresh existing
+  indexes when needed;
 - route the next task to an existing Capability or prompt;
 - keep setup guidance beginner-friendly;
 - update planning notes when a getting-started decision is resolved.
@@ -243,8 +241,8 @@ A first getting-started pass is complete when:
 - three to five owner goals are requested or captured in chat;
 - zero to five **Suggested** valuable reference rows are captured when direction
   implies external canonical sources (optional but encouraged);
-- `Indexes/` exists and first-session files are indexed (unless the owner
-  already declined);
+- indexing was completed when accepted, or the decision to defer was recorded;
+- every confirmed adopted project has a verified `Workspace/RepositoryIdentity.md`;
 - Repository Goals remain separate and linked;
 - the next setup task is routed to one existing guide, prompt, or Capability;
 - no unapproved structure, platform, automation, or publishing decision is
@@ -253,7 +251,6 @@ A first getting-started pass is complete when:
 ## Related
 
 - [AgentSituationalAwareness.md](../../Standards/AgentSituationalAwareness.md)
-- [CloudOnlyPlanningAndMeasurementDevicePlan.md](../../Plans/CloudOnlyPlanningAndMeasurementDevicePlan.md)
 - [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md)
 - [QuickStartupGreeting.md](QuickStartupGreeting.md)
 - [EnvironmentAwareStartupPrompt.md](EnvironmentAwareStartupPrompt.md)

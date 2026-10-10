@@ -3,7 +3,7 @@ IndexTitle: Repository Search Map
 IndexDescription: Boot and search map for GetEstablishedOnTheWebStartup web-presence starter.
 IndexType: Project
 IndexStatus: Active
-LastEdited: 2026-07-24
+LastEdited: 2026-10-10
 -->
 
 # Repository Search Map
@@ -28,6 +28,8 @@ Workspace/SiteDeployProfiles/_TEMPLATE.md
 | Need | Look first |
 | --- | --- |
 | Public page drafts (GEOTW examples) | `Content/Website/Pages/` |
+| Adopt a new project copy | `Capabilities/GettingStarted/HowToAdoptThisStarter.md` |
+| Adopted project identity | `Capabilities/GettingStarted/RepositoryIdentityTemplate.md` + `Automation/Test-AdoptedRepositoryIdentity.ps1` |
 | New commission checklist | `Capabilities/WordPressWebsite/NewCommissionSiteChecklist.md` |
 | One-page business website | `Content/OnePageBusinessWebsite/` |
 | Website outcomes | `Plans/WebsiteGoals.md` |

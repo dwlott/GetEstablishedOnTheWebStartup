@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-07-06
+LastEdited: 2026-10-10
 -->
 
 # GettingStarted Prompt
@@ -16,8 +16,10 @@ path, clarify owner setup goals, or route the next beginner setup task.
 ```text
 # Worker pass: GettingStarted
 
-Repository: GetEstablished
-Branch: main
+Repository: {{ACTIVE_REPOSITORY_NAME}}
+Root: {{VERIFIED_ACTIVE_ROOT}}
+Branch: {{CURRENT_BRANCH_OR_NONE}}
+Identity mode: {{VERIFIED_IDENTITY_MODE}}
 
 Read first:
 - AGENTS.md
@@ -36,14 +38,18 @@ Read first:
 
 Goal:
 Make the getting-started path clear enough for a new owner or agent to use.
-On Quick Startup, run Workspace Adoption Prep first (reset stale boot files;
-auto-remove starter `.git` on renamed folder copies), then collect three to five
+On Quick Startup, classify the root first. Apply Workspace Adoption Prep
+only to a confirmed adopted copy (reset stale template files and detach stale
+starter Git). Preserve canonical and established repositories, then collect three to five
 practical owner setup goals, keep those separate from Repository Goals, and route
 the next setup task through existing guides, prompts, or Capabilities, and
 finish with mode-gated adopted-project identity cleanup.
 
 In scope:
-- Run WorkspaceAdoptionPrep when Quick Startup begins (no permission ask for stale template content; auto-detach starter `.git` on renamed copies).
+- Read WorkspaceAdoptionPrep and confirm adoption before mutations. Preserve
+  canonical roots, project Git remotes, and previously captured project goals.
+- Offer optional indexing; complete the identity record and read-only verification
+  in every confirmed adopted project.
 - Clarify beginner-facing setup guidance.
 - Confirm the read-first path.
 - Ask for or summarize three to five owner setup goals.

@@ -3,7 +3,7 @@ IndexTitle: Get Established On The Web Startup
 IndexDescription: Web-presence starter with WordPress bootstrap for new local sites.
 IndexType: README
 IndexStatus: Active
-LastEdited: 2026-07-24
+LastEdited: 2026-10-10
 -->
 
 # Get Established On The Web Startup
@@ -15,34 +15,36 @@ cPanel email guidance, and a High Altitude method pointer for new commissions.
 This is **not** the GetEstablishedOnTheWeb product repository. After you adopt
 this folder, **this workspace** is the source of truth for your work.
 
-## Start a new project (folder copy)
 
-Do **not** keep the starter `.git` — that leaves `origin` pointing at
-`GetEstablishedOnTheWebStartup` and blocks a clean Quick Startup.
+## Start A New Project
+
+Choose a new project name and purpose, then copy without inherited Git:
 
 ```powershell
-cd C:\Repositories\GetEstablishedOnTheWebStartup
-.\Automation\Copy-StartupToProject.ps1 -DestinationName YourProjectName
+& "C:\Repositories\GetEstablishedOnTheWebStartup\Automation\Copy-StartupToProject.ps1" -DestinationName "YourProjectName"
 ```
 
-Or Explorer-copy the folder, then delete the copied `.git` directory. Open the
-new folder and say **"Begin Quick Startup from AGENTS.md"**. Connect GitHub later
-via **GitHubWorkflow** (`git init` + new repo).
+Add `-WhatIf` to preview. The script excludes `.git`, `.cursor`, and `.claude`
+and refuses an existing destination. Preserve existing repositories through a
+reviewed import instead of copying over them. The canonical Startup remains
+the template; do not remove its Git metadata or perform adoption resets there.
 
-## First Session (already in this folder)
-
-If you **copied** this folder to a new project name, delete `.git` in the
-**new** folder first — [HowToAdoptThisStarter.md](Capabilities/GettingStarted/HowToAdoptThisStarter.md).
-Then say **"Begin Quick Startup from AGENTS.md"** in your agent chat.
-
-The agent will detach leftover starter Git if you forgot, capture Owner Goals,
-and **index** the workspace. It will not stop to ask about the starter remote.
-
-Path example after adoption:
+Open the **new project folder** in Codex, Cursor, Claude Code, or another agent:
 
 ```text
-C:\Repositories\<YourWebProjectName>
+This is my new project copied from GetEstablishedOnTheWebStartup.
+Begin Quick Startup from AGENTS.md. This is not an app launch.
 ```
+
+The agent confirms adoption before clearing stale template setup, captures
+your goals and preferences, offers indexing, and verifies the project's
+identity record. A folder without Git is valid; connect your own GitHub repo
+later through **GitHubWorkflow** when you ask. Existing project goals and the
+project's own remote are preserved when resuming.
+
+Full adoption steps: [HowToAdoptThisStarter.md](Capabilities/GettingStarted/HowToAdoptThisStarter.md).
+WordPress setup follows only when your goals call for it, using
+[NewCommissionSiteChecklist.md](Capabilities/WordPressWebsite/NewCommissionSiteChecklist.md).
 
 ## What Ships Here
 

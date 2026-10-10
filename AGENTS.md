@@ -3,7 +3,7 @@ IndexTitle: Repository Instructions
 IndexDescription: Agent boot for GetEstablishedOnTheWebStartup web-presence and WordPress bootstrap starter.
 IndexType: Workflow
 IndexStatus: Active
-LastEdited: 2026-09-03
+LastEdited: 2026-10-10
 -->
 
 # Repository Instructions
@@ -20,7 +20,7 @@ acting.
 
 | Situation | What to do |
 | --- | --- |
-| First time in this repo | If you copied this folder, delete `.git` in the **new** copy first ([HowToAdoptThisStarter.md](Capabilities/GettingStarted/HowToAdoptThisStarter.md)). Say **"Begin Quick Startup from AGENTS.md"** — agent preps boot files, detaches starter Git without blocking, then follow `Capabilities/GettingStarted/GettingStarted.md` |
+| First session in an adopted copy | Confirm this is your new project copied from Startup, then say **"Begin Quick Startup from AGENTS.md"**. Follow [HowToAdoptThisStarter.md](Capabilities/GettingStarted/HowToAdoptThisStarter.md); classify the root before resets or Git detach. |
 | Start a **new** project from this starter | `Automation/Copy-StartupToProject.ps1 -DestinationName YourProject` (no `.git`) — or Explorer copy then **delete `.git`** — then Quick Startup in the new folder |
 | Review website page examples | **ContentReview** on `Content/Website/Pages/` |
 | Draft one-page business site | **OnePageWebsite** |
@@ -76,6 +76,19 @@ Do not assume the root is `C:\Repositories\GetEstablishedOnTheWeb` or
 When the owner references **`agents.md`**, read **`AGENTS.md`** at the repository
 root (case-insensitive intent).
 
+## Adoption Boundary
+
+`C:\Repositories\GetEstablishedOnTheWebStartup` is the canonical template.
+Preserve its Startup identity, owner scaffolds, and Git metadata. The product
+repository and established projects also retain their identity and owner data.
+Run adoption resets or Git detach only in a new copy identified by the owner,
+or with an existing `adopted-project` identity record. Folder names and stale
+remotes alone do not authorize changes. See
+`Capabilities/GettingStarted/WorkspaceAdoptionPrep.md`.
+
+Every confirmed adopted project completes `Workspace/RepositoryIdentity.md`
+and runs `Automation/Test-AdoptedRepositoryIdentity.ps1` before startup closes.
+
 ## Source Of Truth
 
 | Rank | Surface | Role |
@@ -104,7 +117,7 @@ On every new pass, before editing:
 
 | Signal | Action |
 | --- | --- |
-| **Begin Quick Startup from AGENTS.md** | WorkspaceAdoptionPrep (boot files, OpenQuestions, auto Git detach) → GettingStarted → OwnerGoals → ValuableReferences → ManualIndexing |
+| **Begin Quick Startup from AGENTS.md** | Classify root → adopted-only WorkspaceAdoptionPrep → Owner Goals + preferences + references → optional indexing → adopted identity record + verification |
 | Review website page examples | **ContentReview** |
 | Draft one-page business website | **OnePageWebsite** |
 | Web listing/profile node | **WebPresenceNode** |

@@ -1,188 +1,97 @@
 <!--
 IndexTitle: First Run Agent Prompts
-IndexDescription: Copy-ready agent prompts for Quick Startup across Cursor, Claude Code, and ChatGPT-style workers.
+IndexDescription: Quick Startup prompts for confirmed adopted copies, template smoke tests, and resumed projects.
 IndexType: Capability
 CapabilityName: GettingStarted
 IndexStatus: Active
-LastEdited: 2026-07-06
+LastEdited: 2026-10-10
 -->
 
 # First Run Agent Prompts
 
-Use when the owner opens a fresh **Get Established Workspace** and wants
-**Quick Startup**. These prompts avoid the word **run** (which some agents
-map to app-launch skills).
+**Begin Quick Startup from AGENTS.md** is the deterministic trigger. It means
+the first-session workflow, not an app launch. Replace the project path below
+with the folder you actually opened.
 
-## Preferred Owner Phrases
-
-**Deterministic trigger (smoke tests, Claude-safe):**
-
-- `Begin Quick Startup from AGENTS.md` — match **case-insensitive**; always
-  means read `AGENTS.md` then this Capability; **not** an app launch.
-
-Other good phrases:
-
-- `Start Quick Startup from the repo`
-- `Lets go through the quick startup`
-- `Start up from the repo`
-
-Avoid: `run Quick Startup` (may trigger app-launch skills in Claude). You cannot
-reliably override Claude's `/run` by keeping the word **run** in the phrase —
-**drop run entirely**.
-
-## Packaging Validation (Full Session — Required After Repair)
-
-Use after StarterRepositoryPackage repair when optimization or release requires
-human Quick Startup — not verify-only.
-
-```text
-Repository folder: C:\Repositories\GetEstablishedStartup
-
-Begin Quick Startup from AGENTS.md. Full first-session order.
-This is not an app launch.
-
-Read AGENTS.md, then Capabilities/GettingStarted/GettingStarted.md and Rules.md.
-
-Run WorkspaceAdoptionPrep.md first (reset stale boot files and OpenQuestions
-automatically — do not ask permission). Prefer copies made without .git
-(Copy-StartupToProject.ps1). If this folder still has starter/host origin,
-remove .git and git init automatically — do not stop for remote choices.
-
-Display the opening and five setup questions from QuickStartupGreeting.md (do not
-invent questions). Wait for owner answers before writing real rows to
-Workspace/OwnerGoals.md (replace the scaffold row).
-
-Ask about prior repository import; add two to five Suggested rows to
-Workspace/ValuableReferences.md when direction implies external sources.
-
-Offer optional reference review; suggest one next step (optional — now or later);
-park GitHub; detach starter Git if needed (do not block); index the workspace
-by default; run the final mode-gated identity cleanup from
-RepositoryIdentityTemplate.md; then owner session close from
-PostQuickStartupRouting.md — not a planner handoff block.
-```
-
-## Cursor Or Claude Code (Local Folder — smoke test)
-
-Use the **deterministic trigger** when testing a fresh starter copy:
+## New Adopted Project — Codex, Cursor, Or Claude Code
 
 ```text
 Repository folder: C:\Repositories\<YourProjectName>
+This is my new project copied from GetEstablishedOnTheWebStartup.
 
 Begin Quick Startup from AGENTS.md. This is not an app launch.
 
-Read AGENTS.md, then Capabilities/GettingStarted/GettingStarted.md.
-Run WorkspaceAdoptionPrep.md first, then proceed through the first-session order —
-do not ask again whether to run Quick Startup if I already agreed. Follow through
-Owner Goals, valuable reference candidates, and default first-session indexing.
-Then run the final mode-gated identity cleanup from
-RepositoryIdentityTemplate.md before the owner-facing close.
+Read AGENTS.md, Standards/AgentSituationalAwareness.md, and GettingStarted's
+Rules.md, GettingStarted.md, WorkspaceAdoptionPrep.md, and
+RepositoryIdentityTemplate.md. Verify the active root and classify it before
+changes. Preserve the canonical Startup, product, and established projects.
+In this confirmed adopted copy, clear only stale template setup and detach
+stale starter Git. Preserve goals already captured for this project and any
+project-owned remote. Missing .git is a valid state; do not create Git yet.
+
+Display QuickStartupGreeting.md's opening and five setup questions. Wait for
+my answers before writing real Owner Goals. Capture preferences and suggested
+references. Record prior material paths; copy nothing without authorization.
+Offer reference review and optional indexing; record a decision to defer.
+Route one focused next task and park GitHub until I ask.
+
+Complete Workspace/RepositoryIdentity.md using its seven required fields.
+Rewrite only allowlisted active identity surfaces and preserve intentional
+source-template, historical, packaging, and related-repository references.
+Run Automation/Test-AdoptedRepositoryIdentity.ps1 and resolve failures.
+Include changed identity files in any accepted index refresh. Close with a
+plain owner-facing summary, including identity verification and indexing state.
 ```
 
-## Cursor Or Claude Code (Local Folder)
+## Packaging Smoke Test
+
+Create a temporary new copy with `Automation/Copy-StartupToProject.ps1`, then
+use the new-project prompt above **in that copy**. Do not perform adopted
+resets or Git detach in the canonical Startup checkout. A readiness check
+does not authorize public distribution, WordPress writes, or production launch.
+
+To check the canonical template's package structure:
+
+```powershell
+.\Automation\VerifyStarterPackage.ps1 -Root (Get-Location).Path -Profile WebPresenceWordPress
+.\Automation\Test-AdoptedRepositoryIdentity.ps1 -Root (Get-Location).Path
+```
+
+## Resume An Established Project
 
 ```text
 Repository folder: C:\Repositories\<YourProjectName>
-
-Start Quick Startup from the repo. This is not an app launch.
-
-Read AGENTS.md, then Capabilities/GettingStarted/GettingStarted.md.
-
-Help me capture three to five Owner Goals in Workspace/OwnerGoals.md.
-
-Then add two to five candidate rows to Workspace/ValuableReferences.md for
-likely external sources (URLs or search terms with commentary, Confidence:
-Suggested). Do not tell me to "go find a URL" without suggesting a link or
-search term first.
-
-Offer optional reference review (ReferenceReviewPrompt.md), then recommend
-exactly one focused next task. Do not start GitHub setup unless I ask.
-
-As the last step, index the workspace: create Indexes/ if missing, then
-refresh ManualIndexing for files written this session. Tell me indexes are
-ready. Skip only if I already declined indexing. Offer indexing softly and
-record the choice in Workspace/OwnerPreferences.md; do not block startup on it.
-
-As the last operational step before the owner-facing close, classify the
-repository using RepositoryIdentityTemplate.md. Preserve identity in the
-canonical Startup repository. In an adopted project, create
-Workspace/RepositoryIdentity.md, rewrite only the allowlisted active identity
-surfaces, and run Automation/Test-AdoptedRepositoryIdentity.ps1. Do not remove
-intentional packaging or source-template references.
+This is an established project. Read AGENTS.md, Workspace/RepositoryIdentity.md
+if present, the owner registers, and Plans/AgentTaskBacklog.md. Preserve existing
+goals, preferences, Git history, and remote. Continue the recorded next task;
+do not repeat new-copy resets or infer adoption from the folder name.
 ```
 
-## Claude Code — Boot With Memory Awareness
+## Claude Code Memory Awareness
 
-```text
-Repository folder: C:\Repositories\<YourProjectName>
+Read the owner registers before trusting profile memory. Repository decisions
+win over conflicting memory. Store durable decisions in the repo first; any
+profile memory should agree with them. See
+[ClaudeCode.md](../LocalAgentToolSetup/Vendors/ClaudeCode.md).
 
-Begin Quick Startup from AGENTS.md. This is not an app launch.
-
-Read AGENTS.md and repo registers (Workspace/OwnerGoals.md,
-Workspace/OwnerPreferences.md, Workspace/ValuableReferences.md) before
-trusting any Claude profile memory from a prior session.
-
-If I already agreed to Quick Startup, proceed through the session order —
-do not ask again whether to run Quick Startup now.
-
-At session end, if you offer to save Claude memory, harmonize per
-Capabilities/LocalAgentToolSetup/Vendors/ClaudeCode.md: update the repo
-for durable decisions first; memory is optional and should complement the repo.
-```
-
-## Claude Code (After Quick Startup Complete)
-
-```text
-Repository folder: C:\Repositories\<YourProjectName>
-
-Owner Goals are in Workspace/OwnerGoals.md. Skip GitHub for now.
-
-Route the next task through Capabilities/AgentCapabilityGuide.md — prefer
-ContentReview on Content/Website/Pages/ or UserDiscoveryPrompt if I have
-not clarified my business yet.
-```
-
-## ChatGPT (Connected Repo — Read Only First)
+## ChatGPT With Read-Only Repository Access
 
 ```text
 Read AGENTS.md and Capabilities/GettingStarted/GettingStarted.md through the
-connected repository. Start Quick Startup: explain the five setup questions and
-help me draft Owner Goals for Workspace/OwnerGoals.md. Do not edit files yet.
+connected repository. Help me answer the five startup questions and draft
+Owner Goals. Do not edit files or detach Git from read-only access.
 ```
 
-## After Quick Startup — Prior Archive Import
+## Prior Repository Material
 
-```text
-Repository folder: C:\Repositories\<YourPriorRepo>
-Source archive: C:\Repositories\<YourPriorRepoArchive>
-
-Owner Goals are in Workspace/OwnerGoals.md.
-
-Import owner preferences from the source archive into Workspace/OwnerPreferences.md
-only. Do not write preferences into Capability Rules.md.
-
-Then present the capability module checklist from
-Plans/RepositoryImportPilotPlan.md (or ImportCapabilitiesFromRepository).
-Wait for my approval per module before copying.
-
-Start with ImportOwnerPreferencesFromRepository, then ImportCapabilitiesFromRepository.
-```
-
-## Agent Read Order (Quick Startup)
-
-1. `AGENTS.md`
-2. `Standards/AgentSituationalAwareness.md`
-3. `README.md`
-4. `Capabilities/GettingStarted/GettingStarted.md`
-5. `Capabilities/GettingStarted/Rules.md`
-6. `Workspace/OwnerGoals.md`
-7. `Workspace/ValuableReferences.md` (create or update during Quick Startup)
-8. `Workspace/OwnerPreferences.md` (when import or connector work)
-9. `Capabilities/LocalAgentToolSetup/Vendors/ClaudeCode.md` (when Claude offers profile memory)
+Record the source path in `Workspace/OwnerPreferences.md`. Inspect local routing
+before selecting an import capability; do not route to modules absent from this
+starter. Review the proposed files and obtain owner authorization before copying.
 
 ## Related
 
-- [ReferenceReviewPrompt.md](ReferenceReviewPrompt.md)
+- [HowToAdoptThisStarter.md](HowToAdoptThisStarter.md)
+- [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md)
+- [RepositoryIdentityTemplate.md](RepositoryIdentityTemplate.md)
 - [GettingStarted.md](GettingStarted.md)
-- [Prompt.md](Prompt.md)
-- [../../Plans/FirstRunStreamlinePlan.md](../../Plans/FirstRunStreamlinePlan.md)
+- [PostQuickStartupRouting.md](PostQuickStartupRouting.md)

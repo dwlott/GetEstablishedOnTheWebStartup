@@ -5,21 +5,21 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-07-16
+LastEdited: 2026-10-10
 -->
 
 # Quick Startup Greeting
 
-**Agents:** Run [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) **first**
-(reset stale starter boot files; detach starter Git automatically — do not
-block on a remote menu). Then display this greeting and these questions.
-**Do not invent a different question set.** **Do not ask**
-whether to overwrite leftover starter content — prep already handled that.
 
-**Do not write** `Workspace/OwnerGoals.md` with real goals until the owner
-answers the five questions below.
+**Agents:** Read [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) first and
+classify the active repository before changing files. Apply resets and Git
+detach only to a confirmed adopted copy. Preserve canonical repositories and
+previously captured project goals. In a fresh adopted copy, display this
+greeting and these five questions; do not invent a different set.
 
-Read `AGENTS.md` and [GettingStarted.md](GettingStarted.md) first.
+Do not write real Owner Goals until the owner answers. When resuming an
+established project, use its existing goals and backlog rather than repeating
+new-copy prep. Read `AGENTS.md` and [GettingStarted.md](GettingStarted.md) first.
 
 ## Opening (display to owner)
 
@@ -72,13 +72,14 @@ Follow [GettingStarted.md](GettingStarted.md) first-session order from step 4
 onward: write Owner Goals (replace scaffold row), prior-repo path in Import
 section if applicable, valuable references, optional reference review, **one**
 suggested next task per [PostQuickStartupRouting.md](PostQuickStartupRouting.md),
-park GitHub, **index the workspace by default**, then **close for the owner**
+park GitHub, offer optional indexing, finalize and verify adopted identity,
+then **close for the owner**
 (plain chat — not a planner handoff block).
 
 ## Do not
 
-- Stop to ask "should I overwrite leftover starter goals?" — run
-  [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) instead.
+- Reset goals or detach Git before the repository is confirmed as an adopted
+  copy. Follow [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md).
 - End with a fenced worker handoff block — Quick Startup closes for the **owner**
   in plain chat unless PlannerWorker workflow was explicitly requested.
 - Assume a **planning agent** is waiting to receive a handoff.
@@ -94,4 +95,4 @@ park GitHub, **index the workspace by default**, then **close for the owner**
 - [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) — reset stale boot files first
 - [Rules.md](Rules.md) — boundaries and routing
 - [FirstRunAgentPrompts.md](FirstRunAgentPrompts.md)
-- [Plans/FirstRunStreamlinePlan.md](../../Plans/FirstRunStreamlinePlan.md) — smoke observations
+- [RepositoryIdentityTemplate.md](RepositoryIdentityTemplate.md) — final identity verification

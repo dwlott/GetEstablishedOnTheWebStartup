@@ -3,7 +3,7 @@ IndexTitle: Agent Task Backlog
 IndexDescription: Web-presence starter task queue for GetEstablishedOnTheWebStartup.
 IndexType: Project
 IndexStatus: Active
-LastEdited: 2026-07-24
+LastEdited: 2026-10-10
 -->
 
 # Agent Task Backlog
@@ -25,6 +25,17 @@ Verify with `Automation/VerifyStarterPackage.ps1 -Profile WebPresenceWordPress`.
 | Configure `site-manifest.json` for new site | WordPressWebsite | Set `siteKey`, `localUrl`, `tablePrefix` |
 | Fill deploy profile from `_TEMPLATE.md` | SiteDeployProfiles | Before Bluehost prep |
 | Connect GitHub when owner is ready | GitHubWorkflow | SetupPrompt.md — owner must ask |
+
+## Adoption Readiness
+
+Adoption instructions refreshed on 2026-10-10. Canonical template Git and blank
+owner registers remain intact. New copies exclude Git and agent runtime
+metadata. Quick Startup confirms adoption before resets, preserves resumed
+project data and owner remotes, offers indexing, and verifies identity.
+Package verification, all eight identity matrix scenarios, and the actual
+temporary-folder copy smoke test passed. Canonical Git config and owner
+registers were verified unchanged. The project's own Quick Startup follows
+after copying. See [QuickStartupAdoptedIdentityCleanupPlan.md](QuickStartupAdoptedIdentityCleanupPlan.md).
 
 ## Later
 
