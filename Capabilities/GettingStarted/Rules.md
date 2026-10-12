@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-10-10
+LastEdited: 2026-10-11
 -->
 
 # GettingStarted Rules
@@ -63,78 +63,64 @@ Keep these goal types separate:
 | Repository Goals | Core durable Goals set for this learning repository | `Plans/RepositoryGoals.md` |
 
 **Quick Startup** is the owner-facing name for the first-session path through
-this Capability: orient, capture three to five Owner Goals, route the next task.
+this Capability: orient, capture one or more Owner Goals, route the next task.
 
 Owner Goals route early setup work. Repository Goals govern how the learning
 repository stays organized, indexed, reusable, and safe.
 
 ## First Setup Questions
 
-**Canonical greeting and questions:** [QuickStartupGreeting.md](QuickStartupGreeting.md)
-(after [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md)).
-Agents **must display that file's opening and five numbered questions** — do not
-invent a different set (for example website-only or UserDiscovery-style questions).
+**Canonical preview:** [QuickStartupGreeting.md](QuickStartupGreeting.md).
+**Interview protocol:** [QuickStartupWalkthrough.md](QuickStartupWalkthrough.md).
 
-Summary (see greeting file for copy-ready blocks):
+Show all five questions once, then ask one unanswered question at a time with
+Question N of 5 and a short topic. Wait for the actual answer, save progress,
+and lead into the next without making the owner copy questions or type "next."
+Reuse supplied facts and accept explicit skips or deferrals. One concrete goal
+is enough; additional goals are optional. Never invent outcomes to reach a quota.
 
-1. What business, project, or workspace setup are you establishing? (Not website-only.)
-2. First three to five outcomes for this workspace → Owner Goals.
-3. What matters first in the next few sessions?
-4. Devices and agent tools → `Workspace/OwnerPreferences.md`.
-5. Prior folder or repository? → path note only; owner approval before any copy.
-
-Stop after the answer is good enough to choose a next task. Route audience/offer
-detail to [UserDiscoveryPrompt.md](UserDiscoveryPrompt.md) **after** Owner Goals
-when needed — not during this greeting.
+Question 1 identifies existing-site maintenance, new work, or another direction.
+For an existing site, use [ExistingWebsiteStartup.md](ExistingWebsiteStartup.md)
+for only missing maintenance context. Audience/offer discovery belongs after
+startup when it is useful to the owner's actual task.
 
 ## Profile-Aware Quick Startup
 
-When device or environment is unknown — or the user may be on phone, tablet,
-Chromebook, or browser-only — use a **short** environment interview before
-routing. Formal terms:
-[NamingStandard.md](../../Standards/NamingStandard.md) §Environment-Adaptive Model.
+Combine environment discovery with setup question 4. Inspect accessible
+paths, OS/runtime, and tools read-only; distinguish observed facts from owner
+preferences. Ask only about missing details needed for the next action, one at
+a time. Do not add a separate environment questionnaire or ask again about
+tools already supplied. Persist relevant facts to `OwnerPreferences.md`; use
+`OwnerEnvironment.md` when that register exists or a profile-aware capture
+needs it. No new Workspace folder is required.
 
-1. Run questions from
-   [EnvironmentDetectionQuestions.md](../SituationalAwareness/EnvironmentDetectionQuestions.md)
-   (not a long intake form). Persist to `Workspace/OwnerEnvironment.md`.
-2. **Offer optional uploads** if the user has screenshots, logos, existing copy,
-   or prior material to share — see EnvironmentDetectionQuestions §Optional
-   Uploads. Not required.
-3. Recommend operating profile per
-   [CloudOnlyDeviceWorkflow.md](../SituationalAwareness/CloudOnlyDeviceWorkflow.md).
-4. Use [EnvironmentAwareStartupPrompt.md](EnvironmentAwareStartupPrompt.md) as
-   the copy-ready variant.
-
-**Remote-only / GitHub-then-local:** route to GitHubWorkflow
-([CloudOnlyGitHubWorkflow.md](../GitHubWorkflow/CloudOnlyGitHubWorkflow.md)),
-ChatMemoryCapture — skip LocalAgentToolSetup and mirror Capabilities unless
-requested. Use **device-appropriate paths**.
-
-**Local-primary:** follow standard Quick Startup; optional
-[FirstRunStreamlinePlan.md](../../Plans/FirstRunStreamlinePlan.md) consumer path.
-
-Private GitHub repository is a valid start; public is optional.
+Use [EnvironmentDetectionQuestions.md](../SituationalAwareness/EnvironmentDetectionQuestions.md)
+as a question bank and [EnvironmentAwareStartupPrompt.md](EnvironmentAwareStartupPrompt.md)
+as the same interview's device-aware variant. Recommend a profile in plain
+language using [CloudOnlyDeviceWorkflow.md](../SituationalAwareness/CloudOnlyDeviceWorkflow.md).
+Do not impose local PowerShell or cloud mirrors on browser-only users. GitHub
+setup and cloud review remain optional unless they are the owner's stated task.
 
 ## Valuable References (After Goals)
 
-Once Owner Goals and direction are clear:
+Add suggested links or search terms only when useful to the actual goal,
+with what each source is for and `Confidence: Suggested`, in
+`Workspace/ValuableReferences.md`. There is no minimum number of references.
+Use the external information ladder from SituationalAwareness rather than
+telling the owner to go find a URL unaided. Offer review only when it helps;
+do not block startup or create a research detour to fill a quota.
 
-1. Add **two to five** candidate rows to `Workspace/ValuableReferences.md`.
-2. Each row needs: URL or search term, title/source, **Used for** (which goal or
-   next task), `Confidence: Suggested`, and brief review notes if uncertain.
-3. Use the **external information ladder** (SituationalAwareness section 9):
-   suggest a URL → else search term + starting site → else record candidate only.
-4. Never end with "go find a URL" as the only instruction.
-5. Offer optional owner review via [ReferenceReviewPrompt.md](ReferenceReviewPrompt.md).
-6. Do not block Quick Startup on reference validation.
-
-Project-specific folders (for example `Study/References/`) may **link to** or
-summarize from `ValuableReferences.md`; do not duplicate an unmanaged link dump.
+Optional choices follow [QuickStartupWalkthrough.md](QuickStartupWalkthrough.md).
+Indexing gets one benefit-based offer, unless a preference is already recorded.
+Set up missing indexes only after acceptance. GitHub waits until requested.
+Ask at most one optional question at a time; preserve unanswered decisions as
+unanswered rather than inventing consent, rejection, or deferral.
 
 ## Routing From Owner Goals
 
 | Owner goal signal | Route first |
 | --- | --- |
+| Existing website maintenance | [ExistingWebsiteStartup.md](ExistingWebsiteStartup.md); inspect the current registry before selecting implementation |
 | Basic orientation | `Capabilities/GettingStarted/GettingStarted.md`, then `Plans/UserSetupGuide.md` |
 | Cursor demo / recording | `Plans/OneWindowCursorDemoScript.md`, `Plans/CursorYouTubeDemoGuide.md` |
 | GitHub setup or sync | `GitHubWorkflow` Capability |
@@ -147,7 +133,7 @@ summarize from `ValuableReferences.md`; do not duplicate an unmanaged link dump.
 | Save important chat decisions | `InstructionCapture` or `ChatToMarkdown` as appropriate |
 | Prior repo, archive, or import from old folder | Record source path; inspect local routing, review proposed files, and obtain authorization before copying |
 
-If no owner goals are available, ask for three to five practical setup goals
+If no owner goals are available, ask for one or more practical setup goals
 before selecting optional Capabilities.
 
 ## Situational Awareness (Cloud Versus Cursor)
@@ -237,11 +223,11 @@ GettingStarted must not:
 
 A first getting-started pass is complete when:
 
-- the user can identify the first read path;
-- three to five owner goals are requested or captured in chat;
-- zero to five **Suggested** valuable reference rows are captured when direction
-  implies external canonical sources (optional but encouraged);
-- indexing was completed when accepted, or the decision to defer was recorded;
+- the user knows the first priority and concrete next action, or has explicitly deferred choosing an outcome;
+- each setup question is covered or explicitly skipped/deferred, and the checkpoint is saved when write access exists;
+- at least one owner goal is captured, or all outcomes are explicitly deferred and reported as undecided;
+- suggested references are captured only when useful to the actual task;
+- indexing is completed when accepted, or its actual optional-choice state is recorded without blocking startup;
 - every confirmed adopted project has a verified `Workspace/RepositoryIdentity.md`;
 - Repository Goals remain separate and linked;
 - the next setup task is routed to one existing guide, prompt, or Capability;

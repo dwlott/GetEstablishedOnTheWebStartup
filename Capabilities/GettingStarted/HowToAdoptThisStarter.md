@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-10-10
+LastEdited: 2026-10-11
 -->
 
 # How To Adopt This Starter
@@ -16,7 +16,7 @@ becomes the project's local source of truth.
 
 ## 1 — Choose a new destination
 
-Choose a project name, one-line purpose, and three to five initial outcomes.
+Choose a project name, one-line purpose, and one initial outcome (more are optional).
 The destination must not already exist. If you already have a repository with
 work in it, plan a reviewed import rather than copying over it.
 
@@ -56,7 +56,11 @@ Begin Quick Startup from AGENTS.md. This is not an app launch.
 
 The agent verifies the active root, preserves canonical and established
 repositories, clears only stale template setup, and displays the five setup
-questions. After your answers it captures goals, preferences, and reference
+questions as a preview, then asks them one at a time with Question N of 5
+and saves each answer. One initial goal is enough; a partial interview resumes
+from its checkpoint. Existing sites get a brief maintenance follow-up.
+You only answer; the agent leads into the next question without making you copy
+questions or ask it to continue. After your answers it captures goals, preferences, and reference
 candidates, offers indexing, and routes one next task. Existing project goals
 and the project's own Git remote remain intact when resuming.
 

@@ -1,58 +1,45 @@
 <!--
 IndexTitle: Profile-Aware Quick Startup Prompt
-IndexDescription: Copy-ready Quick Startup with environment interview and operating profile recommendation.
-IndexType: Prompt
+IndexDescription: The same guided interview with environment discovery integrated into question four.
+IndexType: Workflow
+CapabilityName: GettingStarted
 IndexStatus: Active
-LastEdited: 2026-10-10
+LastEdited: 2026-10-11
 -->
 
 # Profile-Aware Quick Startup Prompt
 
-Use when the user's device or environment is unknown, or when they may be on
-phone, tablet, Chromebook, or browser-only.
-
-Formal terms: [NamingStandard.md](../../Standards/NamingStandard.md)
-§Environment-Adaptive Model.
+Use when device constraints affect the next action. This is not a second interview.
 
 ```text
-Start Quick Startup with environment awareness.
+Begin Quick Startup with environment awareness.
+Read AGENTS.md, GettingStarted.md, Rules.md, and QuickStartupWalkthrough.md.
+Classify the root before any adopted reset; preserve canonical and established
+repositories and owner data. Resume a saved checkpoint when available.
 
-Read AGENTS.md and Capabilities/GettingStarted/GettingStarted.md.
-When local access exists, classify the active root using WorkspaceAdoptionPrep
-and RepositoryIdentityTemplate before any reset or Git change. Apply prep only
-to a confirmed adopted copy; preserve canonical and established projects.
-After capture, offer optional indexing and finalize verified adopted identity.
-Without local write access, draft the record for the local worker to complete.
+Show QuickStartupGreeting.md's five questions once, then ask one unanswered
+question at a time with Question N of 5. Wait for each answer and save progress.
+One clear outcome is sufficient. Reuse answers and accept skips or deferrals.
+At question 4, inspect accessible environment facts read-only. Ask only for
+missing details that affect the next action; the environment question bank
+is not a separate questionnaire. Explain the recommended operating profile
+in plain language and use device-appropriate instructions.
 
-1. Ask briefly about my environment (device, OS, Git/GitHub access, cloud tools,
-   technical comfort, workflow preference). Use
-   Capabilities/SituationalAwareness/EnvironmentDetectionQuestions.md — keep it
-   short, not a long form. Persist results to Workspace/OwnerEnvironment.md.
+For an existing site, use ExistingWebsiteStartup.md for missing maintenance
+context and local/live boundaries. Capture goals/preferences as answers arrive.
+Without local write access, give a compact copy-ready checkpoint and goals,
+explicitly stating that they have not been saved.
 
-2. If I have files to help get started (screenshots, logo, existing copy, prior
-   material), offer to accept them — optional, not required. Route per
-   EnvironmentDetectionQuestions.md §Optional Uploads.
-
-3. Recommend an operating profile: Remote-only, GitHub-then-local, Dual-surface,
-   or Local-primary.
-
-4. Capture three to five Owner Goals for Workspace/OwnerGoals.md (or a copy-ready
-   block if I have no local clone yet).
-
-5. Route exactly one next task using the profile-appropriate Capabilities:
-   - Remote-only / GitHub-then-local: GitHubWorkflow (CloudOnlyGitHubWorkflow), InstructionCapture or ChatToMarkdown
-   - Dual-surface: GettingStarted + GitHubWorkflow
-   - Local-primary: GettingStarted + optional LocalAgentToolSetup
-
-6. Use device-appropriate paths — do not require PowerShell, local paths, or
-   cloud mirror sync unless I chose Local-primary and have a local clone.
-
-7. Private GitHub repository is fine; do not require public visibility.
+Offer indexing once through its benefit, unless a decision is already recorded.
+References are optional when useful. GitHub waits until requested; private
+repositories are fine. Complete required adopted identity checks, then close
+with the owner's priority and one concrete next action. Do not invent missing
+facts, require local tools on a browser-only device, or imply startup authorizes
+a website write, import, production change, commit, or push.
 ```
 
 ## Related
 
-- [Rules.md](Rules.md)
-- [FirstRunAgentPrompts.md](FirstRunAgentPrompts.md)
+- [QuickStartupWalkthrough.md](QuickStartupWalkthrough.md)
 - [EnvironmentDetectionQuestions.md](../SituationalAwareness/EnvironmentDetectionQuestions.md)
-
+- [Rules.md](Rules.md)

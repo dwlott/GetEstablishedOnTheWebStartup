@@ -6,7 +6,7 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-06-07
+LastEdited: 2026-10-11
 -->
 
 # GettingStarted Capability
@@ -15,7 +15,7 @@ LastEdited: 2026-06-07
 - **Tier:** Archetype
 - **Purpose:** Help a new owner or agent run **Quick Startup**—the first
   getting-started path: prep the Workspace boot files for an adopted copy, orient
-  to the learning repository, collect three to five **Owner Goals**, keep those
+  to the learning repository, collect one or more **Owner Goals**, keep those
   goals separate from **Repository Goals**, and route the next setup task through
   existing docs and Capabilities.
 - **Inputs:** Current repository state; `Capabilities/GettingStarted/GettingStarted.md`;
@@ -76,6 +76,13 @@ It does not provision new repository folders. There is no `Structure.md` or
 | **LastReviewed** | 2026-07-06 |
 | **HarmonizationNotes** | Archetype tier; does not provision folders |
 
+## Guided startup
+
+The [walkthrough](QuickStartupWalkthrough.md) owns the question-by-question
+protocol, durable resume checkpoint, optional choices, and short outcome-first
+close. [ExistingWebsiteStartup.md](ExistingWebsiteStartup.md) captures missing
+maintenance boundaries without new-site bootstrap or a production change.
+
 ## Related
 
 - Canonical rules: [Rules.md](Rules.md)
@@ -94,6 +101,7 @@ It does not provision new repository folders. There is no `Structure.md` or
 
 | Date | Ver | Change | Lesson / why | Files |
 | --- | ---: | --- | --- | --- |
+| 2026-10-11 | 1 | Guided startup, one-goal minimum, resume checkpoint, maintenance route, and optional choices | Reduce effort and preserve owner direction | QuickStartupWalkthrough, ExistingWebsiteStartup, greeting, rules, prompts, routing |
 | 2026-07-06 | 3 | Quick Startup closes for owner, not planner handoff | Agents assumed a planning agent was waiting | Rules, PostQuickStartupRouting, Prompt, AgentSituationalAwareness |
 | 2026-07-06 | 2 | Workspace Adoption Prep — auto-reset stale boot files on Quick Startup | Adopted copies stalled on leftover template Owner Goals | WorkspaceAdoptionPrep, Rules, QuickStartupGreeting, GettingStarted |
 | 2026-06-01 | 1 | Initial Capability | First setup needs routable owner-goal capture without merging owner goals into Repository Goals | README, Rules, Prompt |

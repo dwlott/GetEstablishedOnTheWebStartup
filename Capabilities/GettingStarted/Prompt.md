@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-10-10
+LastEdited: 2026-10-11
 -->
 
 # GettingStarted Prompt
@@ -29,6 +29,8 @@ Read first:
 - Capabilities/GettingStarted/README.md
 - Capabilities/GettingStarted/Rules.md
 - Capabilities/GettingStarted/GettingStarted.md
+- Capabilities/GettingStarted/QuickStartupWalkthrough.md
+- Capabilities/GettingStarted/ExistingWebsiteStartup.md
 - Capabilities/GettingStarted/WorkspaceAdoptionPrep.md
 - Capabilities/GettingStarted/RepositoryIdentityTemplate.md
 - Capabilities/GettingStarted/QuickStartupGreeting.md
@@ -40,10 +42,24 @@ Goal:
 Make the getting-started path clear enough for a new owner or agent to use.
 On Quick Startup, classify the root first. Apply Workspace Adoption Prep
 only to a confirmed adopted copy (reset stale template files and detach stale
-starter Git). Preserve canonical and established repositories, then collect three to five
+starter Git). Preserve canonical and established repositories, then collect one or more
 practical owner setup goals, keep those separate from Repository Goals, and route
 the next setup task through existing guides, prompts, or Capabilities, and
 finish with mode-gated adopted-project identity cleanup.
+
+Interview protocol:
+Display QuickStartupGreeting.md's opening and five questions once as a preview.
+Follow QuickStartupWalkthrough.md: ask one unanswered question at a time with
+Question N of 5, wait for the answer, save progress, and lead into the next.
+One clear outcome is enough; reuse supplied facts and accept skips or deferrals.
+Resume Workspace/QuickStartupProgress.md rather than repeating answered questions.
+Combine environment discovery with question 4; ask only for missing information.
+If this is an existing website, use ExistingWebsiteStartup.md to establish the
+missing local/live and work-scope facts before proposing changes.
+Capture goals and preferences as answers arrive. References are optional when
+useful. Offer indexing through its benefit and create it only after acceptance.
+Leave GitHub until requested. Finish required adopted identity checks and close
+with the owner's first priority and one concrete next action.
 
 In scope:
 - Read WorkspaceAdoptionPrep and confirm adoption before mutations. Preserve
@@ -52,7 +68,12 @@ In scope:
   in every confirmed adopted project.
 - Clarify beginner-facing setup guidance.
 - Confirm the read-first path.
-- Ask for or summarize three to five owner setup goals.
+- Ask for or summarize one or more owner setup goals.
+- Show QuickStartupGreeting.md's opening and five-question preview, then follow
+  its Agent-led walkthrough. Ask one unanswered question at a time, wait for
+  the answer, and lead into the next without requiring the owner to copy
+  questions or request continuation. Reuse supplied answers and accept skips
+  or deferrals.
 - Point to Plans/RepositoryGoals.md as the repository North Star.
 - Route the next task to an existing Capability or prompt.
 - Update setup or planning docs only when the change is small and directly
@@ -68,6 +89,11 @@ Out of scope:
 - Committing or pushing unless explicitly instructed.
 
 Quality checks:
+- One goal is sufficient; progress survives interruption without repeated questions.
+- Existing-site work has an appropriate route and confirmed working boundaries.
+- Optional choices retain their actual state, and the close leads with the outcome.
+- The five-question preview remains visible, and the agent guides each answer
+  individually rather than leaving the owner to drive the questionnaire.
 - Owner goals and Repository Goals remain separate.
 - Any owner-goal examples are practical and beginner-friendly.
 - The next task is one focused step, not a broad plan.

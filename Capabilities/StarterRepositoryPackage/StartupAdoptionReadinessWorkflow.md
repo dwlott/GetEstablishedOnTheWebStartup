@@ -4,7 +4,7 @@ IndexDescription: Maintain and verify GetEstablishedOnTheWebStartup adoption ins
 IndexType: Workflow
 CapabilityName: StarterRepositoryPackage
 IndexStatus: Active
-LastEdited: 2026-10-10
+LastEdited: 2026-10-11
 -->
 
 # Startup Adoption Readiness Workflow
@@ -84,7 +84,7 @@ instructions, including the WordPress extension.
 | --- | --- |
 | Human and agent entry points | `README.md`, `AGENTS.md`, `Plans/RepositorySearchMap.md`, `Plans/AgentTaskBacklog.md` |
 | First-session operation | GettingStarted `Rules.md`, `Prompt.md`, `GettingStarted.md`, `WorkspaceAdoptionPrep.md` |
-| Owner prompts | GettingStarted `HowToAdoptThisStarter.md`, `FirstRunAgentPrompts.md`, `QuickStartupGreeting.md`, `EnvironmentAwareStartupPrompt.md`, `PostQuickStartupRouting.md` |
+| Owner prompts | GettingStarted `HowToAdoptThisStarter.md`, `FirstRunAgentPrompts.md`, `QuickStartupGreeting.md`, `EnvironmentAwareStartupPrompt.md`, `PostQuickStartupRouting.md`, `QuickStartupWalkthrough.md`, `ExistingWebsiteStartup.md` |
 | Identity contract | GettingStarted `RepositoryIdentityTemplate.md`; `Automation/Test-AdoptedRepositoryIdentity.ps1` and its matrix |
 | Package contract | `WebPresenceStartupRepairSpec.md`; `Automation/VerifyStarterPackage.ps1` |
 
@@ -112,16 +112,20 @@ Apply these rules consistently across the entry points:
    Keep GitHub setup separate until requested.
 4. **Use the actual project identity.** Prompts should name the active root,
    repository, branch, and mode, rather than assuming a template or host name.
-5. **Preserve the five-question greeting.** Wait for answers before writing
-   owner facts. Quick Startup captures goals and routes one next task.
-6. **Offer indexing consistently.** Provision missing indexes through accepted
+5. **Keep the guided startup flow.** Show the five-question preview once, then
+   ask one unanswered question at a time with progress labels. Save each answer
+   and the next prompt in an adopted-project checkpoint. One goal is enough;
+   combine environment discovery with question 4. Existing-site maintenance
+   gets a short context follow-up and a real maintenance route. Reuse facts,
+   accept skips, and preserve interrupted interviews.
+6. **Offer indexing consistently through its benefit.** Provision missing indexes through accepted
    Indexing Setup; refresh through ManualIndexing. Record deferral without
    blocking startup. Include final identity and boot changes in any refresh.
 7. **Keep reference routing usable.** Link to files and capabilities actually
    present in the target. Record a prior source path before proposing imports;
    copy prior material only when authorized.
-8. **Close in normal owner-facing prose.** Report identity verification,
-   indexing state, and one next step. Use a handoff block only when requested
+8. **Close with the outcome and concrete next action.** Report identity
+   verification and actual optional-choice states briefly as supporting facts. Use a handoff block only when requested
    or in an explicitly selected planner/worker workflow.
 
 Update only active identity statements in the GettingStarted allowlist.

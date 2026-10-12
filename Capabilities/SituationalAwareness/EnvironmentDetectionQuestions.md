@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: SituationalAwareness
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-06-09
+LastEdited: 2026-10-11
 -->
 
 # Environment Detection Questions
@@ -22,6 +22,16 @@ Planning source:
 
 Persist answers in `Workspace/OwnerEnvironment.md` (ENV-1 resolved 2026-06-09:
 durable register; chat reads and updates it).
+
+## Quick Startup integration
+
+During Quick Startup, use this bank at setup question 4, not as another
+interview. Inspect available environment facts read-only, reuse the owner's
+answers, and ask only for missing details needed by the next action, one at a
+time. Do not require GitHub/cloud setup or every field in the bank. Record
+relevant facts in OwnerPreferences.md; use OwnerEnvironment.md if present or
+needed for a profile-aware capture. See
+[QuickStartupWalkthrough.md](../GettingStarted/QuickStartupWalkthrough.md).
 
 ## Interview Questions
 
@@ -80,17 +90,11 @@ State the recommended profile in plain language. Route per
 ## Copy-Ready Prompt Block
 
 ```text
-Before we pick the next task, help me understand your environment briefly.
-
-1. What device and OS are you on?
-2. Can you use Git or a local code editor, or mainly browser/GitHub?
-3. Do you have a GitHub repository (private is fine)?
-4. Any cloud tools you already use (Drive, Dropbox)?
-5. Do you prefer phone-first, GitHub-primary, or local-primary work?
-6. Do you have screenshots, a logo, or existing copy to share? (Optional.)
-
-Recommend an operating profile: Remote-only, GitHub-then-local, Dual-surface,
-or Local-primary. Persist to Workspace/OwnerEnvironment.md. Then route one next task.
+At Quick Startup question 4, use the existing answers and inspect accessible
+environment facts read-only. Ask one missing detail at a time only when it
+affects our next action. Do not repeat the startup interview or require GitHub
+and cloud setup. Recommend a workable profile in plain language and save the
+facts in the appropriate owner register. Then continue the saved walkthrough.
 ```
 
 ## Related

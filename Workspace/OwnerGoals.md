@@ -3,7 +3,7 @@ IndexTitle: Owner Goals
 IndexDescription: Durable register for the owner's practical outcomes; captured in Quick Startup and refined as work progresses.
 IndexType: Workspace
 IndexStatus: Active
-LastEdited: 2026-07-06
+LastEdited: 2026-10-11
 -->
 
 # Owner Goals
@@ -14,7 +14,7 @@ want from this web-presence starter.
 ## How To Use
 
 1. Start with **Quick Startup**: `Capabilities/GettingStarted/GettingStarted.md`
-2. Write three to five practical outcomes below.
+2. Write one or more practical outcomes below.
 3. Refine this list as work progresses. Route new Ideas and Plans from these
    goals — not the other way around.
 

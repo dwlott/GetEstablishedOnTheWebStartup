@@ -3,7 +3,7 @@ IndexTitle: Repository Search Map
 IndexDescription: Boot and search map for GetEstablishedOnTheWebStartup web-presence starter.
 IndexType: Project
 IndexStatus: Active
-LastEdited: 2026-10-10
+LastEdited: 2026-10-11
 -->
 
 # Repository Search Map
@@ -27,6 +27,8 @@ Workspace/SiteDeployProfiles/_TEMPLATE.md
 
 | Need | Look first |
 | --- | --- |
+| Guided startup and saved interview progress | [QuickStartupWalkthrough.md](../Capabilities/GettingStarted/QuickStartupWalkthrough.md) |
+| Existing website startup and maintenance boundaries | [ExistingWebsiteStartup.md](../Capabilities/GettingStarted/ExistingWebsiteStartup.md) |
 | Public page drafts (GEOTW examples) | `Content/Website/Pages/` |
 | Prepare Startup adoption instructions | [StartupAdoptionReadinessWorkflow.md](../Capabilities/StarterRepositoryPackage/StartupAdoptionReadinessWorkflow.md) |
 | Adopt a new project copy | `Capabilities/GettingStarted/HowToAdoptThisStarter.md` |

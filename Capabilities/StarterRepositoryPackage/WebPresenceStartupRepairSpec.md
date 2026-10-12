@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: StarterRepositoryPackage
 CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-10-10
+LastEdited: 2026-10-11
 -->
 
 # WebPresence Startup Repair Spec
@@ -19,6 +19,20 @@ Verify profile: **`WebPresenceWordPress`** (33 Capabilities; WordPress layer + W
 
 This is a packaging profile for the downloadable / cloneable starter — not a
 public product repository and not a commissioned customer site.
+
+## Guided startup source contract
+
+The reusable source is GetEstablishedOnTheWeb. Retain its GettingStarted
+`QuickStartupWalkthrough.md`, `QuickStartupGreeting.md`, `ExistingWebsiteStartup.md`,
+`PostQuickStartupRouting.md`, rules, and owner prompts when rebuilding Startup.
+Reconcile profile-specific goals, automation availability, and identity wording;
+do not regenerate the older batch interview or mandatory goal quota.
+Only the checkpoint scaffold ships in Capability guidance. Preserve real owner
+registers and Git in canonical checkouts; do not package a completed interview
+or private `Workspace/QuickStartupProgress.md` from product work.
+Use [StartupAdoptionReadinessWorkflow.md](StartupAdoptionReadinessWorkflow.md)
+for maintained-checkout updates and checks. Do not repackage or distribute as
+a side effect of instruction maintenance.
 
 ## Two-Phase Packaging
 

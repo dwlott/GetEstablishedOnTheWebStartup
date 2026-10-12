@@ -3,7 +3,7 @@ IndexTitle: User Setup Guide
 IndexDescription: Guide for applying the repository pattern to web-presence work.
 IndexType: Setup
 IndexStatus: Draft
-LastEdited: 2026-06-01
+LastEdited: 2026-10-11
 -->
 
 # User Setup Guide
@@ -73,7 +73,7 @@ Stop and ask for help if a conflict, unexpected file state, or risky decision ap
 
 Before building a website, write down the source material.
 
-Start by naming three to five practical setup goals. These should describe
+Start by naming one or more practical setup goals. These should describe
 what you want the first setup work to produce, such as a basic website, a
 Google Business Profile improvement, first service pages, reviews or proof,
 online estimates, appointments, or a reusable starter repository.
@@ -227,7 +227,7 @@ Use this checklist for a first local session:
 - Read `AGENTS.md`.
 - Read `README.md`.
 - Read `Plans/RepositoryMap.md`.
-- Name three to five practical setup goals.
+- Name one or more practical setup goals.
 - Create or review your identity statement.
 - Define your target audience.
 - Draft your first offer direction.

@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-10-10
+LastEdited: 2026-10-11
 -->
 
 # Post Quick Startup Routing
@@ -16,40 +16,33 @@ Read [AgentCapabilityGuide.md](../AgentCapabilityGuide.md) only to confirm.
 
 ## Quick Startup complete (say this)
 
-Close in **plain chat for the owner**. Do **not** end with a fenced worker
-handoff block unless the owner explicitly asked for **PlannerWorker** or
-**AssistedAgenticWorkflow** (see
-[AssistedAgenticWorkflow/PlannerWorkerWorkflow.md](../AssistedAgenticWorkflow/PlannerWorkerWorkflow.md)).
-
-**Default assumption:** there is **no planning agent waiting**. The same agent
-(or the owner in a new chat) may continue later — that is not an automatic
-handoff to another role.
+Lead with what the workspace now supports and the owner's first priority,
+then one concrete next action. Use plain language; Capability names and boot-file
+details are supporting information. Do not claim the first project goal is
+achieved merely because startup is complete.
 
 ```text
-Quick Startup is complete for this session.
+Your workspace is ready to support <owner's actual project>.
+First priority: <owner's outcome>.
+Next: <one concrete action; optional when no work has been requested>.
+Working scope: <confirmed local/live boundary, if relevant>.
 
-What I did:
-- (one line per boot-file update — prep, goals, references, preferences)
-- (git: fresh-copy-no-git or removed-starter-git — connect GitHub later)
-
-Owner Goals are in Workspace/OwnerGoals.md.
-Indexing: (accepted and completed | existing indexes refreshed | deferred — match the recorded choice).
-GitHub: (plain folder / no .git | new repo connected | local-only | unchanged — match OwnerPreferences).
-Do not push until the owner explicitly asks.
-
-Suggested next step (optional — you can do this now or later):
-- (one Capability or prompt from the routing table below)
-
-Identity: (canonical-template | product | adopted-project) — (verification result; record path or not applicable).
+Saved: <brief links to goals/preferences and interview progress>.
+Indexing: <actual status>. GitHub: <actual status>.
+Identity verification: <actual result or not applicable>.
 ```
 
-Do **not** format the close as `Summary / Files Changed / Planning Files To Review /
-Next Recommended Task` unless the owner is in an explicit planner/worker loop.
+Close in normal owner-facing prose. Use a fenced worker handoff only when
+explicitly requested or when an explicit separate planner/worker workflow needs
+one. Optional choices may remain unresolved; accurately report their state.
+If all outcomes were deferred, say that setup information is saved and the next
+outcome is undecided, rather than choosing a starter example for the owner.
 
 ## Route exactly one next task
 
 | If the owner's goals or answer emphasize... | Route | Entry |
 | --- | --- | --- |
+| Maintain an existing website | **GettingStarted** maintenance orientation, then a present project maintenance Capability | [ExistingWebsiteStartup.md](ExistingWebsiteStartup.md) |
 | Business plan inputs, North Star, offer/audience clarity | **BusinessPlan** | [Prompt.md](../BusinessPlan/Prompt.md) |
 | Draft the owner's one-page business website | **OnePageWebsite** | [Prompt.md](../OnePageWebsite/Prompt.md) — after essentials exist |
 | Review public website page drafts | **ContentReview** | [Prompt.md](../ContentReview/Prompt.md) |
@@ -83,11 +76,14 @@ or **distribution**:
 
 ## Default when unclear
 
-**ContentReview** on `Content/Website/Pages/Home.md` or **UserDiscoveryPrompt**
-if business direction is still open — not RepositoryScaffold.
+Use the supplied first goal and project direction. If the next action is still
+unclear, ask one focused clarification or record the outcome as deferred.
+Do not choose starter example pages, a new website build, or repository repair
+by default. For an existing website, choose read-only diagnosis until work scope
+is established; use only implementation workflows present in the registry.
 
 ## Related
 
-- [GettingStarted.md](GettingStarted.md) — first-session order step 7
+- [GettingStarted.md](GettingStarted.md) — first-session order
 - [QuickStartupGreeting.md](QuickStartupGreeting.md)
 - [RepositoryIdentityTemplate.md](RepositoryIdentityTemplate.md)

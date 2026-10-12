@@ -3,7 +3,7 @@ IndexTitle: Agent Task Backlog
 IndexDescription: Web-presence starter task queue for GetEstablishedOnTheWebStartup.
 IndexType: Project
 IndexStatus: Active
-LastEdited: 2026-10-10
+LastEdited: 2026-10-11
 -->
 
 # Agent Task Backlog
@@ -27,6 +27,17 @@ Verify with `Automation/VerifyStarterPackage.ps1 -Profile WebPresenceWordPress`.
 | Connect GitHub when owner is ready | GitHubWorkflow | SetupPrompt.md — owner must ask |
 
 ## Adoption Readiness
+
+Guided startup refreshed on 2026-10-11 from the reusable GEOTW source:
+five-question preview, individual questions with progress labels, one-goal
+minimum, saved resume checkpoint, integrated environment discovery, and
+existing-site maintenance follow-up. Optional setup remains optional; the
+close leads with the owner's outcome and next action. Shared source documents,
+new links, diff checks, package verification, and an actual temporary project
+copy passed. Real owner goal entries and protected identity/Git/preferences
+were preserved. The temporary fixture was removed. These checks verify package
+contents; a real human interview was not performed. No public package, commit,
+or push. See [QuickStartupWalkthrough.md](../Capabilities/GettingStarted/QuickStartupWalkthrough.md).
 
 Adoption instructions refreshed on 2026-10-10. Canonical template Git and blank
 owner registers remain intact. New copies exclude Git and agent runtime

@@ -3,7 +3,7 @@ IndexTitle: Getting Started
 IndexDescription: Beginner-friendly entry point for understanding Markdown, read-first files, and the repository workflow.
 IndexType: Setup
 IndexStatus: Active
-LastEdited: 2026-10-10
+LastEdited: 2026-10-11
 -->
 
 # Getting Started
@@ -21,7 +21,7 @@ This guide sits between the root `README.md` and the fuller
 
 **Quick Startup** is the first-session path through the `GettingStarted`
 Capability. Before choosing tools, platforms, or website structure, write down
-three to five practical outcomes you want this setup to produce.
+one or more practical outcomes you want this setup to produce.
 
 Useful first goals might be:
 
@@ -69,65 +69,48 @@ in the confirmed new copy —
 
 First session order:
 
-1. Read `AGENTS.md` and `README.md`.
-
-2. **Workspace Adoption Prep** — read [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md)
-   and classify the active root before changes. Run resets and Git detach only
-   in a confirmed adopted Startup copy; preserve canonical and established
-   repositories. Prefer `Automation/Copy-StartupToProject.ps1` (no `.git`).
-   Reset stale template content only, preserve captured project goals, detach
-   stale starter Git, and continue without a blocking Git menu. A missing
-   `.git` is success; a project's own remote stays intact.
-
-3. Display the opening and five setup questions from
-   [QuickStartupGreeting.md](QuickStartupGreeting.md) — **do not invent questions**.
-   (Use [UserDiscoveryPrompt.md](UserDiscoveryPrompt.md) only **after** Owner Goals
-   when business or page clarity is the next step.)
-   When device or environment is unknown, use the **profile-aware** path in
-   [Rules.md](Rules.md) §Profile-Aware Quick Startup — short environment
-   interview, optional uploads if the user has files to share, persist to
-   `Workspace/OwnerEnvironment.md`.
-4. Write three to five Owner Goals in `Workspace/OwnerGoals.md` from the owner's
-   answers (replace the scaffold row).
-5. Ask: **Do you have a prior repository folder or archive to import from?**
-   If yes, record the path in `Workspace/OwnerPreferences.md`. Inspect the
-   local registry before selecting an import workflow; do not route to absent
-   modules. Review proposed files and obtain authorization before copying.
-   See [FirstRunAgentPrompts.md](FirstRunAgentPrompts.md).
-6. **Capture candidate valuable references** (two to five rows max for the first
-   pass). Once direction is clear, add likely URLs or search terms to
-   `Workspace/ValuableReferences.md` with `Confidence: Suggested` and short
-   commentary (what each link is for). Do not tell the owner to "go find a URL"
-   without offering a specific link or search term first — see
-   [SituationalAwareness/Rules.md](../SituationalAwareness/Rules.md) section 9.
-7. **Offer reference review (optional).** Offer a short owner pass over
-   Suggested rows — now or later — using
-   [ReferenceReviewPrompt.md](ReferenceReviewPrompt.md). Do not block startup.
-8. Route **one** next task per
-   [PostQuickStartupRouting.md](PostQuickStartupRouting.md) — then confirm in
-   `Capabilities/AgentCapabilityGuide.md`. **Do not** route **RepositoryScaffold**
-   for packaging validation or "consumer scaffold check."
-9. Park GitHub until the owner chooses (`git init` later via **GitHubWorkflow**
-   if Adoption Prep removed `.git`).
-
-10. **Offer indexing (optional).** If the owner accepts and `Indexes/` is absent,
-    follow [../Indexing/SetupPrompt.md](../Indexing/SetupPrompt.md) and
-    [../Indexing/Structure.md](../Indexing/Structure.md). Refresh existing indexes
-    through [../ManualIndexing/WorkflowIndex.md](../ManualIndexing/WorkflowIndex.md).
-    Record a decision to defer; it does not block startup.
-11. **Finalize adopted-project identity.** In a confirmed adopted copy, complete
-    `Workspace/RepositoryIdentity.md` using
-    [RepositoryIdentityTemplate.md](RepositoryIdentityTemplate.md), rewrite only
-    allowlisted active identity statements, and run
-    `Automation/Test-AdoptedRepositoryIdentity.ps1`. Preserve intentional
-    source-template and packaging references. Include changed identity and boot
-    files in any accepted index refresh. Skip this phase in canonical repositories.
-
-12. **Close the session for the owner** using
-    [PostQuickStartupRouting.md](PostQuickStartupRouting.md) § Quick Startup
-    complete. Do **not** end with a fenced worker handoff unless the owner
-    explicitly requested PlannerWorker workflow. Assume **no planning agent** is
-    waiting.
+1. Read `AGENTS.md`, `README.md`, the owner registers, and the current backlog.
+   If `Workspace/QuickStartupProgress.md` exists, resume it rather than restarting.
+2. Read [WorkspaceAdoptionPrep.md](WorkspaceAdoptionPrep.md) and classify the
+   root before mutations. Apply resets and Git detach only to identified
+   template residue in a confirmed adopted copy. Preserve canonical roots,
+   established projects, existing owner data, and project-owned Git history.
+3. Follow [QuickStartupWalkthrough.md](QuickStartupWalkthrough.md): show the
+   [five-question preview](QuickStartupGreeting.md) once, then ask one unanswered
+   question at a time with **Question N of 5 — topic**. Save each answer and
+   next prompt. Accept skips and deferrals; one clear goal is enough.
+4. Capture supplied outcomes in `Workspace/OwnerGoals.md` as answers arrive.
+   Save tool/context facts and prior-material paths in `OwnerPreferences.md`.
+   Reuse answers instead of asking the prior-folder question again. Inspect
+   available Capabilities before suggesting an import; copying requires authorization.
+5. For an existing website, use [ExistingWebsiteStartup.md](ExistingWebsiteStartup.md)
+   to establish only missing local/live, freshness, backup, and work-scope facts.
+   Choose read-only diagnosis when scope remains unclear. No site write is
+   authorized merely by completing startup.
+6. Combine environment discovery with question 4. Inspect what is available
+   read-only; use the question bank only for missing facts needed to choose a
+   workable path. The profile-aware variant is the same interview, not an extra form.
+7. Suggest useful references only when the immediate task benefits. Record
+   suggested sources in `Workspace/ValuableReferences.md`; reference review is
+   optional. No URL quota or research detour is required.
+8. Offer indexing once with its benefit: a directory that helps future sessions
+   find project notes. Reuse a recorded decision. If accepted, use
+   [Indexing Setup](../Indexing/SetupPrompt.md) for missing indexes and
+   [ManualIndexing](../ManualIndexing/WorkflowIndex.md) for refreshes. Track an
+   unanswered offer accurately; optional setup does not block real work.
+9. Leave GitHub until requested. Retain the project's current Git state; do not
+   start remote setup, commit, or push just to complete the interview.
+10. In every confirmed adopted project, complete `Workspace/RepositoryIdentity.md`
+    using [RepositoryIdentityTemplate.md](RepositoryIdentityTemplate.md), apply
+    allowlisted active-identity cleanup, and verify with
+    `Automation/Test-AdoptedRepositoryIdentity.ps1`. Preserve source provenance.
+    Skip adopted rewrites in both canonical repositories. Refresh accepted
+    indexes after final identity changes.
+11. Close with the practical outcome, working boundaries when relevant, and
+    one concrete next action per [PostQuickStartupRouting.md](PostQuickStartupRouting.md).
+    Give files, indexing/Git status, and identity checks as brief supporting facts.
+    Mark the checkpoint Complete only after required capture and verification.
+    If the user stops earlier, save the next prompt without claiming completion.
 
 ### Consent cascade (all agents)
 
@@ -254,7 +237,7 @@ Use this list as a simple picture of what the repository is trying to model:
 - Use simple indexes and metadata so future agents can find the right context.
 - **Curate valuable external references in the Workspace** — candidates plus
   owner-approved URLs; see `Workspace/ValuableReferences.md`.
-- Preserve human control with reviewable changes, batched questions, and clear
+- Preserve human control with reviewable changes, guided questions, and clear
   handoffs.
 - Expand only when there is a real need.
 
