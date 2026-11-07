@@ -4,7 +4,7 @@ IndexDescription: Question-by-question progress, durable resume checkpoint, and 
 IndexType: Workflow
 CapabilityName: GettingStarted
 IndexStatus: Active
-LastEdited: 2026-10-11
+LastEdited: 2026-11-06
 -->
 
 # Quick Startup Walkthrough
@@ -38,6 +38,16 @@ create a real interview record or reset owner registers in either canonical
 repository while editing or packaging instructions. Without write access,
 maintain a compact copy-ready checkpoint in chat and state that it is unsaved.
 
+## Confirm before the preview
+
+When the folder has no adopted-project identity record yet, the only question
+is whether this copy is the owner's project. Wait for that answer. The opening
+and five-question preview come next, in a later turn. An owner message that
+already confirms the copy counts; do not ask again.
+
+These instructions stay usable in any agent app. Record the apps the owner
+names, and do not make one vendor required for the project.
+
 ## Ask, capture, and advance
 
 1. Show [QuickStartupGreeting.md](QuickStartupGreeting.md)'s opening and five
@@ -51,8 +61,12 @@ maintain a compact copy-ready checkpoint in chat and state that it is unsaved.
    quota. Use an answer for every question it covers.
 4. Acknowledge briefly. Save the factual summary and question status before
    asking the next. Update `OwnerGoals.md` and `OwnerPreferences.md` with supplied
-   facts as they arrive, preserving existing entries. The checkpoint tracks
+   facts as they arrive, preserving existing entries. Write Windows and local
+   site paths with forward slashes (`C:/Repositories/<ProjectName>`,
+   `C:/wamp64/www`). Read those lines back before continuing. The checkpoint tracks
    interview progress; those registers remain authoritative for durable facts.
+   If the owner names more than one computer, record the names and leave file
+   sync until they ask.
 5. At question 4, inspect the accessible environment read-only and ask only
    about details that matter and remain unknown. The environment question bank
    is a reference, not another questionnaire. Store relevant device/profile
@@ -62,10 +76,12 @@ maintain a compact copy-ready checkpoint in chat and state that it is unsaved.
    If the owner asks to stop, save progress, say which question is next, and
    stop. Never mark remaining questions answered merely to finish startup.
 7. Once the five questions are covered or explicitly deferred, use the short
-   existing-site follow-up when applicable, then offer useful optional setup
-   and complete identity verification. If all goals were deferred, record
-   orientation complete with the next outcome still undecided; do not invent
-   a task or claim the owner's project goal has been achieved.
+   existing-site follow-up when applicable, then offer useful optional setup.
+   Rewrite the four boot lines in
+   [RepositoryIdentityTemplate.md](RepositoryIdentityTemplate.md) before the
+   first identity verification, then run the verifier. If all goals were
+   deferred, record orientation complete with the next outcome still undecided;
+   do not invent a task or claim the owner's project goal has been achieved.
 
 ## Checkpoint scaffold
 

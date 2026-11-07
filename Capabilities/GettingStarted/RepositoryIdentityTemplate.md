@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-10-10
+LastEdited: 2026-11-06
 -->
 
 # Repository Identity Template
@@ -42,6 +42,31 @@ Creation source: GetEstablishedOnTheWebStartup
 All seven fields are required. The local root, Git remote, and branch must
 agree with the active repository state. The project name must not retain the
 canonical product or Startup name.
+
+Write both path fields with forward slashes, such as
+`C:/Repositories/<ProjectName>`. Backslashes are often dropped when an agent
+saves a file. After saving, read the two path lines back and confirm the
+project folder name is still separated by slashes. Do this before the first
+verifier run.
+
+## Lines the verifier rejects
+
+Rewrite these active sentences in the adopted copy before the first run of
+`Test-AdoptedRepositoryIdentity.ps1`. The check names the file and line if one
+remains. Keep sentences that say the project was copied from
+GetEstablishedOnTheWebStartup. Do not change these lines in the canonical
+Startup checkout.
+
+| File | Current active line | Adopted replacement |
+| --- | --- | --- |
+| `AGENTS.md` | `This is a Get Established On The Web Startup repository` | `This is <ProjectName>, a web project workspace copied from GetEstablishedOnTheWebStartup.` |
+| `README.md` | `IndexTitle` and the heading `Get Established On The Web Startup` | `<ProjectName>` in both places |
+| `Capabilities/README.md` | `This is the GetEstablishedOnTheWebStartup web-presence starter registry` | `This is the <ProjectName> capability registry.` |
+| `Capabilities/RouterIndex.md` | `This is the GetEstablishedOnTheWebStartup starter` | `This is the <ProjectName> workspace.` |
+
+Also retitle the active introductions in `Capabilities/AgentCapabilityGuide.md`,
+`Plans/RepositorySearchMap.md`, and `Plans/AgentTaskBacklog.md` so they name
+`<ProjectName>`. Leave packaging instructions and creation-source text in place.
 
 Rewrite only active boot, registry, routing, and workspace identity surfaces.
 Preserve source-template, product-packaging, historical, and related-repository

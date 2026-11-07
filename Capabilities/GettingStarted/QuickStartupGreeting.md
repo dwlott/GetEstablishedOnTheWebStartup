@@ -4,7 +4,7 @@ IndexDescription: Five-question preview and guided startup for new projects or e
 IndexType: Workflow
 CapabilityName: GettingStarted
 IndexStatus: Active
-LastEdited: 2026-10-11
+LastEdited: 2026-11-06
 -->
 
 # Quick Startup Greeting
@@ -14,8 +14,11 @@ Read `AGENTS.md`, [GettingStarted.md](GettingStarted.md), and
 reset only identified template residue in an owner-confirmed adopted copy.
 Preserve canonical repositories, established projects, owner data, and Git.
 
-For a fresh startup, display this opening and all five questions once as a
-preview. Then follow [QuickStartupWalkthrough.md](QuickStartupWalkthrough.md).
+If this folder is not yet confirmed as the owner's adopted copy, ask only
+that confirmation. Do not display the opening or the five questions in the
+same turn. After the owner confirms, state the Git fact once, then display
+this opening and all five questions once as a preview. Then follow
+[QuickStartupWalkthrough.md](QuickStartupWalkthrough.md).
 For a resumed interview, read its checkpoint and ask the next unanswered
 question; do not repeat the opening or completed questions.
 

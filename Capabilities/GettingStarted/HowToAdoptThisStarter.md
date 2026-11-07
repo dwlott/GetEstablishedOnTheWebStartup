@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-10-11
+LastEdited: 2026-11-06
 -->
 
 # How To Adopt This Starter
@@ -66,8 +66,9 @@ and the project's own Git remote remain intact when resuming.
 
 ## 4 — Verify project identity
 
-The agent completes `Workspace/RepositoryIdentity.md`, updates only allowlisted
-active identity surfaces, and runs:
+The agent completes `Workspace/RepositoryIdentity.md` with forward-slash paths,
+rewrites the four boot lines listed in
+[RepositoryIdentityTemplate.md](RepositoryIdentityTemplate.md), and then runs:
 
 ```powershell
 .\Automation\Test-AdoptedRepositoryIdentity.ps1 -Root (Get-Location).Path

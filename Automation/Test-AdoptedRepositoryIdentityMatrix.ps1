@@ -89,6 +89,13 @@ try {
     $result = Invoke-IdentityVerifier $freshAdopted $ProductRoot $canonicalStartup
     Assert-Passed 'fresh adopted copy without Git' $result 'identity record is valid'
 
+    $freshIdentity = Join-Path $freshAdopted 'Workspace\RepositoryIdentity.md'
+    $slashRoot = $freshAdopted.Replace('\', '/')
+    (Get-Content -LiteralPath $freshIdentity -Raw).Replace($freshAdopted, $slashRoot) |
+        Set-Content -LiteralPath $freshIdentity -Encoding UTF8 -NoNewline
+    $result = Invoke-IdentityVerifier $freshAdopted $ProductRoot $canonicalStartup
+    Assert-Passed 'forward-slash local root' $result 'identity record is valid'
+
     $freshBoot = Join-Path $freshAdopted 'AGENTS.md'
     'This is a **Get Established On The Web Startup** repository.' |
         Set-Content -LiteralPath $freshBoot -Encoding UTF8

@@ -4,7 +4,7 @@ IndexDescription: Read-only orientation and owner-defined local/live boundaries 
 IndexType: Workflow
 CapabilityName: GettingStarted
 IndexStatus: Active
-LastEdited: 2026-10-11
+LastEdited: 2026-11-06
 -->
 
 # Existing Website Startup
@@ -34,6 +34,12 @@ Ask only for missing scope that changes the proposed action. If scope or
 freshness remains unknown, choose a read-only diagnostic next step. Treat
 local and live databases as separate authorities; never overwrite live data
 with a local database just to change one product or setting.
+
+A read-only look may find another business's name, prices, placeholder media,
+or empty duplicate pages. Record those as open questions in
+`Plans/OpenQuestions.md`. They are leftover content, not this project's offer,
+audience, or prices. Starter examples are not the site's content. Do not change
+the site during startup.
 
 ## Select the next action
 

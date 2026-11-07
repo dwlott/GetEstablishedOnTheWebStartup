@@ -3,7 +3,7 @@ IndexTitle: Quick Startup Adopted Identity Cleanup Plan
 IndexDescription: Make the final Quick Startup step identify an adopted project as its own repository rather than as the startup template.
 IndexType: Project
 IndexStatus: Active
-LastEdited: 2026-10-10
+LastEdited: 2026-11-06
 PromotedFrom: Owner request - Quick Startup identity correction
 -->
 
@@ -191,3 +191,15 @@ and the WordPress extension's migration and theme-pointer plans (29 total).
 Ready for a new local project copy. The real owner's five-question Quick
 Startup and project-specific identity cleanup happen in that copy. Temporary
 fixtures were removed. Changes remain uncommitted; no push or deployment.
+
+## First-session lesson — 2026-11-06
+
+A first Quick Startup in an adopted copy, using a different agent app, showed
+four generic stalls. The startup instructions now say:
+
+1. Confirm adoption before showing the five questions.
+2. Record paths with forward slashes and read them back.
+3. Rewrite the four verifier lines before the first identity check. The
+   verifier names the file and line.
+4. Keep the interview vendor-neutral, leave multi-computer sync until asked,
+   and record another business's leftover site content as open questions.

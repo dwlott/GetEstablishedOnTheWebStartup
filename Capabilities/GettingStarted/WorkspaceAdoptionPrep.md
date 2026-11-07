@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-10-10
+LastEdited: 2026-11-06
 -->
 
 # Workspace Adoption Prep
@@ -41,6 +41,24 @@ first session. The owner deleted `.git` by hand. **Do not block.** Detach, say
 one line, continue.
 
 Human copy steps: [HowToAdoptThisStarter.md](HowToAdoptThisStarter.md).
+
+Field lesson (2026-11-06, first Quick Startup in an adopted web-project copy,
+any agent app):
+
+- Ask for adoption confirmation alone. Show the five-question preview only
+  after the owner confirms, and not in that same turn.
+- State Git once. A `Copy-StartupToProject.ps1` copy has no `.git`; record
+  `fresh-copy-no-git` and do not run Git commands. Do not also describe that
+  folder as having inherited Git.
+- Record paths with forward slashes and read them back.
+- Rewrite the four verifier lines in
+  [RepositoryIdentityTemplate.md](RepositoryIdentityTemplate.md) before the
+  first identity check.
+- Record every agent app the owner names. Do not make one vendor required.
+- If the owner uses more than one computer, record the names and leave sync,
+  GitHub, and mirror setup until they ask.
+- On an existing site, record another business's leftover name, prices, or
+  placeholder media as open questions. Do not adopt them as this project's facts.
 
 Do **not** ask permission to reset stale scaffold content. Reset, tell them
 briefly what you did, then continue with
@@ -120,7 +138,8 @@ Reset **Import** only:
 ```
 
 If **Local repository root** is still a placeholder, set it to the actual
-repository folder path (for example `C:\Repositories\<YourWebProjectName>`).
+repository folder path with forward slashes (for example
+`C:/Repositories/<YourWebProjectName>`). Read the saved line back.
 
 Do **not** wipe WAMP, mirror, or WordPress sections the owner may have already
 filled in during a resumed session.

@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-10-11
+LastEdited: 2026-11-06
 -->
 
 # GettingStarted Rules
@@ -28,7 +28,18 @@ Folder name alone never authorizes adoption mutations.
 - If stale starter Git metadata remains, detach it automatically as documented;
   do not present a blocking Git menu. Preserve the project's own Git remote.
 - If `.git` is absent, record that and continue without Git commands.
-- State what prep did, then display [QuickStartupGreeting.md](QuickStartupGreeting.md).
+- State what prep did. If adoption is not confirmed yet, ask only that
+  question. Display [QuickStartupGreeting.md](QuickStartupGreeting.md) after
+  confirmation, not in the same turn.
+- Write recorded paths with forward slashes and read them back.
+- Rewrite the four verifier lines in
+  [RepositoryIdentityTemplate.md](RepositoryIdentityTemplate.md) before the
+  first identity check. The check reports the file and line.
+- Stay vendor-neutral. Any agent app can run this startup. Record the owner's
+  tools, and do not make one vendor required.
+- Several computers are a recorded preference. Set up sync only when asked.
+- Existing-site leftovers from another business stay open questions. Do not
+  invent this project's prices, audience, or public copy from them.
 
 ## Repository Identity Cleanup (Last Operational Step)
 

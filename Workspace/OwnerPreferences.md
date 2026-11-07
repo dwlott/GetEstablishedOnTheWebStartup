@@ -37,7 +37,7 @@ Preferred: copy without `.git` (`Automation/Copy-StartupToProject.ps1`).
 | --- | --- | --- |
 | Mirror mode | on-demand | No automatic cloud copy after local edits |
 | Default mirror style | fast | Incremental `/E`; no purge unless owner asks |
-| Local repository root | `C:\Repositories\<YourWebProjectName>` | Set after adoption |
+| Local repository root | `C:/Repositories/<YourWebProjectName>` | Set after adoption. Use forward slashes, then read the line back |
 | Mirror target path | *(owner sets)* | Dropbox or GDrive repository mirror |
 | Mirror platform | Windows | **MirrorToWindows** docs-only |
 | Mirror purpose | backup | Confirm with owner |
@@ -48,7 +48,7 @@ Preferred: copy without `.git` (`Automation/Copy-StartupToProject.ps1`).
 
 | Setting | Value |
 | --- | --- |
-| `WAMP_WWW_ROOT` | *(owner sets — e.g. `C:\wamp64\www`)* |
+| `WAMP_WWW_ROOT` | *(owner sets — e.g. `C:/wamp64/www`)* |
 | Site folder | `www\{siteKey}` |
 | Local URL | `http://localhost/{siteKey}` |
 | Site manifest | `Workspace/LocalWordPressBuild/site-manifest.json` |

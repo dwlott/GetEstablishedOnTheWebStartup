@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: GettingStarted
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-10-11
+LastEdited: 2026-11-06
 -->
 
 # GettingStarted Prompt
@@ -48,7 +48,8 @@ the next setup task through existing guides, prompts, or Capabilities, and
 finish with mode-gated adopted-project identity cleanup.
 
 Interview protocol:
-Display QuickStartupGreeting.md's opening and five questions once as a preview.
+If adoption is not confirmed, ask only that. After confirmation, display
+QuickStartupGreeting.md's opening and five questions once as a preview.
 Follow QuickStartupWalkthrough.md: ask one unanswered question at a time with
 Question N of 5, wait for the answer, save progress, and lead into the next.
 One clear outcome is enough; reuse supplied facts and accept skips or deferrals.
@@ -56,6 +57,8 @@ Resume Workspace/QuickStartupProgress.md rather than repeating answered question
 Combine environment discovery with question 4; ask only for missing information.
 If this is an existing website, use ExistingWebsiteStartup.md to establish the
 missing local/live and work-scope facts before proposing changes.
+Write saved paths with forward slashes and read them back. Rewrite the four
+verifier lines before the first identity check. Stay usable in any agent app.
 Capture goals and preferences as answers arrive. References are optional when
 useful. Offer indexing through its benefit and create it only after acceptance.
 Leave GitHub until requested. Finish required adopted identity checks and close

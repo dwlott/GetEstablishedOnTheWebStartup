@@ -105,8 +105,13 @@ if ($identityMode -cne 'adopted-project') {
 if ($repositoryName -match '^GetEstablishedOnTheWeb(StartUp)?$') {
     throw "Adopted repository name retains a canonical name: $repositoryName"
 }
-if ((Get-NormalizedPath $recordedRoot) -ine $rootPath) {
-    throw "Recorded Local root does not match the active root: $recordedRoot"
+try {
+    $normalizedRecordedRoot = Get-NormalizedPath $recordedRoot
+} catch {
+    throw "Recorded Local root is not a usable path: $recordedRoot. Write it with forward slashes, such as C:/Repositories/YourProject, then read that line back."
+}
+if ($normalizedRecordedRoot -ine $rootPath) {
+    throw "Recorded Local root does not match the active root: $recordedRoot. Write Windows paths with forward slashes, such as C:/Repositories/YourProject, then read that line back."
 }
 if ((Get-NormalizedRemote $recordedRemote) -cne (Get-NormalizedRemote $remote)) {
     throw "Recorded Git remote does not match origin. Recorded: $recordedRemote; Actual: $remote"
@@ -118,9 +123,16 @@ if ($recordedBranch -ine $actualBranch) {
 }
 
 $sourceMatch = [regex]::Match($sourceOfTruth, '(?i)^Local repository at\s+(.+)$')
-if (-not $sourceMatch.Success -or
-    (Get-NormalizedPath $sourceMatch.Groups[1].Value.Trim()) -ine $rootPath) {
-    throw "Source of truth must identify the active local repository: $rootPath"
+$normalizedSource = ''
+if ($sourceMatch.Success) {
+    try {
+        $normalizedSource = Get-NormalizedPath $sourceMatch.Groups[1].Value.Trim()
+    } catch {
+        throw "Source of truth is not a usable path. Write: Local repository at C:/Repositories/YourProject"
+    }
+}
+if (-not $sourceMatch.Success -or $normalizedSource -ine $rootPath) {
+    throw "Source of truth must identify the active local repository: $rootPath. Use forward slashes and read the line back."
 }
 if ($creationSource -cne 'GetEstablishedOnTheWebStartup') {
     throw "Creation source must be GetEstablishedOnTheWebStartup; found: $creationSource"
@@ -139,12 +151,26 @@ $activeFiles = @(
     Test-Path -LiteralPath $_ -PathType Leaf
 }
 
+$stalePatterns = @(
+    'This is (a |the )?Get.?Established.?On.?The.?Web.?Startup',
+    'this (is|repo is) .*starter repository',
+    'Repository:\s*GetEstablishedOnTheWebStartup',
+    '(?im)^\s*(?:#\s+|IndexTitle:\s*)(?:Get Established On The Web Startup|GetEstablishedOnTheWebStartup)\s*$'
+)
 $stale = @()
 foreach ($file in $activeFiles) {
     $text = (Get-Content -LiteralPath $file -Raw) -replace '\*\*|`', ''
-    if ($text -match 'This is (a |the )?Get.?Established.?On.?The.?Web.?Startup|this (is|repo is) .*starter repository|Repository:\s*GetEstablishedOnTheWebStartup' -or
-        $text -match '(?im)^\s*(?:#\s+|IndexTitle:\s*)(?:Get Established On The Web Startup|GetEstablishedOnTheWebStartup)\s*$') {
-        $stale += $file
+    foreach ($pattern in $stalePatterns) {
+        $match = [regex]::Match($text, $pattern)
+        if ($match.Success) {
+            $lineNo = ($text.Substring(0, $match.Index) -split "`n").Count
+            $snippet = (($match.Value -replace '\s+', ' ').Trim())
+            if ($snippet.Length -gt 120) {
+                $snippet = $snippet.Substring(0, 120)
+            }
+            $stale += ("{0} (line {1}: {2})" -f $file, $lineNo, $snippet)
+            break
+        }
     }
 }
 
