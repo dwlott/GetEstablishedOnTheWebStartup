@@ -4,7 +4,7 @@ IndexDescription: Access-aware planner and worker workflow for repository-backed
 IndexType: Capability
 CapabilityName: AssistedAgenticWorkflow
 IndexStatus: Active
-LastEdited: 2026-06-04
+LastEdited: 2026-11-07
 -->
 
 # Planner Worker Workflow
@@ -119,7 +119,7 @@ The worker should:
 
 ## Worker To Planner Handoff
 
-Worker agents must end each completed pass with exactly one copy-ready fenced `text` handoff block.
+Worker agents must end each completed pass with exactly one copy-ready fenced `text` handoff block. This applies when a separate planner receives the handoff; an agent working alone with the owner reports in normal dialogue. See [Click-To-Copy Blocks And Handoffs](../../Standards/AgentSituationalAwareness.md#click-to-copy-blocks-and-handoffs).
 
 Use these standard fields:
 

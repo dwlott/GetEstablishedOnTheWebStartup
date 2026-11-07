@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: StarterRepositoryPackage
 CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-07-24
+LastEdited: 2026-11-07
 -->
 
 # WebPresence Boot Snippets
@@ -59,6 +59,15 @@ acting.
 | Not sure what's going on | **SituationalAwareness** Rules |
 
 Before acting: read this file, then `Standards/AgentSituationalAwareness.md`.
+
+## Click-To-Copy Rule (always on)
+
+A fenced code block (click-to-copy window) is **only** for text the owner will
+paste somewhere else: prompts for other agents or tools, commands to run, and
+text for forms, settings, emails, or files. It always appears in chat, even
+when the text is also saved to a file. Normal dialogue (answers, reports,
+summaries, questions) is **never** in a fenced block. Full rule:
+[Standards/AgentSituationalAwareness.md — Click-To-Copy Blocks And Handoffs](Standards/AgentSituationalAwareness.md#click-to-copy-blocks-and-handoffs).
 
 ## Primary Goal Of Repository
 

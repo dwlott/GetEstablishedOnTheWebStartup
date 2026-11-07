@@ -3,7 +3,7 @@ IndexTitle: Agent Situational Awareness
 IndexDescription: Runtime-aware rules so agents know when local repo access makes cloud-assisted handoffs unnecessary (Cursor) versus required (ChatGPT planning).
 IndexType: Standard
 IndexStatus: Active
-LastEdited: 2026-06-09
+LastEdited: 2026-11-07
 -->
 
 # Agent Situational Awareness
@@ -87,7 +87,8 @@ When you are operating **inside Cursor** with this starter or an adopted project
 5. **Do not send work to Codex** only to inspect files the workspace already
    exposes.
 6. **Planner and worker** may be the same Cursor session or two chats in one
-   window; handoffs are copy-ready blocks or natural chat, not Drive documents.
+   window; handoffs are not Drive documents. Format them per
+   [Click-To-Copy Blocks And Handoffs](#click-to-copy-blocks-and-handoffs).
 
 Cursor-specific setup: `Capabilities/LocalAgentToolSetup/Vendors/Cursor.md`.
 
@@ -133,19 +134,57 @@ When booting in Cursor, **deprioritize** (do not treat as mandatory next steps):
 Still read **GoogleDriveLink** when the task is actually about Drive MCP,
 connectors, OAuth, or handoff **for ChatGPT** sessions.
 
-## Quick Startup And Default Single-Agent Sessions
+## Click-To-Copy Blocks And Handoffs
+
+Always on, for every agent and every pass. `AGENTS.md` carries a short pointer
+to this section; this section is the single source of the rule.
+
+A fenced code block (click-to-copy window) is **only** for text the owner will
+copy and paste somewhere else. Everything else is normal dialogue.
+
+**Always in one fenced block, in chat:**
+
+- Prompts for another agent or AI tool: handoffs, worker prompts, prompts for
+  ChatGPT, Codex, or a new Claude Code session. Use a `text` block.
+- Commands the owner will run themselves. Use a shell-tagged block.
+- Any other text the owner must paste somewhere: a form field, a settings
+  box, an email, a file. Use a `text` block.
+
+Rules for those blocks:
+
+- The block holds only the text to copy. Explanations go before or after it,
+  never inside.
+- One block per thing to copy. Don't split one prompt across blocks.
+- Saving the prompt to a file as well is fine, but the file never replaces
+  the in-chat block.
+
+**Never in a fenced block:** normal dialogue. That includes answers, reports,
+summaries, recaps, status, findings, plans, questions to the owner, and lists
+of what changed. Write these as ordinary text (tables and lists are fine).
+Short inline code such as a file name or a single value stays in backticks,
+not a block. Never wrap a whole final summary in a block just to make it
+copyable.
+
+### Handoff blocks and single-agent sessions
+
+**Default assumption:** one agent (or the owner) continues when ready. **Do not**
+assume a separate **planning agent** is waiting unless the owner explicitly
+requested **PlannerWorker** or **AssistedAgenticWorkflow**. Editing files or
+being called a "worker" does not by itself call for a handoff block.
+
+Give a fenced `text` handoff block (`Summary`, `Files Changed`,
+`Next Recommended Task`, …) only when at least one is true:
+
+- the owner explicitly chose a separate planner-agent / implementation-agent
+  workflow;
+- another agent or conversation is waiting for the handoff; or
+- the owner asked for a copy-ready prompt, report, or handoff.
+
+Otherwise report in normal dialogue.
 
 **Quick Startup** ([GettingStarted](../Capabilities/GettingStarted/GettingStarted.md))
 ends with a **plain owner summary** — not a fenced worker handoff. See
 [PostQuickStartupRouting.md](../Capabilities/GettingStarted/PostQuickStartupRouting.md).
-
-**Default assumption:** one agent (or the owner) continues when ready. **Do not**
-assume a separate **planning agent** is waiting unless the owner explicitly
-requested **PlannerWorker** or **AssistedAgenticWorkflow**.
-
-Fenced worker handoff blocks (`Summary`, `Files Changed`, `Next Recommended Task`, …)
-apply to **implementation worker passes** in that explicit loop — not to Quick
-Startup, casual chat, or owner Q&A.
 
 ## Instructions Codex And Claude Should Still Read
 
@@ -154,9 +193,9 @@ Codex (outside Cursor) and Claude Code workers should:
 - Edit the **local** repository as source of truth;
 - Copy files to a cloud review surface **only when** the user or planner
   explicitly requests review sync;
-- End **implementation worker passes** (explicit PlannerWorker loop) with the
-  standard handoff block for the human or planner. **Quick Startup** uses an
-  owner session close instead — see GettingStarted Rules.
+- Give a handoff block only under the conditions in
+  [Click-To-Copy Blocks And Handoffs](#click-to-copy-blocks-and-handoffs);
+  otherwise report in normal dialogue.
 
 ## Layered Boot Order
 

@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: StarterRepositoryPackage
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-06-10
+LastEdited: 2026-11-07
 -->
 
 # Consumer Boot Snippets
@@ -48,6 +48,15 @@ Before acting on any task: read this file, then `Standards/AgentSituationalAware
 setup questions → Owner Goals → optional prior-repo path note → valuable reference
 candidates → optional reference review → one routed next task → park GitHub →
 index workspace. See GettingStarted first-session order.
+
+## Click-To-Copy Rule (always on)
+
+A fenced code block (click-to-copy window) is **only** for text the owner will
+paste somewhere else: prompts for other agents or tools, commands to run, and
+text for forms, settings, emails, or files. It always appears in chat, even
+when the text is also saved to a file. Normal dialogue (answers, reports,
+summaries, questions) is **never** in a fenced block. Full rule:
+[Standards/AgentSituationalAwareness.md — Click-To-Copy Blocks And Handoffs](Standards/AgentSituationalAwareness.md#click-to-copy-blocks-and-handoffs).
 
 ## Primary Goal Of Repository
 

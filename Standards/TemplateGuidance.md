@@ -3,7 +3,7 @@ IndexTitle: Template Guidance
 IndexDescription: Guidance for copying this repository method into a user's own web-presence repository.
 IndexType: Standard
 IndexStatus: Active
-LastEdited: 2026-06-05
+LastEdited: 2026-11-07
 -->
 
 # Template Guidance
@@ -92,7 +92,10 @@ Work locally before syncing or pushing. Use one focused pass at a time:
 3. Choose one small task.
 4. Make a reviewable change.
 5. Leave durable context in repository files.
-6. Report with a short copy-ready fenced `text` block.
+6. Report back. Use a short copy-ready fenced `text` block only when the
+   report goes to another agent or planner; otherwise report in normal
+   dialogue. See
+   [Click-To-Copy Blocks And Handoffs](AgentSituationalAwareness.md#click-to-copy-blocks-and-handoffs).
 7. Sync or push only at meaningful milestones.
 
 Commit and sync are milestone actions. They are not the default next task after every edit.

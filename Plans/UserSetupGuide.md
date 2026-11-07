@@ -3,7 +3,7 @@ IndexTitle: User Setup Guide
 IndexDescription: Guide for applying the repository pattern to web-presence work.
 IndexType: Setup
 IndexStatus: Draft
-LastEdited: 2026-10-11
+LastEdited: 2026-11-07
 -->
 
 # User Setup Guide
@@ -133,7 +133,7 @@ Mobile notes, screenshots, or chat ideas can be useful, but they are draft mater
 
 ## Use Click-To-Copy Handoffs
 
-Ask agents to end normal passes with a short fenced `text` block that is easy to copy into a planning tool, future ChatGPT thread, or next agent session.
+When you pass work between tools (a planning tool, a ChatGPT thread, or the next agent session), ask agents to end passes with a short fenced `text` block that is easy to copy. When you work with one agent alone, its reports are normal dialogue, not a copy block. See [Click-To-Copy Blocks And Handoffs](../Standards/AgentSituationalAwareness.md#click-to-copy-blocks-and-handoffs).
 
 Normal handoffs should list only:
 
@@ -237,7 +237,7 @@ Use this checklist for a first local session:
 - Add non-blocking decisions to `Plans/OpenQuestions.md`.
 - Make one focused local change.
 - Review changed files.
-- Report in a short copy-ready fenced block with summary, files changed, planning files to review, questions added or changed, and next recommended task.
+- Report the summary, files changed, planning files to review, questions added or changed, and next recommended task. Use a copy-ready fenced block only if the report goes to another agent or planning tool.
 
 ## Simple First Session
 
