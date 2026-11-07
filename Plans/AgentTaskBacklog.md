@@ -3,7 +3,7 @@ IndexTitle: Agent Task Backlog
 IndexDescription: Web-presence starter task queue for GetEstablishedOnTheWebStartup.
 IndexType: Project
 IndexStatus: Active
-LastEdited: 2026-10-11
+LastEdited: 2026-11-06
 -->
 
 # Agent Task Backlog
@@ -13,9 +13,11 @@ until the owner changes it.
 
 ## Ready Next
 
-**Starter launch-ready refresh (2026-07-24):** SituationalAwareness write path
-fixed; SiteDeployProfiles template; Bluehost migration / re-push plan;
-HighAltitudeThemeMethod pointer; CPanelEmail ported from US1 learnings.
+**Starter launch-ready refresh (2026-11-06):** Web capability pack is in place
+for a new project copy. Bluehost SQL prep includes the October serializer fix
+(nested `i:8;` / `b:1;` stay valid) and fails closed on leftover local paths
+when the public site is at the domain root. Commissioned-only modules stay out:
+Altitude overlay, forum operations, the MoverCalcs mailer, and item images.
 Verify with `Automation/VerifyStarterPackage.ps1 -Profile WebPresenceWordPress`.
 
 | Task | Capability | Notes |

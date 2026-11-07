@@ -3,7 +3,7 @@ IndexTitle: Cross-Repo Capability Gap Matrix
 IndexDescription: Living inventory for CapabilityHarmonize passes involving GetEstablishedOnTheWebStartup.
 IndexType: Project
 IndexStatus: Active
-LastEdited: 2026-09-03
+LastEdited: 2026-11-06
 -->
 
 # Cross-Repo Capability Gap Matrix
@@ -46,7 +46,7 @@ profiles in the starter.
 | --- | --- | --- | --- | --- |
 | WordPressMigrationBackup | Plan-level | **Active v4** (blended 2026-09-03) | Done | MoverCalcsWeb hardening ported |
 | WordPressSave | **Active** — help + forum tracks | **Active v1** — single-site | Intentional | Promoted from MC pattern 2026-09-03 |
-| BluehostDatabasePrep | Hardened source | Blended scripts + README | Done | Serialized rewrite, prefix guard |
+| BluehostDatabasePrep | Hardened source (2026-10 serializer fix) | Blended scripts, tests, README | Done | 2026-11-06: scalar colon fix and domain-root path gate. Do not copy MoverCalcs site defaults |
 | BluehostEmailDelivery | **Active** | N/A | Intentional | Never copy; see `Plans/WordPressMailDeliveryPlan.md` |
 | CPanelEmail | N/A | **Active** | Intentional | Starter mailboxes/forwarders |
 | AltitudeProOverlay | Commissioned Active | **Not shipped** | Intentional | Commissioned project repos only |
@@ -65,6 +65,7 @@ profiles in the starter.
 
 | Date | Change |
 | --- | --- |
+| 2026-11-06 | Bluehost SQL adapter caught up with the MoverCalcsWeb 2026-10 handoff: serialized scalar colon fix, domain-root local-path gate, starter-safe tests. Altitude, forum ops, mailer plugin, and item-image modules stay commissioned-only |
 | 2026-09-03 | WordPressSave Cap promoted; Bluehost SQL hardening; WordPressMailDeliveryPlan on this starter (GetEstablished is non-web) |
 | 2026-07-23 | DRS → GEOTWStartup: Bluehost serialize-aware prep; Save deferred per packaging |
 

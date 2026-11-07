@@ -3,7 +3,7 @@ IndexTitle: Bluehost Database Prep
 IndexDescription: Export local WordPress SQL for Bluehost import — serialize-aware URL replace, prefix verify, SiteDeployProfiles.
 IndexType: Automation
 IndexStatus: Active
-LastEdited: 2026-09-03
+LastEdited: 2026-11-06
 -->
 
 # Bluehost Database Prep
@@ -18,7 +18,8 @@ Harmonized from MoverCalcsWeb commissioned go-live (2026-09-03).
 | File | Role |
 | --- | --- |
 | [Export-BluehostReadyDatabase.ps1](Export-BluehostReadyDatabase.ps1) | Orchestrates dump → serialize-aware adapter |
-| [prepare_bluehost_sql.py](prepare_bluehost_sql.py) | Rewrites SQL string literals; PHP-serialized URL rewrite; prefix case normalization; DROP TABLE validation; loopback checks |
+| [prepare_bluehost_sql.py](prepare_bluehost_sql.py) | Rewrites SQL string literals; PHP-serialized URL rewrite; prefix case normalization; DROP TABLE validation; loopback and local-path checks |
+| [test_prepare_bluehost_sql.py](test_prepare_bluehost_sql.py) | Regression tests for serialized scalars, path boundaries, and prefix case |
 | [search-replace-urls.php](search-replace-urls.php) | Serialize-aware replace **inside MySQL** (temp DB) before final dump |
 
 ## Export script parameters (2026-09)
@@ -51,7 +52,9 @@ SQL dumps stay in Downloads / outside the repo.
 | --- | --- |
 | **Always pass `-SiteKey` / `-WpConfigPath` into the export** | Default export path may point at another WAMP site |
 | **`prepare_bluehost_sql.py` alone is not enough** | Widgets, theme_mods, and hero HTML live in **PHP-serialized** options — use `search-replace-urls.php` on a temp database first |
-| **Serialized rewrite in Python adapter** | Generalized adapter now handles common serialized URL patterns (MoverCalcsWeb hardening) |
+| **Serialized rewrite in Python adapter** | Generalized adapter handles common serialized URL patterns (MoverCalcsWeb hardening) |
+| **Scalar separators stay single** | Nested PHP scalars such as `i:8;` and `b:1;` must not gain a second colon during rewrite. Proven on the 2026-10-04 Bluehost handoff |
+| **Domain-root local paths fail closed** | When the public site is at the domain root, leftover `/yoursite/` paths block the SQL write. A public site that stays in the same folder is not treated as leftover |
 | **Prefix case normalization** | Mixed-case prefix in dump vs production `wp-config` causes silent import failures |
 | **Windows PowerShell 5.1: no `ArgumentList`** | Shared export helpers fall back to an `Arguments` string; Python launcher tries `py` then `python` |
 | **Uploads + child theme: copy as-is** | After DB URLs are public, do **not** search-replace inside `uploads` or child-theme binary/CSS trees |

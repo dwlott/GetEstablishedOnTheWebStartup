@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: WordPressMigrationBackup
 CapabilityVersion: 4
 IndexStatus: Active
-LastEdited: 2026-09-03
+LastEdited: 2026-11-06
 -->
 
 # WordPressMigrationBackup Capability
@@ -48,13 +48,14 @@ LastEdited: 2026-09-03
 | **PromotionStatus** | Active |
 | **Dependencies** | SiteDeployProfiles (host DB name, prefix); **WordPressSave** for local snapshot |
 | **RelatedFiles** | WorkflowIndex.md, Rules.md, Prompt.md |
-| **LastReviewed** | 2026-09-03 |
+| **LastReviewed** | 2026-11-06 |
 | **HarmonizationNotes** | MoverCalcsWeb Bluehost hardening blended; prefix guard; Downloads-only default |
 
 ## Capability Changelog
 
 | Date | Ver | Change | Lesson / why | Files |
 | --- | ---: | --- | --- | --- |
+| 2026-11-06 | 4 | Ported the October Bluehost serializer fix | Nested PHP scalars must keep one colon (`i:8;`, not `i::8;`). Domain-root leftover local paths now fail the SQL write. Site-specific forum, mailer, and theme modules stay on commissioned repos | Automation/BluehostDatabasePrep |
 | 2026-09-03 | 4 | Blended MoverCalcsWeb Bluehost hardening | Serialized PHP rewrite, prefix case normalization, `-AdditionalReplacement`, Downloads-only output | Rules, Automation/BluehostDatabasePrep |
 | 2026-07-23 | 3 | Blended Bluehost prep path from commissioned go-live (CapabilityHarmonize Option B) | Naive SQL string replace fails on PHP-serialized widgets/theme_mods; temp DB + search-replace-urls.php then adapter | README, Rules, Prompt, Automation/BluehostDatabasePrep |
 | 2026-07-07 | 2 | Capability active on starter | Pre-write backup gate | Capability folder |

@@ -187,6 +187,9 @@ class SerializedPhpRewriter:
             return "N;"
 
         if kind in {"b", "i", "d", "r", "R"}:
+            if self.index >= len(self.value) or self.value[self.index] != ":":
+                raise ValueError("Malformed PHP-serialized scalar.")
+            self.index += 1
             return kind + ":" + self._take_until(";") + ";"
 
         if kind == "s":
@@ -304,6 +307,13 @@ def strip_database_selection(text: str, target_database: str) -> str:
 
 
 def normalize_prefix_case(text: str, expected_prefix: str) -> str:
+    """Normalize WordPress prefix references to the target case.
+
+    Linux MySQL treats table names as case-sensitive. A Windows export can
+    contain lowercase table names while option and usermeta keys still use the
+    mixed-case prefix from wp-config.php. Case-only changes keep serialized
+    string lengths valid.
+    """
     pattern = re.compile(re.escape(expected_prefix), re.IGNORECASE)
     return pattern.sub(expected_prefix, text)
 
@@ -378,15 +388,16 @@ def validate_output(
         name: len(re.findall(pattern, text, re.IGNORECASE))
         for name, pattern in loopback_patterns.items()
     }
-    path_pattern = local_path_pattern(primary_local_url)
+    path_pattern = local_path_pattern(local_url or primary_local_url)
     local_path_references: list[str] = []
     if path_pattern:
         public_path = urlparse(primary_public_url).path.strip("/")
+        exempt = f"/{public_path.lower()}/" if public_path else None
         local_path_references = sorted(
             {
                 match
                 for match in re.findall(path_pattern, text, re.IGNORECASE)
-                if public_path and match.lstrip("\"' =").lower() != f"/{public_path.lower()}/"
+                if exempt is None or match.lstrip("\"' =").lower() != exempt
             }
         )
     remaining_local_host = sum(loopback_counts.values())
@@ -478,6 +489,11 @@ def main() -> int:
     if validation["remainingHttpPublicReferences"]:
         raise SystemExit(
             f"Output still contains {validation['remainingHttpPublicReferences']} insecure public URL references."
+        )
+    if validation["remainingLocalPathReferences"]:
+        raise SystemExit(
+            "Output still contains local site-path references: "
+            f"{validation['remainingLocalPathSamples']}"
         )
     if not validation["siteurlOk"] or not validation["homeOk"]:
         raise SystemExit("Output did not verify both siteurl and home as the public URL.")
