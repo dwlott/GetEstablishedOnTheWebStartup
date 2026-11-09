@@ -38,3 +38,9 @@ for example `m7k_`). Record in `site-manifest.json`.
 - [WorkflowIndex.md](WorkflowIndex.md)
 - [NewCommissionSiteChecklist.md](NewCommissionSiteChecklist.md)
 - [WampServerAndMampSetup.md](WampServerAndMampSetup.md)
+
+## Runner contract — 2026-11-09
+
+Follow [the shared build contract](../../Workspace/LocalWordPressBuild/README.md).
+Default/direct-child execution is static preview; `--write` requires scoped owner
+approval and database/theme backups. Validate manifest identity before apply.

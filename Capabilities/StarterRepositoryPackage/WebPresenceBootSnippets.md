@@ -5,10 +5,15 @@ IndexType: Capability
 CapabilityName: StarterRepositoryPackage
 CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-11-07
+LastEdited: 2026-11-09
 -->
 
 # WebPresence Boot Snippets
+
+For the maintained WordPress profile, preserve the current Startup boot and
+WordPress instructions rather than replacing them with the older snippets below.
+Runner configuration/plan/apply rules live in `Workspace/LocalWordPressBuild/README.md`.
+
 
 Copy and adapt these during [WorkflowIndex.md](WorkflowIndex.md) Step 3 identity
 repair when the starter profile is **`GetEstablishedOnTheWebStartup`**.

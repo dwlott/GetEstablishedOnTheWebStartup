@@ -3,7 +3,7 @@ IndexTitle: Agent Task Backlog
 IndexDescription: Web-presence starter task queue for GetEstablishedOnTheWebStartup.
 IndexType: Project
 IndexStatus: Active
-LastEdited: 2026-11-06
+LastEdited: 2026-11-09
 -->
 
 # Agent Task Backlog
@@ -12,6 +12,15 @@ Web-presence starter backlog. After adoption, **Ready Next** is Quick Startup
 until the owner changes it.
 
 ## Ready Next
+
+**WAMP runner repair — 2026-11-09:** shared static plan/explicit apply contract
+implemented in maintained Startup source. Retain runner/guarded children/tests
+together during packaging. Next validate real WordPress content/nav/front-page
+apply and repeat behavior, plus backup/restore, on an isolated disposable site.
+DB-export target defaults and WordPressSave cloud-copy defaults remain separate
+repair gaps. Owner requested review, commit and push of this repair on 2026-11-09;
+this source publication does not approve a runtime build or package release.
+
 
 **Starter launch-ready refresh (2026-11-06):** Web capability pack is in place
 for a new project copy. Bluehost SQL prep includes the October serializer fix

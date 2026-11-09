@@ -114,6 +114,13 @@ try {
     if ($Profile -eq 'WebPresenceWordPress') {
         foreach ($path in @(
             "Workspace/LocalWordPressBuild/ges-build.php",
+            "Workspace/LocalWordPressBuild/ges-build-contract.php",
+            "Workspace/LocalWordPressBuild/README.md",
+            "Automation/LocalWordPress/test_build_runner.py",
+            "Workspace/LocalWordPressBuild/ges-theme-css-sync.php",
+            "Workspace/LocalWordPressBuild/ges-content-setup.php",
+            "Workspace/LocalWordPressBuild/ges-front-page-sync.php",
+            "Workspace/LocalWordPressBuild/ges-nav-menu-sync.php",
             "Workspace/LocalWordPressBuild/site-manifest.json",
             "Capabilities/MirrorWebAssets/README.md",
             "Automation/WordPressSave/Save-LocalWordPress.ps1",

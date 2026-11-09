@@ -22,13 +22,16 @@ if ( php_sapi_name() !== 'cli' ) {
 	exit( "CLI only.\n" );
 }
 
+require_once __DIR__ . '/ges-build-contract.php';
+$build_context = GES_build_enter($argv, 'ges-front-page-sync');
+
 require_once __DIR__ . '/ges-wp-content-lib.php';
 
 $repo_root = dirname( __DIR__, 2 );
 $page_dir  = $repo_root . '/Content/Website/Pages';
 
 $cli     = GES_parse_cli_args( $argv );
-$wp_root = $cli['wp-root'] ?: 'G:/wamp64/www/{siteKey}';
+$wp_root = $build_context['root'];
 $write   = ! empty( $cli['write'] );
 
 $section_filter = array();
@@ -38,11 +41,14 @@ foreach ( array_slice( $argv, 1 ) as $arg ) {
 	}
 }
 
+$front_manifest = require __DIR__ . '/front-page-manifest.php';
+if (!is_array($front_manifest) || empty($front_manifest['sections']) || !is_array($front_manifest['sections'])) { throw new RuntimeException('Configure nonempty front-page manifest sections before apply.'); }
+
 GES_log( 'Mode: ' . ( $write ? 'WRITE (persisting changes)' : 'DRY RUN (no DB writes)' ) );
 GES_log( "Loading WordPress: $wp_root" );
 GES_load_wordpress( $wp_root );
 
-$manifest = require __DIR__ . '/front-page-manifest.php';
+$manifest = $front_manifest;
 $sections = $manifest['sections'];
 
 if ( $section_filter ) {

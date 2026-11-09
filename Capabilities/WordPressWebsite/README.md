@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: WordPressWebsite
 CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-07-07
+LastEdited: 2026-11-09
 -->
 
 # WordPressWebsite Capability
@@ -31,6 +31,7 @@ Then [WorkflowIndex.md](WorkflowIndex.md) → [Rules.md](Rules.md) → [Prompt.m
 | WordPressMigrationBackup | DB snapshot before experiments |
 | StudioPressGenesisChildTheme | Altitude CSS and child-theme overlay |
 | MirrorWebAssets | Uploads/theme ↔ Dropbox |
+| WordPressSave | Explicit capture of direct runtime edits; separate from Git-first content sync |
 
 ## Related Plans
 

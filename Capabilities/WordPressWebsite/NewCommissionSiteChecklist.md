@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: WordPressWebsite
 CapabilityVersion: 1
 IndexStatus: Active
-LastEdited: 2026-07-24
+LastEdited: 2026-11-09
 -->
 
 # New Commission Site Checklist
@@ -87,8 +87,11 @@ php ges-build.php --only=ges-theme-css-sync,ges-content-setup,ges-nav-menu-sync
 Add `ges-front-page-sync` when front-page Markdown sections exist under
 `Content/Website/Pages/FrontPage/`.
 
-Full `ges-build.php` without `--only` references **product-only** steps not
-shipped in this starter — always use `--only` until a product sync pack is added.
+The runner defaults to the shipped CSS/content/navigation sequence. See the
+[execution contract](../../Workspace/LocalWordPressBuild/README.md): every command
+previews without loading WordPress unless `--write` is explicit. Configure the
+optional front-page manifest before selecting that step. After approval and backup,
+rerun the reviewed command with `--write`. Legacy `ges-local-setup.php` apply is retired.
 
 ## Phase 5 — Save and iterate
 

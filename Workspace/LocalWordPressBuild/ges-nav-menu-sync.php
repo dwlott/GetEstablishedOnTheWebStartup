@@ -13,10 +13,13 @@ if ( php_sapi_name() !== 'cli' ) {
 	exit( "CLI only.\n" );
 }
 
+require_once __DIR__ . '/ges-build-contract.php';
+$build_context = GES_build_enter($argv, 'ges-nav-menu-sync');
+
 require_once __DIR__ . '/ges-wp-content-lib.php';
 
 $cli     = GES_parse_cli_args( $argv );
-$wp_root = $cli['wp-root'] ?: 'G:/wamp64/www/{siteKey}';
+$wp_root = $build_context['root'];
 
 $section_anchors = in_array( '--section-anchors', $argv, true );
 

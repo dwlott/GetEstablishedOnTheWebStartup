@@ -5,10 +5,18 @@ IndexType: Capability
 CapabilityName: StarterRepositoryPackage
 CapabilityVersion: 3
 IndexStatus: Active
-LastEdited: 2026-10-10
+LastEdited: 2026-11-09
 -->
 
 # Starter Repository Package Workflow Index
+
+**Current WordPress profile:** use a reviewed snapshot of the maintained
+`GetEstablishedOnTheWebStartup` Git source, copied into a separate packaging
+folder. Follow [the maintained-source contract](WebPoweredStartupExtensionSpec.md#maintained-source-and-runner-contract--2026-11-09).
+The base host-copy flow below is historical reconstruction for that profile;
+never detach or trim the maintained checkout. Retain and run the shared build
+contract tests against the packaging copy before release review.
+
 
 **Maintaining an existing canonical Startup before a project copy?** Use
 [StartupAdoptionReadinessWorkflow.md](StartupAdoptionReadinessWorkflow.md).

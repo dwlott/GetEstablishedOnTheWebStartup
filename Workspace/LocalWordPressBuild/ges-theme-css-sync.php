@@ -10,9 +10,12 @@ if ( php_sapi_name() !== 'cli' ) {
 	exit( "CLI only.\n" );
 }
 
+require_once __DIR__ . '/ges-build-contract.php';
+$build_context = GES_build_enter($argv, 'ges-theme-css-sync');
+
 $repo_build = __DIR__;
-$wp_root    = 'G:/wamp64/www/{siteKey}';
-$theme_dir  = $wp_root . '/wp-content/themes/altitude-pro';
+$wp_root    = $build_context['root'];
+$theme_dir  = $wp_root . '/wp-content/themes/' . $build_context['config']['theme'];
 $custom_dir = $theme_dir . '/ges-custom';
 $functions  = $theme_dir . '/functions.php';
 
@@ -24,8 +27,13 @@ $files = array(
 	'ges-site-links.php'        => $repo_build . '/ges-site-links.php',
 );
 
+foreach (array_keys($files) as $name) {
+	$dest = $custom_dir . '/' . $name;
+	if (is_link($dest)) { throw new RuntimeException('Overlay destination may not be a symlink.'); }
+}
+
 if ( ! is_dir( $custom_dir ) ) {
-	mkdir( $custom_dir, 0755, true );
+	if (!mkdir($custom_dir, 0755, true)) { throw new RuntimeException('Could not create overlay directory.'); }
 	GES_log( "Created: $custom_dir" );
 }
 
@@ -34,7 +42,9 @@ foreach ( $files as $name => $source ) {
 		throw new RuntimeException( "Missing source file: $source" );
 	}
 	$dest = $custom_dir . '/' . $name;
-	copy( $source, $dest );
+	if (!is_file($dest) || hash_file('sha256', $source) !== hash_file('sha256', $dest)) {
+		if (!copy($source, $dest)) { throw new RuntimeException('Overlay copy failed.'); }
+	}
 	GES_log( "Copied: $name" );
 }
 
@@ -43,7 +53,7 @@ $functions_text = file_get_contents( $functions );
 
 if ( false === strpos( $functions_text, $require_line ) ) {
 	$functions_text = rtrim( $functions_text ) . "\n\n// GES custom CSS overlay.\n" . $require_line . "\n";
-	file_put_contents( $functions, $functions_text );
+	if (file_put_contents($functions, $functions_text) === false) { throw new RuntimeException('Could not update functions.php.'); }
 	GES_log( 'Patched functions.php with ges-custom require.' );
 } else {
 	GES_log( 'functions.php already requires ges-customizations.php.' );
@@ -55,7 +65,7 @@ $old_enqueue = "\twp_enqueue_style( // phpcs:ignore WordPress.WP.EnqueuedResourc
 if ( false !== strpos( $functions_text, $old_enqueue ) && false === strpos( $functions_text, '// GES: Google Fonts disabled' ) ) {
 	$new_enqueue = "\t// GES: Google Fonts disabled — system fonts in ges-altitude-custom.css\n\t/* wp_enqueue_style( // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- see https://core.trac.wordpress.org/ticket/49742\n\t\tgenesis_get_theme_handle() . '-fonts',\n\t\t\$appearance['fonts-url'],\n\t\t[],\n\t\tnull\n\t); */";
 	$functions_text = str_replace( $old_enqueue, $new_enqueue, $functions_text );
-	file_put_contents( $functions, $functions_text );
+	if (file_put_contents($functions, $functions_text) === false) { throw new RuntimeException('Could not update functions.php.'); }
 	GES_log( 'Commented Google Fonts enqueue in functions.php.' );
 } elseif ( false !== strpos( file_get_contents( $functions ), 'GES: Google Fonts disabled' ) ) {
 	GES_log( 'Google Fonts enqueue already commented.' );

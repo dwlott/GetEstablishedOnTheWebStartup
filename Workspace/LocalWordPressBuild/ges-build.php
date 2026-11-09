@@ -1,78 +1,38 @@
 <?php
-/**
- * GES one-shot sync orchestrator (CLI only).
- *
- * Runs the local WordPress sync scripts in dependency order, each in its own
- * PHP subprocess so one failure does not abort the rest. Prints a summary.
- *
- * Usage:
- *   php ges-build.php
- *   php ges-build.php --only=ges-theme-css-sync,ges-content-setup,ges-nav-menu-sync
- *
- * Starter package: use --only with scripts that exist on disk. Full step list
- * below includes GEOTW product steps not shipped in GetEstablishedOnTheWebStartup.
- */
-
-if ( php_sapi_name() !== 'cli' ) {
-	exit( "CLI only.\n" );
+/** Local starter runner. Default is a static, read-only plan. --write applies. */
+if (PHP_SAPI !== 'cli') { exit(1); }
+require_once __DIR__ . '/ges-build-contract.php';
+try {
+    $options = GES_build_options($argv);
+    $context = GES_build_context($options);
+    $selected = array('ges-theme-css-sync', 'ges-content-setup', 'ges-nav-menu-sync');
+    if (isset($options['only'])) {
+        $selected = explode(',', $options['only']);
+        if (count(array_unique($selected)) !== count($selected)) { throw new RuntimeException('Duplicate step selection.'); }
+        foreach ($selected as $step) {
+            if (!in_array($step, GES_build_steps(), true)) { throw new RuntimeException('Unknown or empty step selection: ' . $step); }
+        }
+        // Keep dependency order even when --only is supplied in another order.
+        $selected = array_values(array_intersect(GES_build_steps(), $selected));
+    }
+    if (isset($options['sections']) && !in_array('ges-front-page-sync', $selected, true)) { throw new RuntimeException('--sections requires a selected front-page step.'); }
+    if (isset($options['section-anchors']) && !in_array('ges-nav-menu-sync', $selected, true)) { throw new RuntimeException('--section-anchors requires a selected nav step.'); }
+    // All prerequisites must pass before the first child can write.
+    foreach ($selected as $step) { GES_build_describe($context, $step, GES_build_preflight($context, $step)); }
+    if (!$options['write']) { exit(0); }
+    foreach ($selected as $step) {
+        $args = array(PHP_BINARY, __DIR__ . '/' . $step . '.php', '--manifest=' . $context['manifest'], '--wp-root=' . $context['root'], '--write');
+        if (isset($options['force'])) { $args[] = '--force'; }
+        if (isset($options['sections']) && $step === 'ges-front-page-sync') { $args[] = '--sections=' . $options['sections']; }
+        if (isset($options['section-anchors']) && $step === 'ges-nav-menu-sync') { $args[] = '--section-anchors'; }
+        // Array-form proc_open avoids cmd.exe quoting and shell interpretation on Windows.
+        $process = proc_open($args, array(0 => STDIN, 1 => STDOUT, 2 => STDERR), $pipes, __DIR__, null, array('bypass_shell' => true));
+        if (!is_resource($process)) { throw new RuntimeException('Could not start child: ' . $step); }
+        $status = proc_close($process);
+        if ($status !== 0) { fwrite(STDERR, "FAILED: $step (exit $status); remaining steps stopped.\n"); exit($status > 0 && $status <= 255 ? $status : 1); }
+    }
+    echo "Build complete.\n";
+} catch (Throwable $error) {
+    fwrite(STDERR, 'Build rejected: ' . $error->getMessage() . PHP_EOL);
+    exit(1);
 }
-
-$skip_messaging = in_array( '--skip-messaging', $argv, true );
-$only           = array();
-foreach ( $argv as $arg ) {
-	if ( strpos( $arg, '--only=' ) === 0 ) {
-		$only = array_filter( array_map( 'trim', explode( ',', substr( $arg, 7 ) ) ) );
-	}
-}
-
-// Ordered: CSS first, then content scaffolding, catalog (random post images),
-// offer hubs (need catalog posts), front-page backgrounds, interior pages last.
-$steps = array(
-	array( 'ges-theme-css-sync.php', array() ),
-	array( 'ges-content-setup.php', array() ),
-	array( 'ges-capability-catalog-sync.php', array() ),
-	array( 'ges-offer-hub-sync.php', array() ),
-	array( 'ges-front-page-backgrounds-sync.php', array( '--write' ) ),
-	array( 'ges-downloads-sync.php', array() ),
-	array( 'ges-messaging-sync.php', array() ),
-	// Nav last: every linked page must exist before the menu is rebuilt.
-	array( 'ges-nav-menu-sync.php', array() ),
-);
-
-$php     = PHP_BINARY;
-$dir     = __DIR__;
-$results = array();
-
-foreach ( $steps as $step ) {
-	list( $script, $args ) = $step;
-	$base = basename( $script, '.php' );
-
-	if ( $only && ! in_array( $base, $only, true ) ) {
-		continue;
-	}
-	if ( $skip_messaging && 'ges-messaging-sync' === $base ) {
-		$results[ $script ] = 'skipped';
-		continue;
-	}
-
-	$cmd = escapeshellarg( $php ) . ' ' . escapeshellarg( $dir . '/' . $script );
-	foreach ( $args as $a ) {
-		$cmd .= ' ' . escapeshellarg( $a );
-	}
-
-	echo "\n========================================\n";
-	echo "RUN: $script " . implode( ' ', $args ) . "\n";
-	echo "========================================\n";
-
-	$exit = 0;
-	passthru( $cmd, $exit );
-	$results[ $script ] = ( 0 === $exit ) ? 'ok' : "FAILED (exit $exit)";
-}
-
-echo "\n========================================\n";
-echo "SYNC-ALL SUMMARY\n";
-echo "========================================\n";
-foreach ( $results as $script => $status ) {
-	echo str_pad( $status, 22 ) . $script . "\n";
-}
-echo "\nVerify: http://localhost/{siteKey}/\n";

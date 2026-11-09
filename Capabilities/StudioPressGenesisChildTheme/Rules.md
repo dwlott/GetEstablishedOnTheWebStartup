@@ -19,3 +19,9 @@ Out of scope:
 
 - [Prompt.md](Prompt.md)
 - [../WordPressContentUpdate/Prompt.md](../WordPressContentUpdate/Prompt.md)
+
+## Runner contract — 2026-11-09
+
+Follow [the shared build contract](../../Workspace/LocalWordPressBuild/README.md).
+Default/direct-child execution is static preview; `--write` requires scoped owner
+approval and database/theme backups. Validate manifest identity before apply.

@@ -5,10 +5,22 @@ IndexType: Capability
 CapabilityName: StarterRepositoryPackage
 CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-10-11
+LastEdited: 2026-11-09
 -->
 
 # WebPresence Startup Repair Spec
+
+## Maintained WordPress profile precedence — 2026-11-09
+
+This base-only repair is for a newly created disposable packaging folder. It
+must never trim or detach the maintained `GetEstablishedOnTheWebStartup` Git
+checkout. For the current WordPress profile, copy a reviewed maintained Startup
+snapshot into an isolated destination and follow the maintained-source contract in
+[WebPoweredStartupExtensionSpec.md](WebPoweredStartupExtensionSpec.md).
+Preserve the shared runner contract, guarded scripts, and acceptance tests as a
+matched set. The base remove matrix below does not apply to the maintained
+WordPress source or its complete WordPress candidate copy.
+
 
 Use this spec to repair a fresh copy of
 `C:\Repositories\GetEstablishedOnTheWeb` into the disposable starter workspace

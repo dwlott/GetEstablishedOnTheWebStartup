@@ -993,10 +993,17 @@ function GES_parse_cli_args( $argv ) {
 }
 
 function GES_load_wordpress( $wp_root ) {
+	global $table_prefix;
 	if ( ! is_readable( $wp_root . '/wp-load.php' ) ) {
 		throw new RuntimeException( "WordPress not found at: $wp_root" );
 	}
 	require_once $wp_root . '/wp-load.php';
+	if (isset($GLOBALS['ges_build_context'])) {
+		$config = $GLOBALS['ges_build_context']['config'];
+		if (($GLOBALS['table_prefix'] ?? '') !== $config['tablePrefix'] || rtrim(home_url('/'), '/') !== rtrim($config['localUrl'], '/') || get_option('stylesheet') !== $config['theme']) {
+			throw new RuntimeException('Loaded WordPress prefix, URL or active theme does not match the site manifest.');
+		}
+	}
 }
 
 function GES_upsert_term( $slug, $name, $description = '', $parent_slug = '' ) {

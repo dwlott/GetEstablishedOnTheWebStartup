@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: WordPressContentUpdate
 CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-07-16
+LastEdited: 2026-11-09
 -->
 
 # WordPressContentUpdate Prompt
@@ -32,29 +32,25 @@ Read [Rules.md](Rules.md) first. Parent checklist:
 
 ## Starter build commands
 
-Scripts shipped in this starter:
-
-```text
-ges-theme-css-sync.php
-ges-content-setup.php
-ges-front-page-sync.php
-ges-nav-menu-sync.php
-```
-
-**Dry-run (no DB writes from orchestrator — verify each script's own flags):**
+Follow [the execution contract](../../Workspace/LocalWordPressBuild/README.md).
+Configure the adopted site manifest and target first. Default steps are CSS,
+content and navigation; product-only scripts are never selected.
 
 ```powershell
-cd Workspace\LocalWordPressBuild
-php ges-build.php --only=ges-theme-css-sync,ges-content-setup,ges-nav-menu-sync
+cd Workspace/LocalWordPressBuild
+php ges-build.php --plan
 ```
 
-**With front-page sections:**
+This is a static preview: no WordPress bootstrap, PHP manifest execution, or
+file/database writes. After owner approval and the required backups:
 
 ```powershell
-php ges-build.php --only=ges-theme-css-sync,ges-content-setup,ges-front-page-sync,ges-nav-menu-sync
+php ges-build.php --write
 ```
 
-Do **not** run full `ges-build.php` without `--only` — product-only steps are not in this package.
+Use `--only` for a subset. Add optional `ges-front-page-sync` only after configuring
+its front-page manifest and Markdown. Every direct child also defaults to plan.
+Failures stop the runner; previous successful steps are not rolled back.
 
 ## Worker handoff
 

@@ -14,11 +14,14 @@ if ( php_sapi_name() !== 'cli' ) {
 	exit( "CLI only.\n" );
 }
 
+require_once __DIR__ . '/ges-build-contract.php';
+$build_context = GES_build_enter($argv, 'ges-content-setup');
+
 $repo_root = dirname( __DIR__, 2 );
 require_once __DIR__ . '/ges-wp-content-lib.php';
 
 $cli         = GES_parse_cli_args( $argv );
-$wp_root     = $cli['wp-root'] ?: 'G:/wamp64/www/{siteKey}';
+$wp_root     = $build_context['root'];
 $manifest    = require __DIR__ . '/content-manifest.php';
 $page_dir    = $repo_root . '/Content/Website/Pages';
 $register_md = $repo_root . '/Workspace/Reference/WordPressGenesisOperatingGuide/Examples/ges-category-id-register.md';
@@ -94,7 +97,12 @@ if ( ! empty( $nav_pages ) && ! empty( $manifest['nav_menu_name'] ) ) {
 }
 
 $site_url = home_url( '/' );
-file_put_contents( $register_md, GES_render_register_md( $register_rows, $site_url ) );
+$register_dir = dirname($register_md);
+if (!is_dir($register_dir) && !mkdir($register_dir, 0755, true)) { throw new RuntimeException('Could not create category register directory.'); }
+$register_content = GES_render_register_md($register_rows, $site_url);
+if (!is_file($register_md) || file_get_contents($register_md) !== $register_content) {
+	if (file_put_contents($register_md, $register_content) === false) { throw new RuntimeException('Could not write category register.'); }
+}
 GES_log( "Wrote register: $register_md" );
 
 GES_log( 'Content setup complete.' );

@@ -5,7 +5,7 @@ IndexType: Capability
 CapabilityName: WordPressContentUpdate
 CapabilityVersion: 2
 IndexStatus: Active
-LastEdited: 2026-07-16
+LastEdited: 2026-11-09
 -->
 
 # WordPressContentUpdate Rules
@@ -63,3 +63,9 @@ starter regardless.
 
 - [Prompt.md](Prompt.md)
 - [../WordPressWebsite/NewCommissionSiteChecklist.md](../WordPressWebsite/NewCommissionSiteChecklist.md)
+
+## Runner contract — 2026-11-09
+
+Follow [the shared build contract](../../Workspace/LocalWordPressBuild/README.md).
+Default/direct-child execution is static preview; `--write` requires scoped owner
+approval and database/theme backups. Validate manifest identity before apply.
