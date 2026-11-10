@@ -70,3 +70,19 @@ bootstrap tripwires, controlled child processes, and real CSS filesystem writes.
 They do not connect to an installed WordPress/database or a network service.
 Packaging must retain this README, the shared contract, guarded child scripts,
 and the test file as a matched set, then rerun tests against the copied source.
+
+## Content fidelity
+
+Post/page upserts take ordinary unslashed strings and apply `wp_slash()` once
+at the WordPress persistence boundary. This preserves Windows paths, regex
+backslashes, quotes and embedded JSON on both creation and update. Callers
+should not pre-slash rendered content.
+
+A page-layout row may supply trusted `intro_pitch_html`. It renders once after
+the intro lead/deck and before body content, inside `ges-page-intro-pitch`.
+With a photo it shares the intro grid; without a photo the configured
+`intro_paragraphs` still determine the paragraphs before the pitch. Existing
+third-paragraph pitches remain supported and render once; when both are supplied,
+the legacy paragraph and configured HTML are included in the same pitch region.
+Authored pitch paragraphs can use `class="ges-page-pitch"` for the existing style.
+The runner's test suite includes content insert/update and layout regressions.

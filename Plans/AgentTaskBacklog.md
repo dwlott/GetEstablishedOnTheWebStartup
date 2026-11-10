@@ -15,11 +15,17 @@ until the owner changes it.
 
 **WAMP runner repair — 2026-11-09:** shared static plan/explicit apply contract
 implemented in maintained Startup source. Retain runner/guarded children/tests
-together during packaging. Next validate real WordPress content/nav/front-page
-apply and repeat behavior, plus backup/restore, on an isolated disposable site.
+together during packaging. Owner-authorized real WordPress integration and
+manual recovery tests have now run. Follow-up fixes preserve literal backslashes
+on post/page insert and update, and render configured `intro_pitch_html` without
+breaking legacy third-paragraph pitches. All 33 isolated checks passed on PHP
+8.3.14 and 8.0.30; fresh real WordPress create/repeat/HTTP/recovery checks confirm
+both fixes. See `Workspace/LocalWordPressBuild/README.md` for the content contract.
+Next decide repeat-write/navigation-ID behavior. Engine-aware backup consistency,
 DB-export target defaults and WordPressSave cloud-copy defaults remain separate
-repair gaps. Owner requested review, commit and push of this repair on 2026-11-09;
-this source publication does not approve a runtime build or package release.
+repair gaps; a host MySQL privilege-table fault also remains unmodified. These
+follow-up source fixes and backlog are included in the owner-requested commit
+and push on 2026-11-09. No public package or production build was performed.
 
 
 **Starter launch-ready refresh (2026-11-06):** Web capability pack is in place

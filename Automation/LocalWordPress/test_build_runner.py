@@ -224,5 +224,79 @@ function update_option($name,$value){$p=__DIR__.'/options.json';$all=json_decode
         result=subprocess.run([PHP,str(copied/'Workspace/LocalWordPressBuild/ges-build.php')],capture_output=True,text=True,timeout=20)
         self.assertEqual(result.returncode,0,result.stdout+result.stderr);self.assertFalse(self.marker.exists())
 
+
+class ContentFidelity(unittest.TestCase):
+    """WordPress slashing protocol and intro-layout regressions; no real DB."""
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory(prefix='ges-content-fidelity-')
+        self.addCleanup(self.temp.cleanup)
+        self.root=Path(self.temp.name); self.build=self.root/'Workspace/LocalWordPressBuild'
+        self.build.mkdir(parents=True)
+        for name in ['ges-wp-content-lib.php','ges-site-links.php']:
+            shutil.copy2(SOURCE/'Workspace/LocalWordPressBuild'/name,self.build/name)
+        images=self.root/'Content/Website/Assets/PageImages';images.mkdir(parents=True)
+        (images/'fixture.png').write_bytes(b'image metadata is stubbed in this unit test')
+        (self.build/'page-layout-manifest.php').write_text("<?php return json_decode(file_get_contents(__DIR__.'/layout.json'),true);",encoding='utf-8')
+        self.markdown=self.root/'page.md'
+        self.markdown.write_text('# Example\n\nLEAD_MARKER\n\nDECK_MARKER\n\nLEGACY_PITCH_MARKER\n\n## Details\n\nBODY_MARKER\n',encoding='utf-8')
+        self.probe=self.build/'probe.php'
+        self.probe.write_text(r"""<?php
+function esc_html($s){return htmlspecialchars($s,ENT_QUOTES,'UTF-8');}
+function esc_attr($s){return esc_html($s);}
+function esc_url($s){return esc_html($s);}
+function home_url($p=''){return 'http://localhost/fixture'.$p;}
+function wp_parse_url($u,$c=-1){return parse_url($u,$c);}
+function get_option($k,$default=false){return $default;}
+function get_posts($a){return [23];}
+function wp_get_attachment_image($id,$size,$icon=false,$attrs=[]){return '<img src="fixture.png" alt="">';}
+function get_page_by_path($slug,$output,$type){return isset($GLOBALS['stored'])?(object)['ID'=>41]:null;}
+function wp_slash($v){return is_array($v)?array_map('wp_slash',$v):(is_string($v)?addslashes($v):$v);}
+function fixture_unslash($v){return is_array($v)?array_map('fixture_unslash',$v):(is_string($v)?stripslashes($v):$v);}
+function wp_insert_post($a,$errors=false){$GLOBALS['stored']=fixture_unslash($a);return 41;}
+function wp_update_post($a,$errors=false){return wp_insert_post($a,$errors);}
+function is_wp_error($v){return false;}
+define('OBJECT','OBJECT');
+require __DIR__.'/ges-wp-content-lib.php';
+$payload=json_decode(file_get_contents(__DIR__.'/payload.json'),true);
+if($argv[1]==='save'){
+ $ids=[];$saved=[];
+ foreach($payload as $row){$ids[]=GES_upsert_post_content('fixture',$row['title'],$row['html']);$saved[]=$GLOBALS['stored'];}
+ echo json_encode(['ids'=>$ids,'saved'=>$saved]);
+}else{echo GES_build_page_html('fixture',dirname(__DIR__,2).'/page.md');}
+""",encoding='utf-8')
+    def probe_php(self,mode,payload=None,layout=None):
+        (self.build/'payload.json').write_text(json.dumps(payload or []),encoding='utf-8')
+        (self.build/'layout.json').write_text(json.dumps({'fixture':layout or {}}),encoding='utf-8')
+        result=subprocess.run([PHP,str(self.probe),mode],capture_output=True,text=True,encoding='utf-8',timeout=20)
+        self.assertEqual(result.returncode,0,result.stdout+result.stderr)
+        return result.stdout
+    def test_insert_and_update_preserve_slashes_quotes_and_json(self):
+        rows=[{'title':r"C:\One's project",'html':r'<pre>C:\fixture\demo\file.txt</pre><p>Regex: \d+; JSON: {"path":"C:\\temp"}</p>'},
+              {'title':r'Update C:\Two\"quoted"','html':r'<code>\\server\share\folder</code><p>Literal \n and \t</p>'}]
+        out=json.loads(self.probe_php('save',payload=rows))
+        self.assertEqual(out['ids'],[41,41])
+        for saved,row in zip(out['saved'],rows):
+            self.assertEqual(saved['post_title'],row['title']);self.assertEqual(saved['post_content'],row['html'])
+    def test_configured_pitch_follows_deck_before_body(self):
+        html=self.probe_php('layout',layout={'intro':'fixture.png','intro_paragraphs':2,'intro_pitch_html':'<p class="ges-page-pitch">CONFIGURED_PITCH</p>'})
+        self.assertEqual(html.count('CONFIGURED_PITCH'),1)
+        self.assertLess(html.index('DECK_MARKER'),html.index('CONFIGURED_PITCH'))
+        self.assertLess(html.index('CONFIGURED_PITCH'),html.index('BODY_MARKER'))
+        self.assertIn('class="ges-page-intro-pitch"',html)
+    def test_legacy_third_paragraph_pitch_is_preserved(self):
+        html=self.probe_php('layout',layout={'intro':'fixture.png','intro_paragraphs':3})
+        self.assertEqual(html.count('LEGACY_PITCH_MARKER'),1)
+        self.assertIn('class="ges-page-intro-pitch"',html)
+        self.assertLess(html.index('DECK_MARKER'),html.index('LEGACY_PITCH_MARKER'))
+    def test_legacy_and_configured_pitch_each_render_once(self):
+        html=self.probe_php('layout',layout={'intro':'fixture.png','intro_paragraphs':3,'intro_pitch_html':'<p>CONFIGURED_PITCH</p>'})
+        self.assertEqual(html.count('LEGACY_PITCH_MARKER'),1);self.assertEqual(html.count('CONFIGURED_PITCH'),1)
+        self.assertEqual(html.count('class="ges-page-intro-pitch"'),1)
+    def test_configured_pitch_without_photo_retains_intro_order(self):
+        html=self.probe_php('layout',layout={'intro_paragraphs':2,'intro_pitch_html':'<p>CONFIGURED_PITCH</p>'})
+        self.assertNotIn('<img',html)
+        self.assertLess(html.index('DECK_MARKER'),html.index('CONFIGURED_PITCH'))
+        self.assertLess(html.index('CONFIGURED_PITCH'),html.index('BODY_MARKER'))
+
 if __name__=='__main__':
     unittest.main(argv=[__file__,*remaining])

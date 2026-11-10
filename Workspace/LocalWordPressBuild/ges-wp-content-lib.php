@@ -860,11 +860,12 @@ function GES_build_page_html( $slug, $markdown_path ) {
 	$blocks  = GES_parse_markdown_blocks( $body_md );
 
 	$intro_paragraphs = isset( $layout['intro_paragraphs'] ) ? (int) $layout['intro_paragraphs'] : 0;
+	$intro_pitch_html = isset( $layout['intro_pitch_html'] ) ? trim( (string) $layout['intro_pitch_html'] ) : '';
 	$has_intro_image  = ! empty( $layout['intro'] );
 	list( $intro_blocks, $body_blocks ) = GES_split_blocks_for_intro(
 		$blocks,
 		$intro_paragraphs,
-		$has_intro_image
+		$has_intro_image || $intro_pitch_html !== ''
 	);
 
 	$html  = '<h1 class="ges-page-title">' . esc_html( $title ) . "</h1>\n";
@@ -895,7 +896,7 @@ function GES_build_page_html( $slug, $markdown_path ) {
 			array( 'lead_first_paragraph' => true )
 		);
 		$html .= '</div>';
-		if ( $intro_pitch_blocks ) {
+		if ( $intro_pitch_blocks || $intro_pitch_html !== '' ) {
 			$html .= '<div class="ges-page-intro-pitch">';
 			$html .= GES_render_blocks_to_html(
 				$intro_pitch_blocks,
@@ -904,12 +905,17 @@ function GES_build_page_html( $slug, $markdown_path ) {
 					'intro_para_index_start' => 2,
 				)
 			);
+			// Manifest HTML is trusted source, like the other authored intro HTML.
+			$html .= $intro_pitch_html;
 			$html .= '</div>';
 		}
 		$html .= '<hr class="clearfix">' . "\n";
 		$html .= "</div>\n";
-	} elseif ( $intro_blocks ) {
+	} elseif ( $intro_blocks || $intro_pitch_html !== '' ) {
 		$html .= GES_render_blocks_to_html( $intro_blocks ) . "\n";
+		if ( $intro_pitch_html !== '' ) {
+			$html .= '<div class="ges-page-intro-pitch">' . $intro_pitch_html . "</div>\n";
+		}
 	}
 
 	$html .= GES_render_blocks_to_html( $body_blocks );
@@ -1060,11 +1066,12 @@ function GES_upsert_post_content( $slug, $title, $html, $post_type = 'page', $po
 		'post_status'  => $post_status,
 		'post_type'    => $post_type,
 	);
+	// WordPress unslashes post input; slash once at this persistence boundary.
 	if ( $existing ) {
 		$args['ID'] = $existing->ID;
-		$id         = wp_update_post( $args, true );
+		$id         = wp_update_post( wp_slash( $args ), true );
 	} else {
-		$id = wp_insert_post( $args, true );
+		$id = wp_insert_post( wp_slash( $args ), true );
 	}
 	if ( is_wp_error( $id ) ) {
 		throw new RuntimeException( $id->get_error_message() );
