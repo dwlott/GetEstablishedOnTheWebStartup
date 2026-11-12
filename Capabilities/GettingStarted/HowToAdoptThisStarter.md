@@ -81,7 +81,10 @@ A plain folder without Git is valid; GitHub setup can follow later through
 
 ## 5 — Configure WordPress only if your goals require it
 
-Use [New Commission Site Checklist](../WordPressWebsite/NewCommissionSiteChecklist.md)
+For a running site, give your agent the WordPress folder and the change you
+want. Follow [Use AI on local WordPress](../WordPressWebsite/UseAIOnLocalWordPress.md).
+
+For a new site, use [New Commission Site Checklist](../WordPressWebsite/NewCommissionSiteChecklist.md)
 for site manifests, local paths, and owner content. Replace example pages and
 navigation before building. Database backup and owner build approval precede
 WordPress writes; production launch has its own approval.

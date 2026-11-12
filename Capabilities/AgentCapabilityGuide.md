@@ -50,6 +50,7 @@ Use after [AGENTS.md](../AGENTS.md) for workflow tasks on the
 | Package `GetEstablishedOnTheWebStartup` from GEOTW copy | **StarterRepositoryPackage** | [WorkflowIndex](StarterRepositoryPackage/WorkflowIndex.md) | Active | Archetype | WebPresenceStartupRepairSpec |
 | Plan Google Business Profile setup/readiness | **GoogleBusinessProfile** | [README](GoogleBusinessProfile/README.md) | Planned | Archetype | No credentials or ranking promises |
 | Plan Yelp Business Page setup/readiness | **YelpBusinessProfile** | [README](YelpBusinessProfile/README.md) | Planned | Archetype | No review solicitation or lead promises |
+| Connect or update an existing localhost WordPress site | **WordPressWebsite** | [Use AI on local WordPress](WordPressWebsite/UseAIOnLocalWordPress.md) | Active | Archetype | WordPress folder and requested change |
 | Bootstrap local WordPress site; configure site-manifest | **WordPressWebsite** | [NewCommissionSiteChecklist](WordPressWebsite/NewCommissionSiteChecklist.md) | Active | Archetype | site-manifest.json |
 | Install WampServer (Windows) or MAMP (macOS) *(optional offer)* | **WordPressWebsite** | [WampServerAndMampSetup](WordPressWebsite/WampServerAndMampSetup.md) | Active | Archetype | Offer; skip if stack already running |
 | Sync Markdown/manifests to WordPress (`ges-build`) | **WordPressContentUpdate** | [Prompt](WordPressContentUpdate/Prompt.md) | Active | Archetype | Owner-approved --write |

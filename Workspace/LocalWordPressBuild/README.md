@@ -46,6 +46,19 @@ and `--wp-root=...`; omitting `--write` is always static preview. Explicit write
 is permission to execute the trusted PHP source manifests. Review those manifests
 before apply. Never point this pipeline at production.
 
+For an ordinary page, add a slug and filename to the `pages` map in
+`content-manifest.php`, such as `'about' => 'About.md'`. The filename is
+relative to `Content/Website/Pages`. Use `ges-build.php --pages=about --plan`
+and then `--write` with the same selection for an approved local apply.
+`--pages` is also supported by `ges-content-setup.php`. The selected page
+sync skips categories, archives, sample posts, navigation, and the category
+register. It keeps the status of an existing page and publishes new pages on
+the configured local site. The static plan lists the selection without
+executing the content manifest. Apply validates the mapping before loading
+WordPress. Full content sync also applies configured ordinary pages.
+
+For the agent workflow, see [Use AI on local WordPress](../../Capabilities/WordPressWebsite/UseAIOnLocalWordPress.md).
+
 Optional front-page sync requires an owner-configured `front-page-manifest.php`
 returning a nonempty `sections` array with section/widget entries understood by
 `ges-front-page-sync.php`, plus the referenced Markdown. It is not in the default

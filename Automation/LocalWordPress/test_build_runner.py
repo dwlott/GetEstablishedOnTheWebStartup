@@ -196,6 +196,66 @@ class BuildContract(unittest.TestCase):
         before=self.snapshot();result=self.run_php('--write','--only=ges-content-setup')
         self.assertEqual(result.returncode,0,result.stdout+result.stderr);self.assertEqual(before,self.snapshot())
 
+    def test_selected_markdown_page_plan_and_apply(self):
+        pages = self.repo / 'Content/Website/Pages'
+        pages.mkdir(parents=True)
+        source = pages / 'About.md'
+        source.write_text(r'# About' + '\n\n' + r'Folder is `C:\wamp\www\fixture-site`.', encoding='utf-8')
+        (self.build / 'content-manifest.php').write_text(
+            "<?php return ['pages' => ['about' => 'About.md', 'other' => 'Missing.md'],"
+            "'categories' => [['slug' => 'untouched']]];", encoding='utf-8',
+        )
+        (self.build / 'page-layout-manifest.php').write_text('<?php return [];', encoding='utf-8')
+        before = self.snapshot()
+        result = self.run_php('--pages=about', '--plan')
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn('upsert selected Markdown pages: about', result.stdout)
+        self.assertNotIn('PLAN: ges-nav-menu-sync', result.stdout)
+        self.assertEqual(before, self.snapshot())
+        self.reject('--pages=about,about', '--plan')
+        self.reject('--pages=about', '--only=ges-nav-menu-sync', '--plan')
+        self.reject('--pages=unknown', '--write')
+        self.reject('--pages=about,other', '--write')
+
+        bootstrap = """<?php
+$table_prefix = 'fx_';
+define('OBJECT', 'OBJECT');
+function home_url($path='/') { return 'http://localhost:8187/fixture-site' . $path; }
+function get_option($name) { return 'fixture-theme'; }
+function esc_html($text) { return htmlspecialchars($text, ENT_QUOTES, 'UTF-8'); }
+function get_page_by_path($slug, $output, $types) {
+    if ($slug !== 'about' || $types !== ['page']) { throw new RuntimeException('Unexpected lookup'); }
+    $path = __DIR__.'/page.json';
+    return is_file($path) ? (object) ['ID' => 42, 'post_status' => 'draft'] : null;
+}
+function wp_slash($args) { return array_map('addslashes', $args); }
+function wp_insert_post($args, $error) {
+    file_put_contents(__DIR__.'/page.json', json_encode(array_map('stripslashes', $args)));
+    return 42;
+}
+function wp_update_post($args, $error) { return wp_insert_post($args, $error); }
+function is_wp_error($value) { return false; }
+function update_post_meta($id, $key, $value) {
+    if ([$id, $key, $value] !== [42, '_genesis_hide_title', '1']) { throw new RuntimeException('Unexpected metadata'); }
+}
+function get_permalink($id) { return home_url('/about/'); }
+"""
+        (self.site / 'wp-load.php').write_text(bootstrap, encoding='utf-8')
+        result = self.run_php('--pages=about', '--write')
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn('http://localhost:8187/fixture-site/about/', result.stdout)
+        saved = json.loads((self.site / 'page.json').read_text())
+        self.assertEqual(saved['post_status'], 'publish')
+        self.assertIn('<h1 class="ges-page-title">About</h1>', saved['post_content'])
+        self.assertIn(r'C:\wamp\www\fixture-site', saved['post_content'])
+        source.write_text('# About\n\nRevised opening.', encoding='utf-8')
+        result = self.run_php('--pages=about', '--write', child='ges-content-setup.php')
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        saved = json.loads((self.site / 'page.json').read_text())
+        self.assertEqual(int(saved['ID']), 42)
+        self.assertEqual(saved['post_status'], 'draft')
+        self.assertIn('Revised opening.', saved['post_content'])
+
     def test_real_front_apply_with_isolated_option_store(self):
         # Execute the actual front-page child against a tiny WP option API double.
         # This exercises widget wiring; it is not a full WordPress/database test.

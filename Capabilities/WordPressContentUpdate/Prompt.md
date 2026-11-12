@@ -48,6 +48,12 @@ file/database writes. After owner approval and the required backups:
 php ges-build.php --write
 ```
 
+For ordinary pages, map the slug to its Markdown filename in the
+`pages` entry of `content-manifest.php` (for example, `'about' => 'About.md'`).
+Use `--pages=about` on the runner or content child to sync just that page.
+Follow [Use AI on local WordPress](../WordPressWebsite/UseAIOnLocalWordPress.md)
+for target setup and the owner handoff.
+
 Use `--only` for a subset. Add optional `ges-front-page-sync` only after configuring
 its front-page manifest and Markdown. Every direct child also defaults to plan.
 Failures stop the runner; previous successful steps are not rolled back.

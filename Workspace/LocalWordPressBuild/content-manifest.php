@@ -8,6 +8,8 @@
  */
 
 return array(
+	// Ordinary pages keyed by URL slug, with source filenames relative to Content/Website/Pages.
+	'pages' => array(),
 	'categories' => array(
 		array(
 			'slug'        => 'get-established-showcase',

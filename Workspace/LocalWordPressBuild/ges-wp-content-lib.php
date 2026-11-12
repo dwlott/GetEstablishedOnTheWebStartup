@@ -1053,7 +1053,7 @@ function GES_build_query_args( $template, $cat_id ) {
 }
 
 function GES_get_post_by_slug( $slug, $post_type = 'post' ) {
-	$post = get_page_by_path( $slug, OBJECT, $post_type );
+	$post = get_page_by_path( $slug, OBJECT, array( $post_type ) );
 	return $post ? $post : null;
 }
 

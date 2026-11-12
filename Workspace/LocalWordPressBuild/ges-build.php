@@ -6,6 +6,9 @@ try {
     $options = GES_build_options($argv);
     $context = GES_build_context($options);
     $selected = array('ges-theme-css-sync', 'ges-content-setup', 'ges-nav-menu-sync');
+    if (isset($options['pages'])) {
+        $selected = array('ges-content-setup');
+    }
     if (isset($options['only'])) {
         $selected = explode(',', $options['only']);
         if (count(array_unique($selected)) !== count($selected)) { throw new RuntimeException('Duplicate step selection.'); }
@@ -15,6 +18,9 @@ try {
         // Keep dependency order even when --only is supplied in another order.
         $selected = array_values(array_intersect(GES_build_steps(), $selected));
     }
+    if (isset($options['pages']) && $selected !== array('ges-content-setup')) {
+        throw new RuntimeException('--pages is a content-only build.');
+    }
     if (isset($options['sections']) && !in_array('ges-front-page-sync', $selected, true)) { throw new RuntimeException('--sections requires a selected front-page step.'); }
     if (isset($options['section-anchors']) && !in_array('ges-nav-menu-sync', $selected, true)) { throw new RuntimeException('--section-anchors requires a selected nav step.'); }
     // All prerequisites must pass before the first child can write.
@@ -22,6 +28,7 @@ try {
     if (!$options['write']) { exit(0); }
     foreach ($selected as $step) {
         $args = array(PHP_BINARY, __DIR__ . '/' . $step . '.php', '--manifest=' . $context['manifest'], '--wp-root=' . $context['root'], '--write');
+        if (isset($options['pages'])) { $args[] = '--pages=' . $options['pages']; }
         if (isset($options['force'])) { $args[] = '--force'; }
         if (isset($options['sections']) && $step === 'ges-front-page-sync') { $args[] = '--sections=' . $options['sections']; }
         if (isset($options['section-anchors']) && $step === 'ges-nav-menu-sync') { $args[] = '--section-anchors'; }

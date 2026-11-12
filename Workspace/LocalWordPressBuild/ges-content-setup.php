@@ -1,6 +1,6 @@
 <?php
 /**
- * Apply GES content manifest: categories, archive pages, sample posts (CLI only).
+ * Apply GES content manifest: Markdown pages, categories, archive pages, sample posts (CLI only).
  *
  * Usage:
  *   G:\wamp64\bin\php\php8.3.14\php.exe ges-content-setup.php
@@ -20,14 +20,62 @@ $build_context = GES_build_enter($argv, 'ges-content-setup');
 $repo_root = dirname( __DIR__, 2 );
 require_once __DIR__ . '/ges-wp-content-lib.php';
 
-$cli         = GES_parse_cli_args( $argv );
 $wp_root     = $build_context['root'];
 $manifest    = require __DIR__ . '/content-manifest.php';
 $page_dir    = $repo_root . '/Content/Website/Pages';
 $register_md = $repo_root . '/Workspace/Reference/WordPressGenesisOperatingGuide/Examples/ges-category-id-register.md';
 
+$pages = $manifest['pages'] ?? array();
+$selection = $build_context['options']['pages'] ?? null;
+if ( $selection !== null ) {
+	$requested = explode( ',', $selection );
+	$unknown = array_diff( $requested, array_keys( $pages ) );
+	if ( $unknown ) {
+		throw new RuntimeException( 'Unmapped Markdown pages: ' . implode( ', ', $unknown ) );
+	}
+	$pages = array_intersect_key( $pages, array_flip( $requested ) );
+}
+
+$page_root = realpath( $page_dir );
+$archive_slugs = array_column( $manifest['archive_pages'] ?? array(), 'slug' );
+$page_sources = array();
+foreach ( $pages as $slug => $filename ) {
+	if ( ! preg_match( '/^[a-z0-9]+(?:-[a-z0-9]+)*$/D', (string) $slug ) || in_array( (string) $slug, $archive_slugs, true ) ) {
+		throw new RuntimeException( "Invalid or conflicting Markdown page slug: $slug" );
+	}
+	if ( ! is_string( $filename ) || ! preg_match( '/^[A-Za-z0-9_-]+\.md$/D', $filename ) ) {
+		throw new RuntimeException( "Use a Markdown filename for page: $slug" );
+	}
+	$source = realpath( $page_dir . '/' . $filename );
+	if ( $source === false || ! is_file( $source ) || ! is_readable( $source )
+		|| ! GES_build_equal_path( dirname( str_replace( '\\', '/', $source ) ), str_replace( '\\', '/', $page_root ) )
+	) {
+		throw new RuntimeException( "Missing or out-of-folder Markdown source for page: $slug" );
+	}
+	$page_sources[ $slug ] = $source;
+}
+
 GES_log( "Loading WordPress: $wp_root" );
 GES_load_wordpress( $wp_root );
+
+foreach ( $page_sources as $slug => $source ) {
+	$slug = (string) $slug;
+	$title = GES_extract_markdown_title( GES_strip_markdown_page( $source ) );
+	if ( $title === '' ) {
+		$title = ucwords( str_replace( '-', ' ', $slug ) );
+	}
+	$existing = GES_get_post_by_slug( $slug, 'page' );
+	$status = $existing ? $existing->post_status : 'publish';
+	$html = GES_build_page_html( $slug, $source );
+	$page_id = GES_upsert_post_content( $slug, $title, $html, 'page', $status );
+	GES_set_page_hide_title( $page_id );
+	GES_log( "Page ID $page_id — " . get_permalink( $page_id ) );
+}
+
+if ( $selection !== null ) {
+	GES_log( 'Selected page sync complete.' );
+	exit( 0 );
+}
 
 $purpose_by_slug = array();
 foreach ( $manifest['categories'] as $cat ) {
@@ -106,4 +154,4 @@ if (!is_file($register_md) || file_get_contents($register_md) !== $register_cont
 GES_log( "Wrote register: $register_md" );
 
 GES_log( 'Content setup complete.' );
-GES_log( 'Verify: ' . home_url( '/showcase/' ) );
+GES_log( 'Verify: ' . home_url( '/' ) );

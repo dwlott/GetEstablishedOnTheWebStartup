@@ -20,7 +20,7 @@ Out of scope unless owner approves:
 
 ## Before any pass
 
-1. Read [NewCommissionSiteChecklist.md](NewCommissionSiteChecklist.md).
+1. For an existing local site, follow [Use AI on local WordPress](UseAIOnLocalWordPress.md). For a new site, read [NewCommissionSiteChecklist.md](NewCommissionSiteChecklist.md).
 2. **Offer** (do not force) [WampServerAndMampSetup.md](WampServerAndMampSetup.md)
    when the stack may be missing or the owner asks about install/migration.
 3. Read `Workspace/LocalWordPressBuild/site-manifest.json`.

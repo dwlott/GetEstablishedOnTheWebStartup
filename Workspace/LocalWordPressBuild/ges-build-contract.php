@@ -12,7 +12,7 @@ function GES_build_options($argv, $step = null) {
         }
         $name = $m[1];
         $flags = array('write', 'plan', 'force', 'section-anchors');
-        $values = array('manifest', 'wp-root', 'only', 'sections');
+        $values = array('manifest', 'wp-root', 'only', 'sections', 'pages');
         if (!in_array($name, array_merge($flags, $values), true)) {
             throw new RuntimeException('Unknown option: --' . $name);
         }
@@ -30,6 +30,15 @@ function GES_build_options($argv, $step = null) {
     if ($step !== null && isset($options['only'])) { throw new RuntimeException('--only belongs to ges-build.php.'); }
     if ($step !== null && isset($options['sections']) && $step !== 'ges-front-page-sync') { throw new RuntimeException('--sections requires front-page sync.'); }
     if ($step !== null && isset($options['section-anchors']) && $step !== 'ges-nav-menu-sync') { throw new RuntimeException('--section-anchors requires nav sync.'); }
+    if (isset($options['pages'])) {
+        if ($step !== null && $step !== 'ges-content-setup') {
+            throw new RuntimeException('--pages requires content sync.');
+        }
+        $pages = explode(',', $options['pages']);
+        if (!preg_match('/^[a-z0-9]+(?:-[a-z0-9]+)*(?:,[a-z0-9]+(?:-[a-z0-9]+)*)*$/D', $options['pages']) || count(array_unique($pages)) !== count($pages)) {
+            throw new RuntimeException('--pages requires a comma-separated list of distinct page slugs.');
+        }
+    }
     return $options;
 }
 function GES_build_absolute($path) {
@@ -127,7 +136,10 @@ function GES_build_describe($context, $step, $files) {
         'ges-nav-menu-sync' => 'rebuild manifest navigation and menu location',
         'ges-local-setup' => 'legacy initializer retired; configure manifests and use ges-build.php instead',
     );
-    echo '  Actions: ' . $actions[$step] . PHP_EOL;
+    $action = isset($context['options']['pages'])
+        ? 'upsert selected Markdown pages: ' . $context['options']['pages']
+        : $actions[$step];
+    echo '  Actions: ' . $action . PHP_EOL;
     if (!$context['options']['write']) { echo "  Static preview only; WordPress and PHP manifests were not loaded. No database diff was calculated.\n"; }
 }
 function GES_build_enter($argv, $step) {

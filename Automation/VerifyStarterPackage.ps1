@@ -113,6 +113,7 @@ try {
 
     if ($Profile -eq 'WebPresenceWordPress') {
         foreach ($path in @(
+            "Capabilities/WordPressWebsite/UseAIOnLocalWordPress.md",
             "Workspace/LocalWordPressBuild/ges-build.php",
             "Workspace/LocalWordPressBuild/ges-build-contract.php",
             "Workspace/LocalWordPressBuild/README.md",

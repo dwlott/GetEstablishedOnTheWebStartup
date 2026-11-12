@@ -25,6 +25,7 @@ acting.
 | Review website page examples | **ContentReview** on `Content/Website/Pages/` |
 | Draft one-page business site | **OnePageWebsite** |
 | Google or Yelp profile planning | **WebPresenceNode** (Google/Yelp children Planned) |
+| Existing local WordPress site, localhost edit, or “my WordPress is at…” | [Use AI on local WordPress](Capabilities/WordPressWebsite/UseAIOnLocalWordPress.md) — owner gives the site folder and task; agent handles setup, backup, sync, and verification |
 | New commission site bootstrap | **WordPressWebsite** → `NewCommissionSiteChecklist.md` |
 | Configure new site | Edit `site-manifest.json` + `WebAssetsSites.json` |
 | Site deploy profile (Bluehost fields) | Copy `Workspace/SiteDeployProfiles/_TEMPLATE.md` → `{SiteKey}.md` |
